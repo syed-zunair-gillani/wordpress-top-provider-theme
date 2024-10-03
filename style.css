@@ -13,3 +13,191 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html{
+    font-family: "Manrope", sans-serif !important;
+}
+.container{
+    max-width: 1110px !important;
+    width: 100% !important;
+}
+
+.bgmain{
+    background-color: #215690;
+}
+
+.block_heading {
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .block_content p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .block_content ul li {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 6px;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  .pros ul li,
+.cons ul li {
+  font-size: 16px;
+  list-style-type: none;
+  margin-bottom: 6px;
+}
+.pros ul li:before {
+  content: '✓';
+  border: 1px solid green;
+  color: green;
+  border-radius: 100%;
+  text-align: center;
+  margin-right: 10px;
+  width: 20px;
+  line-height: 20px;
+  display: inline-block;
+}
+.cons ul li:before {
+  content: '☓';
+  border: 1px solid red;
+  color: red;
+  border-radius: 100%;
+  text-align: center;
+  margin-right: 10px;
+  width: 20px;
+  line-height: 20px;
+  display: inline-block;
+}
+/* Initially hide all submenus */
+.submenu {
+    display: none;
+}
+/* Show submenu when hovering over the parent li element */
+.menu-item:hover .submenu {
+    display: block;
+}
+/* Additional styling to make submenu behave like a dropdown */
+.submenu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+/* Optional: add transition for smooth appearance */
+.submenu {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;    
+}
+.menu-item{
+    padding: 12px 0;
+}
+.menu-item:hover .submenu{
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Mobile menu hidden by default */
+#menu {
+    display: none;
+}
+/* Show menu when 'hidden' class is removed */
+#menu.hidden {
+    display: block;
+}
+/* Mobile styles */
+@media (max-width: 640px) {
+    /* Show hamburger button */
+    #menu-toggle {
+        display: block;
+    }
+    /* Hide menu initially */
+    #menu {
+        display: none;
+    }
+    /* Menu styling for mobile */
+    #menu.hidden {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px; /* Position below the header */
+        left: 0;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #ffffff; /* Or any color you want */
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .menu-item{
+        padding: 0 !important;
+    }
+}
+/* For larger screens, always display the menu */
+@media (min-width: 641px) {
+    #menu {
+        display: flex;
+    }
+}
+.menu-item ul li{
+    padding: 5px 16px !important;
+}
+#dropdownMenu{
+    overflow: hidden;
+}
+
+
+
+
+
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -8px;
+    margin-right: -8px;
+    background-color: #EF9831;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
