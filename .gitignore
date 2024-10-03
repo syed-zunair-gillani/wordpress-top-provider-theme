@@ -1,6 +1,5 @@
 # Ignore compiled output, build directories, and binaries
 /node_modules
-/dist
 /build
 
 # Ignore log and temp files
