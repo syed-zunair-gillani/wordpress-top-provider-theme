@@ -9,3 +9,7 @@ License: GNU General Public License
 Text Domain: cbl_theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

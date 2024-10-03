@@ -606,7 +606,10 @@ function theme_register_nav_menu() {
 add_action('after_setup_theme', 'theme_register_nav_menu');
 
 
-
+function my_theme_enqueue_styles() {
+    wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/dist/style.css', array(), null);
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 

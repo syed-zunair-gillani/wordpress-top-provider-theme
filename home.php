@@ -2,6 +2,9 @@
 
 ?>
 
+
+
+
 <?php query_posts(array(
     'post_type' => 'providers',
     'posts_per_page' => -1,
