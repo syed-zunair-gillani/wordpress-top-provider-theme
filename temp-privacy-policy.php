@@ -1,12 +1,12 @@
 <?php
-/** Template Name: About Us */
+/** Template Name: Privacy Policy */
 
 get_header();
 ?>
 
 <section class="py-24 bg-[#215690]">
     <div class="container mx-auto px-4">
-        <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">About Us</h1>
+        <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">Privacy Policy        </h1>
     </div>
 </section>
 
