@@ -53,7 +53,7 @@
         </div>
         <div class="sm:pl-0 sm:w-1/3 w-full">
             <a href="">
-                <img src="https://www.cablemovers.net/_next/image?url=%2Flogo.png&w=256&q=75" alt="Cable Movers Logo" width="120" height="34" class="w-20 md:w-auto" />
+                <img src="https://www.cablemovers.net/_next/image?url=%2Flogo.png&w=256&q=75" alt="Cable Movers Logo" width="120" height="34" class="w-20 md:w-44" />
             </a>
         </div>
         <div id="menu" class="sm:w-2/3 bg-gray-100 w-full sm:bg-white shadow-xl sm:shadow-none sm:justify-end sm:static absolute left-0 sm:py-0 py-7 sm:px-0 px-5 flex items-center">
