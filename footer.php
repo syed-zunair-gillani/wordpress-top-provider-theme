@@ -16,7 +16,7 @@
     <!-- Footer Logo and Description -->
     <div class="col-span-2">
       <a href="<?php echo esc_url(home_url('/')); ?>">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/logo.png'); ?>" alt="Cable Movers footer logo" height="56" width="254" />
+        <img src="https://www.cablemovers.net/_next/image?url=%2Flogo.png&w=256&q=75" alt="Cable Movers footer logo" height="56" width="254" />
       </a>
       <p class="text-sm font-normal text-white/75 mt-5">
         All names, logos, trademarks displayed are the sole property of their respective owners; cablemovers.net employs these trademarks solely for the purpose of describing the products and services provided by each respective trademark holder. We offer information for comparative purposes and do not directly provide internet and TV services, nor do we endorse one service provider over another. We are financially supported by compensation from our internet and TV partners.

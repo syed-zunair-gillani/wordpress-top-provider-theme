@@ -6,7 +6,7 @@ get_header();
 
 <section class="py-24 bg-[#215690]">
     <div class="container mx-auto px-4">
-        <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">Contact Us</h1>
+        <h1 class="sm:text-5xl text-4xl leading-normal font-semibold text-white text-center">Contact Us</h1>
     </div>
 </section>
 
