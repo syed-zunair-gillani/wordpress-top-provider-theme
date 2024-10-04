@@ -1,5 +1,5 @@
 <?php
-/** Template Name: About Us */
+/** Template Name: Terms and conditions */
 
 get_header();
 ?>
