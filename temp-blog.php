@@ -8,10 +8,22 @@ get_header();
 
 <!-- Main Content Area -->
 <div class="container mx-auto px-4 py-12">
+
+    <?php
+    // Custom WP Query to get posts of a specific post type (e.g., 'post')
+    $args = array(
+        'post_type' => 'post', // Specify the post type
+        'posts_per_page' => -1, // Number of posts to display
+        'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1, // Enable pagination
+    );
+
+    $custom_query = new WP_Query( $args );
+    ?>
+
     <!-- Loop through posts -->
-    <?php if ( have_posts() ) : ?>
+    <?php if ( $custom_query->have_posts() ) : ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php while ( have_posts() ) : the_post(); ?>
+            <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
                 <!-- Individual Blog Post -->
                 <article class="bg-white shadow-md rounded-lg overflow-hidden">
                     <!-- Featured Image -->
@@ -50,14 +62,19 @@ get_header();
     <!-- Pagination -->
     <div class="mt-12">
         <?php
-        // WordPress pagination function
-        the_posts_pagination( array(
-            'mid_size'  => 2,
+        // WordPress pagination function for custom query
+        echo paginate_links( array(
+            'total' => $custom_query->max_num_pages,
             'prev_text' => __( '&larr; Previous', 'textdomain' ),
             'next_text' => __( 'Next &rarr;', 'textdomain' ),
         ) );
         ?>
     </div>
+
+    <?php
+    // Reset post data after custom query
+    wp_reset_postdata();
+    ?>
 </div>
 
 <?php get_footer(); ?>
