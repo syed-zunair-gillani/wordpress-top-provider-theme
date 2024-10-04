@@ -8,9 +8,21 @@
  */
 
     get_header();
+
+    $phone = get_field( "pro_phone" );
+    $logoArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    $logoUrl = esc_url( $logoArray[0]);
+    $currentYear = date("Y");
+    $currentMonth = date('F');
+    $price = get_field( "pro_price" );
+    $features = get_field( "features" );
+    $features = get_field( "banner_image" );
+    $pros = get_field( "pros" );
+    $cons = get_field( "cons" );
+
+    
+
 ?>
-
-
 <section class="relative my-8">
     <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
         <div class="md:w-1/2 w-full py-10">
@@ -22,34 +34,28 @@
                     height="50"
                     decoding="async"
                     data-nimg="1"
-                    src="https://www.cablemovers.net/_next/image?url=https%3A%2F%2Fcblproject.cablemovers.net%2Fwp-content%2Fuploads%2F2023%2F08%2Fatt.jpg&w=256&q=75"
+                    src="<?php echo $logoUrl ?>"
                     style="color: transparent;"
                 />
             </a>
-            <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-black"><span class="text-[#ef9831]">AT&amp;T </span>Plans and Pricing for October, 2024</h1>
-            <div class="features text-black mb-5">
-                <p>Get AT&amp;T Internet today and enjoy 25x faster speeds than cable. Connect all your devices and appliances for a synchronized smart home.</p>
-                <ul>
-                    <li>99% proven reliability</li>
-                    <li>No annual contracts</li>
-                    <li>Straightforward pricing</li>
-                    <li>Speeds up to 5 GIGs</li>
-                </ul>
+            <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-black"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
+            <div class="features text-black mb-5 single_content">
+                <?php echo $features ?>
             </div>
             <h5 class="text-xl font-bold text-black">Price Starting At</h5>
             <h2 class="md:text-4xl text-3xl font-extrabold text-black my-4 flex items-start">
-                <span class="md:text-3xl text-base">$</span>55.00
+                <span class="md:text-3xl text-base">$</span><?php echo $price ?>
                 <span class="grid">
                     <span class="md:text-3xl text-base"><sub>/mo</sub></span>
                 </span>
             </h2>
-            <a class="bg-[#ef9831] rounded-3xl md:text-4xl text-base font-bold text-white w-fit px-3 py-1.5 flex items-center gap-3 mb-4" href="tel:855-205-8483">
+            <a class="bg-[#ef9831] rounded-3xl md:text-4xl text-base font-bold text-white w-fit px-3 py-1.5 flex items-center gap-3 mb-4" href="<?php echo $phone ?>">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z"
                     ></path>
                 </svg>
-                855-205-8483
+                </span><?php echo $phone ?>
             </a>
         </div>
         <div class="md:w-1/2 w-full md:block hidden">
@@ -61,7 +67,7 @@
                 decoding="async"
                 data-nimg="1"
                 class="object-cover w-full h-full"
-                src="https://www.cablemovers.net/_next/image?url=https%3A%2F%2Fcblproject.cablemovers.net%2Fwp-content%2Fuploads%2F2023%2F10%2Fatt-banner-1-scaled-e1696963990452.jpg&w=1200&q=75"
+                src="<?php echo $features ?>"
                 style="color: transparent;"
             />
         </div>
@@ -77,7 +83,7 @@
                     d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"
                 ></path>
             </svg>
-            <a href="tel:855-205-8483"> 855-205-8483</a>
+            <a href="tel:<?php echo $phone ?>"> <?php echo $phone ?></a>
         </div>
     </div>
 </section>
@@ -85,7 +91,7 @@
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold"><?php _e('AT&T Internet Plans', 'your-theme-textdomain'); ?></h2>
+            <h2 class="text-2xl font-bold"><?php echo the_title(); ?> Internet Plans</h2>
             <div class="w-fit hint mx-auto block md:hidden mt-5"><?php _e('Swipe Left to See All →', 'your-theme-textdomain'); ?></div>
         </div>
         <div>
@@ -148,7 +154,7 @@
 
 <section class="my-16">
     <div class="container mx-auto px-4">
-        <div class="mb-10"><h2 class="text-2xl font-bold">Switch to AT&amp;T And Get Benefits You’ll Love</h2></div>
+        <div class="mb-10"><h2 class="text-2xl font-bold">Switch to <?php echo the_title(); ?> And Get Benefits You’ll Love</h2></div>
         <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                 <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
@@ -161,7 +167,7 @@
                     </svg>
                 </span>
                 <h2 class="mt-5 text-xl font-bold text-center">No Data Caps</h2>
-                <p class="mt-5 text-base text-center">All AT&amp;T internet plans come with unlimited data so you can stream, game without paying overage or additional charges.</p>
+                <p class="mt-5 text-base text-center">All <?php echo the_title(); ?> internet plans come with unlimited data so you can stream, game without paying overage or additional charges.</p>
             </div>
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                 <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
@@ -172,7 +178,7 @@
                     </svg>
                 </span>
                 <h2 class="mt-5 text-xl font-bold text-center">24/7 Internet Security</h2>
-                <p class="mt-5 text-base text-center">With AT&amp;T ActiveArmor, stop data threats before they get to you even on WiFi.</p>
+                <p class="mt-5 text-base text-center">With <?php echo the_title(); ?> ActiveArmor, stop data threats before they get to you even on WiFi.</p>
             </div>
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                 <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
@@ -183,7 +189,7 @@
                     </svg>
                 </span>
                 <h2 class="mt-5 text-xl font-bold text-center">No Contracts</h2>
-                <p class="mt-5 text-base text-center">AT&amp;T does not require annual contract. Cancel anytime without paying any termination or cancelation fees.</p>
+                <p class="mt-5 text-base text-center"><?php echo the_title(); ?> does not require annual contract. Cancel anytime without paying any termination or cancelation fees.</p>
             </div>
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                 <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
@@ -193,7 +199,7 @@
                         ></path>
                     </svg>
                 </span>
-                <h2 class="mt-5 text-xl font-bold text-center">AT&amp;T Smart Home Manager</h2>
+                <h2 class="mt-5 text-xl font-bold text-center"><?php echo the_title(); ?> Smart Home Manager</h2>
                 <p class="mt-5 text-base text-center">This feature allows you to manage your Wi-Fi network, set parental controls, and monitor connected devices using a mobile app or web interface.</p>
             </div>
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
@@ -205,7 +211,7 @@
                     </svg>
                 </span>
                 <h2 class="mt-5 text-xl font-bold text-center">Nextgen WiFi</h2>
-                <p class="mt-5 text-base text-center">With AT&amp;T All-Fi, get more coverage to more corners of your home.</p>
+                <p class="mt-5 text-base text-center">With <?php echo the_title(); ?> All-Fi, get more coverage to more corners of your home.</p>
             </div>
             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                 <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
@@ -215,8 +221,8 @@
                         ></path>
                     </svg>
                 </span>
-                <h2 class="mt-5 text-xl font-bold text-center">AT&amp;T Wi-Fi Hotspots</h2>
-                <p class="mt-5 text-base text-center">Subscribers often have access to AT&amp;T's extensive network of Wi-Fi hotspots across the country, allowing for internet connectivity while on the go.</p>
+                <h2 class="mt-5 text-xl font-bold text-center"><?php echo the_title(); ?> Wi-Fi Hotspots</h2>
+                <p class="mt-5 text-base text-center">Subscribers often have access to <?php echo the_title(); ?>'s extensive network of Wi-Fi hotspots across the country, allowing for internet connectivity while on the go.</p>
             </div>
         </div>
     </div>
@@ -226,41 +232,41 @@
     <div class="container mx-auto px-4">
         <div class="">
             <div>
-                <h2 class="block_heading">Current AT&amp;T Internet Deals</h2>
+                <h2 class="block_heading">Current <?php echo the_title(); ?> Internet Deals</h2>
                 <div class="block_content">
-                    <p>AT&amp;T is a DSL and Fiber Internet service provider. AT&amp;T is offering the following incentives to its new customers.</p>
+                    <p><?php echo the_title(); ?> is a DSL and Fiber Internet service provider. <?php echo the_title(); ?> is offering the following incentives to its new customers.</p>
                     <ul>
                         <li>No annual contracts or data caps</li>
                         <li>Free self-install option available</li>
                         <li>Free equipment included on all plans.</li>
-                        <li><strong>$250 Visa Reward card</strong> when you sign up with AT&amp;T Fiber 300Mbps or higher plan.</li>
+                        <li><strong>$250 Visa Reward card</strong> when you sign up with <?php echo the_title(); ?> Fiber 300Mbps or higher plan.</li>
                     </ul>
                 </div>
             </div>
             <div>
-                <h2 class="block_heading">AT&amp;T Equipment fees, contracts, data caps &amp; ETF's.</h2>
+                <h2 class="block_heading"><?php echo the_title(); ?> Equipment fees, contracts, data caps &amp; ETF's.</h2>
                 <div class="block_content">
-                    <p>AT&amp;T customers are required to pay some fees on top of their plans base pricing. Here’s what you can expect to pay;</p>
+                    <p><?php echo the_title(); ?> customers are required to pay some fees on top of their plans base pricing. Here’s what you can expect to pay;</p>
                     <ul>
-                        <li><strong>Equipment Fee:</strong> AT&amp;T doesn’t charge for equipment as all DSL and fiber plans include equipment free of charge.</li>
+                        <li><strong>Equipment Fee:</strong> <?php echo the_title(); ?> doesn’t charge for equipment as all DSL and fiber plans include equipment free of charge.</li>
                         <li>
-                            <strong>Install Fee:</strong> You have to pay a onetime installation fee of $99 when you choose professional install on any DSL order. To avoid this fee, request for a self-install option. Currently, All AT&amp;T
+                            <strong>Install Fee:</strong> You have to pay a onetime installation fee of $99 when you choose professional install on any DSL order. To avoid this fee, request for a self-install option. Currently, All <?php echo the_title(); ?>
                             fiber plans have no install fee.
                         </li>
                         <li>
-                            <strong>Early Termination Fee:</strong> AT&amp;T offer plans without contracts, providing month-to-month flexibility. With no-contract plan, you can typically cancel your service without incurring early
+                            <strong>Early Termination Fee:</strong> <?php echo the_title(); ?> offer plans without contracts, providing month-to-month flexibility. With no-contract plan, you can typically cancel your service without incurring early
                             termination fee.
                         </li>
-                        <li><strong>Data Caps:</strong> AT&amp;T internet plans come with unlimited data so you won’t have to worry about limiting your internet usage.</li>
+                        <li><strong>Data Caps:</strong> <?php echo the_title(); ?> internet plans come with unlimited data so you won’t have to worry about limiting your internet usage.</li>
                     </ul>
                 </div>
             </div>
             <div>
-                <h2 class="block_heading">Why Choose AT&amp;T Internet?</h2>
+                <h2 class="block_heading">Why Choose <?php echo the_title(); ?> Internet?</h2>
                 <div class="block_content">
                     <p>
-                        AT&amp;T is a DSL and Fiber internet service provider, providing fast and reliable internet services in 21 states. Like any service, AT&amp;T has its advantages and disadvantages. Here are some of the pros and cons
-                        of AT&amp;T Internet.
+                        <?php echo the_title(); ?> is a DSL and Fiber internet service provider, providing fast and reliable internet services in 21 states. Like any service, <?php echo the_title(); ?> has its advantages and disadvantages. Here are some of the pros and cons
+                        of <?php echo the_title(); ?> Internet.
                     </p>
                 </div>
             </div>
@@ -273,19 +279,11 @@
         <div class="grid md:grid-cols-2 grid-cols-1">
             <div class="bg-gray-200 p-8 pros">
                 <h2 class="text-2xl font-bold mb-4">Pros</h2>
-                <ul>
-                    <li>Unlimited data</li>
-                    <li>No annual contracts</li>
-                    <li>No equipment fees</li>
-                    <li>Wide Availability</li>
-                </ul>
+                <?php echo $pros ?>
             </div>
             <div class="bg-gray-100 p-8 cons">
                 <h2 class="text-2xl font-bold mb-4">Cons</h2>
-                <ul>
-                    <li>Limited fiber availability</li>
-                    <li>No Bundle discounts</li>
-                </ul>
+                <?php echo $cons ?>
             </div>
         </div>
     </div>
@@ -294,60 +292,43 @@
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold">AT&amp;T FAQ’s</h2>
+            <h2 class="text-2xl font-bold"><?php echo the_title(); ?> FAQ’s</h2>
         </div>
         <div class="grid gap-10">
-            <div class="faq-item w-full h-fit border border-[#F0F0F0] rounded-[10px] p-[30px] shadow-[0_15px_15px_rgba(0,0,0,0.05)]">
-                <div class="faq-question flex justify-between cursor-pointer">
-                    <p class="text-lg font-semibold">What types of internet technology does AT&amp;T offer?</p>
-                    <span class="faq-icon text-lightBlue">
-                        <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 1024 1024"
-                            class="faq-arrow transform transition duration-200 rotate-0"
-                            height="24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <defs></defs>
-                            <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
-                            <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
-                        </svg>
-                    </span>
-                </div>
-                <div class="faq-answer hidden mt-5">
-                    <p class="text-base font-medium">AT&amp;T offers both DSL and fiber-optic internet technologies, with fiber-optic providing higher speeds and reliability.</p>
-                </div>
-            </div>
-
-            <div class="faq-item w-full h-fit border border-[#F0F0F0] rounded-[10px] p-[30px] shadow-[0_15px_15px_rgba(0,0,0,0.05)]">
-                <div class="faq-question flex justify-between cursor-pointer">
-                    <p class="text-lg font-semibold">What internet speeds are available with AT&amp;T?</p>
-                    <span class="faq-icon text-lightBlue">
-                        <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 1024 1024"
-                            class="faq-arrow transform transition duration-200 rotate-0"
-                            height="24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <defs></defs>
-                            <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
-                            <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
-                        </svg>
-                    </span>
-                </div>
-                <div class="faq-answer hidden mt-5">
-                    <p class="text-base font-medium">AT&amp;T offers a range of internet plans with varying speeds from 25 Mbps to 5000 Mbps, depending on your location and the technology available in your area.</p>
-                </div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
+            <?php
+                if( have_rows('faqs') ):
+                    while( have_rows('faqs') ) : the_row();
+                        $question = get_sub_field('question');
+                        $answer = get_sub_field('answer');
+                    ?>
+                        <div class="faq-item w-full h-fit border border-[#F0F0F0] rounded-[10px] p-[30px] shadow-[0_15px_15px_rgba(0,0,0,0.05)]">
+                            <div class="faq-question flex justify-between cursor-pointer">
+                                <p class="text-lg font-semibold"><?php echo $question ?></p>
+                                <span class="faq-icon text-lightBlue">
+                                    <svg
+                                        stroke="currentColor"
+                                        fill="currentColor"
+                                        stroke-width="0"
+                                        viewBox="0 0 1024 1024"
+                                        class="faq-arrow transform transition duration-200 rotate-0"
+                                        height="24"
+                                        width="24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <defs></defs>
+                                        <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
+                                        <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="faq-answer hidden mt-5">
+                                <p class="text-base font-medium"><?php echo $question ?></p>
+                            </div>
+                        </div>
+                    <?php
+                    endwhile;
+                else : endif;
+            ?>
         </div>
     </div>
 </section>

@@ -200,4 +200,11 @@ body, html{
     cursor: pointer;
 }
 
-
+.single_content p{
+    margin: 7px 0;
+}
+.single_content ul{
+    list-style-type: disc;
+    padding-left: 18px;
+    margin-top: 4px;
+}
