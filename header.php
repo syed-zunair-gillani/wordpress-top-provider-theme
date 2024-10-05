@@ -83,7 +83,7 @@
                         <li><a href="/providers/t-mobile" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">T-Mobile</a></li>
                     </ul>
                 </li>
-                <li><a href="/providers" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Providers</a></li>
+                <li><a href="<?php echo home_url('/providers'); ?>" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Providers</a></li>
                 <li><a href="tel:833-592-0098" class="items-center gap-2 text-[#ef9831] font-[Roboto] flex justify-end">
                     <i class="lu-phone-call">
                         <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none">
