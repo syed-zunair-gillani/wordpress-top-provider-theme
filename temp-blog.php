@@ -6,10 +6,9 @@ get_header();
 
 <section class="py-24 bg-[#215690]">
     <div class="container mx-auto px-4">
-        <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">Blogs</h1>
+        <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">Blog</h1>
     </div>
 </section>
-
 <section class="py-24 ">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center mb-14 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
