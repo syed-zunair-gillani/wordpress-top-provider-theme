@@ -28,26 +28,7 @@ get_header();
             <div class="flex items-center mb-6">
                 <img src="https://pagedone.io/asset/uploads/1696244579.png" alt="John image" class="rounded-lg w-full object-cover">
             </div>
-            <div class="block">
-                <h4 class="text-gray-900 font-medium leading-8 mb-9">From Classroom to Cyberspace: The Growing Influence of EdTech in Fintech</h4>
-                <div class="flex items-center justify-between  font-medium">
-                    <h6 class="text-sm text-gray-500">By John D.</h6>
-                    <span class="text-sm text-indigo-600">2 year ago</span>
-                </div>
-            </div>
-            </div>
-            <div class="group cursor-pointer w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600">
-            <div class="flex items-center mb-6">
-                <img src="https://pagedone.io/asset/uploads/1696244619.png" alt="Alexa image" class="rounded-lg w-full object-cover">
-            </div>
-            <div class="block">
-                <h4 class="text-gray-900 font-medium leading-8 mb-9">Fintech Solutions for Student Loans: Easing the Burden of Education Debt</h4>
-                <div class="flex items-center justify-between  font-medium">
-                    <h6 class="text-sm text-gray-500">By Alexa H.</h6>
-                    <span class="text-sm text-indigo-600">2 year ago</span>
-                </div>
-            </div>
-            </div>
+                        
         </div>
         <a href="javascript:;" class="cursor-pointer border border-gray-300 shadow-sm rounded-full py-3.5 px-7 w-52 flex justify-center items-center text-gray-900 font-semibold mx-auto transition-all duration-300 hover:bg-[#215690] hover:text-white">View All</a>
     </div>
