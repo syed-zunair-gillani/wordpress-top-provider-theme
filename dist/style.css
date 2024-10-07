@@ -1474,6 +1474,10 @@ video {
   padding-top: 1rem;
 }
 
+.\!pt-5 {
+  padding-top: 1.25rem !important;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2087,6 +2091,10 @@ body, html{
 
   .sm\:mt-1 {
     margin-top: 0.25rem;
+  }
+
+  .sm\:grid {
+    display: grid;
   }
 
   .sm\:hidden {
