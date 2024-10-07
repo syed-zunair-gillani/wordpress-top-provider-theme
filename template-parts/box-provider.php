@@ -2,7 +2,7 @@
   <a href="<?php the_permalink() ?>" class="flex flex-col justify-center items-center">
     <?php if (has_post_thumbnail()) {
       ?>
-        <figure class="!w-[144px]">
+        <figure style="width: 140px">
           <?php the_post_thumbnail('full') ?>
         </figure>
       <?php
