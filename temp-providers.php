@@ -24,7 +24,7 @@ get_header();
     <div class="max-w-[1110px] w-full mx-auto px-4">
         <div>
             <h3 class="text-3xl font-semibold mb-10">Featured Providers</h3>
-            <div class="mt-8 grid grid-cols-1 sm:!grid-cols-2 gap-8 md:grid-cols-4 text-center">
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:grid-cols-4 text-center">
                 <?php
                 // Arguments for the WP Query
                 $args = array(
@@ -57,7 +57,7 @@ get_header();
 
         <div>
             <h3 class="text-3xl font-semibold mb-10">Top TV and Internet Service Providers</h3>
-            <div class="grid sm:!grid-cols-2 md:grid-cols-4 grid-cols-1 gap-7">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-7">
             <?php
                 // Arguments for the WP Query
                 $args = array(
