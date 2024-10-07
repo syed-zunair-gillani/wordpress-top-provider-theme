@@ -71,7 +71,7 @@
                 </li>
                 <li class="menu-item" data-submenu="submenu-internet">
                     <a href="#" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Internet</a>
-                    <ul id="submenu-internet" class="submenu bg-transparent sm:bg-white pl-5 sm:pl-0 border-l sm:border-none mt-1 md:mt-0 md:absolute static top-[5.7rem] md:w-40 w-full grid gap-3 z-50 md:shadow-xl">
+                    <ul id="submenu-internet" class="submenu bg-transparent sm:bg-white pl-5 sm:pl-0 border-l sm:border-none mt-1 md:mt-[-34px] md:absolute static top-[5.7rem] md:w-40 w-full grid gap-3 z-50 md:shadow-xl">
                         <li><a href="/providers/att" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">AT&T</a></li>
                         <li><a href="/providers/spectrum" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Spectrum</a></li>
                         <li><a href="/providers/frontier" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Frontier</a></li>
