@@ -23,7 +23,7 @@ get_header();
 <section class="py-16">
     <div class="max-w-[1110px] w-full mx-auto px-4">
         <div>
-            <h3 class="text-3xl font-bold mb-10">Featured Providers</h3>
+            <h3 class="text-3xl font-semibold mb-10">Featured Providers</h3>
             <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-4 text-center">
                 <?php
                 // Arguments for the WP Query
@@ -56,7 +56,7 @@ get_header();
         <div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-16"></div>
 
         <div>
-            <h3 class="text-3xl font-bold mb-10">Top TV and Internet Service Providers</h3>
+            <h3 class="text-3xl font-semibold mb-10">Top TV and Internet Service Providers</h3>
             <div class="grid md:grid-cols-4 grid-cols-3 gap-7">
             <?php
                 // Arguments for the WP Query
