@@ -1896,7 +1896,7 @@ body, html{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 90px;
+    top: 56px;
     /* Position below the header */
     left: 0;
     align-items: flex-start;
