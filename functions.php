@@ -824,3 +824,52 @@ function insert_comment_with_meta(WP_REST_Request $request) {
         return new WP_Error('comment_insert_failed', 'Failed to insert comment', array('status' => 500));
     }
 }
+
+
+
+
+// Add a custom rewrite rule for the area_zone post type
+function custom_rewrite_rule() {
+    add_rewrite_rule(
+        '^my-prefix-([0-9]+)/?$', // Match URL pattern my-prefix-{post_id}
+        'index.php?post_type=area_zone&p=$matches[1]', // Redirect to the area_zone post type using post ID
+        'top' // Apply this rule at the top
+    );
+}
+add_action('init', 'custom_rewrite_rule');
+
+// Modify the permalink structure to add a custom prefix for area_zone post type
+function add_prefix_to_provider_slug($post_link, $post) {
+    if ($post->post_type == 'area_zone') {
+        return home_url('/my-prefix-' . $post->ID); // Use post ID for the custom URL
+    }
+    return $post_link;
+}
+add_filter('post_type_link', 'add_prefix_to_provider_slug', 10, 2);
+
+// Modify the query to fetch the correct post based on the custom URL
+function custom_query_vars($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        // Check if the query is looking for a post_type area_zone
+        if (isset($query->query_vars['p']) && !empty($query->query_vars['p'])) {
+            // Get the post ID from the URL
+            $post_id = (int) $query->query_vars['p'];
+            $query->set('post_type', 'area_zone');
+            $query->set('p', $post_id); // Use post ID to fetch the post
+        }
+    }
+}
+add_action('pre_get_posts', 'custom_query_vars');
+
+// Flush rewrite rules (only needed once after adding the rewrite rule)
+function flush_rewrite_rules_on_activation() {
+    custom_rewrite_rule();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'flush_rewrite_rules_on_activation');
+
+// Flush rules if the plugin is updated or the theme functions file is saved
+function my_custom_flush_rewrite_rules() {
+    flush_rewrite_rules();
+}
+add_action('init', 'my_custom_flush_rewrite_rules');
