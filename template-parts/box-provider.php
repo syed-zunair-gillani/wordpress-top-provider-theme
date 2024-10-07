@@ -1,4 +1,4 @@
-<div class="block rounded-xl border border-gray-100 p-3 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10  ">
+<div class="flex justify-center rounded-xl border border-gray-100 p-3 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10  ">
   <a href="<?php the_permalink() ?>" class="flex flex-col justify-center items-center">
     <?php if (has_post_thumbnail()) {
       ?>
