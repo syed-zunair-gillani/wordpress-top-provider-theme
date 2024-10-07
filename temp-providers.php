@@ -57,7 +57,7 @@ get_header();
 
         <div>
             <h3 class="text-3xl font-semibold mb-10">Top TV and Internet Service Providers</h3>
-            <div class="grid md:grid-cols-4 grid-cols-3 gap-7">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-7">
             <?php
                 // Arguments for the WP Query
                 $args = array(
