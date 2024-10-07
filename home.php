@@ -11,7 +11,7 @@
     <div class="py-10">
       <h1 class="text-3xl md:text-5xl text-center md:leading-tight font-semibold text-white">Find <span class="text-[#ef9831]">TV and Internet Providers</span> in your Area.</h1>
       <p class="text-[22px] text-center md:px-24 font-normal text-white my-5">Compare TV, Internet and Landline Providers, plans and prices by ZIP code.</p>
-      <?php get_template_part('template-parts/filter', 'form'); ?>
+      <?php get_template_part('template-parts/search', 'form'); ?>
     </div>
     <div class=""></div>
   </div>
@@ -296,7 +296,7 @@
     <div class="max-w-[1110px] w-full mx-auto px-4 my-10 flex lg:flex-row flex-col justify-center gap-5 items-center">
         <div class=""><h3 class="md:text-3xl text-2xl text-center lg:text-left font-extrabold leading-normal">Enter your zip code to find providers and plans in your area:</h3></div>
         <div class="flex md:justify-end justify-center [&amp;>div:nth-child(1)]:mr-0 [&amp;>div:nth-child(1)]:w-fit w-full">
-            <?php get_template_part('template-parts/filter', 'form'); ?>
+            <?php get_template_part('template-parts/search', 'form'); ?>
         </div>
     </div>
 </section>

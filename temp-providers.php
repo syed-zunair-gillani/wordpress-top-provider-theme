@@ -6,15 +6,15 @@ get_header();
 ?>
 
 
-<section class="min-h-[40vh] flex items-center bg-gray-50">
+<section class="min-h-[40vh] flex items-center bg-[#215690]">
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
-            <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
+            <h1 class="sm:text-5xl text-2xl text-white font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
                 Internet Providers in <br />
                 ZIP Code <span class="text-[#ef9831]">your area.</span>
             </h1>
-            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best Internet Providers in your area:</p>
-            <?php get_template_part('template-parts/filter', 'form'); ?>
+            <p class="text-xl text-center text-white font-[Roboto] my-5">Enter your zip so we can find the best Internet Providers in your area:</p>
+            <?php get_template_part('template-parts/search', 'form'); ?>
         </div>
     </div>
 </section>

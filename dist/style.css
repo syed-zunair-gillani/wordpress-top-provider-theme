@@ -913,6 +913,18 @@ video {
   width: 100%;
 }
 
+.w-auto {
+  width: auto;
+}
+
+.w-\[14\] {
+  width: 14;
+}
+
+.w-\[144px\] {
+  width: 144px;
+}
+
 .min-w-\[1rem\] {
   min-width: 1rem;
 }
@@ -952,6 +964,18 @@ video {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[712px\] {
+  max-width: 712px;
+}
+
+.\!max-w-\[712px\] {
+  max-width: 712px !important;
 }
 
 .rotate-0 {
@@ -1256,6 +1280,10 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\] {
+  background-color: ;
 }
 
 .bg-cover {
