@@ -24,8 +24,6 @@ get_header();
     </div>
 </section>
 
-
-
 <section class="bg-[#215690] py-4 shadow-sm border-y border-zinc-400/20 sticky top-0">
     <div class="container mx-auto px-4">
         <div>
