@@ -829,6 +829,7 @@ function insert_comment_with_meta(WP_REST_Request $request) {
 
 
 
+
 // Step 1: Define dynamic rewrite rules for all service types
 function custom_dynamic_rewrite_rules() {
     // Define the static service types
@@ -866,7 +867,7 @@ function custom_dynamic_rewrite_rules() {
 }
 add_action('init', 'custom_dynamic_rewrite_rules');
 
-// Step 2: Register custom query variables to ensure WordPress recognizes them.
+// Step 2: Register custom query variables to ensure WordPress recognizes them
 function add_custom_query_vars($vars) {
     $vars[] = 'service';
     $vars[] = 'zone_state';
@@ -876,10 +877,10 @@ function add_custom_query_vars($vars) {
 }
 add_filter('query_vars', 'add_custom_query_vars');
 
-// Step 3: Modify the permalink structure to include service, zone_state, and zone_city in the URL.
+// Step 3: Modify the permalink structure to include service, zone_state, and zone_city in the URL
 function add_custom_prefix_to_area_zone_slug($post_link, $post) {
     if ($post->post_type == 'area_zone') {
-        // Get the zone_city and zone_state terms associated with the post.
+        // Get the zone_city and zone_state terms associated with the post
         $zone_state_terms = wp_get_post_terms($post->ID, 'zone_state');
         $zone_city_terms = wp_get_post_terms($post->ID, 'zone_city');
 
@@ -902,7 +903,7 @@ function add_custom_prefix_to_area_zone_slug($post_link, $post) {
 }
 add_filter('post_type_link', 'add_custom_prefix_to_area_zone_slug', 10, 2);
 
-// Step 4: Modify the query to fetch the correct post based on the custom URL.
+// Step 4: Modify the query to fetch the correct post based on the custom URL
 function custom_query_vars($query) {
     if (!is_admin() && $query->is_main_query() && isset($query->query_vars['post_type']) && $query->query_vars['post_type'] === 'area_zone') {
         if (isset($query->query_vars['service'])) {
@@ -923,7 +924,7 @@ function custom_query_vars($query) {
 }
 add_action('pre_get_posts', 'custom_query_vars');
 
-// Step 5: Dynamic template routing based on the URL structure.
+// Step 5: Dynamic template routing based on the URL structure
 function custom_template_include($template) {
     // Get the query variables
     $service = get_query_var('service');
@@ -961,3 +962,8 @@ function custom_flush_rewrite_rules() {
 }
 add_action('after_switch_theme', 'custom_flush_rewrite_rules');
 
+// Optionally add flush rules manually
+add_action('init', function() {
+    custom_dynamic_rewrite_rules();
+    flush_rewrite_rules(); // Only for development purposes. Remove after testing.
+});
