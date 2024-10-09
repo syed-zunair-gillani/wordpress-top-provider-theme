@@ -41,6 +41,7 @@ $args = array(
 <p>state: <?php echo $state ?></p>
 <p>city: <?php echo $city ?></p>
 <p>zipcode: <?php echo $zipcode ?></p>
+<p>zipcode: <?php print_r($segments) ?></p>
 
 <section class="min-h-[40vh] flex items-center bg-gray-50"> 
     <div class="container mx-auto px-4">
