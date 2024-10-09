@@ -90,6 +90,7 @@
     </div>
 </section>
 
+<!-- Internet Plans -->
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
@@ -114,43 +115,447 @@
                         </div>
                     </div>
                     <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
-                        <?php 
-                        // Example of dynamic package content - Replace with your loop or data source
-                        $plans = array(
-                            array('name' => 'Internet 25', 'speed' => '25 Mbps', 'price' => '$60.00/mo', 'phone' => '855-205-8483'),
-                            array('name' => 'Internet 50', 'speed' => '50 Mbps', 'price' => '$60.00/mo', 'phone' => '855-205-8483'),
-                            // Add more plans here...
-                        );
-                        foreach($plans as $plan): ?>
-                        <div class="w-full flex md:flex-row flex-col dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs"><?php echo esc_html($plan['name']); ?></p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs font-bold"><?php echo esc_html($plan['speed']); ?></p>
-                                    <p class="text-center md:text-xs text-xs"><?php _e('*Speed availability vary by location', 'your-theme-textdomain'); ?></p>
+                        
+                        
+
+                        <?php if( have_rows('internet_plans') ): ?>
+                            <?php while( have_rows('internet_plans') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                                <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs font-bold"><?php echo esc_html($plan['price']); ?></p>
-                                    <p class="text-center md:text-xs text-xs"><?php _e('*w/ Autopay & Paperless Billing', 'your-theme-textdomain'); ?></p>
-                                </div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo esc_html($plan['phone']); ?>">
-                                        <?php echo esc_html($plan['phone']); ?>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- TV Plans -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold"><?php echo the_title(); ?> TV Plans</h2>
+            <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Channels</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
+                        </div>
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        <?php if( have_rows('tv_plans') ): ?>
+                            <?php while( have_rows('tv_plans') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs">*<?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                                <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><p class="text-sm font-[Roboto] mt-10"></p></div>
+    </div>
+</section>
+
+<!-- Internet and Phone Bundles -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">
+                <?php echo the_title(); ?> Internet and Phone Bundles
+            </h2>
+            <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
+                        </div>
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        <?php if( have_rows('internet_and_phone_bundles') ): ?>
+                            <?php while( have_rows('internet_and_phone_bundles') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                $voice = get_sub_field('voice');
+                                $voice_info = get_sub_field('voice_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $voice ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $voice_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><p class="text-sm font-[Roboto] mt-10"></p></div>
+    </div>
+</section>
+
+<!-- Internet and Mobile Bundles -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">
+                <?php echo the_title(); ?> Internet and Mobile Bundles
+            </h2>
+            <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
+                        </div>
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        <?php if( have_rows('internet_and_mobile_bundles') ): ?>
+                            <?php while( have_rows('internet_and_mobile_bundles') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                $voice = get_sub_field('voice');
+                                $voice_info = get_sub_field('voice_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $voice ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $voice_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><p class="text-sm font-[Roboto] mt-10"></p></div>
+    </div>
+</section>
+
+<!-- Internet And TV Bundles -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">
+                <?php echo the_title(); ?> Internet And TV Bundles
+            </h2>
+            <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
+                        </div>
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        <?php if( have_rows('internet_and_tv_bundles') ): ?>
+                            <?php while( have_rows('internet_and_tv_bundles') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                $channels = get_sub_field('channels');
+                                $channels_info = get_sub_field('channels_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $channels ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $channels_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><p class="text-sm font-[Roboto] mt-10"></p></div>
+    </div>
+</section>
+
+<!-- Internet, TV &amp; Phone Bundles -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">
+                <?php echo the_title(); ?>
+                Internet, TV &amp; Phone Bundles
+            </h2>
+            <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-6 grid-cols-1 bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Channels</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
+                        </div>
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        <?php if( have_rows('internet_tv_phone_bundles') ): ?>
+                            <?php while( have_rows('internet_tv_phone_bundles') ): the_row(); 
+                                $package = get_sub_field('package');
+                                $Speeds = get_sub_field('Speeds');
+                                $speed_info = get_sub_field('speed_info');
+                                $price = get_sub_field('price');
+                                $price_info = get_sub_field('price_info');
+                                $channels = get_sub_field('channels');
+                                $channels_info = get_sub_field('channels_info');
+                                $voice = get_sub_field('voice');
+                                $voice_info = get_sub_field('voice_info');
+                                ?>
+                                <div class="w-full flex md:flex-row flex-col dtable">
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $speed_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $channels ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $channels_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $voice ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $voice_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
+                                            <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
+                                        <div>
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <?php echo $phone ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><p class="text-sm font-[Roboto] mt-10"></p></div>
     </div>
 </section>
 
@@ -159,11 +564,14 @@
         <div class="mb-10"><h2 class="text-2xl font-bold">Switch to <?php echo the_title(); ?> And Get Benefits You’ll Love</h2></div>
         <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
        
-            <?php if( have_rows('features_block') ):  while( have_rows('features_block') ): the_row(); 
-                            $title = get_sub_field('title');
-                            $details = get_sub_field('details');
-                            $icon = get_sub_field('icon');
-                            ?>
+            <?php if (have_rows('features_block')):
+                while (have_rows('features_block')):
+
+                    the_row();
+                    $title = get_sub_field('title');
+                    $details = get_sub_field('details');
+                    $icon = get_sub_field('icon');
+                    ?>
                             <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
                                     <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
                                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -174,12 +582,14 @@
                                             ></path>
                                         </svg>
                                     </span>
-                                <h2 class="mt-5 text-xl font-bold text-center"><?php echo $title?></h2>
-                                <p class="mt-5 text-base text-center"><?php echo $details?></p>
+                                <h2 class="mt-5 text-xl font-bold text-center"><?php echo $title; ?></h2>
+                                <p class="mt-5 text-base text-center"><?php echo $details; ?></p>
                             </div>
 
-                        <?php endwhile; ?>               
-            <?php endif; ?>
+                        <?php
+                endwhile; ?>               
+            <?php
+            endif; ?>
            
         </div>
     </div>
@@ -188,24 +598,24 @@
 <section class="mt-16">
     <div class="container mx-auto px-4">
         <div class="">
-                <?php if( have_rows('block') ): ?>
-                    <div class="block">
-                        <?php while( have_rows('block') ): the_row(); 
+            <?php if (have_rows('block')): ?>
+                <div class="block">
+                    <?php while (have_rows('block')):
+                        the_row();
                             $heading = get_sub_field('heading');
                             $content = get_sub_field('content');
-                            ?>
+                        ?>
                             <div class="inner_block">
-                            <h2 class="block_heading"><?php echo $heading; ?></h2>
-                            <div class="block_content">
-                            <?php echo $content; ?>
+                                <h2 class="block_heading"><?php echo $heading; ?></h2>
+                                <div class="block_content"><?php echo $content; ?></div>
                             </div>
-                            </div>
-                        <?php endwhile; ?>
+                        <?php
+                    endwhile; ?>
                 </div>
-                <?php endif; ?>
-            </div>
+            <?php endif; ?>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="mt-8">
     <div class="container mx-auto px-4">
