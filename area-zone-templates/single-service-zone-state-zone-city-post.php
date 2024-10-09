@@ -8,7 +8,44 @@
  */
 
 get_header();
+// Define the zip code you want to search for
+$target_zipcode = '90001';
+
+// Arguments for WP_Query
+$args = array(
+    'post_type' => 'providers', // Custom post type slug
+    'posts_per_page' => -1,     // Get all matching posts
+    'meta_query' => array(
+        array(
+            'key'     => 'internet_services', // Meta key for the custom field
+            'value'   => $target_zipcode,     // Target zip code to search for
+            'compare' => 'LIKE'               // Use LIKE to search within serialized arrays
+        ),
+    ),
+);
+
+// Query the posts
+$query = new WP_Query($args);
+
+// Check if any posts were found
+if ($query->have_posts()) {
+    echo '<h3>Providers with Zip Code ' . esc_html($target_zipcode) . ':</h3>';
+    // Loop through matching posts and display their titles
+    while ($query->have_posts()) {
+        $query->the_post();
+        echo get_the_title() . '<br>'; // Display the title of each matching post
+
+        
+    }
+} else {
+    echo 'No providers found with the specified zip code.';
+}
+
+// Reset post data
+wp_reset_postdata();
 ?>
+
+
 
 
 <section class="min-h-[40vh] flex items-center bg-gray-50"> 
