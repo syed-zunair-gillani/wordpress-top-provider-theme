@@ -16,9 +16,11 @@
     $currentMonth = date('F');
     $price = get_field( "pro_price" );
     $features = get_field( "features" );
-    $features = get_field( "banner_image" );
+    $features_banner = get_field( "banner_image" );
     $pros = get_field( "pros" );
     $cons = get_field( "cons" );
+
+ 
 
     
 
@@ -67,7 +69,7 @@
                 decoding="async"
                 data-nimg="1"
                 class="object-cover w-full h-full"
-                src="<?php echo $features ?>"
+                src="<?php echo $features_banner ?>"
                 style="color: transparent;"
             />
         </div>
