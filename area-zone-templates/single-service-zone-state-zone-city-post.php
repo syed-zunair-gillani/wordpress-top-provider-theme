@@ -17,10 +17,10 @@ $parsed_url = parse_url($current_url);
 $path = trim($parsed_url['path'], '/');
 $segments = explode('/', $path);
 // Extract the required parts
-$type = isset($segments[0]) ? $segments[1] : null; 
-$state = isset($segments[1]) ? $segments[2] : null;   
-$city = isset($segments[2]) ? $segments[3] : null;    
-$zipcode = isset($segments[3]) ? $segments[4] : null;
+$type = isset($segments[0]) ? $segments[0] : null; 
+$state = isset($segments[1]) ? $segments[1] : null;   
+$city = isset($segments[2]) ? $segments[2] : null;    
+$zipcode = isset($segments[3]) ? $segments[3] : null;
 
 $args = array(
     'post_type' => 'providers', // Custom post type slug
