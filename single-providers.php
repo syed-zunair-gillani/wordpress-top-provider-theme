@@ -156,74 +156,29 @@
     <div class="container mx-auto px-4">
         <div class="mb-10"><h2 class="text-2xl font-bold">Switch to <?php echo the_title(); ?> And Get Benefits You’ll Love</h2></div>
         <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            fill-rule="evenodd"
-                            d="M6.97 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06L8.25 4.81V16.5a.75.75 0 01-1.5 0V4.81L3.53 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zm9.53 4.28a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V7.5a.75.75 0 01.75-.75z"
-                            clip-rule="evenodd"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center">No Data Caps</h2>
-                <p class="mt-5 text-base text-center">All <?php echo the_title(); ?> internet plans come with unlimited data so you can stream, game without paying overage or additional charges.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M634.91 154.88C457.74-8.99 182.19-8.93 5.09 154.88c-6.66 6.16-6.79 16.59-.35 22.98l34.24 33.97c6.14 6.1 16.02 6.23 22.4.38 145.92-133.68 371.3-133.71 517.25 0 6.38 5.85 16.26 5.71 22.4-.38l34.24-33.97c6.43-6.39 6.3-16.82-.36-22.98zM320 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm202.67-83.59c-115.26-101.93-290.21-101.82-405.34 0-6.9 6.1-7.12 16.69-.57 23.15l34.44 33.99c6 5.92 15.66 6.32 22.05.8 83.95-72.57 209.74-72.41 293.49 0 6.39 5.52 16.05 5.13 22.05-.8l34.44-33.99c6.56-6.46 6.33-17.06-.56-23.15z"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center">24/7 Internet Security</h2>
-                <p class="mt-5 text-base text-center">With <?php echo the_title(); ?> ActiveArmor, stop data threats before they get to you even on WiFi.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center">No Contracts</h2>
-                <p class="mt-5 text-base text-center"><?php echo the_title(); ?> does not require annual contract. Cancel anytime without paying any termination or cancelation fees.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M634.91 154.88C457.74-8.99 182.19-8.93 5.09 154.88c-6.66 6.16-6.79 16.59-.35 22.98l34.24 33.97c6.14 6.1 16.02 6.23 22.4.38 145.92-133.68 371.3-133.71 517.25 0 6.38 5.85 16.26 5.71 22.4-.38l34.24-33.97c6.43-6.39 6.3-16.82-.36-22.98zM320 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm202.67-83.59c-115.26-101.93-290.21-101.82-405.34 0-6.9 6.1-7.12 16.69-.57 23.15l34.44 33.99c6 5.92 15.66 6.32 22.05.8 83.95-72.57 209.74-72.41 293.49 0 6.39 5.52 16.05 5.13 22.05-.8l34.44-33.99c6.56-6.46 6.33-17.06-.56-23.15z"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center"><?php echo the_title(); ?> Smart Home Manager</h2>
-                <p class="mt-5 text-base text-center">This feature allows you to manage your Wi-Fi network, set parental controls, and monitor connected devices using a mobile app or web interface.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M634.91 154.88C457.74-8.99 182.19-8.93 5.09 154.88c-6.66 6.16-6.79 16.59-.35 22.98l34.24 33.97c6.14 6.1 16.02 6.23 22.4.38 145.92-133.68 371.3-133.71 517.25 0 6.38 5.85 16.26 5.71 22.4-.38l34.24-33.97c6.43-6.39 6.3-16.82-.36-22.98zM320 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm202.67-83.59c-115.26-101.93-290.21-101.82-405.34 0-6.9 6.1-7.12 16.69-.57 23.15l34.44 33.99c6 5.92 15.66 6.32 22.05.8 83.95-72.57 209.74-72.41 293.49 0 6.39 5.52 16.05 5.13 22.05-.8l34.44-33.99c6.56-6.46 6.33-17.06-.56-23.15z"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center">Nextgen WiFi</h2>
-                <p class="mt-5 text-base text-center">With <?php echo the_title(); ?> All-Fi, get more coverage to more corners of your home.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M634.91 154.88C457.74-8.99 182.19-8.93 5.09 154.88c-6.66 6.16-6.79 16.59-.35 22.98l34.24 33.97c6.14 6.1 16.02 6.23 22.4.38 145.92-133.68 371.3-133.71 517.25 0 6.38 5.85 16.26 5.71 22.4-.38l34.24-33.97c6.43-6.39 6.3-16.82-.36-22.98zM320 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm202.67-83.59c-115.26-101.93-290.21-101.82-405.34 0-6.9 6.1-7.12 16.69-.57 23.15l34.44 33.99c6 5.92 15.66 6.32 22.05.8 83.95-72.57 209.74-72.41 293.49 0 6.39 5.52 16.05 5.13 22.05-.8l34.44-33.99c6.56-6.46 6.33-17.06-.56-23.15z"
-                        ></path>
-                    </svg>
-                </span>
-                <h2 class="mt-5 text-xl font-bold text-center"><?php echo the_title(); ?> Wi-Fi Hotspots</h2>
-                <p class="mt-5 text-base text-center">Subscribers often have access to <?php echo the_title(); ?>'s extensive network of Wi-Fi hotspots across the country, allowing for internet connectivity while on the go.</p>
-            </div>
+       
+            <?php if( have_rows('features_block') ):  while( have_rows('features_block') ): the_row(); 
+                            $title = get_sub_field('title');
+                            $details = get_sub_field('details');
+                            $icon = get_sub_field('icon');
+                            ?>
+                            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                                    <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M6.97 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06L8.25 4.81V16.5a.75.75 0 01-1.5 0V4.81L3.53 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zm9.53 4.28a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V7.5a.75.75 0 01.75-.75z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                <h2 class="mt-5 text-xl font-bold text-center"><?php echo $title?></h2>
+                                <p class="mt-5 text-base text-center"><?php echo $details?></p>
+                            </div>
+
+                        <?php endwhile; ?>               
+            <?php endif; ?>
+           
         </div>
     </div>
 </section>
@@ -231,23 +186,21 @@
 <section class="mt-16">
     <div class="container mx-auto px-4">
         <div class="">
-            <?php if( have_rows('block') ): ?>
-                 <div class="block">
-                    <?php while( have_rows('block') ): the_row(); 
-                        $heading = get_sub_field('heading');
-                        $content = get_sub_field('content');
-                        ?>
-                        <div class="inner_block">
-                        <h2 class="block_heading"><?php echo $heading; ?></h2>
-                        <div class="block_content">
-                        <?php echo $content; ?>
-                        </div>
-                        </div>
-                    <?php endwhile; ?>
-            </div>
-    <?php endif; ?>
-
-
+                <?php if( have_rows('block') ): ?>
+                    <div class="block">
+                        <?php while( have_rows('block') ): the_row(); 
+                            $heading = get_sub_field('heading');
+                            $content = get_sub_field('content');
+                            ?>
+                            <div class="inner_block">
+                            <h2 class="block_heading"><?php echo $heading; ?></h2>
+                            <div class="block_content">
+                            <?php echo $content; ?>
+                            </div>
+                            </div>
+                        <?php endwhile; ?>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
