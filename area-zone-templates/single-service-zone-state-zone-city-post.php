@@ -37,6 +37,7 @@ $args = array(
 ?>
 
 
+
 <section class="min-h-[40vh] flex items-center bg-gray-50"> 
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
