@@ -231,48 +231,26 @@
 <section class="mt-16">
     <div class="container mx-auto px-4">
         <div class="">
-            <div>
-                <h2 class="block_heading">Current <?php echo the_title(); ?> Internet Deals</h2>
-                <div class="block_content">
-                    <p><?php echo the_title(); ?> is a DSL and Fiber Internet service provider. <?php echo the_title(); ?> is offering the following incentives to its new customers.</p>
-                    <ul>
-                        <li>No annual contracts or data caps</li>
-                        <li>Free self-install option available</li>
-                        <li>Free equipment included on all plans.</li>
-                        <li><strong>$250 Visa Reward card</strong> when you sign up with <?php echo the_title(); ?> Fiber 300Mbps or higher plan.</li>
-                    </ul>
-                </div>
+            <?php if( have_rows('block') ): ?>
+                 <div class="block">
+                    <?php while( have_rows('block') ): the_row(); 
+                        $heading = get_sub_field('heading');
+                        $content = get_sub_field('content');
+                        ?>
+                        <div class="inner_block">
+                        <h2 class="block_heading"><?php echo $heading; ?></h2>
+                        <div class="block_content">
+                        <?php echo $content; ?>
+                        </div>
+                        </div>
+                    <?php endwhile; ?>
             </div>
-            <div>
-                <h2 class="block_heading"><?php echo the_title(); ?> Equipment fees, contracts, data caps &amp; ETF's.</h2>
-                <div class="block_content">
-                    <p><?php echo the_title(); ?> customers are required to pay some fees on top of their plans base pricing. Here’s what you can expect to pay;</p>
-                    <ul>
-                        <li><strong>Equipment Fee:</strong> <?php echo the_title(); ?> doesn’t charge for equipment as all DSL and fiber plans include equipment free of charge.</li>
-                        <li>
-                            <strong>Install Fee:</strong> You have to pay a onetime installation fee of $99 when you choose professional install on any DSL order. To avoid this fee, request for a self-install option. Currently, All <?php echo the_title(); ?>
-                            fiber plans have no install fee.
-                        </li>
-                        <li>
-                            <strong>Early Termination Fee:</strong> <?php echo the_title(); ?> offer plans without contracts, providing month-to-month flexibility. With no-contract plan, you can typically cancel your service without incurring early
-                            termination fee.
-                        </li>
-                        <li><strong>Data Caps:</strong> <?php echo the_title(); ?> internet plans come with unlimited data so you won’t have to worry about limiting your internet usage.</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <h2 class="block_heading">Why Choose <?php echo the_title(); ?> Internet?</h2>
-                <div class="block_content">
-                    <p>
-                        <?php echo the_title(); ?> is a DSL and Fiber internet service provider, providing fast and reliable internet services in 21 states. Like any service, <?php echo the_title(); ?> has its advantages and disadvantages. Here are some of the pros and cons
-                        of <?php echo the_title(); ?> Internet.
-                    </p>
-                </div>
+    <?php endif; ?>
+
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <section class="mt-8">
     <div class="container mx-auto px-4">
@@ -296,8 +274,8 @@
         </div>
         <div class="grid gap-10">
             <?php
-                if( have_rows('faqs') ):
-                    while( have_rows('faqs') ) : the_row();
+                if( have_rows('faq’s') ):
+                    while( have_rows('faq’s') ) : the_row();
                         $question = get_sub_field('question');
                         $answer = get_sub_field('answer');
                     ?>
