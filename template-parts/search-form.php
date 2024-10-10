@@ -1,5 +1,5 @@
 <div class="!max-w-[712px] w-full mx-auto">
-    <form class="sm:bg-gray-100 rounded-2xl shadow-xl w-full sm:w-auto" method="post" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <form id="searchProvidersForm"  class="sm:bg-gray-100 rounded-2xl shadow-xl w-full sm:w-auto" method="post" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <div class="relative sm:flex-row flex-col gap-2 flex sm:pl-3 items-center w-full m-auto serch_form">
             <div class="flex items-center bg-gray-100 w-full border border-gray-300 sm:border-none">
                 <svg
@@ -17,7 +17,7 @@
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                <input type="text" placeholder="Enter Zip Code" maxlength="5" name="zip_code" class="w-full py-3 sm:py-5 pl-10 pr-8 outline-none md:w-80 bg-transparent rounded-l-md" value="" />
+                <input type="text" placeholder="Enter Zip Code" maxlength="5" id="zip_code" name="zip_code" class="w-full py-3 sm:py-5 pl-10 pr-8 outline-none md:w-80 bg-transparent rounded-l-md" value="" />
             </div>
             <div class="flex sm:flex-row flex-col gap-2 w-full sm:gap-0">
                 <div class="flex flex-col justify-center w-full bg-gray-100">
