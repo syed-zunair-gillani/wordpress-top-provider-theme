@@ -12,7 +12,23 @@ $state = get_query_var('state');
 $city = get_query_var('city');
 $zipcode = get_query_var('zipcode');
 
-$URL = "$state/$city/$zipcode/";
+$URL = '';
+
+// Check if the state, city, and zipcode exist and build the URL accordingly
+if ($state && $city && $zipcode) {
+    // All three exist: state, city, and zipcode
+    $URL = "$state/$city/$zipcode/";
+} elseif ($state && $city) {
+    // Only state and city exist
+    $URL = "$state/$city/";
+} elseif ($state) {
+    // Only state exists
+    $URL = "$state/";
+} else {
+    // None of the parameters exist
+    $URL = '/';
+}
+
 
 if (in_array($_SERVER['SERVER_NAME'], ['127.0.0.1', 'localhost', '::1'])) {
     $links = [

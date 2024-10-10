@@ -54,7 +54,7 @@
                                         </li>
                                         <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="Internet TV">
                                             <div class="flex items-center">
-                                                <span class="ml-3 block font-normal truncate">Internet TV</span>
+                                                <span class="ml-3 block font-normal truncate">TV Internet</span>
                                             </div>
                                         </li>
                                         <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="Landline">

@@ -5,9 +5,8 @@ jQuery(document).ready(function ($) {
 
         // Collect form data
         var zipCode = $('#zip_code').val();
-        var type = "internet";
-
-   
+        const typeValue = document.getElementById('customSelect').value;
+        const type = typeValue.replace(" ", "-").toLowerCase()
 
         // Perform the AJAX request
         $.ajax({

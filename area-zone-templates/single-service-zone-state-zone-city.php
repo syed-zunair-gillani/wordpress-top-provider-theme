@@ -9,6 +9,10 @@
 
 get_header();
 
+$state = get_query_var('state');
+$city = get_query_var('city');
+$type = get_query_var('type');
+
 // Define the zip codes you want to search for
 $zip_codes_to_search = array('35085', '35459', '90001');
 
@@ -39,21 +43,8 @@ $args = array(
 
 // Run the query
 $query = new WP_Query($args);
+$i = 0;
 
-// Check if any providers are found
-if ($query->have_posts()) {
-    echo '<h2>Providers with specified zip codes:</h2>';
-    while ($query->have_posts()) {
-        $query->the_post();
-        // Display the title of each provider
-        echo get_the_title() . '<br>';
-    }
-} else {
-    echo 'No providers found with the specified zip codes.';
-}
-
-// Reset post data
-wp_reset_postdata();
 ?>
 
 
@@ -63,10 +54,10 @@ wp_reset_postdata();
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-                Internet Providers in <br />
+                <?php echo $type ?> Providers in <br />
                 ZIP Code <span class="text-[#ef9831]">20001</span>
             </h1>
-            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best Internet Providers in your area:</p>
+            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>
             <?php get_template_part('template-parts/filter', 'form'); ?>
         </div>
     </div>
@@ -78,70 +69,25 @@ wp_reset_postdata();
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">Internet Providers in <span class="text-[#ef9831]">20001 </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#ef9831]">20001 </span></h2>
         </div>
-        <div class="grid gap-7">
-            <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex flex-col">
-                <div class="md:w-full min-w-fit bg-[#215690] flex justify-between items-center">
-                    <h2 class="text-base font-bold text-center text-white p-5"><span> 1 </span>- Xfinity</h2>
-                    <h2 class="text-base font-bold text-center text-white p-5"></h2>
-                </div>
-                <div class="md:w-full w-full grid grid-cols-1 dtable md:grid-cols-5 flex flex-col">
-                    <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5">
-                        <a target="_blank" href="/providers/xfinity">
-                            <img
-                                alt="Feature Image"
-                                loading="lazy"
-                                width="140"
-                                height="50"
-                                decoding="async"
-                                data-nimg="1"
-                                src="https://www.cablemovers.net/_next/image?url=https%3A%2F%2Fcblproject.cablemovers.net%2Fwp-content%2Fuploads%2F2023%2F08%2Fxfinity.jpg&w=256&q=75"
-                                style="color: transparent;"
-                            />
-                        </a>
-                    </div>
-                    <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5">
-                        <div class="text-center">
-                            <p class="tch">Speeds from</p>
-                            <p class="tcd">75-1200 Mbps</p>
-                        </div>
-                    </div>
-                    <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5 px-3">
-                        <ul class="grid items-center justify-center">
-                            <li class="flex gap-2 items-center">
-                                <svg class="min-w-[1rem] h-4 text-[#ef9831] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-sm">Fast and secure</span>
-                            </li>
-                            <li class="flex gap-2 items-center">
-                                <svg class="min-w-[1rem] h-4 text-[#ef9831] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-sm">99.9% network reliability</span>
-                            </li>
-                            <li class="flex gap-2 items-center">
-                                <svg class="min-w-[1rem] h-4 text-[#ef9831] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-sm">Wall-to-wall WiFi coverage with xFi </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5">
-                        <div>
-                            <p class="tch">Pricing starts from</p>
-                            <p class="tcd"><span class="font-extrabold text-[#215690] font-[Roboto] text-xl"> $19.99 </span> /mo.</p>
-                        </div>
-                    </div>
-                    <div class="grid gap-3 items-center justify-center p-5">
-                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#215690] hover:bg-[#ef9831]" href="tel:844-581-1129">844-581-1129 </a>
-                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#215690]" href="/providers/xfinity">View Plans</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        <?php
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    $i++;
+                    set_query_var('provider_index', $i);     
+                    get_template_part( 'template-parts/provider', 'card' );
+                }
+            } else {
+                echo 'No providers found with the specified zip codes.';
+            }
+            
+            // Reset post data
+            wp_reset_postdata();
+        ?>
+
         <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
     </div>
 </section>
@@ -151,7 +97,7 @@ wp_reset_postdata();
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="">
-            <h2 class="text-2xl font-bold">Overview of Internet Providers in <span class="text-[#ef9831]">20002 </span></h2>
+            <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]">20002 </span></h2>
             <p class="text-xl font-[Roboto] mt-5">
                 As of the time this page was written, 20002 has 5 Internet Providers offering Various types of Internet plans and deals to its residents. You'll likely have Options from<span> <span>Satellite</span> , </span>
                 <span> <span>DSL</span> , </span><span> <span>Fiber</span> , </span><span> <span>Cable</span> </span> Internet Providers. <span> HughesNet </span> is the best Internet Provider in 20002
@@ -163,7 +109,7 @@ wp_reset_postdata();
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">Cheap Internet Providers in <span class="text-[#ef9831]">20002 </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10">Cheap <?php echo $type ?> Providers in <span class="text-[#ef9831]">20002 </span></h2>
             <p class="text-xl font-[Roboto] mt-5">
                 Affordability is essential when choosing your Internet Provider; in an age where staying connected is more crucial than ever, we bring you budget-friendly Internet options that don't compromise on quality. Below are the
                 cheap Internet Providers in 20002.
@@ -245,7 +191,7 @@ wp_reset_postdata();
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">Fastest Internet Providers in <span class="text-[#ef9831]">20002 </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span class="text-[#ef9831]">20002 </span></h2>
             <p class="text-xl font-[Roboto] mt-5">
                 If speed is your top priority consider the following Internet Providers in 20002. These providers offer impressive download speeds that cater to the needs of heavy internet users, streamers, and online gamers.
             </p>
@@ -326,7 +272,7 @@ wp_reset_postdata();
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold">Summary of Internet Providers in <span class="text-[#ef9831]">20002 </span></h2>
+            <h2 class="text-2xl font-bold">Summary of <?php echo $type ?> Providers in <span class="text-[#ef9831]">20002 </span></h2>
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
@@ -459,7 +405,7 @@ wp_reset_postdata();
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-                Types of Internet Technologies Available in <span class="text-[#ef9831]">Los Angeles, <span class="uppercase">ca</span></span>
+                Types of <?php echo $type ?> Technologies Available in <span class="text-[#ef9831]">Los Angeles, <span class="uppercase">ca</span></span>
             </h2>
             <p class="text-base">
                 Los Angeles, CA is well-connected with a diverse range of Internet connection types to its residents, each with with its own advantages and considerations. These connection types include <span> <span>Cable</span> , </span>
