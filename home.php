@@ -167,7 +167,7 @@
         <div>
             <ul class="grid sm:grid-cols-4 grid-cols-2 gap-5">
                 <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="/internet/ca/los-angeles">
+                    <a class="" href="<?php echo home_url('/internet/ca/los-angeles'); ?>">
                         <div class="flex justify-between items-center">
                             <h3 class="text-xl group-hover:underline">Los Angeles</h3>
                             <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

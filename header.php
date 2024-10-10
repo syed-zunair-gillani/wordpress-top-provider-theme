@@ -42,35 +42,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php
-    // Define the zip code you want to search for
-$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-// Parse the URL to get the path component
-$parsed_url = parse_url($current_url);
-// Break down the path into segments
-$path = trim($parsed_url['path'], '/');
-$segments = explode('/', $path);
-// Extract the required parts
-
-if (in_array($_SERVER['SERVER_NAME'], ['127.0.0.1', 'localhost', '::1'])) {
-    $type = isset($segments[1]) ? $segments[1] : 'internet';     
-    $state = isset($segments[2]) ? $segments[2] : null;     
-    $city = isset($segments[3]) ? $segments[3] : null;     
-    $zipcode = isset($segments[4]) ? $segments[4] : null;
-} else {
-    $type = isset($segments[0]) ? $segments[0] : 'internet'; 
-    $state = isset($segments[1]) ? $segments[1] : null;     
-    $city = isset($segments[2]) ? $segments[2] : null;   
-    $zipcode = isset($segments[3]) ? $segments[3] : null;
-}
-
-set_query_var('state', $state);
-set_query_var('city', $city);
-set_query_var('zipcode', $zipcode);
-set_query_var('type', $type);
-
-
-?>
+<?php check_header();?>
 
 <header class="h-auto shadow py-4 font-[Roboto]">
     <nav class="max-w-[1110px] w-full mx-auto px-4 flex flex-row-reverse sm:flex-row items-center justify-between">
@@ -80,8 +52,8 @@ set_query_var('type', $type);
             </button>
         </div>
         <div class="sm:pl-0 sm:w-1/3 w-full">
-            <a href="">
-                <img src="https://www.cablemovers.net/_next/image?url=%2Flogo.png&w=256&q=75" alt="Cable Movers Logo" width="120" height="34" class="w-20 md:w-44" />
+            <a href="<?php bloginfo('url'); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" alt="<?php bloginfo('name'); ?>" width="120" height="34" class="w-20 md:w-44" />
             </a>
         </div>
         <div id="menu" class="sm:w-2/3 bg-gray-100 w-full sm:bg-white shadow-xl sm:shadow-none z-10 sm:justify-end sm:static absolute left-0 sm:py-0 py-7 sm:px-0 px-5 flex items-center">
