@@ -17,19 +17,30 @@ $parsed_url = parse_url($current_url);
 $path = trim($parsed_url['path'], '/');
 $segments = explode('/', $path);
 // Extract the required parts
-$type = isset($segments[0]) ? $segments[0] : null; 
-$state = isset($segments[1]) ? $segments[1] : null;   
-$city = isset($segments[2]) ? $segments[2] : null;    
-$zipcode = isset($segments[3]) ? $segments[3] : null;
+
+if (in_array($_SERVER['SERVER_NAME'], ['127.0.0.1', 'localhost', '::1'])) {
+    $type = isset($segments[1]) ? $segments[1] : 'internet';      
+    $zipcode = isset($segments[4]) ? $segments[4] : null;
+} else {
+    $type = isset($segments[0]) ? $segments[0] : 'internet';   
+    $zipcode = isset($segments[3]) ? $segments[3] : null;
+}
 
 $args = array(
-    'post_type' => 'providers', // Custom post type slug
-    'posts_per_page' => -1,     // Get all matching posts
+    'post_type' => 'providers', 
+    'posts_per_page' => -1,    
     'meta_query' => array(
         array(
-            'key'     => 'internet_services', // Meta key for the custom field
-            'value'   => $zipcode,     // Target zip code to search for
-            'compare' => 'LIKE'               // Use LIKE to search within serialized arrays
+            'key'     => 'internet_services', 
+            'value'   => $zipcode,   
+            'compare' => 'LIKE'   
+        ),
+    ),
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'providers_types',
+            'field'    => 'slug',
+            'terms'    => $type,
         ),
     ),
 );
@@ -42,7 +53,7 @@ $args = array(
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-                Internet Providers in <br />
+            <?php echo $type ?> Providers in <br />
                 ZIP Code <span class="text-[#ef9831]"><?php echo $zipcode ?></span>
             </h1>
             <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best Internet Providers in your area:</p>
@@ -80,9 +91,9 @@ $args = array(
         <?php
         // Query the posts
             $query = new WP_Query($args);
+            $i = 0;
             if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();        
+                while ($query->have_posts()) { $query->the_post(); $i++; set_query_var('provider_index', $i);     
                     get_template_part( 'template-parts/provider', 'card' );
                 }
             } else {
