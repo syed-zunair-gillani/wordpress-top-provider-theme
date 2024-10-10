@@ -110,7 +110,8 @@
     document.querySelectorAll('#dropdownMenu ul li').forEach(function (item) {
         item.addEventListener('click', function () {
             const selectedOption = item.getAttribute('data-value'); // Get the value of the clicked item
-            document.getElementById('dropdownSelected').innerText = selectedOption; // Update the button text
+            const selectedTitle = item.getAttribute('data-title'); // Get the value of the clicked item
+            document.getElementById('dropdownSelected').innerText = selectedTitle; // Update the button text
             document.getElementById('customSelect').value = selectedOption; // Update the hidden input value
             document.getElementById('dropdownMenu').classList.add('hidden'); // Close the dropdown after selection
         });

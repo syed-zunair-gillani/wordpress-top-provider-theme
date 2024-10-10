@@ -42,22 +42,22 @@
                                 <!-- Dropdown Menu -->
                                 <div id="dropdownMenu" class="absolute mt-2 overflow-hidden sm:mt-1 w-full z-10 bg-gray-100 sm:rounded-b-2xl border border-gray-300 sm:border-none hidden">
                                     <ul class="max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-none sm:text-sm">
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="internet">
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="internet" data-title="Internet">
                                             <div class="flex items-center">
                                                 <span class="ml-3 block font-normal truncate">Internet</span>
                                             </div>
                                         </li>
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="tv">
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="tv" data-title="TV">
                                             <div class="flex items-center">
                                                 <span class="ml-3 block font-normal truncate">TV</span>
                                             </div>
                                         </li>
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="tv-internet">
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="tv-internet" data-title="Internet TV">
                                             <div class="flex items-center">
                                                 <span class="ml-3 block font-normal truncate">TV Internet</span>
                                             </div>
                                         </li>
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="landline">
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="landline" data-title="Landline">
                                             <div class="flex items-center">
                                                 <span class="ml-3 block font-normal truncate">Landline</span>
                                             </div>
