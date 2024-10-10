@@ -1,5 +1,13 @@
 <?php
 
+// global $wp_query;
+
+// // Get all query variables
+// $query_vars = $wp_query->query_vars;
+
+// print "<pre>";
+// print_r($query_vars);
+
 $state = get_query_var('state');
 $city = get_query_var('city');
 $zipcode = get_query_var('zipcode');
