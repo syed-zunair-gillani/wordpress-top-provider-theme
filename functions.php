@@ -348,5 +348,3 @@ function insert_comment_with_meta(WP_REST_Request $request) {
 }
 
 
-
-

@@ -8,23 +8,13 @@
  */
 
 get_header();
-// Define the zip code you want to search for
-$target_zipcode = '90001';
-$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-// Parse the URL to get the path component
-$parsed_url = parse_url($current_url);
-// Break down the path into segments
-$path = trim($parsed_url['path'], '/');
-$segments = explode('/', $path);
-// Extract the required parts
 
-if (in_array($_SERVER['SERVER_NAME'], ['127.0.0.1', 'localhost', '::1'])) {
-    $type = isset($segments[1]) ? $segments[1] : 'internet';      
-    $zipcode = isset($segments[4]) ? $segments[4] : null;
-} else {
-    $type = isset($segments[0]) ? $segments[0] : 'internet';   
-    $zipcode = isset($segments[3]) ? $segments[3] : null;
-}
+$state = get_query_var('state');
+$city = get_query_var('city');
+$zipcode = get_query_var('zipcode');
+$type = get_query_var('type');
+
+
 
 $args = array(
     'post_type' => 'providers', 
@@ -62,26 +52,7 @@ $args = array(
     </div>
 </section>
 
-<section class="bg-[#215690] py-4 shadow-sm border-y border-zinc-400/20 sticky top-0">
-    <div class="container mx-auto px-4">
-        <div>
-            <ul class="flex md:gap-3 gap-1.5 items-center">
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet/zip-20001">Internet Providers</a>
-                </li>
-                <li><a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/tv/zip-20001">TV Providers</a></li>
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet-tv/zip-20001">
-                        Internet and TV Providers
-                    </a>
-                </li>
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/landline/zip-20001">Landline Providers</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+<?php get_template_part( 'template-parts/types', 'routing' ); ?>
 
 <section class="my-16">
     <div class="container mx-auto px-4">

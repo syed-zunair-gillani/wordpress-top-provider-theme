@@ -72,26 +72,8 @@ wp_reset_postdata();
     </div>
 </section>
 
-<section class="bg-[#215690] py-4 shadow-sm border-y border-zinc-400/20 sticky top-0">
-    <div class="container mx-auto px-4">
-        <div>
-            <ul class="flex md:gap-3 gap-1.5 items-center">
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet/zip-20001">Internet Providers</a>
-                </li>
-                <li><a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/tv/zip-20001">TV Providers</a></li>
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet-tv/zip-20001">
-                        Internet and TV Providers
-                    </a>
-                </li>
-                <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/landline/zip-20001">Landline Providers</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+<?php get_template_part( 'template-parts/types', 'routing' ); ?>
+
 
 <section class="my-16">
     <div class="container mx-auto px-4">

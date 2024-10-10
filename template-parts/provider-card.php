@@ -4,9 +4,15 @@ $phone = get_field( "pro_phone" );
 $logoArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 $logoUrl = esc_url( $logoArray[0]);
 $servicesInfo = get_field('services_info');
-$speed =  $servicesInfo["internet_services"]["speed"];
 $price = $servicesInfo["internet_services"]["price"];
 $features_items = explode(',', $servicesInfo["internet_services"]["features"]);
+
+$isSpeed = $servicesInfo["internet_services"]["speed"] == "";
+if($isSpeed){
+    $speed =  $servicesInfo["tv_services"]["speed"];
+}else{
+    $speed =  $servicesInfo["internet_services"]["speed"];
+}
 
 
 ?>
@@ -35,8 +41,16 @@ $features_items = explode(',', $servicesInfo["internet_services"]["features"]);
             </div>
             <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5">
                 <div class="text-center">
-                    <p class="tch">Speeds from</p>
-                    <p class="tcd"><?php echo $speed  ?> Mbps</p>
+                    <?php if ($isSpeed): ?>
+                        <p class="tch">Channels are</p>
+                    <?php else: ?>
+                        <p class="tch">Speed from</p>
+                    <?php endif; ?>
+                    <p class="tcd"><?php echo $speed  ?> 
+                        <?php if (!$isSpeed): ?>
+                            <span class="tch">Mbps</span>
+                        <?php endif; ?>
+                    </p>
                 </div>
             </div>
             <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5 px-3">
