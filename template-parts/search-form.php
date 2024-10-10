@@ -24,7 +24,7 @@
                     <div class="relative sm:max-w-xl sm:mx-auto border border-gray-300 sm:border-none">
                         <div class="w-full sm:w-64">
                             <div class="mt-1 relative sm:border-l-[2px] border-gray-300">
-                                <input type="hidden" name="customSelect" id="customSelect" class="bg-transparent" value="-- Select Option --" />
+                                <input type="hidden" name="customSelect" id="customSelect" class="bg-transparent" value="internet" />
                                 <button type="button" id="dropdownButton" class="transition-all relative w-full bg-transparent rounded-md pl-3 pr-10 pb-[10px] py-1.5 sm:py-3 text-left cursor-pointer sm:text-sm">
                                     <span class="flex items-center">
                                         <span id="dropdownSelected" class="ml-3 block text-lg font-semibold truncate">-- Select Option --</span>

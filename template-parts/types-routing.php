@@ -30,21 +30,14 @@ if ($state && $city && $zipcode) {
 }
 
 
-if (in_array($_SERVER['SERVER_NAME'], ['127.0.0.1', 'localhost', '::1'])) {
+
     $links = [
-        'Internet Providers' => '/cbl/internet/' . $URL,
-        'TV Providers' => '/cbl/tv/' . $URL,
-        'Internet and TV Providers' => '/cbl/tv-internet/' . $URL,
-        'Landline Providers' => '/cbl/landline/' . $URL,
-     ];
-} else {
-    $links = [
-        'Internet Providers' => '/internet/' . $URL,
-        'TV Providers' => '/tv/' . $URL,
-        'Internet and TV Providers' => '/tv-internet/' . $URL,
-        'Landline Providers' => '/landline/' . $URL,
-     ];
-}
+        'Internet Providers' => home_url('/internet/' . $URL),
+        'TV Providers' => home_url('/tv/' . $URL),
+        'Internet and TV Providers' => home_url('/tv-internet/' . $URL),
+        'Landline Providers' => home_url('/landline/' . $URL),
+    ];
+
 
 ?>
 
