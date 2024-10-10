@@ -4,14 +4,16 @@ $phone = get_field( "pro_phone" );
 $logoArray = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 $logoUrl = esc_url( $logoArray[0]);
 $servicesInfo = get_field('services_info');
-$price = $servicesInfo["internet_services"]["price"];
-$features_items = explode(',', $servicesInfo["internet_services"]["features"]);
 
 $isSpeed = $servicesInfo["internet_services"]["speed"] == "";
 if($isSpeed){
     $speed =  $servicesInfo["tv_services"]["speed"];
+    $features_items = explode(',', $servicesInfo["tv_services"]["features"]);
+    $price = $servicesInfo["tv_services"]["price"];
 }else{
     $speed =  $servicesInfo["internet_services"]["speed"];
+    $features_items = explode(',', $servicesInfo["internet_services"]["features"]);
+    $price = $servicesInfo["internet_services"]["price"];
 }
 
 
