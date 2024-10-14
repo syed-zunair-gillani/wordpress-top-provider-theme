@@ -33,7 +33,7 @@ foreach ($posts as $post) {
 
 
 
-print_r( $post_zipcodes );
+//print_r( $post_zipcodes );
 
 
 
