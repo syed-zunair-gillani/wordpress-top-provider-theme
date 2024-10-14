@@ -162,3 +162,63 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_ajax_search_script');
 
 
 
+function get_zipcodes_by_city($city) {
+    $post_zipcodes = array(); 
+	$posts = get_posts(array(
+        'post_type' => 'area_zone',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'zone_city',
+                'field'    => 'slug',
+                'terms'    => $city, 
+            ),
+        ),
+        'posts_per_page' => -1, 
+    ));
+    foreach ($posts as $post) {
+        $post_zipcodes[] = $post->post_title; 
+    }
+    return $post_zipcodes;
+}
+
+
+function get_zipcodes_by_state($state) {
+    $post_zipcodes = array(); 
+	$posts = get_posts(array(
+        'post_type' => 'area_zone',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'zone_state',
+                'field'    => 'slug',
+                'terms'    => $state, 
+            ),
+        ),
+        'posts_per_page' => -1, 
+    ));
+    foreach ($posts as $post) {
+        $post_zipcodes[] = $post->post_title; 
+    }
+    return $post_zipcodes;
+}
+
+
+
+function create_meta_query_for_zipcodes($zip_codes_to_search) {
+    $meta_queries = array('relation' => 'OR');
+	foreach ($zip_codes_to_search as $zip_code) {
+        $meta_queries[] = array(
+            'key'     => 'internet_services',
+            'value'   => serialize($zip_code),
+            'compare' => 'LIKE',
+        );
+    }
+    $args = array(
+        'post_type'      => 'providers', 
+        'posts_per_page' => -1,          
+        'meta_query'     => $meta_queries,
+    );
+    return $args;
+}
+
+
+

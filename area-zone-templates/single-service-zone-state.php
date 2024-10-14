@@ -13,65 +13,12 @@
  $city = get_query_var('city');
  $type = get_query_var('type');
 
- $post_titles = array();
-
- $args = array(
-    'post_type' => 'area_zone',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'zone_city',
-            'field'    => 'slug',
-            'terms'    => 'ca', // The term slug of the zone_city taxonomy you want to filter by
-        ),
-    ),
-);
-
-$query = new WP_Query( $args );
-
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        $post_titles[] = get_the_title();
-    }
-} else {
-    echo 'No posts found';
-}
-
-wp_reset_postdata();
-
-print_r( $post_titles );
-
-die("asdf");
- 
- // Define the zip codes you want to search for
- $zip_codes_to_search = array('35085', '35459', '90001');
+ $zip_codes_to_search = get_zipcodes_by_state($state);
+ $query_args = create_meta_query_for_zipcodes($zip_codes_to_search);
+ $query = new WP_Query($query_args);
+ $i = 0;
 
 
- 
- // Arguments for WP_Query
- $args = array(
-     'post_type'      => 'providers',
-     'posts_per_page' => -1,
-     'meta_query'     => array(
-         'relation' => 'OR', // We'll use 'OR' because we want posts that match any of the zip codes
-         // Add a separate meta query for each zip code
-         array(
-             'key'     => 'internet_services',
-             'value'   => serialize('35085'),
-             'compare' => 'LIKE',
-         ),
-         array(
-             'key'     => 'internet_services',
-             'value'   => serialize('35459'),
-             'compare' => 'LIKE',
-         ),
-         array(
-             'key'     => 'internet_services',
-             'value'   => serialize('90001'),
-             'compare' => 'LIKE',
-         ),
-     ),
- );
  
  // Run the query
  $query = new WP_Query($args);

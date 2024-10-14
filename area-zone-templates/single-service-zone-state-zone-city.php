@@ -7,62 +7,17 @@
  * @package CBL_Theme
  */
 
-get_header();
+    get_header();
 
-$state = get_query_var('state');
-$city = get_query_var('city');
-$type = get_query_var('type');
+    $state = get_query_var('state');
+    $city = get_query_var('city');
+    $type = get_query_var('type');
+    $zip_codes_to_search = get_zipcodes_by_city($city);
+    $query_args = create_meta_query_for_zipcodes($zip_codes_to_search);
+    $query = new WP_Query($query_args);
+    $i = 0;
 
-
-$post_zipcodes = array();
-
- $args = array(
-    'post_type' => 'area_zone',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'zone_city',
-            'field'    => 'slug',
-            'terms'    =>  $city
-        ),
-    ),
-);
-
-foreach ($posts as $post) {
-        $post_zipcodes[] = get_the_title();
-    }
-
-
-
-//print_r( $post_zipcodes );
-
-
-
-// Define the zip codes you want to search for
-$zip_codes_to_search = $post_zipcodes;
-
-$meta_queries = array('relation' => 'OR');
-
-// Loop through each zip code and add a meta query for each one
-foreach ($zip_codes_to_search as $zip_code) {
-    $meta_queries[] = array(
-        'key'     => 'internet_services',
-        'value'   => serialize($zip_code),
-        'compare' => 'LIKE',
-    );
-}
-
-// Arguments for WP_Query
-$args = array(
-    'post_type'      => 'providers',
-    'posts_per_page' => -1,
-    'meta_query'     => $meta_queries
-);
-
-// Run the query
-$query = new WP_Query($args);
-$i = 0;
-
-?>
+    ?>
 
 
 
