@@ -13,9 +13,14 @@
     $city = get_query_var('city');
     $type = get_query_var('type');
     $zip_codes_to_search = get_zipcodes_by_city($city);
-    $query_args = create_meta_query_for_zipcodes($zip_codes_to_search);
+    
+    $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
+    // $query_args = short_providers_with_price($zip_codes_to_search, $type);
+
     $query = new WP_Query($query_args);
     $i = 0;
+
+
 
     ?>
 
@@ -26,7 +31,7 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-                <?php echo $type ?> Providers in <br />
+                <?php echo $type ?> Providers in<br />
                 <?php echo $state?> <span class="text-[#ef9831]"><?php echo $city?></span>
             </h1>
             <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>

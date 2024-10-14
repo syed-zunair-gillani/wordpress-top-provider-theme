@@ -14,9 +14,9 @@
  $type = get_query_var('type');
 
  $zip_codes_to_search = get_zipcodes_by_state($state);
- $query_args = create_meta_query_for_zipcodes($zip_codes_to_search);
+ $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
  // Run the query
- $query = new WP_Query($args);
+ $query = new WP_Query($query_args);
  $i = 0;
  
  ?>
@@ -45,8 +45,6 @@
          </div>
          <?php
          // Query the posts
-             $query = new WP_Query($args);
-             $i = 0;
              if ($query->have_posts()) {
                  while ($query->have_posts()) { $query->the_post(); $i++; set_query_var('provider_index', $i);     
                      get_template_part( 'template-parts/provider', 'card' );
@@ -57,6 +55,7 @@
              // Reset post data
              wp_reset_postdata();
          ?>
+         
          <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
      </div>
  </section>

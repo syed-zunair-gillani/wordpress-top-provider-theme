@@ -203,22 +203,83 @@ function get_zipcodes_by_state($state) {
 
 
 
-function create_meta_query_for_zipcodes($zip_codes_to_search) {
+// function create_meta_query_for_zipcodes($zip_codes_to_search) {
+//     $meta_queries = array('relation' => 'OR');
+// 	foreach ($zip_codes_to_search as $zip_code) {
+//         $meta_queries[] = array(
+//             'key'     => 'internet_services',
+//             'value'   => serialize($zip_code),
+//             'compare' => 'LIKE',
+//         );
+//     }
+//     $args = array(
+//         'post_type'      => 'providers', 
+//         'posts_per_page' => -1,          
+//         'meta_query'     => $meta_queries,
+//     );
+//     return $args;
+// }
+
+
+
+function create_meta_query_for_zipcodes($zip_codes_to_search, $type) {
     $meta_queries = array('relation' => 'OR');
-	foreach ($zip_codes_to_search as $zip_code) {
+    // Build the meta queries based on zip codes
+    foreach ($zip_codes_to_search as $zip_code) {
         $meta_queries[] = array(
             'key'     => 'internet_services',
             'value'   => serialize($zip_code),
             'compare' => 'LIKE',
         );
     }
+
+    // Build the arguments for the query
     $args = array(
         'post_type'      => 'providers', 
-        'posts_per_page' => -1,          
+        'posts_per_page' => -1,
         'meta_query'     => $meta_queries,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'providers_types',
+                'field'    => 'slug',
+                'terms'    => $type,
+            ),
+        ),
     );
+
     return $args;
 }
 
 
+function short_providers_with_price($zip_codes_to_search, $type) {
+    $meta_queries = array('relation' => 'OR');
+
+    // Build the meta queries based on zip codes
+    foreach ($zip_codes_to_search as $zip_code) {
+        $meta_queries[] = array(
+            'key'     => 'internet_services',
+            'value'   => serialize($zip_code),
+            'compare' => 'LIKE',
+        );
+    }
+
+    // Build the arguments for the query
+    $args = array(
+        'post_type'      => 'providers',
+        'posts_per_page' => -1,
+        'meta_query'     => $meta_queries,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'providers_types',
+                'field'    => 'slug',
+                'terms'    => $type,
+            ),
+        ),
+        'meta_key' => 'pro_price', // Specify the meta key for sorting
+        'orderby'  => 'ID', // Sort by numeric value
+        'order'    => 'ASC', // Order from lowest to highest
+    );
+
+    return $args;
+}
 
