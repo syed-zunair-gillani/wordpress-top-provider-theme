@@ -15,11 +15,6 @@
 
  $zip_codes_to_search = get_zipcodes_by_state($state);
  $query_args = create_meta_query_for_zipcodes($zip_codes_to_search);
- $query = new WP_Query($query_args);
- $i = 0;
-
-
- 
  // Run the query
  $query = new WP_Query($args);
  $i = 0;
