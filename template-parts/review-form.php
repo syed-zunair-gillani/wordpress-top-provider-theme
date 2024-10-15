@@ -7,7 +7,7 @@
  $i = 0;
 ?>
 
-<div id="reviewModal" class="fixed inset-0 bg-white flex bg-opacity-75 justify-center items-center z-50">
+<div id="reviewModal" class="fixed inset-0 bg-white flex bg-opacity-75 justify-center items-center z-50 hidden">
     <div class="relative bg-white p-6 rounded-lg max-w-3xl w-full mx-4 shadow-lg">
         <button id="closeModalBtn" class="text-xl absolute top-3 right-3">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
