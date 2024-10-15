@@ -19,8 +19,7 @@
  $query = new WP_Query($query_args);
  $i = 0;
  
- ?>
- 
+ ?> 
  
  
  <section class="min-h-[40vh] flex items-center bg-gray-50"> 
@@ -60,9 +59,5 @@
      </div>
  </section>
  
- 
- 
- <?php
- 
- get_footer();
+ <?php  get_footer();
  
