@@ -1,9 +1,7 @@
 <?php
 /**
  * The template for displaying all single posts
- *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
  * @package CBL_Theme
  */
 
@@ -20,7 +18,7 @@
     $query = new WP_Query($query_args);
     $i = 0;
 
-    ?>
+?>
 
 
 
@@ -39,7 +37,6 @@
 </section>
 
 <?php get_template_part( 'template-parts/types', 'routing' ); ?>
-
 
 <section class="my-16">
     <div class="container mx-auto px-4">
@@ -351,12 +348,11 @@
     document.getElementById('openModalBtn').addEventListener('click', function () {
         document.getElementById('reviewModal').classList.remove('hidden');
     });
-
     document.getElementById('closeModalBtn').addEventListener('click', function () {
         document.getElementById('reviewModal').classList.add('hidden');
     });
 </script>
 
-
 <?php
+
 get_footer();
