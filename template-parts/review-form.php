@@ -15,25 +15,21 @@
             </svg>
         </button>
 
-        <div class="max-w-[900px] mt-4">
+        <form id="submit-review-form" class="max-w-[900px] mt-4">
             <div class="space-y-3">
                 <div>
                     <label class="block mb-2 text-sm font-medium text-gray-900">Select Provider</label>
-                    <select id="countries" name="provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <select id="provider" name="provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option>Choose a provider</option>
                         <?php
                             if ($query->have_posts()) {
                                 while ($query->have_posts()) {
                                     $query->the_post();
-                                    $i++;
-                                    set_query_var('provider_index', $i);     
-                                    ?><option value="42923"><?php echo the_title() ?></option><?php
+                                    ?><option value="<?php echo get_the_ID(); ?>"><?php echo the_title(); ?></option><?php
                                 }
                             } else {
-                                echo 'No providers found with the specified zip codes.';
+                                echo '<option>No providers found.</option>';
                             }
-                            
-                            // Reset post data
                             wp_reset_postdata();
                         ?>
                     </select>
@@ -41,37 +37,73 @@
                 <div class="flex md:flex-row flex-col gap-4">
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
-                        <input type="text" id="fname" name="firstName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="Jhon" required="" />
+                        <input type="text" id="fname" name="firstName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="John" required />
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
-                        <input type="text" id="lname" name="lastName" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Peter" required="" />
+                        <input type="text" id="lname" name="lastName" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Doe" required />
                     </div>
                 </div>
                 <div>
                     <label class="block mb-2 text-sm font-medium text-gray-900">Street Address</label>
-                    <input type="text" id="StreetAddress" name="street" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Street Address" required="" />
+                    <input type="text" id="street" name="street" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Street Address" required />
                 </div>
                 <div class="flex flex-row gap-4">
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">City</label>
-                        <input type="text" id="City" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" required="" />
+                        <input type="text" id="city" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" required />
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">State</label>
-                        <input type="text" id="State" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="State" name="state" required="" />
+                        <input type="text" id="state" name="state" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="State" required />
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">Zipcode</label>
-                        <input type="text" id="Zipcode" name="zipcode" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Zipcode" required="" />
+                        <input type="text" id="zipcode" name="zipcode" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Zipcode" required />
                     </div>
                 </div>
                 <div class="sm:col-span-2">
                     <label class="block mb-2 text-sm font-medium text-gray-900">Comments</label>
-                    <textarea id="message" name="comment" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                    <textarea id="comment" name="comment" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
                 </div>
-                <button class="py-3 px-5 text-sm font-medium text-center bg-[#EF9831] text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Submit Review</button>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center bg-[#EF9831] text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Submit Review</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
+
+
+
+
+<script>
+    jQuery(document).ready(function ($) {
+    $('#submit-review-form').on('submit', function (e) {
+        e.preventDefault();
+
+        // Gather form data
+        var formData = $(this).serialize();
+
+        // AJAX request
+        $.ajax({
+            url: ajaxurl, // AJAX URL provided by WordPress
+            type: 'POST',
+            data: {
+                action: 'submit_review', // Custom action name
+                formData: formData // Serialized form data
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert('Review submitted successfully!');
+                    $('#submit-review-form')[0].reset(); // Reset form after successful submission
+                } else {
+                    alert('Error: ' + response.data);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert('There was an error submitting the review.');
+            }
+        });
+    });
+});
+
+</script>

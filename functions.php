@@ -281,70 +281,119 @@ function get_states_and_cities_data($request) {
   return $states_and_cities;
 }
 
+
 // Register the custom REST API endpoint
-function register_states_and_cities_endpoint() {
-  register_rest_route('custom/v1', '/states-cities', array(
-      'methods' => 'GET',
-      'callback' => 'get_states_and_cities_data',
-  ));
-}
+// function register_states_and_cities_endpoint() {
+//   register_rest_route('custom/v1', '/states-cities', array(
+//       'methods' => 'GET',
+//       'callback' => 'get_states_and_cities_data',
+//   ));
+// }
 
-add_action('rest_api_init', 'register_states_and_cities_endpoint');
+// add_action('rest_api_init', 'register_states_and_cities_endpoint');
 
-add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+// add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+
+// add_action('rest_api_init', function () {
+//     register_rest_route('custom/v1', '/insert-comment', array(
+//         'methods' => 'POST',
+//         'callback' => 'insert_comment_with_meta',
+//         'permission_callback' => '__return_true', // Adjust permissions as needed
+//     ));
+// });
+
+// function insert_comment_with_meta(WP_REST_Request $request) {
+//     // Get parameters from the request
+//     $post_id = $request->get_param('post_id');
+// 	$providertype = $request->get_param('providertype');
+//     $author = $request->get_param('author');
+//     $author_email = $request->get_param('author_email');
+//     $content = $request->get_param('content');
+//     $city = $request->get_param('city');
+// 	$comment_city = $request->get_param('comment_city');	
+// 	$star = $request->get_param('star');
+//     $state = $request->get_param('state');
+//     $zipcode = $request->get_param('zipcode');
+//     $streetAddress = $request->get_param('street_address');
+    
+//     // Validate required parameters
+//     if (!$post_id || !$author || !$streetAddress || !$author_email || !$content || !$city || !$state || !$zipcode) {
+//         return new WP_Error('missing_parameter', 'Missing required parameter', array('status' => 400));
+//     }
+    
+//     // Data for the new comment
+//     $commentdata = array(
+//         'comment_post_ID' => $post_id,
+//         'comment_author' => $author,
+//         'comment_author_email' => $author_email,
+//         'comment_content' => $content,
+//         'comment_approved' => 1,
+//     );
+    
+//     // Insert the comment and get the comment ID
+//     $comment_id = wp_insert_comment($commentdata);
+    
+//     if ($comment_id) {
+//         // Add meta values to the comment
+//         add_comment_meta($comment_id, 'provider_type', $providertype, true);
+// 		add_comment_meta($comment_id, 'city', $city, true);
+//         add_comment_meta($comment_id, 'star', $star, true);
+// 		add_comment_meta($comment_id, 'comment_city', $comment_city, true);
+//         add_comment_meta($comment_id, 'state', $state, true);
+//         add_comment_meta($comment_id, 'zipcode', $zipcode, true);
+//         add_comment_meta($comment_id, 'commnt_street_address', $streetAddress, true);
+//         return new WP_REST_Response(array('comment_id' => $comment_id, 'message' => 'Comment added successfully with meta values'), 200);
+//     } else {
+//         return new WP_Error('comment_insert_failed', 'Failed to insert comment', array('status' => 500));
+//     }
+// }
 
 
-add_action('rest_api_init', function () {
-    register_rest_route('custom/v1', '/insert-comment', array(
-        'methods' => 'POST',
-        'callback' => 'insert_comment_with_meta',
-        'permission_callback' => '__return_true', // Adjust permissions as needed
-    ));
-});
-function insert_comment_with_meta(WP_REST_Request $request) {
-    // Get parameters from the request
-    $post_id = $request->get_param('post_id');
-	$providertype = $request->get_param('providertype');
-    $author = $request->get_param('author');
-    $author_email = $request->get_param('author_email');
-    $content = $request->get_param('content');
-    $city = $request->get_param('city');
-	$comment_city = $request->get_param('comment_city');	
-	$star = $request->get_param('star');
-    $state = $request->get_param('state');
-    $zipcode = $request->get_param('zipcode');
-    $streetAddress = $request->get_param('street_address');
+
+
+function handle_review_submission() {
+    parse_str($_POST['formData'], $form_data); // Parse serialized form data
     
-    // Validate required parameters
-    if (!$post_id || !$author || !$streetAddress || !$author_email || !$content || !$city || !$state || !$zipcode) {
-        return new WP_Error('missing_parameter', 'Missing required parameter', array('status' => 400));
-    }
-    
-    // Data for the new comment
-    $commentdata = array(
-        'comment_post_ID' => $post_id,
-        'comment_author' => $author,
-        'comment_author_email' => $author_email,
-        'comment_content' => $content,
-        'comment_approved' => 1,
-    );
-    
-    // Insert the comment and get the comment ID
-    $comment_id = wp_insert_comment($commentdata);
-    
-    if ($comment_id) {
-        // Add meta values to the comment
-        add_comment_meta($comment_id, 'provider_type', $providertype, true);
-		add_comment_meta($comment_id, 'city', $city, true);
-        add_comment_meta($comment_id, 'star', $star, true);
-		add_comment_meta($comment_id, 'comment_city', $comment_city, true);
-        add_comment_meta($comment_id, 'state', $state, true);
-        add_comment_meta($comment_id, 'zipcode', $zipcode, true);
-        add_comment_meta($comment_id, 'commnt_street_address', $streetAddress, true);
-        return new WP_REST_Response(array('comment_id' => $comment_id, 'message' => 'Comment added successfully with meta values'), 200);
+    // Validate required fields
+    if (isset($form_data['provider']) && isset($form_data['firstName']) && isset($form_data['lastName']) && isset($form_data['comment'])) {
+        
+        // Sanitize data
+        $provider = sanitize_text_field($form_data['provider']);
+        $first_name = sanitize_text_field($form_data['firstName']);
+        $last_name = sanitize_text_field($form_data['lastName']);
+        $street = sanitize_text_field($form_data['street']);
+        $city = sanitize_text_field($form_data['city']);
+        $state = sanitize_text_field($form_data['state']);
+        $zipcode = sanitize_text_field($form_data['zipcode']);
+        $comment_content = sanitize_textarea_field($form_data['comment']);
+        
+        // Insert comment data
+        $comment_data = array(
+            'comment_post_ID' => $provider, // Provider as the post ID
+            'comment_author' => $first_name . ' ' . $last_name,
+            'comment_content' => $comment_content,
+            'comment_type' => 'review',
+            'comment_approved' => 1, // Automatically approve the comment
+        );
+
+        $comment_id = wp_insert_comment($comment_data);
+
+        if ($comment_id) {
+            // Add custom meta fields
+            add_comment_meta($comment_id, 'commnt_street_address', $street);
+            add_comment_meta($comment_id, 'city', $city);
+            add_comment_meta($comment_id, 'state', $state);
+            add_comment_meta($comment_id, 'zipcode', $zipcode);
+
+            wp_send_json_success('Review submitted successfully!');
+        } else {
+            wp_send_json_error('There was an error submitting the review.');
+        }
     } else {
-        return new WP_Error('comment_insert_failed', 'Failed to insert comment', array('status' => 500));
+        wp_send_json_error('Missing required fields.');
     }
 }
 
-
+// Add AJAX actions for logged-in and non-logged-in users
+add_action('wp_ajax_submit_review', 'handle_review_submission');
+add_action('wp_ajax_nopriv_submit_review', 'handle_review_submission');
