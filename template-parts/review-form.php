@@ -1,0 +1,77 @@
+<?php
+ $city = get_query_var('city');
+ $type = get_query_var('type');
+ $zip_codes_to_search = get_zipcodes_by_city($city);
+ $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
+ $query = new WP_Query($query_args);
+ $i = 0;
+?>
+
+<div id="reviewModal" class="fixed inset-0 bg-white flex bg-opacity-75 justify-center items-center z-50">
+    <div class="relative bg-white p-6 rounded-lg max-w-3xl w-full mx-4 shadow-lg">
+        <button id="closeModalBtn" class="text-xl absolute top-3 right-3">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+            </svg>
+        </button>
+
+        <div class="max-w-[900px] mt-4">
+            <div class="space-y-3">
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Select Provider</label>
+                    <select id="countries" name="provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option>Choose a provider</option>
+                        <?php
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    $i++;
+                                    set_query_var('provider_index', $i);     
+                                    ?><option value="42923"><?php echo the_title() ?></option><?php
+                                }
+                            } else {
+                                echo 'No providers found with the specified zip codes.';
+                            }
+                            
+                            // Reset post data
+                            wp_reset_postdata();
+                        ?>
+                    </select>
+                </div>
+                <div class="flex md:flex-row flex-col gap-4">
+                    <div class="flex-1">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
+                        <input type="text" id="fname" name="firstName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="Jhon" required="" />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
+                        <input type="text" id="lname" name="lastName" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Peter" required="" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Street Address</label>
+                    <input type="text" id="StreetAddress" name="street" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Street Address" required="" />
+                </div>
+                <div class="flex flex-row gap-4">
+                    <div class="flex-1">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">City</label>
+                        <input type="text" id="City" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" required="" />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">State</label>
+                        <input type="text" id="State" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="State" name="state" required="" />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">Zipcode</label>
+                        <input type="text" id="Zipcode" name="zipcode" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Zipcode" required="" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Comments</label>
+                    <textarea id="message" name="comment" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                </div>
+                <button class="py-3 px-5 text-sm font-medium text-center bg-[#EF9831] text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</div>

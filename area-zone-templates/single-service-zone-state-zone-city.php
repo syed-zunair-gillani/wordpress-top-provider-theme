@@ -20,8 +20,6 @@
     $query = new WP_Query($query_args);
     $i = 0;
 
-
-
     ?>
 
 
@@ -69,8 +67,6 @@
     </div>
 </section>
 
-
-
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="">
@@ -101,66 +97,36 @@
             </div>
         </div>
         <div class="grid">
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-2">
-                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/xfinity"> Xfinity </a></p>
+            
+            <?php
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $i++;
+                        set_query_var('provider_index', $i);
+                        $price = get_field( "pro_price" );
+                        ?>
+                        <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                            <div class="md:w-full w-full grid grid-cols-2">
+                                <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div>
+                                        <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/xfinity"> <?php the_title()?> </a></p>
+                                    </div>
+                                </div>
+                                <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div><p class="text-center md:text-base text-xs">$<?php echo $price ?> /mo.</p></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div><p class="text-center md:text-base text-xs">$19.99 /mo.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-2">
-                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/astound-broadband"> Astound Broadband </a></p>
-                        </div>
-                    </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div><p class="text-center md:text-base text-xs">$25.00 /mo.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-2">
-                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"> EarthLink </a></p>
-                        </div>
-                    </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div><p class="text-center md:text-base text-xs">$49.95 /mo.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-2">
-                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/viasat"> Viasat </a></p>
-                        </div>
-                    </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div><p class="text-center md:text-base text-xs">$49.99 /mo.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-2">
-                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> HughesNet </a></p>
-                        </div>
-                    </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div><p class="text-center md:text-base text-xs">$49.99 /mo.</p></div>
-                    </div>
-                </div>
-            </div>
+                        <?php
+                    }
+                } else {
+                    echo 'No providers found with the specified zip codes.';
+                }
+                
+                // Reset post data
+                wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>
@@ -182,66 +148,42 @@
             </div>
         </div>
         <div class="grid">
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"> EarthLink</a></p>
+            <?php
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $i++;
+                        set_query_var('provider_index', $i);
+                        $servicesInfo = get_field('services_info');
+                        $type = get_query_var('type');
+                        $isSpeed = $type === "tv";
+                        if($isSpeed){
+                            $speed =  $servicesInfo["tv_services"]["summary_speed"];
+                        }else{
+                            $speed =  $servicesInfo["internet_services"]["summary_speed"];
+                        }
+                    ?>
+                        <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                            <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                                <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
+                                    <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                        <div>
+                                            <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $speed ?> Mbps</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">5000 Mbps</div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/astound-broadband"> Astound Broadband</a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">1500 Mbps</div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/xfinity"> Xfinity</a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">1200 Mbps</div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/viasat"> Viasat</a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">150 Mbps</div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> HughesNet</a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">50 Mbps</div>
-                    </div>
-                </div>
-            </div>
+                    <?php
+                    }
+                } else {
+                    echo 'No providers found with the specified zip codes.';
+                }
+                
+                // Reset post data
+                wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>
@@ -273,104 +215,54 @@
                         </div>
                     </div>
                     <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> HughesNet </a></p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">Satellite</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">50 Mbps</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
-                                <div><p class="text-center md:text-base text-xs">Fast Speeds, More Data, Built-in WiFi</p></div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">$49.99/mo</p></div>
-                            </div>
-                        </div>
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/viasat"> Viasat </a></p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">Satellite</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">150 Mbps</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
-                                <div><p class="text-center md:text-base text-xs">Access high-speed satellite internet no matter your location</p></div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">$49.99/mo</p></div>
-                            </div>
-                        </div>
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"> EarthLink </a></p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs">DSL</p>
-                                    <p class="text-center md:text-base text-xs">Fiber</p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">5000 Mbps</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
-                                <div><p class="text-center md:text-base text-xs">Blazing-fast speeds paired with enhanced security measures</p></div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">$49.95/mo</p></div>
-                            </div>
-                        </div>
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/xfinity"> Xfinity </a></p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">Cable</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">1200 Mbps</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
-                                <div><p class="text-center md:text-base text-xs">Connect to and access over 20 million secure hotspots</p></div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">$19.99/mo</p></div>
-                            </div>
-                        </div>
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/astound-broadband"> Astound Broadband </a></p>
-                                </div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">Cable</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">1500 Mbps</p></div>
-                            </div>
-                            <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
-                                <div><p class="text-center md:text-base text-xs">Smartest WiFi on the Block</p></div>
-                            </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div><p class="text-center md:text-base text-xs">$25.00/mo</p></div>
-                            </div>
-                        </div>
+                        
+                        <?php
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    $i++;
+                                    set_query_var('provider_index', $i);
+                                    $servicesInfo = get_field('services_info');
+                                    $type = get_query_var('type');
+                                    $isSpeed = $type === "tv";
+                                    if($isSpeed){
+                                        $speed =  $servicesInfo["tv_services"]["summary_speed"];
+                                        $feature =  $servicesInfo["tv_services"]["summary_features"];
+                                        $price =  $servicesInfo["tv_services"]["price"];
+                                    }else{
+                                        $speed =  $servicesInfo["internet_services"]["summary_speed"];
+                                        $feature =  $servicesInfo["internet_services"]["summary_features"];
+                                        $price =  $servicesInfo["internet_services"]["price"];
+                                    }
+                                ?>
+                                    <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div>
+                                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> <?php the_title()?> </a></p>
+                                            </div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">Satellite</p></div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $speed ?> Mbps</p></div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $feature ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $price ?>/mo</p></div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                            } else {
+                                echo 'No providers found with the specified zip codes.';
+                            }
+                            
+                            // Reset post data
+                            wp_reset_postdata();
+                        ?>
                     </div>
                 </div>
             </div>
@@ -446,11 +338,25 @@
 </section>
 
 <section class="px-4 my-16 container mx-auto">
-    <button class="border-[#EF9831] border-[2px] text-[#EF9831] p-3 px-5 rounded-lg hover:bg-[#EF9831] hover:text-white font-medium">Leave a Review</button>
+    <button id="openModalBtn" class="border-[#EF9831] border-[2px] text-[#EF9831] p-3 px-5 rounded-lg hover:bg-[#EF9831] hover:text-white font-medium">
+        Leave a Review
+    </button>
     <div class="grid gap-10"></div>
 </section>
 
+<?php get_template_part( 'template-parts/review', 'form' ); ?>
+
+
+<script>
+    document.getElementById('openModalBtn').addEventListener('click', function () {
+        document.getElementById('reviewModal').classList.remove('hidden');
+    });
+
+    document.getElementById('closeModalBtn').addEventListener('click', function () {
+        document.getElementById('reviewModal').classList.add('hidden');
+    });
+</script>
+
 
 <?php
-
 get_footer();
