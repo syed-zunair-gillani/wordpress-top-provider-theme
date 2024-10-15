@@ -6,6 +6,8 @@ $logoUrl = esc_url( $logoArray[0]);
 $servicesInfo = get_field('services_info');
 $type = get_query_var('type');
 
+
+
 $isSpeed = $type === "tv";
 if($isSpeed){
     $speed =  $servicesInfo["tv_services"]["speed"];
@@ -16,6 +18,8 @@ if($isSpeed){
     $features_items = explode(',', $servicesInfo["internet_services"]["features"]);
     $price = $servicesInfo["internet_services"]["price"];
 }
+
+
 
 ?>
 
