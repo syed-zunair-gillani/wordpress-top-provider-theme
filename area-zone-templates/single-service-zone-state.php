@@ -14,7 +14,20 @@
  $type = get_query_var('type');
 
  $zip_codes_to_search = get_zipcodes_by_state($state);
+
+ //print "<pre>";
+//print_r($zip_codes_to_search);
+
+
  $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
+
+
+
+ //$provider_ids = get_posts($query_args);
+ //print_r($query_args);
+ //print "</pre>";
+
+ //die();
  // Run the query
  $query = new WP_Query($query_args);
  $i = 0;

@@ -246,18 +246,19 @@ function create_meta_query_for_zipcodes($zip_codes_to_search, $type) {
             ),
         ),
     );
-
     return $args;
 }
-
 
 function short_providers_with_price($zip_codes_to_search, $type) {
     $meta_queries = array('relation' => 'OR');
 
     // Build the meta queries based on zip codes
-    foreach ($zip_codes_to_search as $zip_code) {
+    foreach ($zip_codes_to_search as $zip_code)
+     {
         $meta_queries[] = array(
+
             'key'     => 'internet_services',
+            
             'value'   => serialize($zip_code),
             'compare' => 'LIKE',
         );
@@ -283,3 +284,51 @@ function short_providers_with_price($zip_codes_to_search, $type) {
     return $args;
 }
 
+
+
+function register_custom_zipcode_endpoints() {
+    // Endpoint for getting zip codes by city
+    register_rest_route('zipcode/v1', '/city/(?P<city>[a-zA-Z0-9-]+)', array(
+        'methods'  => 'GET',
+        'callback' => 'get_zipcodes_by_city_callback',
+        'permission_callback' => '__return_true', // Set this as needed for security
+    ));
+
+    // Endpoint for getting zip codes by state
+    register_rest_route('zipcode/v1', '/state/(?P<state>[a-zA-Z0-9-]+)', array(
+        'methods'  => 'GET',
+        'callback' => 'get_zipcodes_by_state_callback',
+        'permission_callback' => '__return_true', // Set this as needed for security
+    ));
+}
+add_action('rest_api_init', 'register_custom_zipcode_endpoints');
+
+
+// Callback for getting zip codes by city
+function get_zipcodes_by_city_callback($request) {
+    $city = $request['city']; // Get the city parameter from the request
+    $zipcodes = get_zipcodes_by_city($city); // Use your existing function
+
+    if (empty($zipcodes)) {
+        return new WP_Error('no_zipcodes', 'No zip codes found for this city', array('status' => 404));
+    }
+
+    return rest_ensure_response($zipcodes);
+}
+
+// Callback for getting zip codes by state
+function get_zipcodes_by_state_callback($request) {
+    $state = $request['state']; // Get the state parameter from the request
+    $zipcodes = get_zipcodes_by_state($state); // Use your existing function
+
+    if (empty($zipcodes)) {
+        return new WP_Error('no_zipcodes', 'No zip codes found for this state', array('status' => 404));
+    }
+
+    return rest_ensure_response($zipcodes);
+}
+
+
+
+//
+//http://localhost/cablemovers/wp-json/custom/v1/area-zones?state=ca
