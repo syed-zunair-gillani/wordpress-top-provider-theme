@@ -7,34 +7,30 @@
  * @package CBL_Theme
  */
 
- get_header();
+    get_header();
 
- $state = get_query_var('state');
- $city = get_query_var('city');
- $type = get_query_var('type');
+    $state = get_query_var('state');
+    $city = get_query_var('city');
+    $type = get_query_var('type');
 
- $zip_codes_to_search = get_zipcodes_by_state($state);
+    $zip_codes_to_search = get_zipcodes_by_state($state);
+    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);  
+        if (!empty($provider_ids)) {    
+                $query_args = array(
+                        'post_type'      => 'providers',
+                        'posts_per_page' => -1,
+                        'post__in'       => $provider_ids, 
+                        'orderby'        => 'post__in',             
+                    );
+                    $query = new WP_Query($query_args);
+            
+                } else {
+                echo 'No providers match the criteria.';
+            }   
 
+    $i = 0;
 
-
- print "<pre>";
-print_r($zip_codes_to_search);
-
-
- $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
-
- print "</pre>";
-
-
-
- //$provider_ids = get_posts($query_args);
- //print_r($query_args);
- //print "</pre>";
-
- //die();
- // Run the query
- $query = new WP_Query($query_args);
- $i = 0;
+    $state = strtoupper($state);
  
  ?> 
  
@@ -43,8 +39,7 @@ print_r($zip_codes_to_search);
      <div class="container mx-auto px-4">
          <div class="flex justify-center flex-col items-center">
              <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-             <?php echo $type ?> Providers in <br />
-                 ZIP Code <span class="text-[#ef9831]"><?php echo $state ?></span>
+             <?php echo $type ?> Providers in <br /><span class="text-[#ef9831]"><?php echo $state ?></span>
              </h1>
              <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>
              <?php get_template_part('template-parts/filter', 'form'); ?>

@@ -5,7 +5,7 @@
     $type = get_query_var('type');
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
-     // print_r($zip_codes_to_search);
+
     $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);   
     
     $total_provider = count($provider_ids);
