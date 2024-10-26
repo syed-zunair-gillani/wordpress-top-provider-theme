@@ -6,7 +6,9 @@
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
      // print_r($zip_codes_to_search);
-    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);    
+    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);   
+    
+    $total_provider = count($provider_ids);
     //    print "<pre>";
     //     print_r($provider_ids);
     //     print "</pre>";
@@ -23,6 +25,40 @@
             } else {
             echo 'No providers match the criteria.';
         }   
+
+
+        if (!empty($provider_ids)) {    
+            $query_args_cheep = array(
+                    'post_type'      => 'providers',
+                    'posts_per_page' => -1,
+                    'post__in'       => $provider_ids, 
+                    'orderby'        => 'post__in', 
+                    'orderby'        => 'meta_value_num', // Order by meta value as a number
+                    'meta_key'       => 'pro_price',      // The meta key to sort by
+                    'order'          => 'DESC',             
+                );
+                $query_cheep = new WP_Query($query_args_cheep);
+        
+            } else {
+            echo 'No providers match the criteria.';
+        }  
+
+        if (!empty($provider_ids)) {    
+            $query_args_fast = array(
+                    'post_type'      => 'providers',
+                    'posts_per_page' => -1,
+                    'post__in'       => $provider_ids, 
+                    'orderby'        => 'post__in', 
+                    'orderby'        => 'meta_value_num', // Order by meta value as a number
+                    'meta_key'       => 'services_info_internet_services_summary_speed',      // The meta key to sort by
+                    'order'          => 'DESC',             
+                );
+                $query_fast = new WP_Query($query_args_fast);
+        
+            } else {
+            echo 'No providers match the criteria.';
+        }  
+
 
     ?>
 
@@ -75,7 +111,7 @@
             <div class="">
                 <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
                 <p class="text-xl font-[Roboto] mt-5">
-                    As of the time this page was written, <?php echo $city ?> has 5 <?php echo $type ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo get_first_provider_title($provider_ids); ?> </span> is the best Internet Provider in <?php echo $city ?>
+                    As of the time this page was written, <?php echo $city ?> has <?php echo $total_provider; ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo get_first_provider_title($provider_ids); ?> </span> is the best Internet Provider in <?php echo $city ?>
                 </p>
             </div>
         </div>
@@ -101,9 +137,9 @@
         <div class="grid">
             
             <?php
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
+                if ($query_cheep->have_posts()) {
+                    while ($query_cheep->have_posts()) {
+                        $query_cheep->the_post();
                         $i++;
                         set_query_var('provider_index', $i);
                         $price = get_field( "pro_price" );
@@ -151,9 +187,9 @@
         </div>
         <div class="grid">
             <?php
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
+                if ($query_fast->have_posts()) {
+                    while ($query_fast->have_posts()) {
+                        $query_fast->the_post();
                         $i++;
                         set_query_var('provider_index', $i);
                         $servicesInfo = get_field('services_info');
