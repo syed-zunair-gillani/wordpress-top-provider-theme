@@ -35,7 +35,7 @@
                     'orderby'        => 'post__in', 
                     'orderby'        => 'meta_value_num', // Order by meta value as a number
                     'meta_key'       => 'pro_price',      // The meta key to sort by
-                    'order'          => 'DESC',             
+                    'order'          => 'ASC',             
                 );
                 $query_cheep = new WP_Query($query_args_cheep);
         
