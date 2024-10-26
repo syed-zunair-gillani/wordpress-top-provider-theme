@@ -15,11 +15,15 @@
 
  $zip_codes_to_search = get_zipcodes_by_state($state);
 
- //print "<pre>";
-//print_r($zip_codes_to_search);
+
+
+ print "<pre>";
+print_r($zip_codes_to_search);
 
 
  $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
+
+ print "</pre>";
 
 
 

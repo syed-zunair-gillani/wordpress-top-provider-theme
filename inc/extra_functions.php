@@ -237,6 +237,7 @@ function create_meta_query_for_zipcodes($zip_codes_to_search, $type) {
     $args = array(
         'post_type'      => 'providers', 
         'posts_per_page' => -1,
+        'fields'         => 'ids', 
         'meta_query'     => $meta_queries,
         'tax_query' => array(
             array(
@@ -246,7 +247,14 @@ function create_meta_query_for_zipcodes($zip_codes_to_search, $type) {
             ),
         ),
     );
-    return $args;
+    // Execute the query
+    $query = new WP_Query($args);
+
+    // Get the provider IDs
+    $provider_ids = $query->posts;
+
+    // Return the IDs
+    return $provider_ids;
 }
 
 function short_providers_with_price($zip_codes_to_search, $type) {
@@ -332,3 +340,92 @@ function get_zipcodes_by_state_callback($request) {
 
 //
 //http://localhost/cablemovers/wp-json/custom/v1/area-zones?state=ca
+
+
+
+function display_unique_service_types($provider_ids) {
+    // Initialize an array to store the unique service types
+    $all_service_types = array();
+
+    // Check if there are any provider IDs
+    if (!empty($provider_ids)) {
+        foreach ($provider_ids as $provider_id) {
+            // Get the terms associated with each provider
+            $terms = wp_get_object_terms($provider_id, 'providers_service_types');
+
+            // If terms are found, add them to the array
+            if (!is_wp_error($terms) && !empty($terms)) {
+                foreach ($terms as $term) {
+                    $all_service_types[$term->term_id] = $term;
+                }
+            }
+        }
+
+        // If you want to output the unique terms
+        if (!empty($all_service_types)) {
+            $service_type_names = array_map(function($service_type) {
+                return $service_type->name;
+            }, $all_service_types);
+
+            echo implode(', ', $service_type_names);
+        } else {
+            echo 'No service types found for the selected providers.';
+        }
+    } else {
+        echo 'No providers match the criteria.';
+    }
+}
+
+
+function display_service_types_details($provider_ids) {
+    // Initialize an array to store the unique service types
+    $all_service_types = array();
+
+    // Check if there are any provider IDs
+    if (!empty($provider_ids)) {
+        foreach ($provider_ids as $provider_id) {
+            // Get the terms associated with each provider
+            $terms = wp_get_object_terms($provider_id, 'providers_service_types');
+
+            // If terms are found, add them to the array
+            if (!is_wp_error($terms) && !empty($terms)) {
+                foreach ($terms as $term) {
+                    $all_service_types[$term->term_id] = $term;
+                }
+            }
+        }
+
+        // If you want to output the title and description of the unique terms
+        if (!empty($all_service_types)) {
+            foreach ($all_service_types as $service_type) {
+                ?>
+                <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                    <span class="text-4xl !text-[#215690] block w-fit">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.5 1.5A1.5 1.5 0 0 1 7 0h2a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.404 1.497c.35.305.872.678 1.628 1.056A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.224-.947c.756-.378 1.277-.75 1.628-1.056A1.5 1.5 0 0 1 5.5 12.5v-11ZM7 1a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 9 1H7Z"
+                            ></path>
+                            <path d="M8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path>
+                        </svg>
+                    </span>
+                    <h2 class="mt-4 text-xl font-bold"><span><?php echo esc_html($service_type->name); ?></span></h2>
+                    <p class="mt-1 text-base">
+                        <?php echo esc_html($service_type->description); ?>
+                    </p>
+                </div>
+                <?php
+            }
+        } else {
+            echo 'No service types found for the selected providers.';
+        }
+    } else {
+        echo 'No providers match the criteria.';
+    }
+}
+
+
+
+
+
+
+
