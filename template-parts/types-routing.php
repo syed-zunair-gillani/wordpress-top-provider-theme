@@ -34,8 +34,8 @@ if ($state && $city && $zipcode) {
     $links = [
         'Internet Providers' => home_url('/internet/' . $URL),
         'TV Providers' => home_url('/tv/' . $URL),
-        'Internet and TV Providers' => home_url('/tv-internet/' . $URL),
-        'Landline Providers' => home_url('/landline/' . $URL),
+        'Landline Providers' => home_url('/home-phone/' . $URL),
+        'Home Security' => home_url('/home-security/' . $URL),
     ];
 
 
