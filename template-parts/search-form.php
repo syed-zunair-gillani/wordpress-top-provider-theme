@@ -52,14 +52,14 @@
                                                 <span class="ml-3 block font-normal truncate">TV</span>
                                             </div>
                                         </li>
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="tv-internet" data-title="Internet TV">
-                                            <div class="flex items-center">
-                                                <span class="ml-3 block font-normal truncate">TV Internet</span>
-                                            </div>
-                                        </li>
-                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="landline" data-title="Landline">
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="home-phone" data-title="Landline">
                                             <div class="flex items-center">
                                                 <span class="ml-3 block font-normal truncate">Landline</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 cursor-pointer hover:bg-[#EF9831] hover:text-white select-none relative py-2 pl-3 pr-9" data-value="home-security" data-title="Home Security">
+                                            <div class="flex items-center">
+                                                <span class="ml-3 block font-normal truncate">Home Security</span>
                                             </div>
                                         </li>
                                     </ul>
