@@ -1,111 +1,85 @@
 <?php
     get_header();
-
     $state = get_query_var('state');
-    $city = get_query_var('city');
+    $qcity = get_query_var('city');
     $type = get_query_var('type');
-    $zip_codes_to_search = get_zipcodes_by_city($city);
-
- 
-
-   // print_r($zip_codes_to_search);
-
-  
-    
-    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
-
-
-
-
-
-
-
-
-
-    
-//    print "<pre>";
-//     print_r($provider_ids);
-//     print "</pre>";
-
-
+    $zip_codes_to_search = get_zipcodes_by_city($qcity);
+    $city = FormatData($qcity);
+     // print_r($zip_codes_to_search);
+    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);    
+    //    print "<pre>";
+    //     print_r($provider_ids);
+    //     print "</pre>";
     // Check if there are any provider IDs
-    if (!empty($provider_ids)) {
-    
-        $query_args = array(
-            'post_type'      => 'providers',
-            'posts_per_page' => -1,
-            'post__in'       => $provider_ids, 
-            'orderby'        => 'post__in', 
-            
-        );
-
-        // Create a new query using the provider IDs
-        $query = new WP_Query($query_args);
-
-    
-    } else {
-        echo 'No providers match the criteria.';
-    }
-
-   
+    if (!empty($provider_ids)) {    
+            $query_args = array(
+                    'post_type'      => 'providers',
+                    'posts_per_page' => -1,
+                    'post__in'       => $provider_ids, 
+                    'orderby'        => 'post__in',             
+                );
+                $query = new WP_Query($query_args);
+        
+            } else {
+            echo 'No providers match the criteria.';
+        }   
 
     ?>
 
 
 
 
-<section class="min-h-[40vh] flex items-center bg-gray-50"> 
-    <div class="container mx-auto px-4">
-        <div class="flex justify-center flex-col items-center">
-            <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-                <?php echo $type ?> Providers in<br />
-                <?php echo $state?> <span class="text-[#ef9831]"><?php echo $city?></span>
-            </h1>
-            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>
-            <?php get_template_part('template-parts/filter', 'form'); ?>
+    <section class="min-h-[40vh] flex items-center bg-gray-50"> 
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
+                    <?php echo $type ?> Providers in<br />
+                    <?php echo $state?> <span class="text-[#ef9831]"><?php echo $city?></span>
+                </h1>
+                <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>
+                <?php get_template_part('template-parts/filter', 'form'); ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<?php get_template_part( 'template-parts/types', 'routing' ); ?>
+    <?php get_template_part( 'template-parts/types', 'routing' ); ?>
 
-<section class="my-16">
-    <div class="container mx-auto px-4">
-        <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <?php echo $state?> <span class="text-[#ef9831]"><?php echo $city?> </span></h2>
-        </div>
-        
-        <?php
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    $i++;
-                    set_query_var('provider_index', $i);     
-                    get_template_part( 'template-parts/provider', 'card' );
-                }
-            } else {
-                echo 'No providers found with the specified zip codes.';
-            }
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <?php echo $state?> <span class="text-[#ef9831]"><?php echo $city?> </span></h2>
+            </div>
             
-            // Reset post data
-            wp_reset_postdata();
-        ?>
+            <?php
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $i++;
+                        set_query_var('provider_index', $i);     
+                        get_template_part( 'template-parts/provider', 'card' );
+                    }
+                } else {
+                    echo 'No providers found with the specified zip codes.';
+                }
+                
+                // Reset post data
+                wp_reset_postdata();
+            ?>
 
-        <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
-    </div>
-</section>
-
-<section class="my-16">
-    <div class="container mx-auto px-4">
-        <div class="">
-            <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5">
-                As of the time this page was written, <?php echo $city ?> has 5 <?php echo $type ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from<span> <span>Satellite</span> , </span>
-                <span> <span>DSL</span> , </span><span> <span>Fiber</span> , </span><span> <span>Cable</span> </span> <?php echo $type ?> Providers. <span> HughesNet </span> is the best Internet Provider in <?php echo $city ?>
-            </p>
+            <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="">
+                <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                <p class="text-xl font-[Roboto] mt-5">
+                    As of the time this page was written, <?php echo $city ?> has 5 <?php echo $type ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo get_first_provider_title($provider_ids); ?> </span> is the best Internet Provider in <?php echo $city ?>
+                </p>
+            </div>
+        </div>
+    </section>
 
 <section class="my-16">
     <div class="container mx-auto px-4">

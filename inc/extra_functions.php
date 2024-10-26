@@ -424,6 +424,35 @@ function display_service_types_details($provider_ids) {
 }
 
 
+function get_first_provider_title($provider_ids) {
+    if (!empty($provider_ids)) {      
+        $query_args = array(
+            'post_type'      => 'providers',
+            'posts_per_page' => 1, 
+            'post__in'       => $provider_ids, 
+            'orderby'        => 'post__in',             
+        );
+        $query = new WP_Query($query_args);
+        if ($query->have_posts()) {
+            $query->the_post();
+            $first_title = get_the_title(); 
+            wp_reset_postdata(); 
+            return $first_title;
+        } else {
+            return 'No providers found.';
+        }
+    } else {
+        return 'No providers match the criteria.';
+    }
+}
+
+function FormatData($string) {
+    $string = str_replace('-', ' ', $string);
+    $formatted_string = ucwords($string);
+    return $formatted_string;
+}
+
+
 
 
 
