@@ -165,14 +165,16 @@
                 </div>
                 <div class="grid md:grid-cols-4 grid-cols-1 gap-6">            
                     <div class="fact-box text-center">
-                        <div class="icon"><i class="fa fa-tag"></i> <?php echo esc_html($total_provider); ?></div>
+                        <div class="icon"><?php echo esc_html($total_provider); ?></div>
+                        <i class="fas fa-tag"></i> 
                         <h3 class="mt-4 text-lg font-bold">Available Internet Providers</h3>
                         <p class="mt-1 text-base"><?php echo esc_html($total_provider . ' total providers'); ?></p>
                     </div>
                     
                     
                     <div class="fact-box text-center">
-                        <div class="icon"><i class="fa fa-tag"></i><?php echo $total_services_type ?></div>
+                        <div class="icon"><?php echo $total_services_type ?></div>
+                        <i class="fas fa-wrench"></i> 
                         <h3 class="mt-4 text-lg font-bold">Available Technology Types</h3>
                     <p class="mt-1 text-base">
                         <?php echo display_unique_service_types($provider_ids)?>
@@ -180,13 +182,15 @@
                     </div>
                     
                     <div class="fact-box text-center">
-                        <div class="icon"><i class="fa fa-tag"></i>01</div>
+                        <div class="icon">01</div>
+                        <i class="fas fa-gauge"></i> 
                         <h3 class="mt-4 text-lg font-bold">Max Download Speed</h3>
                     <p class="mt-1 text-base"><?php echo esc_html($fast_provider_details['speed'] . ' Mbps'); ?></p>
                     </div>
                     
                     <div class="fact-box text-center">
-                        <div class="icon"><i class="fa fa-tag"></i>01</div>
+                        <div class="icon">01</div>
+                        <i class="fas fa-money-check"></i> 
                         <h3 class="mt-4 text-lg font-bold">Cheapest Plan</h3>
                     <p class="mt-1 text-base"><?php echo esc_html('$ ' .$fast_provider_details['price']); ?></p>
                     </div>

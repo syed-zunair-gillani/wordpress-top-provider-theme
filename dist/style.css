@@ -601,6 +601,8 @@ video {
 }
 
 .fact-box .icon {
+  position: relative;
+  z-index: 20;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -615,6 +617,19 @@ video {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 500;
+}
+
+.fact-box i {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(239 152 49 / var(--tw-text-opacity));
 }
 
 .pointer-events-none {

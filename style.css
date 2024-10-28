@@ -155,7 +155,10 @@ html {
 @layer components {
     
   .fact-box .icon {
-    @apply text-lg font-medium flex items-center justify-center w-[90px] h-[90px] rounded-full border-2 border-[#ef9831] mx-auto;
+    @apply text-lg font-medium flex items-center justify-center w-[90px] h-[90px] rounded-full border-2 border-[#ef9831] mx-auto z-20 relative;
+  }
+  .fact-box i {
+    @apply text-5xl text-[#ef9831] block w-fit mx-auto mt-[-25px] ;
   }
  
 }
