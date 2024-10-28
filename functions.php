@@ -397,3 +397,5 @@ function handle_review_submission() {
 // Add AJAX actions for logged-in and non-logged-in users
 add_action('wp_ajax_submit_review', 'handle_review_submission');
 add_action('wp_ajax_nopriv_submit_review', 'handle_review_submission');
+
+// Sitemap 

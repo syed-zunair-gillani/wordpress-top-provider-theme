@@ -423,8 +423,27 @@ function display_service_types_details($provider_ids) {
     }
 }
 
+function count_service_types($provider_ids) {  
+    $all_service_types = array();
+    if (!empty($provider_ids)) {
+        foreach ($provider_ids as $provider_id) {
+            $terms = wp_get_object_terms($provider_id, 'providers_service_types');
+            if (!is_wp_error($terms) && !empty($terms)) {
+                foreach ($terms as $term) {
+                    $all_service_types[$term->term_id] = $term;
+                }
+            }
+        }
+        $service_type_count = count($all_service_types);
+        return $service_type_count;       
+    } else {
+        echo '<p>No providers match the criteria.</p>';
+    }
+}
 
-function get_first_provider_title($provider_ids) {
+
+
+function Fast_Provider_Details($provider_ids) {
     if (!empty($provider_ids)) {      
         $query_args = array(
             'post_type'      => 'providers',
@@ -436,15 +455,32 @@ function get_first_provider_title($provider_ids) {
         if ($query->have_posts()) {
             $query->the_post();
             $first_title = get_the_title(); 
+            $speed = get_post_meta(get_the_ID(), 'services_info_internet_services_speed', true); // Replace with actual meta key for speed
+            $price = get_post_meta(get_the_ID(), 'pro_price', true); // Replace with actual meta key for price
             wp_reset_postdata(); 
-            return $first_title;
+            
+            // Return the details as an associative array
+            return array(
+                'title' => $first_title,
+                'speed' => $speed ? $speed . ' Mbps' : 'N/A',
+                'price' => $price ? '$' . $price : 'N/A'
+            );
         } else {
-            return 'No providers found.';
+            return array(
+                'title' => 'No providers found.',
+                'speed' => 'N/A',
+                'price' => 'N/A'
+            );
         }
     } else {
-        return 'No providers match the criteria.';
+        return array(
+            'title' => 'No providers match the criteria.',
+            'speed' => 'N/A',
+            'price' => 'N/A'
+        );
     }
 }
+
 
 function FormatData($string) {
     $string = str_replace('-', ' ', $string);

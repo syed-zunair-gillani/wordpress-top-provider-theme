@@ -3,12 +3,47 @@
     $state = get_query_var('state');
     $qcity = get_query_var('city');
     $type = get_query_var('type');
+
+ 
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
 
     $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);   
+
+    $fast_provider_details = Fast_Provider_Details($provider_ids);
     
     $total_provider = count($provider_ids);
+
+    $total_services_type = count_service_types($provider_ids);
+  
+
+    $Recommend_Data = [
+        [
+            'devices' => '1-2',
+            'best_use' => 'SD streaming on One device, Basic Browsing and web surfing, Emailing and downloading music',
+            'recommend' => 'Up to 25 Mbps',
+        ],
+        [
+            'devices' => '3-5',
+            'best_use' => 'HD Streaming on Multiple Devices, Download large files quickly, Lag Free Multi-Player gaming',
+            'recommend' => 'Up to 100 Mbps',
+        ],
+        [
+            'devices' => '6-10',
+            'best_use' => 'Ultra HD streaming on Multiple Devices, Lag Free Gaming on Multiple Console, Work from home and Video Conferencing',
+            'recommend' => 'Up to 500 Mbps',
+        ],
+        [
+            'devices' => '10-15',
+            'best_use' => '4K HD streaming on Multiple Devices, Downloading and Gaming Simultaneously',
+            'recommend' => 'Up to 1000 Mbps',
+        ],
+        [
+            'devices' => 'More Than 15',
+            'best_use' => 'All of the above plus 8K HD streaming on Multiple Devices. Best for Almost Anything',
+            'recommend' => 'Up to 1000+ Mbps',
+        ],
+    ];
     //    print "<pre>";
     //     print_r($provider_ids);
     //     print "</pre>";
@@ -111,11 +146,128 @@
             <div class="">
                 <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
                 <p class="text-xl font-[Roboto] mt-5">
-                    As of the time this page was written, <?php echo $city ?> has <?php echo $total_provider; ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo get_first_provider_title($provider_ids); ?> </span> is the best Internet Provider in <?php echo $city ?>
+                    As of the time this page was written, <?php echo $city ?> has <?php echo $total_provider; ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo $fast_provider_details['title']; ?> </span> is the best Internet Provider in <?php echo $city ?>
                 </p>
             </div>
         </div>
     </section>
+
+    <?php if ($type === 'home-phone'): ?>            
+        <section class="my-16">
+            <div class="container mx-auto px-4">
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold capitalize leading-10">
+                        Internet Facts for 
+                        <span class="text-[#ef9831]">
+                            <?php echo esc_html($city); ?>, <span class="uppercase"><?php echo esc_html($state); ?></span>
+                        </span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-4 grid-cols-1 gap-6">            
+                    <div class="fact-box text-center">
+                        <div class="icon"><i class="fa fa-tag"></i> <?php echo esc_html($total_provider); ?></div>
+                        <h3 class="mt-4 text-lg font-bold">Available Internet Providers</h3>
+                        <p class="mt-1 text-base"><?php echo esc_html($total_provider . ' total providers'); ?></p>
+                    </div>
+                    
+                    
+                    <div class="fact-box text-center">
+                        <div class="icon"><i class="fa fa-tag"></i><?php echo $total_services_type ?></div>
+                        <h3 class="mt-4 text-lg font-bold">Available Technology Types</h3>
+                    <p class="mt-1 text-base">
+                        <?php echo display_unique_service_types($provider_ids)?>
+                        </p>
+                    </div>
+                    
+                    <div class="fact-box text-center">
+                        <div class="icon"><i class="fa fa-tag"></i>01</div>
+                        <h3 class="mt-4 text-lg font-bold">Max Download Speed</h3>
+                    <p class="mt-1 text-base"><?php echo esc_html($fast_provider_details['speed'] . ' Mbps'); ?></p>
+                    </div>
+                    
+                    <div class="fact-box text-center">
+                        <div class="icon"><i class="fa fa-tag"></i>01</div>
+                        <h3 class="mt-4 text-lg font-bold">Cheapest Plan</h3>
+                    <p class="mt-1 text-base"><?php echo esc_html('$ ' .$fast_provider_details['price']); ?></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="my-16">
+            <div class="container mx-auto px-4">
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold capitalize leading-10">
+                        How Much Speed Do I Need For My Home?
+                    </h2>
+                    <p class="text-xl font-[Roboto] mt-5">
+                        How much internet speed is needed for my household? You may ask
+                        this question to yourself whenever shopping for an Internet
+                        service provider but there is no simple or direct answer. It
+                        depends on several different factors such as number of connected
+                        devices to the internet, how they are being used, someone using it
+                        for online gaming, video conferencing, streaming on Netflix or
+                        even working from home. Some households may need more speed than
+                        the rest because of their use cases. That’s why Cable Movers has
+                        designed a chart to help you choose the right internet speed for
+                        your home for seamless online experience.
+                    </p>
+                </div>
+                <div class="shadow-xl border">
+                    <div class="grid md:grid-cols-3 grid-cols-3 gap-0 divide-x bg-[#215690]">
+                        <div class="md:p-5 p-2">
+                            <h3 class="md:text-base text-xs text-center text-white mb-2">
+                                Number of Devices
+                            </h3>
+                        </div>
+                        <div class="flex items-center justify-center md:p-5 p-2">
+                            <h3 class="md:text-base text-xs text-center text-white mb-2">
+                                Best Used For
+                            </h3>
+                        </div>
+                        <div class="flex items-center justify-center md:p-5 p-2">
+                            <h3 class="md:text-base text-xs text-center text-white mb-2">
+                                Recommended Internet Speed
+                            </h3>
+                        </div>
+                    </div>
+                    <?php if (!empty($Recommend_Data)) : ?>
+                        <?php foreach ($Recommend_Data as $idx => $item) : ?>
+                            <?php $bestUse = explode(', ', $item['best_use']); ?>
+                            <div class="grid md:grid-cols-3 grid-cols-3 gap-0 divide-x dtable">
+                                <div class="flex items-center justify-center md:p-5 p-2">
+                                    <p class="text-center md:text-base text-xs">
+                                        <?php echo esc_html($item['devices']); ?>
+                                    </p>
+                                </div>
+                                <div class="md:p-5 p-2">
+                                    <div class="md:text-base text-xs">
+                                        <ul class="grid items-center">
+                                            <?php foreach ($bestUse as $featureIdx => $feature) : ?>
+                                                <li class="flex gap-2" key="<?php echo esc_attr($featureIdx); ?>">
+                                                    <svg class="min-w-[1rem] h-4 mt-[2px] text-[#ef9831] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                    <span class="text-sm">
+                                                        <?php echo esc_html($feature); ?>
+                                                    </span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center md:p-5 p-2">
+                                    <p class="text-center md:text-base text-xs">
+                                        <?php echo esc_html($item['recommend']); ?>
+                                    </p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
 
 <section class="my-16">
     <div class="container mx-auto px-4">
