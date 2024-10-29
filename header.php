@@ -83,6 +83,33 @@
                         <li><a href="/providers/t-mobile" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">T-Mobile</a></li>
                     </ul>
                 </li>
+                <li class="menu-item" data-submenu="submenu-home_security">
+                    <a href="#" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Home Security</a>
+                    <ul id="submenu-home_security" class="submenu bg-transparent sm:bg-white pl-5 sm:pl-0 border-l sm:border-none mt-1 md:!mt-0 md:absolute static top-[3.7rem] md:w-40 w-full grid gap-3 z-50 md:shadow-xl">
+                        <?php  $args = array(
+                                'post_type'      => 'providers', // Custom post type name
+                                'posts_per_page' => -1, // Number of posts to display
+                                'order'          => 'DESC', // Order of the posts
+                                'providers_types'        => 'home-security' // Order by date
+                            );
+
+                            // Custom query to fetch posts
+                            $providers_query = new WP_Query($args);
+
+                            // The Loop
+                            if ($providers_query->have_posts()) :
+                                while ($providers_query->have_posts()) : $providers_query->the_post();
+                                ?>   <li><a href="<?php the_permalink()?>" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]"><?php the_title()?></a></li><?php 
+                                endwhile;
+                            else :
+                                echo '<p>No providers found.</p>';
+                            endif;
+
+                            // Reset post data to avoid conflicts
+                            wp_reset_postdata();
+                            ?>
+                    </ul>
+                </li>
                 <li><a href="<?php echo home_url('/providers'); ?>" class="text-base font-normal text-[#215690] hover:text-[#ef9831] font-[Roboto]">Providers</a></li>
                 <li><a href="tel:833-592-0098" class="items-center gap-2 text-[#ef9831] font-[Roboto] flex justify-end">
                     <i class="lu-phone-call">

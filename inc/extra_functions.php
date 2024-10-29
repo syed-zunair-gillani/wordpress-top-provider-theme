@@ -4,6 +4,7 @@
 
 include_once('cpts.php');
 include_once('rules.php');
+//include_once('sitemap.php');
 
 function check_header() {
     // Define the zip code you want to search for
