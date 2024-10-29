@@ -2107,6 +2107,56 @@ html {
   margin-top: 4px;
 }
 
+/* Breadcrumb container styling */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-family: Arial, sans-serif;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Link styling within the breadcrumb */
+
+.breadcrumb a {
+  color: #0073e6;
+  text-decoration: none;
+  padding: 0 8px;
+  transition: color 0.3s ease;
+}
+
+/* Separator between breadcrumb items */
+
+.breadcrumb a::after {
+  content: '»';
+  color: #888;
+  margin-left: 8px;
+}
+
+/* Remove separator for the last item */
+
+.breadcrumb span::before,
+.breadcrumb a:last-child::after {
+  content: '';
+}
+
+/* Current page styling */
+
+.breadcrumb span {
+  color: #555;
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+/* Hover effect for links */
+
+.breadcrumb a:hover {
+  color: #005bb5;
+  text-decoration: underline;
+}
+
 .hover\:border-\[\#215690\]\/10:hover {
   border-color: rgb(33 86 144 / 0.1);
 }
