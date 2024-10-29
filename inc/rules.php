@@ -142,54 +142,52 @@ add_action('init', function() {
 
 
 function cbl_breadcrumb() {
-     // Get the query variables from the custom rewrite rules
-     $service = get_query_var('service');
-     $zone_state = get_query_var('zone_state');
-     $zone_city = get_query_var('zone_city');
-     $post_slug = get_query_var('post_slug');
-      // Get query variables
+    // Get the query variables from the custom rewrite rules
+    $service = get_query_var('service');
+    $zone_state = get_query_var('zone_state');
+    $zone_city = get_query_var('zone_city');
+    $post_slug = get_query_var('post_slug');
+    
+    // Get the current post type
     $post_type = get_post_type();
-     echo '<div class="container mx-auto px-4">';
-    echo '<a href="' . home_url() . '">Home</a> » ';
 
+    // Start breadcrumb container with appropriate class
+    echo '<div class="container mx-auto px-4 breadcrumb">';
+
+    // Home link
+    echo '<a href="' . home_url() . '">Home</a>';
+
+    // Check post type for custom structure
     if ($post_type === 'area_zone') {
-   
-        // Display breadcrumb for each level
+        // Breadcrumb for 'area_zone' post type
         if ($service) {
-            // Link for service type
-            echo '<a href="' . home_url('/' . $service) . '">' . ucfirst($service) . '</a> » ';
+            echo ' <a href="' . home_url('/' . $service) . '"> ' . ucfirst($service) . '</a>';
         }
-    
         if ($zone_state) {
-            // Link for zone state
-            echo '<a href="' . home_url('/' . $service . '/' . $zone_state) . '">' . ucfirst(str_replace('-', ' ', $zone_state)) . '</a> » ';
+            echo ' <a href="' . home_url('/' . $service . '/' . $zone_state) . '"> ' . ucfirst(str_replace('-', ' ', $zone_state)) . '</a>';
         }
-    
         if ($zone_city) {
-            // Link for zone city
-            echo '<a href="' . home_url('/' . $service . '/' . $zone_state . '/' . $zone_city) . '">' . ucfirst(str_replace('-', ' ', $zone_city)) . '</a> » ';
+            echo ' <a href="' . home_url('/' . $service . '/' . $zone_state . '/' . $zone_city) . '"> ' . ucfirst(str_replace('-', ' ', $zone_city)) . '</a>';
         }
         if ($post_slug) {
-            // Current post title as the final breadcrumb without a link
-            echo '<span>' . get_the_title() . '</span>';
+            echo ' <span> ' . get_the_title() . '</span>';
         }
     } elseif ($post_type === 'providers') {
         // Breadcrumb for 'providers' post type
-     
-        echo '<a href="' . home_url('/providers' ) . '"> Providers </a> » ';
-    
-        echo '<span>' . get_the_title() . '</span>';
+        echo ' <a href="' . home_url('/providers') . '"> Providers</a>';
+        echo ' <span> ' . get_the_title() . '</span>';
     } else {
-        // Default breadcrumb for other post types
+        // Default breadcrumb structure for other post types
         if (is_single()) {
             the_category(' » ');
-            echo " » " . get_the_title();
+            echo ' <span>» ' . get_the_title() . '</span>';
         } elseif (is_page()) {
-            echo get_the_title();
+            echo ' <span> ' . get_the_title() . '</span>';
         } elseif (is_search()) {
-            echo 'Search Results for "' . get_search_query() . '"';
+            echo ' <span> Search Results for "' . get_search_query() . '"</span>';
         }
     }
-        echo '</div>';
     
+    // End breadcrumb container
+    echo '</div>';
 }
