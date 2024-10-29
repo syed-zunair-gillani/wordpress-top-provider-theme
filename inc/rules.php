@@ -139,3 +139,57 @@ add_action('init', function() {
     custom_dynamic_rewrite_rules();
     flush_rewrite_rules(); // Only for development purposes. Remove after testing.
 });
+
+
+function cbl_breadcrumb() {
+     // Get the query variables from the custom rewrite rules
+     $service = get_query_var('service');
+     $zone_state = get_query_var('zone_state');
+     $zone_city = get_query_var('zone_city');
+     $post_slug = get_query_var('post_slug');
+      // Get query variables
+    $post_type = get_post_type();
+     echo '<div class="container mx-auto px-4">';
+    echo '<a href="' . home_url() . '">Home</a> » ';
+
+    if ($post_type === 'area_zone') {
+   
+        // Display breadcrumb for each level
+        if ($service) {
+            // Link for service type
+            echo '<a href="' . home_url('/' . $service) . '">' . ucfirst($service) . '</a> » ';
+        }
+    
+        if ($zone_state) {
+            // Link for zone state
+            echo '<a href="' . home_url('/' . $service . '/' . $zone_state) . '">' . ucfirst(str_replace('-', ' ', $zone_state)) . '</a> » ';
+        }
+    
+        if ($zone_city) {
+            // Link for zone city
+            echo '<a href="' . home_url('/' . $service . '/' . $zone_state . '/' . $zone_city) . '">' . ucfirst(str_replace('-', ' ', $zone_city)) . '</a> » ';
+        }
+        if ($post_slug) {
+            // Current post title as the final breadcrumb without a link
+            echo '<span>' . get_the_title() . '</span>';
+        }
+    } elseif ($post_type === 'providers') {
+        // Breadcrumb for 'providers' post type
+     
+        echo '<a href="' . home_url('/providers' ) . '"> Providers </a> » ';
+    
+        echo '<span>' . get_the_title() . '</span>';
+    } else {
+        // Default breadcrumb for other post types
+        if (is_single()) {
+            the_category(' » ');
+            echo " » " . get_the_title();
+        } elseif (is_page()) {
+            echo get_the_title();
+        } elseif (is_search()) {
+            echo 'Search Results for "' . get_search_query() . '"';
+        }
+    }
+        echo '</div>';
+    
+}

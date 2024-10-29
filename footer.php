@@ -119,6 +119,8 @@ $providersData = [
   ]
 ];
 
+cbl_breadcrumb(); 
+
 ?>
 
 <footer class="bg-[#000] pt-16 pb-4">
