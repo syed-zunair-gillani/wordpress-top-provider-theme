@@ -1,5 +1,5 @@
 <?php
-/** Template Name: Testing propose */
+/** Template Name: Sitmap */
  get_header();
 ?>
 
@@ -16,6 +16,6 @@
 
 <?php
 SiteMapByZipCode();
-//SiteMapByZipCity();
-//SiteMapByState();
+SiteMapByZipCity();
+SiteMapByState();
 ?>

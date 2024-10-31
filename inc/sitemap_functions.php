@@ -1,184 +1,225 @@
 <?php
 
-function custom_sitemap() {
-    // Check if the request is for the sitemap index
-    if (isset($_GET['sitemap']) && $_GET['sitemap'] === 'index') {
-        sitemap_index();
-        exit;
-    }
-    
-    // Handle individual sitemap requests
-    if (strpos($_SERVER['REQUEST_URI'], '/sitemap-zone.xml') !== false) {
-        sitemap_posts();
-        exit;
-    }
-    
-    if (strpos($_SERVER['REQUEST_URI'], '/sitemap-zone-state.xml') !== false) {
-        sitemap_zone_state();
-        exit;
-    }
-
- 
-        sitemap_zone_city();
-     
-
-    // Redirect to sitemap index if /sitemap.xml is accessed
-    if (strpos($_SERVER['REQUEST_URI'], '/sitemap.xml') !== false) {
-        header("Location: " . home_url('/?sitemap=index'), true, 302);
-        exit;
-    }
-}
-
-// Generate the sitemap for posts
-function sitemap_posts() {
-    header("Content-Type: application/xml; charset=utf-8");
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">';
-
-    // Fetch the latest 10 posts
-    $args = array(
-        'post_type' => 'page',
-        'posts_per_page' => 10,
-        'post_status' => 'publish'
-    );
-    $posts = get_posts($args);
-
-    foreach ($posts as $post) {
-        setup_postdata($post);
-        echo '<url>';
-        echo '<loc>' . esc_url(get_permalink($post)) . '</loc>';
-        echo '<lastmod>' . get_the_modified_time('c', $post) . '</lastmod>';
-        echo '<changefreq>weekly</changefreq>';
-        echo '<priority>0.5</priority>';
-        echo '</url>';
-    }
-
-    wp_reset_postdata();
-    echo '</urlset>';
-}
-
-// Generate the sitemap for zone states
-function sitemap_zone_state() {
-    header("Content-Type: application/xml; charset=utf-8");
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">';
-
-    $types = ["internet", "tv", "tv-internet", "landline"];
-    foreach ($types as $type) {
-        $terms = get_terms(array(
-            'taxonomy'   => 'zone_state',
-            'hide_empty' => false, // Set to true if you want to hide empty terms
-            'posts_per_page' => -1,
-        ));
-
-        // Check if terms were found
-        if (!empty($terms) && !is_wp_error($terms)) {
-            foreach ($terms as $term) {
-                echo '<url>';
-                echo '<loc>' . esc_url(home_url($type . '/' . esc_html($term->slug))) . '</loc>';
-                echo '<lastmod>' . date('c', strtotime($term->term_modified)) . '</lastmod>'; // Use term_modified for actual modified date
-                echo '<changefreq>weekly</changefreq>';
-                echo '<priority>0.5</priority>';
-                echo '</url>';
-            }
-        }
-    }
-
-    echo '</urlset>';
-}
-
-// Generate the sitemap for zone states
-function sitemap_zone_city() {
-    // Define the folder path where sitemaps will be saved
-    $sitemap_folder = ABSPATH . 'sitemaps/';
-
-    // Check if the folder exists, and create it if it doesn't
+//SiteMapByState(); Sitemap for States
+function SiteMapByState() {
+    $sitemap_folder = ABSPATH . 'sitemaps';
+    $sitemap_file = $sitemap_folder . '/states-sitemap.xml';
     if (!file_exists($sitemap_folder)) {
-        mkdir($sitemap_folder, 0755, true); // Creates folder with permissions
+        mkdir($sitemap_folder, 0755, true);
     }
-
-    $types = ["internet", "tv","home-security","home-phone"];
-    $max_entries_per_file = 10000;
-    $entry_count = 0;
-    $file_index = 1;
-    $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-
-    // Loop through each service type and generate URLs
+    $file = fopen($sitemap_file, 'w');
+    // XML header
+    $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+    $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+    // Types to iterate
+    $types = ["internet", "tv", "tv-internet", "landline"];    
     foreach ($types as $type) {
+     
         $terms = get_terms(array(
             'taxonomy'   => 'zone_state',
             'hide_empty' => false,
             'posts_per_page' => -1,
         ));
-
-        // Check if terms were found
         if (!empty($terms) && !is_wp_error($terms)) {
             foreach ($terms as $term) {
-                // Add URL entry for each term
-                $xml_content .= '<url>';
-                $xml_content .= '<loc>' . esc_url(home_url($type . '/' . esc_html($term->slug))) . '</loc>';
-                $xml_content .= '<lastmod>' . date('c', strtotime($term->term_modified)) . '</lastmod>';
-                $xml_content .= '<changefreq>weekly</changefreq>';
-                $xml_content .= '<priority>0.5</priority>';
-                $xml_content .= '</url>' . "\n";
-
-                $entry_count++;
-
-                // When reaching max entries per file, save the current file and reset
-                if ($entry_count >= $max_entries_per_file) {
-                    $xml_content .= '</urlset>';
-                    $filename = $sitemap_folder . 'sitemap-state' . $file_index . '.xml';
-                    file_put_contents($filename, $xml_content);
-
-                    // Reset for next file
-                    $entry_count = 0;
-                    $file_index++;
-                    $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-                    $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-                }
+                $xml_content .= '<url>' . PHP_EOL;
+                $xml_content .= '<loc>' . esc_url(home_url($type . '/' . $term->slug)) . '</loc>' . PHP_EOL;
+                $xml_content .= '<lastmod>' . wp_date('c') . '</lastmod>' . PHP_EOL; // Using wp_date for current date in ISO 8601 format
+                $xml_content .= '<priority>0.8</priority>' . PHP_EOL; // Setting priority to 0.8
+                $xml_content .= '</url>' . PHP_EOL;
             }
         }
     }
+    $xml_content .= '</urlset>' . PHP_EOL;
+    fwrite($file, $xml_content);
+    fclose($file);
+}
 
-    // Finalize and save the last file if there are remaining entries
-    if ($entry_count > 0) {
-        $xml_content .= '</urlset>';
-        $filename = $sitemap_folder . 'sitemap-' . $file_index . '.xml';
-        file_put_contents($filename, $xml_content);
+
+//SiteMapByZipCity(); Sitemap for Cities
+
+function SiteMapByZipCity() {
+
+    set_time_limit(0);
+    // Define the services and sitemap folder path
+    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $sitemap_folder = ABSPATH . 'sitemaps';
+    $posts_per_file = 10000;
+
+    // Ensure the sitemap directory exists
+    if (!file_exists($sitemap_folder)) {
+        mkdir($sitemap_folder, 0755, true);
+    }
+
+    // Loop through each service to create separate sitemaps
+    foreach ($services as $service) {
+        $file_index = 1;
+        $offset = 0;
+        
+        while (true) {
+            // Define the file name for each batch of posts
+            $sitemap_file = "{$sitemap_folder}/cities_{$service}-{$file_index}.xml";
+            
+            // Open file for writing
+            $file = fopen($sitemap_file, 'w');
+            
+            // XML header
+            $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+            $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+
+            // WP Query arguments with pagination
+            $args = array(
+                'post_type'      => 'area_zone',
+                'posts_per_page' => $posts_per_file,
+                'offset'         => $offset,
+                'order'          => 'DESC',
+            );
+
+            // Custom query to fetch posts
+            $providers_query = new WP_Query($args);
+
+            // Check if there are posts
+            if (!$providers_query->have_posts()) {
+                // If no posts left, break the loop
+                fclose($file);
+                break;
+            }
+
+            // Loop for each post in area_zone
+            while ($providers_query->have_posts()) {
+                $providers_query->the_post();
+                
+                // Get terms for zone_city and zone_state
+                $zone_city_terms = get_the_terms(get_the_ID(), 'zone_city');
+                $zone_state_terms = get_the_terms(get_the_ID(), 'zone_state');
+
+                // Extract the first term slug
+                $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
+                $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
+
+                // Construct the URL
+                $link = home_url("/{$service}/{$zone_state}/{$zone_city}/");
+
+                // Add URL entry to the XML content
+                $xml_content .= "<url>" . PHP_EOL;
+                $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
+                $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
+                $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
+                $xml_content .= "</url>" . PHP_EOL;
+            }
+
+            // Reset post data after each query
+            wp_reset_postdata();
+
+            // Close XML structure
+            $xml_content .= '</urlset>' . PHP_EOL;
+
+            // Write XML content to the file and close it
+            fwrite($file, $xml_content);
+            fclose($file);
+
+            echo 'Sitemap for ' . esc_html($service) . " generated and saved as " . esc_html($sitemap_file) . '<br>';
+
+            // Update offset and file index for the next file
+            $offset += $posts_per_file;
+            $file_index++;
+        }
+    }
+}
+
+//SiteMapByZipCode(); Sitemap for ZipCode
+function SiteMapByZipCode() {
+
+    set_time_limit(0);
+    // Define the services and sitemap folder path
+    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $sitemap_folder = ABSPATH . 'sitemaps';
+    $posts_per_file = 10000;
+
+    // Ensure the sitemap directory exists
+    if (!file_exists($sitemap_folder)) {
+        mkdir($sitemap_folder, 0755, true);
+    }
+
+    // Loop through each service to create separate sitemaps
+    foreach ($services as $service) {
+        $file_index = 1;
+        $offset = 0;
+        
+        while (true) {
+            // Define the file name for each batch of posts
+            $sitemap_file = "{$sitemap_folder}/zipcode_{$service}-{$file_index}.xml";
+            
+            // Open file for writing
+            $file = fopen($sitemap_file, 'w');
+            
+            // XML header
+            $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+            $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+
+            // WP Query arguments with pagination
+            $args = array(
+                'post_type'      => 'area_zone',
+                'posts_per_page' => $posts_per_file,
+                'offset'         => $offset,
+                'order'          => 'DESC',
+            );
+
+            // Custom query to fetch posts
+            $providers_query = new WP_Query($args);
+
+            // Check if there are posts
+            if (!$providers_query->have_posts()) {
+                // If no posts left, break the loop
+                fclose($file);
+                break;
+            }
+
+            // Loop for each post in area_zone
+            while ($providers_query->have_posts()) {
+                $providers_query->the_post();
+                $post_slug = get_post_field('post_name', get_the_ID());
+                
+                // Get terms for zone_city and zone_state
+                $zone_city_terms = get_the_terms(get_the_ID(), 'zone_city');
+                $zone_state_terms = get_the_terms(get_the_ID(), 'zone_state');
+
+                // Extract the first term slug
+                $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
+                $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
+
+                // Construct the URL
+                $link = home_url("/{$service}/{$zone_state}/{$zone_city}/{$post_slug}");
+
+                // Add URL entry to the XML content
+                $xml_content .= "<url>" . PHP_EOL;
+                $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
+                $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
+                $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
+                $xml_content .= "</url>" . PHP_EOL;
+            }
+
+            // Reset post data after each query
+            wp_reset_postdata();
+
+            // Close XML structure
+            $xml_content .= '</urlset>' . PHP_EOL;
+
+            // Write XML content to the file and close it
+            fwrite($file, $xml_content);
+            fclose($file);
+
+            echo 'Sitemap for ' . esc_html($service) . " generated and saved as " . esc_html($sitemap_file) . '<br>';
+
+            // Update offset and file index for the next file
+            $offset += $posts_per_file;
+            $file_index++;
+        }
     }
 }
 
 
-// Generate the sitemap index
-function sitemap_index() {
-    header("Content-Type: application/xml; charset=utf-8");
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">';
-    
-    // Add links to the individual sitemap files
-    echo '<sitemap>';
-    echo '<loc>' . esc_url(home_url('/sitemap-posts.xml')) . '</loc>';
-    echo '<lastmod>' . date('c') . '</lastmod>'; // Last modified date
-    echo '</sitemap>';
-
-    echo '<sitemap>';
-    echo '<loc>' . esc_url(home_url('/sitemap-zone-state.xml')) . '</loc>';
-    echo '<lastmod>' . date('c') . '</lastmod>'; // Last modified date
-    echo '</sitemap>';
 
 
-    echo '<sitemap>';
-    echo '<loc>' . esc_url(home_url('/sitemap-zone-city.xml')) . '</loc>';
-    echo '<lastmod>' . date('c') . '</lastmod>'; // Last modified date
-    echo '</sitemap>';
-
-
-
-
-
-    echo '</sitemapindex>';
-}
-
-// Hook into WordPress
-add_action('init', 'custom_sitemap');
