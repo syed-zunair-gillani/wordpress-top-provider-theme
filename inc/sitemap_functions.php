@@ -220,57 +220,20 @@ function SiteMapByZipCode() {
     }
 }
 
-
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
-    $custom_sitemaps = [
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-5.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-1.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-2.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-3.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-4.xml',
-        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-5.xml'
-    ];
+    $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
+    $types = ["internet", "tv", "tv-internet", "landline"];
+    $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
+    $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
-    foreach ($custom_sitemaps as $sitemap) {
-        $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap) . '</loc></sitemap>';
+    foreach ($prefixes as $prefix) {
+        foreach ($types as $type) {
+            for ($i = 1; $i <= $number_of_sitemaps; $i++) {
+                $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
+                $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap_url) . '</loc></sitemap>';
+            }
+        }
     }
 
     return $sitemap_index;
 });
-
-
-
