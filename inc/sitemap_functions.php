@@ -222,7 +222,7 @@ function SiteMapByZipCode() {
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
-    $types = ["internet", "tv", "tv-internet", "landline"];
+    $services = ['internet', 'tv', 'home-security', 'home-phone'];
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
