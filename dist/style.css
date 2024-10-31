@@ -2107,7 +2107,7 @@ html {
   margin-top: 4px;
 }
 
-/* Breadcrumb container styling */
+/* Breadcrumb CSS */
 
 .breadcrumb {
   display: flex;
@@ -2115,10 +2115,8 @@ html {
   font-size: 0.9em;
   font-family: Arial, sans-serif;
   color: #555;
-  padding:  10px 0;
+  padding: 10px 0;
 }
-
-/* Link styling within the breadcrumb */
 
 .breadcrumb a {
   color: #0073e6;
@@ -2127,22 +2125,16 @@ html {
   transition: color 0.3s ease;
 }
 
-/* Separator between breadcrumb items */
-
 .breadcrumb a::after {
   content: '»';
   color: #888;
   margin-left: 8px;
 }
 
-/* Remove separator for the last item */
-
 .breadcrumb span::before,
 .breadcrumb a:last-child::after {
   content: '';
 }
-
-/* Current page styling */
 
 .breadcrumb span {
   color: #555;
@@ -2150,12 +2142,12 @@ html {
   font-weight: bold;
 }
 
-/* Hover effect for links */
-
 .breadcrumb a:hover {
   color: #005bb5;
   text-decoration: underline;
 }
+
+/*End */
 
 .hover\:border-\[\#215690\]\/10:hover {
   border-color: rgb(33 86 144 / 0.1);

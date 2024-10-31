@@ -408,3 +408,54 @@ add_action('wp_ajax_submit_review', 'handle_review_submission');
 add_action('wp_ajax_nopriv_submit_review', 'handle_review_submission');
 
 
+
+
+
+// Hook into WordPress initialization
+add_action('init', function() {
+    // Check for the save_xml query parameter
+    if (isset($_GET['save_xml']) && $_GET['save_xml'] == '1') {
+        $file_path = save_xml_file();
+        if ($file_path) {
+            echo "XML file saved to: " . esc_url($file_path);
+        } else {
+            echo "Failed to save XML file.";
+        }
+        exit; // Ensure no further output is sent
+    }
+});
+
+/**
+ * Function to save XML file to the sitemaps directory
+ */
+function save_xml_file() {
+    // Define the path to the sitemaps directory
+    $upload_dir = wp_upload_dir(); // Get the upload directory
+    $sitemap_dir = $upload_dir['basedir'] . '/sitemaps/';
+    $file_path = $sitemap_dir . 'data.xml'; 
+
+    if (!file_exists($sitemap_dir)) {
+        wp_mkdir_p($sitemap_dir);
+    }
+
+    // Start the XML output
+    $xml = new SimpleXMLElement('<?xml version="1.0"?><data></data>');
+
+    // Add sample data (customize this with your actual data)
+    $items = $xml->addChild('items');
+    
+    for ($i = 1; $i <= 10; $i++) {
+        $item = $items->addChild('item');
+        $item->addChild('id', $i);
+        $item->addChild('name', "Item $i");
+        $item->addChild('description', "Description for Item $i");
+    }
+
+    // Save the XML to the specified file path
+    if ($xml->asXML($file_path)) {
+        return $file_path; // Return the file path on success
+    } else {
+        error_log('Failed to save XML file.');
+        return false; // Return false on failure
+    }
+}
