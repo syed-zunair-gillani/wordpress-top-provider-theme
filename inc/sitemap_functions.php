@@ -222,7 +222,7 @@ function SiteMapByZipCode() {
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
-    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $types =  ['internet', 'tv', 'home-security', 'home-phone'];
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
@@ -234,7 +234,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
 
     // Add dynamic sitemaps
-    foreach ($services as $prefix) {
+    foreach ($prefixes as $prefix) {
         foreach ($types as $type) {
             for ($i = 1; $i <= $number_of_sitemaps; $i++) {
                 $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
