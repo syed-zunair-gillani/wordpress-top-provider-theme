@@ -221,5 +221,32 @@ function SiteMapByZipCode() {
 }
 
 
+add_filter('wpseo_sitemap_index', function ($sitemap_index) {
+    $custom_sitemaps = [
+        home_url('/cities_home-phone-1.xml'),
+        home_url('/cities_home-phone-2.xml'),
+        home_url('/cities_home-phone-4.xml'),
+        home_url('/cities_home-phone-5.xml'),
+        home_url('/cities_home-phone-6.xml'),
+        home_url('/cities_home-security-1.xml'),
+        home_url('/cities_home-security-2.xml'),
+        home_url('/cities_home-security-3.xml'),
+        home_url('/cities_home-security-4.xml'),
+        home_url('/cities_home-security-5.xml'),
+        home_url('/cities_home-security-6.xml'),
+        home_url('/cities_internet-1.xml'),
+        home_url('/cities_internet-2.xml'),
+        home_url('/cities_internet-3.xml'),
+        home_url('/cities_internet-4.xml')
+    ];
+
+    foreach ($custom_sitemaps as $sitemap) {
+        $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap) . '</loc></sitemap>';
+    }
+
+    return $sitemap_index;
+});
+
+
 
 
