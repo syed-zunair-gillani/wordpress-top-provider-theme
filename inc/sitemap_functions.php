@@ -234,7 +234,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
 
     // Add dynamic sitemaps
-    foreach ($prefixes as $prefix) {
+    foreach ($services as $prefix) {
         foreach ($types as $type) {
             for ($i = 1; $i <= $number_of_sitemaps; $i++) {
                 $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
