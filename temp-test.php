@@ -3,6 +3,9 @@
  get_header();
 ?>
 
+
+
+
 <!-- ===================== *********** ======================
         Sitemap Layout for /type/state/city/zipcode 
 ===================== *********** ====================== -->
@@ -60,6 +63,8 @@
     wp_reset_postdata();
 ?>
 </urlset>
+
+
 
 
 
@@ -139,7 +144,7 @@
         if (!empty($terms) && !is_wp_error($terms)) {
             foreach ($terms as $term) {
                 echo '<loc>' . esc_url(home_url($type . '/' . esc_html($term->slug))) . '</loc>';
-                echo '<lastmod>' . date('c', strtotime($term->term_modified)) . '</lastmod>'; // Use term_modified for actual modified date
+                echo '<lastmod>' . date('c', strtotime($term->term_modified)) . '</lastmod>'; 
                 echo '<priority>0.5</priority>';
                 echo "<br/><hr/>";
             }
