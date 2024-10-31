@@ -223,21 +223,46 @@ function SiteMapByZipCode() {
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $custom_sitemaps = [
-        home_url('/cities_home-phone-1.xml'),
-        home_url('/cities_home-phone-2.xml'),
-        home_url('/cities_home-phone-4.xml'),
-        home_url('/cities_home-phone-5.xml'),
-        home_url('/cities_home-phone-6.xml'),
-        home_url('/cities_home-security-1.xml'),
-        home_url('/cities_home-security-2.xml'),
-        home_url('/cities_home-security-3.xml'),
-        home_url('/cities_home-security-4.xml'),
-        home_url('/cities_home-security-5.xml'),
-        home_url('/cities_home-security-6.xml'),
-        home_url('/cities_internet-1.xml'),
-        home_url('/cities_internet-2.xml'),
-        home_url('/cities_internet-3.xml'),
-        home_url('/cities_internet-4.xml')
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_internet-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_tv-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-security-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/zipcode_home-phone-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_internet-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_tv-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-security-5.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-1.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-2.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-3.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-4.xml',
+        'https://dev.cblproject.cablemovers.net/sitemaps/cities_home-phone-5.xml'
     ];
 
     foreach ($custom_sitemaps as $sitemap) {
@@ -246,7 +271,6 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
 
     return $sitemap_index;
 });
-
 
 
 
