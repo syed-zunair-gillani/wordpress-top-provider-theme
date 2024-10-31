@@ -225,9 +225,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $types = ["internet", "tv", "tv-internet", "landline"];
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
-
-    // Get the current date in the format required for the <lastmod> tag
-    $current_date = date('Y-m-d\TH:i:s\Z');
+    $current_date = gmdate('Y-m-d H:i +00:00');
 
     foreach ($prefixes as $prefix) {
         foreach ($types as $type) {
