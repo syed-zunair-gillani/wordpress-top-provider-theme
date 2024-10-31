@@ -234,6 +234,9 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
             }
         }
     }
-
+      // Add the static sitemap
+     $static_sitemap_url = $base_url . 'states-sitemap.xml';
+     $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc></sitemap>';
+ 
     return $sitemap_index;
 });
