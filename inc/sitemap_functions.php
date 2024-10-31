@@ -226,17 +226,21 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
+    // Get the current date in the format required for the <lastmod> tag
+    $current_date = date('Y-m-d\TH:i:s\Z');
+
     foreach ($prefixes as $prefix) {
         foreach ($types as $type) {
             for ($i = 1; $i <= $number_of_sitemaps; $i++) {
                 $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
-                $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap_url) . '</loc></sitemap>';
+                $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
             }
         }
     }
-      // Add the static sitemap
-     $static_sitemap_url = $base_url . 'states-sitemap.xml';
-     $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc></sitemap>';
- 
+
+    // Add the static sitemap with modification date
+    $static_sitemap_url = $base_url . 'states-sitemap.xml';
+    $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
+
     return $sitemap_index;
 });
