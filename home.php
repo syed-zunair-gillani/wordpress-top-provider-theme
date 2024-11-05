@@ -189,12 +189,12 @@
 <!-- Need Help Finding The Best Provider For You? -->
 <section class="py-24 bg-blue-500">
     <div class="container mx-auto px-4 items-center">        
-        <div class=" text-center">
+        <div class="text-center">
             <h2 class="md:text-5xl text-3xl leading- font-semibold text-white">Need Help Finding The Best Provider For You?</h2>
             <p class="md:text-lg text-lg font-medium text-white my-5">
             Whether you have some questions about a provider or need a little advice, give us a call and we’ll take care of you.
                       </p>
-            <a class="text-[#ef9831] hover:text-[#215690] md:text-3xl text-xl font-extrabold hover:underline flex items-center gap-4 w-fit" href="tel:833-592-0098">
+            <a class="text-white hover:text-white md:text-3xl text-xl font-extrabold hover:underline flex items-center gap-4 w-fit mx-auto" href="tel:833-592-0098">
                 <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -207,10 +207,6 @@
         </div>
     </div>
 </section>
-
-
-
-
 
 
 <?php get_footer() ?>
