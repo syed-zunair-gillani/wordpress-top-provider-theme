@@ -29,10 +29,8 @@
                     'order'          => 'DESC', // Order of the posts
     
                 );
-
                 // Custom query to fetch posts
                 $providers_query = new WP_Query($args);
-
                 // The Loop
                 if ($providers_query->have_posts()) :
                     while ($providers_query->have_posts()) : $providers_query->the_post();
