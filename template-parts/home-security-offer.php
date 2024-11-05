@@ -55,12 +55,7 @@
                                     />
                                 </a>
                             </div>
-                            <div class="  border-b grid items-center justify-center p-5">
-                                <div class="text-center">
-                                        <p class="tch">Channels</p>                                
-                                        <p class="tcd"><?php echo $speed  ?> 
-                                </div>
-                            </div>
+                            
                             <div class="  border-b grid items-center justify-center p-5 px-3">
                                 <?php                  
                                 echo '<ul class="grid items-center justify-center">';                   
