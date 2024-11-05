@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
         });
     });
     $('.providers_slides').slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 2,
         autoplay: true,
         autoplaySpeed: 2000,
