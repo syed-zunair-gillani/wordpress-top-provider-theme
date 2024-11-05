@@ -36,7 +36,7 @@
                 // The Loop
                 if ($providers_query->have_posts()) :
                     while ($providers_query->have_posts()) : $providers_query->the_post();
-                        get_template_part('template-parts/box', 'provider');
+                        get_template_part('template-parts/box', 'provider_slide');
                     endwhile;
                 else :
                     echo '<p>No providers found.</p>';
