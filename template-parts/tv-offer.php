@@ -6,7 +6,9 @@
                     'post_type'      => 'providers', // Custom post type name
                     'posts_per_page' => 4, // Number of posts to display
                     'order'          => 'DESC', // Order of the posts
-                    'providers_types'        => 'tv' // Order by date
+                    'providers_types'        => 'tv' ,
+                    'meta_key'       => 'services_info_internet_tv_bundles_channels',
+                    'orderby'        => 'meta_value_num'
                 );
 
                 // Custom query to fetch posts
