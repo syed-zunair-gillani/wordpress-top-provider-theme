@@ -261,18 +261,17 @@ html {
 
 
 .providers_slides {
-  height: 100px; /* Set the desired slider height */
-  overflow: hidden; /* Ensure content doesn't overflow */
+  height: 100px; 
+  overflow: hidden; 
 }
 
 .providers_slides .slide-item {
-  height: 100%; /* Make each slide fill the container */
+  height: 100%; 
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally if needed */
+  align-items: center; 
+  justify-content: center; 
 }
 
 .providers_slides img {
-  height: 100%; /* Keep images within the slide height */
-  width: auto; /* Maintain image aspect ratio */
+  width: auto;
 }
