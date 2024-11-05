@@ -6,7 +6,9 @@
                     'post_type'      => 'providers', // Custom post type name
                     'posts_per_page' => 4, // Number of posts to display
                     'order'          => 'DESC', // Order of the posts
-                    'providers_types'        => 'home-phone' // Order by date
+                    'providers_types'        => 'home-phone' ,
+                     'meta_key'       => 'pro_price',
+                    'orderby'        => 'meta_value_num'
                 );
 
                 // Custom query to fetch posts
