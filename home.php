@@ -107,22 +107,17 @@
 
   <!-- Second Section -->
   <div class="max-w-[1110px] w-full mx-auto px-4">
-      <div class="mx-auto max-w-3xl">
-      <h2 class="text-center md:text-4xl text-2xl font-semibold">What We Offer</h2>
-      <p class="text-xl font-normal text-center mt-4">Cable Movers is committed to be a one-stop shop for all your connectivity needs by making Internet, TV, Landline and Home security ordering simple and hassle free. Our experts team research and reviews leading providers and bring you the best deals. </p>
-   
-  
-   
-    
-
-  </div>
-  
-    <?php get_template_part('template-parts/internet','offer'); ?>
-    <?php get_template_part('template-parts/tv','offer'); ?>
-    <?php get_template_part('template-parts/home-phone','offer'); ?>
-    <?php get_template_part('template-parts/home-security','offer'); ?>
+        <div class="mx-auto max-w-3xl">
+          <h2 class="text-center md:text-4xl text-2xl font-semibold">What We Offer</h2>
+          <p class="text-xl font-normal text-center mt-4">Cable Movers is committed to be a one-stop shop for all your connectivity needs by making Internet, TV, Landline and Home security ordering simple and hassle free. Our experts team research and reviews leading providers and bring you the best deals. </p>
+        </div>  
+        <div class="max-w-[1110px] w-full mx-auto  bg-black/20 my-16"></div>  
+      <?php get_template_part('template-parts/internet','offer'); ?>
+      <?php get_template_part('template-parts/tv','offer'); ?>
+      <?php get_template_part('template-parts/home-phone','offer'); ?>
+      <?php get_template_part('template-parts/home-security','offer'); ?>
             
-                  </div>
+    </div>
 </section>
 
 
