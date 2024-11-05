@@ -18,7 +18,7 @@
 </section>
 
 <!-- TV Providers / Internet Providers -->
-<section class="py-16">
+<section class="pt-16">
   <div class="max-w-[1110px] w-full mx-auto px-4">
         <div class="providers_slides">
              <?php
@@ -49,7 +49,7 @@
 
 
 </section>
-<div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-16"></div>
+<div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-5"></div>
 
 <!-- How it Works? -->
 <section class="py-16">
