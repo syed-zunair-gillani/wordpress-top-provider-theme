@@ -1,8 +1,8 @@
 <div class="">
-  <a href="<?php the_permalink() ?>" class="flex flex-col justify-center items-center">
+  <a href="<?php the_permalink() ?>" class="">
     <?php if (has_post_thumbnail()) {
       ?>
-        <figure style="max-w-[144px] max-h-[144px]">
+       <figure style="max-width:144px; max-height:144px;">
           <?php the_post_thumbnail('full') ?>
         </figure>
       <?php
