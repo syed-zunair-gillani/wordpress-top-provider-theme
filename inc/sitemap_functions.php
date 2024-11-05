@@ -22,8 +22,12 @@ function SiteMapByState() {
         ));
         if (!empty($terms) && !is_wp_error($terms)) {
             foreach ($terms as $term) {
+                $url = home_url($type . '/' . $term->slug);
+                if (strpos($url, 'www.') === false) {
+                    $url = str_replace('://', '://www.', $url);
+                }
                 $xml_content .= '<url>' . PHP_EOL;
-                $xml_content .= '<loc>' . esc_url(home_url($type . '/' . $term->slug)) . '</loc>' . PHP_EOL;
+                $xml_content .= '<loc>' . esc_url($url) . '</loc>' . PHP_EOL;
                 $xml_content .= '<lastmod>' . wp_date('c') . '</lastmod>' . PHP_EOL; // Using wp_date for current date in ISO 8601 format
                 $xml_content .= '<priority>0.8</priority>' . PHP_EOL; // Setting priority to 0.8
                 $xml_content .= '</url>' . PHP_EOL;
