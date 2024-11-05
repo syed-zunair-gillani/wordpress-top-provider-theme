@@ -3,10 +3,12 @@
             <?php
                $index = 0;
                 $args = array(
-                    'post_type'      => 'providers', // Custom post type name
-                    'posts_per_page' => 4, // Number of posts to display
-                    'order'          => 'DESC', // Order of the posts
-                    'providers_types'        => 'internet' // Order by date
+                    'post_type'      => 'providers',
+                    'posts_per_page' => 4,               
+                    'providers_types' => 'internet',
+                    'order'          => 'DESC', 
+                    'meta_key'       => 'services_info_internet_services_summary_speed',
+                    'orderby'        => 'meta_value_num'
                 );
 
                 // Custom query to fetch posts
