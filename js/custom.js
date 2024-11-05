@@ -32,11 +32,11 @@ jQuery(document).ready(function ($) {
         });
     });
     $('.providers').slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 6,
+        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        arrows: true,
+        arrows: false,
         dots: false
     });
 });
