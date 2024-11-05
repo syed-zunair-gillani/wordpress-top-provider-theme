@@ -5,17 +5,12 @@
 
 
 
-
-
-
-
-
 <!-- ===================== *********** ======================
         Sitemap Layout for /type/state/ 
 ===================== *********** ====================== -->
 
 <?php
-SiteMapByZipCode();
-SiteMapByZipCity();
+//SiteMapByZipCode();
+//SiteMapByZipCity();
 SiteMapByState();
 ?>
