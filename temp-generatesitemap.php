@@ -10,7 +10,7 @@
 ===================== *********** ====================== -->
 
 <?php
-//SiteMapByZipCode();
-//SiteMapByZipCity();
+SiteMapByZipCode();
+SiteMapByZipCity();
 SiteMapByState();
 ?>
