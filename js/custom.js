@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-    $('.providers').slick({
+    $('.providers_slides').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,

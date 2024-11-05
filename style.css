@@ -258,3 +258,21 @@ html {
   text-decoration: underline;
 }
 /*End */
+
+
+.providers_slides {
+  height: 120px; /* Set the desired slider height */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.providers_slides .slide-item {
+  height: 100%; /* Make each slide fill the container */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally if needed */
+}
+
+.providers_slides img {
+  max-height: 100%; /* Keep images within the slide height */
+  width: auto; /* Maintain image aspect ratio */
+}

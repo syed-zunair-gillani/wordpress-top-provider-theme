@@ -20,7 +20,7 @@
 <!-- TV Providers / Internet Providers -->
 <section class="py-16">
   <div class="max-w-[1110px] w-full mx-auto px-4">
-  <div class="providers">
+  <div class="providers_slides">
   <?php
                 // Arguments for the WP Query
                 $args = array(
