@@ -9,11 +9,45 @@
 <section class="min-h-screen h-full flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('https://www.cablemovers.net/images/slide3.jpg');">
   <div class="container mx-auto px-4 gap-7 items-center">
     <div class="py-10">
-      <h1 class="text-3xl md:text-5xl text-center md:leading-tight font-semibold text-white">Find <span class="text-[#ef9831]">TV and Internet Providers</span> in your Area.</h1>
-      <p class="text-[22px] text-center md:px-24 font-normal text-white my-5">Compare TV, Internet and Landline Providers, plans and prices by ZIP code.</p>
+      <h1 class="text-3xl md:text-5xl text-center md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#ef9831]">TV, Internet, Landline and Home Security providers </span> in Your Area.</h1>
+      <p class="text-[22px] text-center md:px-24 font-normal text-white my-5">Compare Top Providers, plans and deals by ZIP code.</p>
       <?php get_template_part('template-parts/search', 'form'); ?>
     </div>
     <div class=""></div>
+  </div>
+</section>
+
+<!-- TV Providers / Internet Providers -->
+<section class="py-16">
+  <div class="max-w-[1110px] w-full mx-auto px-4">
+  <div class="providers">
+  <?php
+                // Arguments for the WP Query
+                $args = array(
+                    'post_type'      => 'providers', // Custom post type name
+                    'posts_per_page' => -1, // Number of posts to display
+                    'order'          => 'DESC', // Order of the posts
+    
+                );
+
+                // Custom query to fetch posts
+                $providers_query = new WP_Query($args);
+
+                // The Loop
+                if ($providers_query->have_posts()) :
+                    while ($providers_query->have_posts()) : $providers_query->the_post();
+                        get_template_part('template-parts/box', 'provider');
+                    endwhile;
+                else :
+                    echo '<p>No providers found.</p>';
+                endif;
+
+                // Reset post data to avoid conflicts
+                wp_reset_postdata();
+                ?>
+
+            </div>
+            </div>
   </div>
 </section>
 

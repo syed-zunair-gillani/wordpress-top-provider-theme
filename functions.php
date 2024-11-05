@@ -19,6 +19,22 @@ add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
 
 include_once('inc/extra_functions.php');
 include_once('inc/sitemap_functions.php');
+
+
+function enqueue_slick_slider_assets() {
+    // Slick CSS
+    wp_enqueue_style('slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+    wp_enqueue_style('slick-theme-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', [], '1.8.1');
+
+    // Slick JS
+    wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+    // Custom Slick initialization
+    wp_enqueue_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', ['slick-js'], null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_slick_slider_assets');
+
+
 	// API 
 
 
