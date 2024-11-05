@@ -261,7 +261,7 @@ html {
 
 
 .providers_slides {
-  height: 120px; /* Set the desired slider height */
+  height: 100px; /* Set the desired slider height */
   overflow: hidden; /* Ensure content doesn't overflow */
 }
 
@@ -273,6 +273,6 @@ html {
 }
 
 .providers_slides img {
-  max-height: 100%; /* Keep images within the slide height */
+  height: 100%; /* Keep images within the slide height */
   width: auto; /* Maintain image aspect ratio */
 }
