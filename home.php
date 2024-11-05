@@ -20,33 +20,34 @@
 <!-- TV Providers / Internet Providers -->
 <section class="py-16">
   <div class="max-w-[1110px] w-full mx-auto px-4">
-  <div class="providers_slides">
-  <?php
-                // Arguments for the WP Query
-                $args = array(
-                    'post_type'      => 'providers', // Custom post type name
-                    'posts_per_page' => -1, // Number of posts to display
-                    'order'          => 'DESC', // Order of the posts
-    
-                );
-                // Custom query to fetch posts
-                $providers_query = new WP_Query($args);
-                // The Loop
-                if ($providers_query->have_posts()) :
-                    while ($providers_query->have_posts()) : $providers_query->the_post();
-                        get_template_part('template-parts/box', 'provider_slide');
-                    endwhile;
-                else :
-                    echo '<p>No providers found.</p>';
-                endif;
+        <div class="providers_slides">
+             <?php
+                    // Arguments for the WP Query
+                    $args = array(
+                        'post_type'      => 'providers', // Custom post type name
+                        'posts_per_page' => -1, // Number of posts to display
+                        'order'          => 'DESC', // Order of the posts
+        
+                    );
+                    // Custom query to fetch posts
+                    $providers_query = new WP_Query($args);
+                    // The Loop
+                    if ($providers_query->have_posts()) :
+                        while ($providers_query->have_posts()) : $providers_query->the_post();
+                            get_template_part('template-parts/box', 'provider_slide');
+                        endwhile;
+                    else :
+                        echo '<p>No providers found.</p>';
+                    endif;
 
-                // Reset post data to avoid conflicts
-                wp_reset_postdata();
+                    // Reset post data to avoid conflicts
+                    wp_reset_postdata();
                 ?>
 
-            </div>
-            </div>
-  </div>
+          </div>
+    </div>
+
+
 </section>
 
 <!-- How it Works? -->
@@ -107,221 +108,20 @@
   <!-- Second Section -->
   <div class="max-w-[1110px] w-full mx-auto px-4">
     <div class="mx-auto max-w-3xl">
-      <h2 class="text-center md:text-4xl text-2xl font-semibold">Find The Best TV and Internet Providers</h2>
-      <p class="text-xl font-normal text-center mt-4">Here at Cable Movers, we research and review leading providers and have found the most popular plans and deals on every TV and Internet Service Providers to help you shop smartly.</p>
+      <h2 class="text-center md:text-4xl text-2xl font-semibold">What We Offer</h2>
+      <p class="text-xl font-normal text-center mt-4">Cable Movers is committed to be a one-stop shop for all your connectivity needs by making Internet, TV, Landline and Home security ordering simple and hassle free. Our experts team research and reviews leading providers and bring you the best deals. </p>
     </div>
+  
+    <?php get_template_part('template-parts/internet','offer'); ?>
+    <?php get_template_part('template-parts/tv','offer'); ?>
+    <?php get_template_part('template-parts/landline','offer'); ?>
+    <?php get_template_part('template-parts/home-security','offer'); ?>
+    
+
   </div>
 </section>
 
-<!-- TV Providers / Internet Providers -->
-<section class="py-16">
-  <div class="max-w-[1110px] w-full mx-auto px-4">
-    <div>
-      <h3 class="text-3xl font-bold mb-10">TV Providers</h3>
-      <div class="grid md:grid-cols-6 grid-cols-3 gap-7">
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FDIRECTV.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="	https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FSpectrum.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="	https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2Fdish.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2Fxfinity.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FOptimum.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FCox.jpg&w=384&q=75">
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-16"></div>
-
-    <div>
-      <h3 class="text-3xl font-bold mb-10">Internet Providers</h3>
-      <div class="grid md:grid-cols-6 grid-cols-3 gap-7">
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FSpectrum.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2Fatt.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FEarthLink.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FHughesNet.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2Ffroniter.jpg&w=384&q=75">
-          </a>
-        </div>
-        <div>
-          <a href="/providers/spectrum">
-            <img alt="Spectrum Internet plans and pricing from Cable Movers" loading="lazy" width="140" height="50" decoding="async" class="mx-auto"  src="	https://www.cablemovers.net/_next/image?url=%2Fimages%2Flogo%2FOptimum.jpg&w=384&q=75">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Compare TV and Internet Providers by Cities. -->
-<section class="py-16">
-    <div class="max-w-[1110px] w-full mx-auto px-4">
-        <div class="mx-auto mb-10"><h2 class="text-center md:text-4xl text-2xl font-bold">Compare TV and Internet Providers by Cities.</h2></div>
-        <div>
-            <ul class="grid sm:grid-cols-4 grid-cols-2 gap-5">
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/ca/los-angeles'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Los Angeles</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/ny/new-york'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">New York</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/ma/boston'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Boston</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/nv/las-vegas'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Las Vegas</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/az/phoenix'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Phoenix</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/ga/atlanta'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Atlanta</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/tx/houston'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Houston</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/co/denver'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Denver</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/fl/orlando'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Orlando</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/il/chicago'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Chicago</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/mi/detroit'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Detroit</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-                <li class="bg-[#F5F5F5] rounded-2xl px-4 py-4 text-[#215690] hover:drop-shadow-xl hover:shadow-bg-[#f5f5f5] group">
-                    <a class="" href="<?php echo home_url('/internet/pa/philadelphia'); ?>">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl group-hover:underline">Philadelphia</h3>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 16 16" class="items-center text-right" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
 
 <!-- Enter your zip code to find providers and plans in your area: -->
 <section class="py-16 bg-[#F3FAFF]">
@@ -331,41 +131,8 @@
             <?php get_template_part('template-parts/search', 'form'); ?>
         </div>
     </div>
-</section>
 
-<!-- Need Help Finding The Best Provider For You? -->
-<section class="py-24">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 grid-cols-1 gap-7 items-center">
-        <div class="">
-            <img
-                alt="Call Cable Movers"
-                loading="lazy"
-                width="750"
-                height="750"
-                decoding="async"
-                data-nimg="1"
-                class="rounded-lg"
-                style="color: transparent;"
-                src="https://www.cablemovers.net/_next/image?url=%2Fimages%2Fcallus.jpg&w=1920&q=75"
-            />
-        </div>
-        <div class="">
-            <h2 class="md:text-5xl text-3xl leading- font-semibold text-black">Need Help Finding The Best Provider For You?</h2>
-            <p class="md:text-xl text-lg font-medium text-black my-5">
-                Whether you have some questions about the plan or need a little advice, Cable Movers can help you find the best TV and Internet Service Providers in your area. Give us a call and we’ll take care of you.
-            </p>
-            <a class="text-[#ef9831] hover:text-[#215690] md:text-3xl text-xl font-extrabold hover:underline flex items-center gap-4 w-fit" href="tel:833-592-0098">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                    ></path>
-                    <path d="M14.05 2a9 9 0 0 1 8 7.94"></path>
-                    <path d="M14.05 6A5 5 0 0 1 18 10"></path>
-                </svg>
-                833-592-0098
-            </a>
-        </div>
-    </div>
+
 </section>
 
 <!-- Why Choose Cable Movers? -->
@@ -419,6 +186,30 @@
         </div>
     </div>
 </section>
+
+<!-- Need Help Finding The Best Provider For You? -->
+<section class="py-24 bg-blue-500">
+    <div class="container mx-auto px-4 items-center">        
+        <div class=" text-center">
+            <h2 class="md:text-5xl text-3xl leading- font-semibold text-white">Need Help Finding The Best Provider For You?</h2>
+            <p class="md:text-lg text-lg font-medium text-white my-5">
+            Whether you have some questions about a provider or need a little advice, give us a call and we’ll take care of you.
+                      </p>
+            <a class="text-[#ef9831] hover:text-[#215690] md:text-3xl text-xl font-extrabold hover:underline flex items-center gap-4 w-fit" href="tel:833-592-0098">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                    <path d="M14.05 2a9 9 0 0 1 8 7.94"></path>
+                    <path d="M14.05 6A5 5 0 0 1 18 10"></path>
+                </svg>
+                833-592-0098
+            </a>
+        </div>
+    </div>
+</section>
+
+
 
 
 

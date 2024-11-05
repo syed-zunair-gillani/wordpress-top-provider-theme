@@ -933,10 +933,6 @@ video {
   max-height: 14rem;
 }
 
-.max-h-\[144px\] {
-  max-height: 144px;
-}
-
 .min-h-\[40vh\] {
   min-height: 40vh;
 }
@@ -1372,6 +1368,11 @@ video {
 
 .bg-black\/50 {
   background-color: rgb(0 0 0 / 0.5);
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -2153,6 +2154,30 @@ html {
 
 /*End */
 
+.providers_slides {
+  height: 120px;
+  /* Set the desired slider height */
+  overflow: hidden;
+  /* Ensure content doesn't overflow */
+}
+
+.providers_slides .slide-item {
+  height: 100%;
+  /* Make each slide fill the container */
+  display: flex;
+  align-items: center;
+  /* Center content vertically */
+  justify-content: center;
+  /* Center content horizontally if needed */
+}
+
+.providers_slides img {
+  max-height: 100%;
+  /* Keep images within the slide height */
+  width: auto;
+  /* Maintain image aspect ratio */
+}
+
 .hover\:border-\[\#215690\]\/10:hover {
   border-color: rgb(33 86 144 / 0.1);
 }
@@ -2610,6 +2635,11 @@ html {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .md\:leading-10 {
