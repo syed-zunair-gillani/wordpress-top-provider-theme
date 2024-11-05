@@ -32,8 +32,8 @@ jQuery(document).ready(function ($) {
         });
     });
     $('.providers_slides').slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
