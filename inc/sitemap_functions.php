@@ -39,8 +39,8 @@ function SiteMapByState() {
     fclose($file);
 }
 
-// SiteMapByZipCity(); Sitemap for Cities
-function SiteMapByZipCity() {
+// SiteMapByCity(); Sitemap for Cities
+function SiteMapByCity() {
     set_time_limit(0);
     $services = ['internet', 'tv', 'home-security', 'home-phone'];
     $sitemap_folder = ABSPATH . 'sitemaps';
@@ -68,6 +68,7 @@ function SiteMapByZipCity() {
             );
 
             $providers_query = new WP_Query($args);
+            $displayed_cities = array();
 
             if (!$providers_query->have_posts()) {
                 fclose($file);
@@ -81,6 +82,9 @@ function SiteMapByZipCity() {
                 $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
                 $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
 
+                if (!in_array($zone_city, $displayed_cities) && $zone_city) {
+                    $displayed_cities[] = $zone_city;
+
                 $link = home_url("/{$service}/{$zone_state}/{$zone_city}/");
                 if (strpos($link, 'www.') === false) {
                     $link = str_replace('://', '://www.', $link);
@@ -92,6 +96,7 @@ function SiteMapByZipCity() {
                 $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
                 $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                 $xml_content .= "</url>" . PHP_EOL;
+             }
             }
 
             wp_reset_postdata();
