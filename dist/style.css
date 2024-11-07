@@ -2178,6 +2178,15 @@ html {
   border-left: 1px solid #dedede;
 }
 
+@media (min-width: 768px) {
+  .dtable:nth-child(odd) {
+    background: #fafafa;
+    border-color: #dedede !important;
+    border-style: solid !important;
+    border-width: 1px 0 !important;
+  }
+}
+
 .hover\:border-\[\#215690\]\/10:hover {
   border-color: rgb(33 86 144 / 0.1);
 }
