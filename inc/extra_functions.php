@@ -153,8 +153,6 @@ add_action('wp_ajax_search_providers', 'handle_search_providers_ajax');
 add_action('wp_ajax_nopriv_search_providers', 'handle_search_providers_ajax');
 
 
-
-
 function enqueue_custom_ajax_search_script() {
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', null, null, true);
     wp_enqueue_script('ajax-search', get_template_directory_uri() . '/js/custom.js', array('jquery'), null, true);
@@ -202,25 +200,6 @@ function get_zipcodes_by_state($state) {
     }
     return $post_zipcodes;
 }
-
-
-
-// function create_meta_query_for_zipcodes($zip_codes_to_search) {
-//     $meta_queries = array('relation' => 'OR');
-// 	foreach ($zip_codes_to_search as $zip_code) {
-//         $meta_queries[] = array(
-//             'key'     => 'internet_services',
-//             'value'   => serialize($zip_code),
-//             'compare' => 'LIKE',
-//         );
-//     }
-//     $args = array(
-//         'post_type'      => 'providers', 
-//         'posts_per_page' => -1,          
-//         'meta_query'     => $meta_queries,
-//     );
-//     return $args;
-// }
 
 
 
@@ -337,7 +316,6 @@ function get_zipcodes_by_state_callback($request) {
 
     return rest_ensure_response($zipcodes);
 }
-
 
 
 //
