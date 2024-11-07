@@ -156,6 +156,7 @@ add_action('wp_ajax_nopriv_search_providers', 'handle_search_providers_ajax');
 
 
 function enqueue_custom_ajax_search_script() {
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', null, null, true);
     wp_enqueue_script('ajax-search', get_template_directory_uri() . '/js/custom.js', array('jquery'), null, true);
     wp_localize_script('ajax-search', 'ajaxurl', admin_url('admin-ajax.php'));
 }
