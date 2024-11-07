@@ -2155,27 +2155,27 @@ html {
 /*End */
 
 .providers_slides {
-  height: 120px;
-  /* Set the desired slider height */
+  height: 100px;
   overflow: hidden;
-  /* Ensure content doesn't overflow */
 }
 
 .providers_slides .slide-item {
   height: 100%;
-  /* Make each slide fill the container */
   display: flex;
   align-items: center;
-  /* Center content vertically */
   justify-content: center;
-  /* Center content horizontally if needed */
 }
 
 .providers_slides img {
-  max-height: 100%;
-  /* Keep images within the slide height */
   width: auto;
-  /* Maintain image aspect ratio */
+}
+
+.dtable:nth-child(odd) {
+  background: #fafafa;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 1px solid #dedede;
+  border-left: 1px solid #dedede;
 }
 
 .hover\:border-\[\#215690\]\/10:hover {
@@ -2627,6 +2627,11 @@ html {
     line-height: 1.5rem;
   }
 
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -2635,11 +2640,6 @@ html {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 
   .md\:leading-10 {

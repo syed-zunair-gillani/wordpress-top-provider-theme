@@ -94,6 +94,8 @@
             echo 'No providers match the criteria.';
         }  
 
+      
+
 
     ?>
 
