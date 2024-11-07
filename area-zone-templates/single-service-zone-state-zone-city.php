@@ -489,7 +489,9 @@
     <div class="grid gap-10"></div>
 </section>
 
-<?php get_template_part( 'template-parts/review', 'form' ); ?>
+<?php 
+set_query_var('review_query', $query);
+get_template_part( 'template-parts/review', 'form' ); ?>
 
 
 <script>

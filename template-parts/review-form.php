@@ -1,9 +1,11 @@
 <?php
+
+// Get the query from set_query_var
+ $query = get_query_var('review_query');
  $city = get_query_var('city');
  $type = get_query_var('type');
- $zip_codes_to_search = get_zipcodes_by_city($city);
- $query_args = create_meta_query_for_zipcodes($zip_codes_to_search, $type);
- $query = new WP_Query($query_args);
+
+
  $i = 0;
 ?>
 
@@ -22,9 +24,9 @@
                     <select id="provider" name="provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option>Choose a provider</option>
                         <?php
-                            if ($query->have_posts()) {
-                                while ($query->have_posts()) {
-                                    $query->the_post();
+                           if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
                                     ?><option value="<?php echo get_the_ID(); ?>"><?php echo the_title(); ?></option><?php
                                 }
                             } else {
