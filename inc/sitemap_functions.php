@@ -1,5 +1,36 @@
 <?php
 
+
+
+
+
+add_filter('wpseo_sitemap_index', function ($sitemap_index) {
+    $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
+    $types =  ['internet', 'tv', 'home-security', 'home-phone'];
+    $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
+    $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
+
+    // Get the current date in the specified format
+    $current_date = gmdate('Y-m-d H:i +00:00');
+
+    // Add the static sitemap with modification date at the top
+    $static_sitemap_url = $base_url . 'states-sitemap.xml';
+    $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
+
+    // Add dynamic sitemaps
+    foreach ($prefixes as $prefix) {
+        foreach ($types as $type) {
+            for ($i = 1; $i <= $number_of_sitemaps; $i++) {
+                $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
+                $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
+            }
+        }
+    }
+
+    return $sitemap_index;
+});
+
+
 //SiteMapByState(); Sitemap for States
 function SiteMapByState() {
     $sitemap_folder = ABSPATH . 'sitemaps';
@@ -39,78 +70,6 @@ function SiteMapByState() {
     fclose($file);
 }
 
-// SiteMapByCity(); Sitemap for Cities
-function SiteMapByCity() {
-    set_time_limit(0);
-    $services = ['internet', 'tv', 'home-security', 'home-phone'];
-    $sitemap_folder = ABSPATH . 'sitemaps';
-    $posts_per_file = 10000;
-
-    if (!file_exists($sitemap_folder)) {
-        mkdir($sitemap_folder, 0755, true);
-    }
-
-    foreach ($services as $service) {
-        $file_index = 1;
-        $offset = 0;
-        
-        while (true) {
-            $sitemap_file = "{$sitemap_folder}/cities_{$service}-{$file_index}.xml";
-            $file = fopen($sitemap_file, 'w');
-            $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
-            $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
-
-            $args = array(
-                'post_type'      => 'area_zone',
-                'posts_per_page' => $posts_per_file,
-                'offset'         => $offset,
-                'order'          => 'DESC',
-            );
-
-            $providers_query = new WP_Query($args);
-            $displayed_cities = array();
-
-            if (!$providers_query->have_posts()) {
-                fclose($file);
-                break;
-            }
-
-            while ($providers_query->have_posts()) {
-                $providers_query->the_post();
-                $zone_city_terms = get_the_terms(get_the_ID(), 'zone_city');
-                $zone_state_terms = get_the_terms(get_the_ID(), 'zone_state');
-                $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
-                $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
-
-                if (!in_array($zone_city, $displayed_cities) && $zone_city) {
-                    $displayed_cities[] = $zone_city;
-
-                $link = home_url("/{$service}/{$zone_state}/{$zone_city}/");
-                if (strpos($link, 'www.') === false) {
-                    $link = str_replace('://', '://www.', $link);
-                }
-
-                $xml_content .= "<url>" . PHP_EOL;
-                $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
-                $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
-                $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
-                $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
-                $xml_content .= "</url>" . PHP_EOL;
-             }
-            }
-
-            wp_reset_postdata();
-            $xml_content .= '</urlset>' . PHP_EOL;
-
-            fwrite($file, $xml_content);
-            fclose($file);
-            echo 'Sitemap for ' . esc_html($service) . " generated and saved as " . esc_html($sitemap_file) . '<br>';
-
-            $offset += $posts_per_file;
-            $file_index++;
-        }
-    }
-}
 
 // SiteMapByZipCode(); Sitemap for ZipCode
 function SiteMapByZipCode() {
@@ -182,31 +141,81 @@ function SiteMapByZipCode() {
 }
 
 
+function SiteMapByCity() {
+    set_time_limit(0);
+    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $sitemap_folder = ABSPATH . 'sitemaps';
+    $posts_per_file = 10000;
+    $total_records = 0; // Initialize counter for total records
 
+    if (!file_exists($sitemap_folder)) {
+        mkdir($sitemap_folder, 0755, true);
+    }
 
+    foreach ($services as $service) {
+        $file_index = 1;
+        $offset = 0;
+        
+        while (true) {
+            $sitemap_file = "{$sitemap_folder}/cities_{$service}-{$file_index}.xml";
+            $file = fopen($sitemap_file, 'w');
+            $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+            $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 
-add_filter('wpseo_sitemap_index', function ($sitemap_index) {
-    $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
-    $types =  ['internet', 'tv', 'home-security', 'home-phone'];
-    $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
-    $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
+            $args = array(
+                'post_type'      => 'area_zone',
+                'posts_per_page' => $posts_per_file,
+                'offset'         => $offset,
+                'order'          => 'DESC',
+            );
 
-    // Get the current date in the specified format
-    $current_date = gmdate('Y-m-d H:i +00:00');
+            $providers_query = new WP_Query($args);
+            $displayed_cities = array();
 
-    // Add the static sitemap with modification date at the top
-    $static_sitemap_url = $base_url . 'states-sitemap.xml';
-    $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
-
-    // Add dynamic sitemaps
-    foreach ($prefixes as $prefix) {
-        foreach ($types as $type) {
-            for ($i = 1; $i <= $number_of_sitemaps; $i++) {
-                $sitemap_url = $base_url . $prefix . '_' . $type . '-' . $i . '.xml';
-                $sitemap_index .= '<sitemap><loc>' . esc_url($sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
+            if (!$providers_query->have_posts()) {
+                fclose($file);
+                break;
             }
+
+            while ($providers_query->have_posts()) {
+                $providers_query->the_post();
+                $zone_city_terms = get_the_terms(get_the_ID(), 'zone_city');
+                $zone_state_terms = get_the_terms(get_the_ID(), 'zone_state');
+                $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
+                $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
+
+                if (!in_array($zone_city, $displayed_cities) && $zone_city) {
+                    $displayed_cities[] = $zone_city;
+
+                    $link = home_url("/{$service}/{$zone_state}/{$zone_city}/");
+                    if (strpos($link, 'www.') === false) {
+                        $link = str_replace('://', '://www.', $link);
+                    }
+
+                    $xml_content .= "<url>" . PHP_EOL;
+                    $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
+                    $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                    $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
+                    $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
+                    $xml_content .= "</url>" . PHP_EOL;
+
+                    $total_records++; // Increment the total records count
+                }
+            }
+
+            wp_reset_postdata();
+            $xml_content .= '</urlset>' . PHP_EOL;
+
+            fwrite($file, $xml_content);
+            fclose($file);
+            echo 'Sitemap for ' . esc_html($service) . " generated and saved as " . esc_html($sitemap_file) . '<br>';
+
+            $offset += $posts_per_file;
+            $file_index++;
         }
     }
 
-    return $sitemap_index;
-});
+    echo "Total records added: " . $total_records . "<br>";
+}
+
+

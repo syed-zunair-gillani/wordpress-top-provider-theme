@@ -2,7 +2,7 @@
 /** Template Name: Testing propose */
  get_header();
 
- SiteMapByZipCity();
+ SiteMapByCity();
 
  exit();
 
