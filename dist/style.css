@@ -1728,10 +1728,6 @@ video {
   line-height: 1.5;
 }
 
-.leading-relaxed {
-  line-height: 1.625;
-}
-
 .\!text-\[\#215690\] {
   --tw-text-opacity: 1 !important;
   color: rgb(33 86 144 / var(--tw-text-opacity)) !important;
@@ -2351,10 +2347,6 @@ html {
     max-width: 36rem;
   }
 
-  .sm\:\!grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
   .sm\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2524,10 +2516,6 @@ html {
     width: 100%;
   }
 
-  .md\:\!grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2649,10 +2637,6 @@ html {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .md\:leading-10 {
-    line-height: 2.5rem;
   }
 
   .md\:leading-tight {

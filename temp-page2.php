@@ -1,5 +1,5 @@
 <?php
-/** Template Name: About Us */
+/** Template Name: Page-2 */
 
 get_header();
 ?>
