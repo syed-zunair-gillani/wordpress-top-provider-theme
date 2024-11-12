@@ -169,14 +169,14 @@
         <div class="">
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Provider in <span
                     class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
-            <p class="text-xl font-[Roboto] mt-5">
+            <p class="PClass">
                 Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service
                 provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high
                 speed internet service with robust download speed of up to {enter max download speed} Mbps. Their
                 monthly plans begins at {enter price} /mo making it an all-around popular choice for <?php echo $city ?>
                 residents.
             </p>
-            <p class="text-xl font-[Roboto] mt-5">
+            <p class="PClass">
                 Another pick for the area is {enter second listed provider name}, featuring a max download speed of up
                 to {enter max download speed} Mbps. Starting at just {enter price} /mo and is a remarkable choice for
                 streaming, gaming and working from home as well.
@@ -190,7 +190,7 @@
         <div class="">
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Service Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
-            <p class="text-xl font-[Roboto] mt-5">
+            <p class="PClass">
                 CableMovers choose {insert top rated phone provider} as the best home phone provider in {insert city
                 name}. {insert provider name} offers home phone service with variety of features such as Caller ID, Call
                 blocking, Three way calling, call forwarding, instant tracing to 911 services along with unlimited
@@ -198,7 +198,7 @@
                 required for the home phone to work. Monthly price is {insert price} per month when bundled with high
                 speed internet.
             </p>
-            <p class="text-xl font-[Roboto] mt-5">
+            <p class="PClass">
                 {Insert second provider name} is another best landline phone option in {insert city name, state name}.
                 It offers crystal clear voice quality for just {insert price} per month with features like unlimited
                 nationwide calling, Caller ID on TV, Readable Voicemail. Upon signing up, you’ll have an option to get a
@@ -207,6 +207,114 @@
                 With {insert provider name} you can block your outbound caller ID and place a don not disturb sign if
                 you do not wish to receive incoming calls.
             </p>
+        </div>
+    </div>
+</section>
+<?php elseif ($type === 'home-security'): ?>
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="">
+            <h2 class="text-2xl font-bold">Best <?php echo $type ?> Service Providers in <span
+                    class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+            <p class="PClass">
+                Home is where your comfort resides, and you shouldn’t let your peace of mind be compromised by
+                unexpected burglaries and intrusions. But how can you protect your belongings and loved ones from those
+                incidents? The answer lies in investing in a cutting-edge home security system. These systems monitor
+                every part of your home around the clock and instantly alert you whenever there is an unusual activity
+                –even when you are not around.
+            </p>
+            <p class="PClass">
+                If you’re living in {insert city name}, you probably know that the city is no stranger to theft crimes.
+                To protect their homes, owners invest in state-of-the-art home security systems that add extra layers of
+                safety around their abodes. Here are reputable home security service providers in {insert city name} you
+                can trust.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-5">ADT </h2>
+            <p class="PClass">
+                Headquartered in Boca Raton, ADT offers all-encompassing residential and commercial security solutions.
+                The company’s unique strength lies in delivering systems that easily integrate with different kinds of
+                Google Nest, Alexa, and Apple tools. And with flexible customization options, you’ll have more control
+                over who can access your property.
+            </p>
+            <p class="PClass">Want more features and functionality without spending an arm and a leg? Choosing ADT
+                should be your best bet.
+
+            </p>
+
+            <h2 class="text-2xl font-bold mt-5">Top Features </h2>
+            <ul>
+                <li>• Control panel: ADT Security touchscreen panel</li>
+                <li>• Wireless controllers: Key fob and panic button</li>
+                <li>• Indoor camera: ADT Indoor Camera or Google Nest Cam (indoor, wired)</li>
+                <li>• Outdoor camera: ADT Outdoor Camera, Nest Cam (battery), or Nest Cam with floodlight</li>
+                <li>• Video doorbell: ADT Video Doorbell Camera or Google Nest Doorbell</li>
+            </ul>
+            <p class="PClass">The price ranges from $29.99 to $45.99 per month. However, the exact number may differ
+                depending on your equipment and services.</p>
+
+            <h2 class="text-2xl font-bold mt-5">VIVINT </h2>
+            <p class="PClass">VIVINT is one of those home security providers in {insert city name, state abbreviation}
+                that stand out due to their modern approaches. </p>
+            <p>From AI-powered cameras to cutting-edge sensors and ultra-smart locks, the company has earned a
+                reputation for its innovative tools. Though the price point is a bit higher than ADT, the feature-rich
+                solutions you’ll get will ensure ultimate protection for your home. Their representatives are also
+                highly responsive and get back to you without delays.</p>
+            <h2 class="text-2xl font-bold mt-5">Top Features </h2>
+            <ul>
+                <li>• VIVINT Smart Hub</li>
+                <li>• Motion sensors</li>
+                <li>• Glass break sensors</li>
+                <li>• Entry sensors</li>
+                <li>• Smoke and CO detectors</li>
+                <li>• Kwikset smart lock</li>
+                <li>• VIVINT Outdoor Camera Pro</li>
+            </ul>
+            <p class="PClass">The price of VIVINT plans ranges from $4.99 to $39.99 per month.</p>
+
+
+            <h2 class="text-2xl font-bold mt-5">FRONTPOINT </h2>
+            <p class="PClass">FRONTPOINT focuses on customizability and a no-commitment approach, and their customer
+                service is second to none. Most of the company’s components come with web and mobile apps that allow you
+                to configure and control functionalities on the go. Recently, they also introduced a geo-fencing
+                function that sends you reminders when you’ve gone far away from your home without turning the system
+                on.</p>
+            <h2 class="text-2xl font-bold mt-5">Top Features </h2>
+            <ul>
+                <li>• Door/window sensors</li>
+                <li>• Motion sensors</li>
+                <li>• Glass break sensor</li>
+                <li>• Video doorbell</li>
+                <li>• Outdoor security cameras</li>
+                <li>• Indoor security cameras</li>
+                <li>• Yale smart locks</li>
+            </ul>
+            <p class="PClass">The cheapest FRONTPOINT package costs $79. It includes 1 hub, 1 keypad, 2 door/window
+                sensors, and 1 set of yard signs and window decals.</p>
+
+
+            <h2 class="text-2xl font-bold mt-5">BRINKS HOME </h2>
+            <p class="PClass">The security threats don’t follow a 9-5 schedule. They can happen in the middle of the
+                night, during the day, or when you are away on a holiday.
+            </p>
+            <p class="PClass">Brinks Home’s round-the-clock security solutions offer you the peace of mind that comes
+                with knowing that your home is under surveillance 24/7. Unlike other security systems that solely rely
+                on homeowners to notice a threat and respond, Brinks Home has trained professionals ready to act as soon
+                as the alarm goes off. </p>
+            <h2 class="text-2xl font-bold mt-5">Top Features </h2>
+            <ul>
+                <li>• IQ 2.0 control panel</li>
+                <li>• Motion sensor</li>
+                <li>• Door sensors</li>
+                <li>• SkyBell slim line video doorbell</li>
+                <li>• Outdoor camera</li>
+                <li>• Yard signs and stickers</li>
+            </ul>
+            <p class="PClass">The price starts from $39.99 and goes up to $49.99 per month.</p>
+
+
+
+
         </div>
     </div>
 </section>
@@ -263,7 +371,7 @@
             <h2 class="text-2xl font-bold capitalize leading-10">
                 How Much Speed Do I Need For My Home?
             </h2>
-            <p class="text-xl font-[Roboto] mt-5">
+            <p class="PClass">
                 How much internet speed is needed for my household? You may ask
                 this question to yourself whenever shopping for an Internet
                 service provider but there is no simple or direct answer. It
@@ -410,6 +518,7 @@
 
 
             <?php elseif ($type === 'landline'): ?>
+
             <p class="PClass"> Our recommendation for the cheap landline provider in Glendale, CA is {insert top
                 provider}. Starting at just {enter landline price} per month would give you unlimited nationwide
                 calling, readable voicemail using transcription services as well as three-way calling when you need to
@@ -425,9 +534,23 @@
                 affordable solution for a new home landline. Below is our list of the cheap home phone providers in
                 Glendale, CA we know you can trust. Each meets our unique quality, support, price, and dependability
                 criteria, so you won’t suffer dropped calls or spotty local service. </p>
-            <?php else: ?>
 
-            <?php endif; ?>
+            <?php elseif ($type === 'home-security'): ?>
+
+            <p class="PClass">The home security companies in {insert city name} mentioned above are known countrywide
+                for their exceptional reputation, which is also why they’re a bit higher on price point But If you are
+                looking for affordable yet reliable home security systems in {insert city name}, we have several
+                budget-friendly options for you.
+            <p>
+            <p class="PClass"> While each system has distinct features, they are all known for providing 24/7
+                monitoring, intrusion detection, and a price that most homeowners can afford. In addition to affordable
+                pricing, these companies also offer flexible payment plans and low-cost equipment options. This allows
+                you to start low and then gradually increase your security system’s components such as security cameras,
+                smart locks, etc. without breaking the bank.</p>
+            <p class="PClass">Here’s a list of the cheapest home security systems in {insert city name}, ranked from the
+                lowest to highest price. </p>
+
+            <?php endif ?>
 
 
 
@@ -548,21 +671,21 @@
                  if ($type === 'internet'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5"> Whether you need high speed internet for streaming in 4K resolution
+            <p class="PClass"> Whether you need high speed internet for streaming in 4K resolution
                 or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet
                 connection in {enter city name} with download speed of up to {enter max download speed} for just {enter
                 price} per month which is perfect for households with multiple users and heavy data consumption and can
                 cater to the needs of heavy internet users, streamers and online gamers.</p>
-            <p class="text-xl font-[Roboto] mt-5">{enter 2nd rated fast internet provider} internet is renowned for its
+            <p class="PClass">{enter 2nd rated fast internet provider} internet is renowned for its
                 high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of
                 up to {enter max download speed} making it one of the fastest internet service provider in {enter city
                 name}. Price begins at {enter price} per month.</p>
-            <p class="text-xl font-[Roboto] mt-5">Take a look at the fastest internet providers in your area sorted by
+            <p class="PClass">Take a look at the fastest internet providers in your area sorted by
                 speed (high to low). </p>
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5">Below is our curated list of the cable TV providers we know that offer
+            <p class="PClass">Below is our curated list of the cable TV providers we know that offer
                 quality service and reasonable pricing. Each one has exceptional customer service and online user
                 reviews so you can enjoy the football, latest films, and local TV stations you love. </p>
             <?php else: ?>
@@ -856,7 +979,16 @@
         <div class="mb-10">
             <h2 class="text-2xl font-bold">Summary of <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <?php if ( $type === 'landline'): ?>
+
+            <?php if ( $type === 'internet'): ?>
+            <p class="PClass"> When it comes to finding Internet service provider, (Insert city name, state
+                abbreviation) is served by a robust selection of home phone service providers each with its own
+                strengths. Whether you prioritize speed, affordability, or reliability, you can find internet providers
+                in (Insert city name, state abbreviation) that suit your specific needs. Compare the available options,
+                consider your budget, and choose the one that fits your requirements for a seamless online experience.
+            <p>
+
+                <?php elseif ( $type === 'landline'): ?>
             <p class="PClass"> The next time you’re moving to the area or need to set up a dedicated landline service
                 for your side hustle, rely on our list of the top landline home service providers in the area. We do the
                 hard work for you so you can quickly get a landline and move on with your day.
@@ -865,8 +997,19 @@
                 services. That is where our trained agents at CableMovers can help. Call us today, and we’ll compare all
                 the available telephone service providers in your area, finding the best deal and assisting with the
                 setup process.</p>
-            <?php endif; ?>
+            <?php elseif ($type === 'home-security'): ?>
+            <p class="PClass"> As household names in the industry, these home security service providers in {insert city
+                name} provide a range of products that are affordable and effective in protecting your home. With
+                flexible plans and low-cost monitoring subscriptions, your wallet won’t hurt too much. What’s more, you
+                can add more accessories to your security system over time.</p>
+            <p class="PClass"> Remember that affordable doesn’t always mean low quality. Some of the companies we have
+                mentioned are extremely economical, offer excellent customer support, and protect your home at a price
+                that fits your budget. We have done the hard work. Now it’s up to you to choose a home security company
+                in {insert city name} that delivers peace of mind without straining your finances.</p>
+            <?php else: ?>
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
+            <?php endif; ?>
+
         </div>
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
@@ -1076,14 +1219,18 @@
 
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-            Get the Best Landline Phone Service in <span class="text-[#ef9831]"><?php echo $city?>, <span
+                Get the Best Landline Phone Service in <span class="text-[#ef9831]"><?php echo $city?>, <span
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
-            Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison our professional agents provide. At CableMovers, we save you time and money by uncovering the home phone service providers in Glendale, CA perfect for your unique personal and business needs. 
+                Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison
+                our professional agents provide. At CableMovers, we save you time and money by uncovering the home phone
+                service providers in Glendale, CA perfect for your unique personal and business needs.
             </p>
             <p class="PClass">
-            Call our agents today, and let’s find the perfect landline solution whether you’ve just moved to the area or need a 24/7 connection to friends, family, and emergency services. Together, we can find an affordable and amenity-rich telephone service provider you can count on.  </p>
+                Call our agents today, and let’s find the perfect landline solution whether you’ve just moved to the
+                area or need a 24/7 connection to friends, family, and emergency services. Together, we can find an
+                affordable and amenity-rich telephone service provider you can count on. </p>
         </div>
     </div>
 </section>
