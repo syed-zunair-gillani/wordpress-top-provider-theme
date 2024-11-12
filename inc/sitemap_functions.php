@@ -6,7 +6,7 @@
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
-    $types =  ['internet', 'tv', 'home-security', 'home-phone'];
+    $types =  ['internet', 'tv', 'home-security', 'landline'];
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
@@ -74,7 +74,7 @@ function SiteMapByState() {
 // SiteMapByZipCode(); Sitemap for ZipCode
 function SiteMapByZipCode() {
     set_time_limit(0);
-    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $services = ['internet', 'tv', 'home-security', 'landline'];
     $sitemap_folder = ABSPATH . 'sitemaps';
     $posts_per_file = 10000;
 
@@ -143,7 +143,7 @@ function SiteMapByZipCode() {
 
 function SiteMapByCity() {
     set_time_limit(0);
-    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $services = ['internet', 'tv', 'home-security', 'landline'];
     $sitemap_folder = ABSPATH . 'sitemaps';
     $posts_per_file = 10000;
     $total_records = 0; // Initialize counter for total records

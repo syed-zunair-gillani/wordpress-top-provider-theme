@@ -154,7 +154,7 @@
         </div>
     </section>
 
-    <?php if ($type === 'home-phone'): ?>            
+    <?php if ($type === 'landline'): ?>            
         <section class="my-16">
             <div class="container mx-auto px-4">
                 <div class="mb-10">

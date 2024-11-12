@@ -3,7 +3,7 @@
 
 function generate_custom_sitemap() {
     // Define the static service types
-    $services = ['internet', 'tv', 'home-security', 'home-phone'];
+    $services = ['internet', 'tv', 'home-security', 'landline'];
     
     // Fetch all terms in `zone_state` and `zone_city` taxonomies
     $zone_states = get_terms(['taxonomy' => 'zone_state', 'hide_empty' => true]);

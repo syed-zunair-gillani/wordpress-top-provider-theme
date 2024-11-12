@@ -115,7 +115,7 @@
         <div class="max-w-[1110px] w-full mx-auto  bg-black/20 my-16"></div>  
       <?php get_template_part('template-parts/internet','offer'); ?>
       <?php get_template_part('template-parts/tv','offer'); ?>
-      <?php get_template_part('template-parts/home-phone','offer'); ?>
+      <?php get_template_part('template-parts/landline','offer'); ?>
       <?php get_template_part('template-parts/home-security','offer'); ?>
             
     </div>
