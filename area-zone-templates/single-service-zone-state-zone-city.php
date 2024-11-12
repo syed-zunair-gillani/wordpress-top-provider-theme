@@ -156,18 +156,23 @@
         </div>
     </section>
 
-    <section class="my-16">
-        <div class="container mx-auto px-4">
-            <div class="">
-                <h2 class="text-2xl font-bold">Overview of <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-                <p class="text-xl font-[Roboto] mt-5">
-                    As of the time this page was written, <?php echo $city ?> has <?php echo $total_provider; ?>  Providers offering Various types of <?php echo $type ?>  plans and deals to its residents. You'll likely have Options from <?php echo display_unique_service_types($provider_ids)?> <?php echo $type ?> Providers. <span> <?php echo $fast_provider_details['title']; ?> </span> is the best Internet Provider in <?php echo $city ?>
-                </p>
-            </div>
-        </div>
-    </section>
+    
 
-    <?php if ($type === 'internet'): ?>            
+    <?php if ($type === 'internet'): ?>   
+
+        <section class="my-16">
+            <div class="container mx-auto px-4">
+                <div class="">
+                    <h2 class="text-2xl font-bold">Best Internet Provider in  <span class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+                    <p class="text-xl font-[Roboto] mt-5">
+                    Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high speed internet service with robust download speed of up to {enter max download speed} Mbps. Their monthly plans begins at {enter price} /mo making it an all-around popular choice for <?php echo $city ?> residents.
+                    </p>
+                <p class="text-xl font-[Roboto] mt-5">
+                    Another pick for the area is {enter second listed provider name}, featuring a max download speed of up to {enter max download speed} Mbps. Starting at just {enter price} /mo and is a remarkable choice for streaming, gaming and working from home as well.
+                    </p>
+                </div>
+            </div>
+        </section>
         <section class="my-16">
             <div class="container mx-auto px-4">
                 <div class="mb-10">
@@ -287,19 +292,28 @@
         </section>
     <?php endif; ?>
 
-    <section class="my-16">
-        <div class="container mx-auto px-4">
-            <div class="">
-                <h2 class="text-2xl font-bold">Best Internet Provider in  <span class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
-                <p class="text-xl font-[Roboto] mt-5">
-                  Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high speed internet service with robust download speed of up to {enter max download speed} Mbps. Their monthly plans begins at {enter price} /mo making it an all-around popular choice for <?php echo $city ?> residents.
-                </p>
-               <p class="text-xl font-[Roboto] mt-5">
-                  Another pick for the area is {enter second listed provider name}, featuring a max download speed of up to {enter max download speed} Mbps. Starting at just {enter price} /mo and is a remarkable choice for streaming, gaming and working from home as well.
-                </p>
+    <?php if ($type === 'tv'): ?> 
+        <section class="my-16">
+            <div class="container mx-auto px-4">
+                <div class="">
+                    <h2 class="text-2xl font-bold">Best Cable <?php echo $type ?>   Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                
+                    <p class="PClass">    While Dish is present in <?php echo $city ?>, we recommend DIRECTV for you entertainment needs. DIRECTV offer a broad catalog of channels perfect for watching the latest local sports with neighbors or recording your favorite shows while you’re out grocery shopping.</p>
+
+                    <p class="PClass">    With DISH, you can choose from multiple tiers of cable TV service packages. This ranges from $84.99 for 190 total channels and up to $144.99 per month for over 290 channels. The biggest differences are the networks you choose, like ESPN and Disney at the lower end and STARZ and Bloomberg at the higher price. In addition, DISH offers easy-to-use accessories like a free DVR for recording all the shows you want using a voice-activated remote. Anyone with kids or those who dislike typing in long show names will appreciate the voice option. All these services can be bundled, and there are free offers for certain premium channels like Showtime and introductory prices upon request.</p>
+
+                    <p class="PClass">DirecTV offers HD-quality picture you want for stunning visuals and immersive audio. However, the pricing is a little different than dish. The regular introductory level of 165+ channels (including the Sports Package free for 3 months) runs $69.99 per month. You can find deals that knock off $10-$20 monthly for the first few months, but you must sign a two-year contract for this satellite cable service. Another aspect of DirecTV that is different is the available tiers. You can select four different packages that vary based on sports, premium networks, and top-tier providers like Max, Paramount+, and Showtime. There is a bit more price flexibility in your monthly home expenses. In addition, DirecTV has the most comprehensive regional sports networks for local channels and unlimited hours for cloud DVR storage, making it a must-have if you never want to miss a college or league game.</p>
+
+                   
+
+
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
+
+  
 
     
 
@@ -308,12 +322,28 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">Cheap <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-                 <p class="text-xl font-[Roboto] mt-5">  
-                 Affordability is essential when choosing your internet service provider. Cable Movers picks {insert lowest priced internet providers name} as the cheapest internet option in <?php echo $city ?>. {Insert lowest priced internet providers name} offers inexpensive and budget friendly internet plans without sacrificing performance. Their monthly plans begins at {enter price} per month making them a great choice for individuals and families looking to save on their internet bills.
-                 </p>
-               <p class="text-xl font-[Roboto] mt-5"> 
-                 {Insert 2nd cheap provider name} is another cheap internet service option offering high speed internet plans as low as {enter price} per month to fit into any budget. To help you choose the right internet provider for your home we have listed all providers available in {enter city name} and sorted them by price (low to high).
-                </p>
+               
+
+
+                <?php 
+                    if ($type === 'internet'): ?>
+                            <p class="PClass"> 
+                                    Affordability is essential when choosing your internet service provider. Cable Movers picks {insert lowest priced internet providers name} as the cheapest internet option in <?php echo $city ?>. {Insert lowest priced internet providers name} offers inexpensive and budget friendly internet plans without sacrificing performance. Their monthly plans begins at {enter price} per month making them a great choice for individuals and families looking to save on their internet bills.
+                            </p>
+                            <p class="PClass">
+                                {Insert 2nd cheap provider name} is another cheap internet service option offering high speed internet plans as low as {enter price} per month to fit into any budget. To help you choose the right internet provider for your home we have listed all providers available in {enter city name} and sorted them by price (low to high).
+                            </p>
+                    <?php elseif ($type === 'tv'): ?>
+                         <p class="PClass">  Affordability is essential when choosing your internet service provider. Cable Movers picks {insert lowest priced internet providers name} as the cheapest internet option in {enter city name}. {Insert lowest priced internet providers name} offers inexpensive and budget friendly internet plans without sacrificing performance. Their monthly plans begins at {enter price} per month making them a great choice for individuals and families looking to save on their internet bills.<p>
+                         <p class="PClass">    {Insert 2nd cheap provider name} is another cheap internet service option offering high speed internet plans as low as {enter price} per month to fit into any budget. To help you choose the right internet provider for your home we have listed all providers available in {enter city name} and sorted them by price (low to high).</p>
+              
+                    <?php else: ?>
+                       
+                    <?php endif; ?>
+
+
+
+
         </div>
         <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -323,10 +353,9 @@
                 <div><h4 class="md:text-base text-xs text-center text-white mb-2">Cheap Package</h4></div>
             </div>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div><h4 class="md:text-base text-xs text-center text-white mb-2"> Download Speed</h4></div>
+                <div><h4 class="md:text-base text-xs text-center text-white mb-2"> 
+                <?php if ($type === 'internet'): ?> Download Speed <?php else: ?> # of Channels <?php endif; ?></h4></div>
             </div>
-
-           
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white mb-2">Contract</h4></div>
             </div>
@@ -342,13 +371,29 @@
                         $i++;
                         set_query_var('provider_index', $i);
                         $price = get_field( "pro_price" );
+                        $servicesInfo = get_field('services_info');
+                        if ($type == 'internet') {
+                            $services = $servicesInfo["internet_services"];
+                        } elseif ($type == 'tv') {
+                            $services = $servicesInfo["tv_services"];
+                        } elseif ($type == 'landline') {
+                            $services = $servicesInfo["landline_services"];
+                        } else {
+                            $services = $servicesInfo["home_security_services"];
+                        }
                         
-                        $services_info_internet_services_cheap_package =  get_post_meta( get_the_ID(), 'services_info_internet_services_cheap_package', true );
-                        $services_info_internet_services_connection_type =  get_post_meta( get_the_ID(), 'services_info_internet_services_connection_type', true );
-                        $services_info_internet_services_contract =  get_post_meta( get_the_ID(), 'services_info_internet_services_contract', true );
-                        $services_info_internet_services_data_caps =  get_post_meta( get_the_ID(), 'services_info_internet_services_data_caps', true );
-                        $services_info_internet_services_early_termination_fee =  get_post_meta( get_the_ID(), 'services_info_internet_services_early_termination_fee', true );
-                        $services_info_internet_services_equipment_rental_fee =  get_post_meta( get_the_ID(), 'services_info_internet_services_equipment_rental_fee', true );
+
+                    //    print "<pre>";
+                    //    print_r($services);
+                    //    print "</pre>";
+                       $price =  $services['price'];
+                       $summary_speed =  $services['summary_speed'];
+                       $connection_type =  $services['connection_type'];
+                       $cheap_package =  $services['cheap_package'];
+                       $contract =  $services['contract'];
+                        
+                        
+                        
                         ?>
                         <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                             <div class="md:w-full w-full grid grid-cols-5">
@@ -359,13 +404,13 @@
                                 </div>
                                 
                                 <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_cheap_package ?> </p></div>
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $cheap_package ?> </p></div>
                                 </div>
                                 <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_connection_type ?> </p></div>
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $summary_speed ?> </p></div>
                                 </div>
                                 <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_contract ?> </p></div>
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $contract ?> </p></div>
                                 </div>
                                 <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                     <div><p class="text-center md:text-base text-xs">$<?php echo $price ?> </p></div>
@@ -389,8 +434,8 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5">  Whether you need high speed internet for streaming in 4K resolution or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet connection in {enter city name} with download speed of up to {enter max download speed} for just {enter price} per month which is perfect for households with multiple users and heavy data consumption and can cater to the needs of heavy internet users, streamers and online gamers.</p>
-            <p class="text-xl font-[Roboto] mt-5">  {enter 2nd rated fast internet provider} internet is renowned for its high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of up to {enter max download speed} making it one of the fastest internet service provider in {enter city name}. Price begins at {enter price} per month.</p>
+            <p class="text-xl font-[Roboto] mt-5"> Whether you need high speed internet for streaming in 4K resolution or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet connection in {enter city name} with download speed of up to {enter max download speed} for just {enter price} per month which is perfect for households with multiple users and heavy data consumption and can cater to the needs of heavy internet users, streamers and online gamers.</p>
+            <p class="text-xl font-[Roboto] mt-5">{enter 2nd rated fast internet provider} internet is renowned for its high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of up to {enter max download speed} making it one of the fastest internet service provider in {enter city name}. Price begins at {enter price} per month.</p>
             <p class="text-xl font-[Roboto] mt-5">Take a look at the fastest internet providers in your area sorted by speed (high to low). </p>
 
         </div>
@@ -419,33 +464,21 @@
                         $i++;
                         set_query_var('provider_index', $i);
                         $servicesInfo = get_field('services_info');
-                        $type = get_query_var('type');
-                        $isSpeed = $type === "tv";
-                        
-                        if($isSpeed){
-                            $speed =  $servicesInfo["tv_services"]["summary_speed"];
-                        }else{
-                            $speed =  $servicesInfo["internet_services"]["summary_speed"];
+                        if ($type == 'internet') {
+                            $services = $servicesInfo["internet_services"];
+                        } elseif ($type == 'tv') {
+                            $services = $servicesInfo["tv_services"];
+                        } elseif ($type == 'landline') {
+                            $services = $servicesInfo["landline_services"];
+                        } else {
+                            $services = $servicesInfo["home_security_services"];
                         }
 
-                        $internet_services =  $servicesInfo["internet_services"];
-                        $home_security_services =  $servicesInfo["home_security_services"];
-                        $landline_services =  $servicesInfo["landline_services"];
-                        $tv_services =  $servicesInfo["tv_services"];
-                        $internet_tv_bundles =  $servicesInfo["internet_tv_bundles"];
-
                       //  var_dump($internet_services);
-                       $price =  $internet_services['price'];
-                       $summary_speed =  $internet_services['summary_speed'];
-                       $connection_type =  $internet_services['connection_type'];
-                       $fast_package =  $internet_services['fast_package'];
-
-                       
-                        
-                       
-
-
-
+                       $price =  $services['price'];
+                       $summary_speed =  $services['summary_speed'];
+                       $connection_type =  $services['connection_type'];
+                       $fast_package =  $services['fast_package'];
                     ?>
                         <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                             <div class="w-full h-auto flex md:flex-col flex-row items-stretch">

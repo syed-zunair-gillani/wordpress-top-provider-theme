@@ -632,6 +632,13 @@ video {
   color: rgb(239 152 49 / var(--tw-text-opacity));
 }
 
+.PClass {
+  margin-top: 1.25rem;
+  font-family: Roboto;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
