@@ -31,6 +31,8 @@
     $i = 0;
 
     $state = strtoupper($state);
+
+
  
  ?> 
  
@@ -70,6 +72,8 @@
          <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
      </div>
  </section>
+
+
  
  <?php  get_footer();
  
