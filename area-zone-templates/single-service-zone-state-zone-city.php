@@ -433,10 +433,29 @@
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5"> Whether you need high speed internet for streaming in 4K resolution or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet connection in {enter city name} with download speed of up to {enter max download speed} for just {enter price} per month which is perfect for households with multiple users and heavy data consumption and can cater to the needs of heavy internet users, streamers and online gamers.</p>
-            <p class="text-xl font-[Roboto] mt-5">{enter 2nd rated fast internet provider} internet is renowned for its high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of up to {enter max download speed} making it one of the fastest internet service provider in {enter city name}. Price begins at {enter price} per month.</p>
-            <p class="text-xl font-[Roboto] mt-5">Take a look at the fastest internet providers in your area sorted by speed (high to low). </p>
+            
+                <?php 
+                    if ($type === 'internet'): ?>
+                          
+                            <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                            <p class="text-xl font-[Roboto] mt-5"> Whether you need high speed internet for streaming in 4K resolution or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet connection in {enter city name} with download speed of up to {enter max download speed} for just {enter price} per month which is perfect for households with multiple users and heavy data consumption and can cater to the needs of heavy internet users, streamers and online gamers.</p>
+                            <p class="text-xl font-[Roboto] mt-5">{enter 2nd rated fast internet provider} internet is renowned for its high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of up to {enter max download speed} making it one of the fastest internet service provider in {enter city name}. Price begins at {enter price} per month.</p>
+                            <p class="text-xl font-[Roboto] mt-5">Take a look at the fastest internet providers in your area sorted by speed (high to low). </p>
+
+
+                            
+                    <?php elseif ($type === 'tv'): ?>
+                        <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated  <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                        <p class="text-xl font-[Roboto] mt-5">Below is our curated list of the cable TV providers we know that offer quality service and reasonable pricing. Each one has exceptional customer service and online user reviews so you can enjoy the football, latest films, and local TV stations you love.  </p>
+
+                    <?php else: ?>
+                       
+                    <?php endif; ?>
+            
+            
+           
+
+
 
         </div>
         <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
@@ -446,11 +465,13 @@
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white">Connection </h4></div>
             </div>
+            <?php if ($type === 'internet'): ?>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white">Fast Package</h4></div>
             </div>
+            <?php endif; ?>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div><h4 class="md:text-base text-xs text-center text-white">Download Speed</h4></div>
+                <div><h4 class="md:text-base text-xs text-center text-white"><?php if ($type === 'internet'): ?> Download Speed <?php else: ?> # of Channels <?php endif; ?></h4></div>
             </div>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white">Price</h4></div>
@@ -489,9 +510,9 @@
                                         </div>
                                     </div>
                                     <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $connection_type ?> </div>
-                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $fast_package ?></div>
+                                    <?php if ($type === 'internet'): ?>  <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $fast_package ?></div>    <?php endif; ?>
 
-                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $summary_speed ?> Mbps</div>
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $summary_speed ?></div>
                                     <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">$<?php echo $price ?></div>
                                 </div>
                             </div>
