@@ -553,16 +553,6 @@
                                    $equipment_rental_fee =  $internet_services['equipment_rental_fee'];
                                    $contract =  $internet_services['contract'];
                                    $data_caps =  $internet_services['data_caps'];
-            
-
-
-
-
-
-
-
-
-
 
                                 ?>
                                     <div class="min-w-[120px] md:w-full dtable">
@@ -581,19 +571,19 @@
                                             <div><p class="text-center md:text-base text-xs"><?php echo $connection_type ?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                            <div><p class="text-center md:text-base text-xs">$<?php echo $data_caps ?></p></div>
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $data_caps ?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                            <div><p class="text-center md:text-base text-xs">$<?php echo $contract ?></p></div>
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $contract ?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                            <div><p class="text-center md:text-base text-xs">$<?php echo $setup_fee?></p></div>
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $setup_fee?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                            <div><p class="text-center md:text-base text-xs">$<?php echo $early_termination_fee ?></p></div>
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $early_termination_fee ?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                            <div><p class="text-center md:text-base text-xs">$<?php echo $equipment_rental_fee ?></p></div>
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $equipment_rental_fee ?></p></div>
                                         </div>
                                         <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                             <div><p class="text-center md:text-base text-xs">$<?php echo $price ?></p></div>
