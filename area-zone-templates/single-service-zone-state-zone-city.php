@@ -94,6 +94,19 @@
             echo 'No providers match the criteria.';
         }  
 
+        if (!empty($provider_ids)) {    
+            $query_args_compair = array(
+                    'post_type'      => 'providers',
+                    'posts_per_page' => 2,
+                    'post__in'       => $provider_ids, 
+                    'order'          => 'DESC',             
+                );
+                $query_compair = new WP_Query($query_args_compair);
+        
+            } else {
+            echo 'No providers match the criteria.';
+        }  
+
       
 
 
@@ -154,7 +167,7 @@
         </div>
     </section>
 
-    <?php if ($type === 'landline'): ?>            
+    <?php if ($type === 'internet'): ?>            
         <section class="my-16">
             <div class="container mx-auto px-4">
                 <div class="mb-10">
@@ -274,26 +287,54 @@
         </section>
     <?php endif; ?>
 
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="">
+                <h2 class="text-2xl font-bold">Best Internet Provider in  <span class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+                <p class="text-xl font-[Roboto] mt-5">
+                  Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high speed internet service with robust download speed of up to {enter max download speed} Mbps. Their monthly plans begins at {enter price} /mo making it an all-around popular choice for <?php echo $city ?> residents.
+                </p>
+               <p class="text-xl font-[Roboto] mt-5">
+                  Another pick for the area is {enter second listed provider name}, featuring a max download speed of up to {enter max download speed} Mbps. Starting at just {enter price} /mo and is a remarkable choice for streaming, gaming and working from home as well.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section class="my-16">
+    
+
+
+<section class="my-8">
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">Cheap <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5">
-                Affordability is essential when choosing your <?php echo $type ?> Provider; in an age where staying connected is more crucial than ever, we bring you budget-friendly Internet options that don't compromise on quality. Below are the
-                cheap <?php echo $type ?> Providers in <?php echo $city ?>.
-            </p>
+                 <p class="text-xl font-[Roboto] mt-5">  
+                 Affordability is essential when choosing your internet service provider. Cable Movers picks {insert lowest priced internet providers name} as the cheapest internet option in <?php echo $city ?>. {Insert lowest priced internet providers name} offers inexpensive and budget friendly internet plans without sacrificing performance. Their monthly plans begins at {enter price} per month making them a great choice for individuals and families looking to save on their internet bills.
+                 </p>
+               <p class="text-xl font-[Roboto] mt-5"> 
+                 {Insert 2nd cheap provider name} is another cheap internet service option offering high speed internet plans as low as {enter price} per month to fit into any budget. To help you choose the right internet provider for your home we have listed all providers available in {enter city name} and sorted them by price (low to high).
+                </p>
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-2 bg-[#215690]">
+        <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white">Provider</h4></div>
             </div>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div><h4 class="md:text-base text-xs text-center text-white mb-2">Pricing starts from</h4></div>
+                <div><h4 class="md:text-base text-xs text-center text-white mb-2">Cheap Package</h4></div>
+            </div>
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white mb-2"> Download Speed</h4></div>
+            </div>
+
+           
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white mb-2">Contract</h4></div>
+            </div>
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white mb-2">Price</h4></div>
             </div>
         </div>
-        <div class="grid">
-            
+        <div class="grid">           
             <?php
                 if ($query_cheep->have_posts()) {
                     while ($query_cheep->have_posts()) {
@@ -301,16 +342,33 @@
                         $i++;
                         set_query_var('provider_index', $i);
                         $price = get_field( "pro_price" );
+                        
+                        $services_info_internet_services_cheap_package =  get_post_meta( get_the_ID(), 'services_info_internet_services_cheap_package', true );
+                        $services_info_internet_services_connection_type =  get_post_meta( get_the_ID(), 'services_info_internet_services_connection_type', true );
+                        $services_info_internet_services_contract =  get_post_meta( get_the_ID(), 'services_info_internet_services_contract', true );
+                        $services_info_internet_services_data_caps =  get_post_meta( get_the_ID(), 'services_info_internet_services_data_caps', true );
+                        $services_info_internet_services_early_termination_fee =  get_post_meta( get_the_ID(), 'services_info_internet_services_early_termination_fee', true );
+                        $services_info_internet_services_equipment_rental_fee =  get_post_meta( get_the_ID(), 'services_info_internet_services_equipment_rental_fee', true );
                         ?>
                         <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                            <div class="md:w-full w-full grid grid-cols-2">
+                            <div class="md:w-full w-full grid grid-cols-5">
                                 <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                     <div>
                                         <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/xfinity"> <?php the_title()?> </a></p>
                                     </div>
                                 </div>
+                                
                                 <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                    <div><p class="text-center md:text-base text-xs">$<?php echo $price ?> /mo.</p></div>
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_cheap_package ?> </p></div>
+                                </div>
+                                <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_connection_type ?> </p></div>
+                                </div>
+                                <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div><p class="text-center md:text-base text-xs"><?php echo $services_info_internet_services_contract ?> </p></div>
+                                </div>
+                                <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div><p class="text-center md:text-base text-xs">$<?php echo $price ?> </p></div>
                                 </div>
                             </div>
                         </div>
@@ -331,16 +389,26 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-            <p class="text-xl font-[Roboto] mt-5">
-                If speed is your top priority consider the following Internet Providers in <?php echo $city ?>. These providers offer impressive download speeds that cater to the needs of heavy internet users, streamers, and online gamers.
-            </p>
+            <p class="text-xl font-[Roboto] mt-5">  Whether you need high speed internet for streaming in 4K resolution or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet connection in {enter city name} with download speed of up to {enter max download speed} for just {enter price} per month which is perfect for households with multiple users and heavy data consumption and can cater to the needs of heavy internet users, streamers and online gamers.</p>
+            <p class="text-xl font-[Roboto] mt-5">  {enter 2nd rated fast internet provider} internet is renowned for its high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of up to {enter max download speed} making it one of the fastest internet service provider in {enter city name}. Price begins at {enter price} per month.</p>
+            <p class="text-xl font-[Roboto] mt-5">Take a look at the fastest internet providers in your area sorted by speed (high to low). </p>
+
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-2 bg-[#215690] md:grid-cols-2">
+        <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div><h4 class="md:text-base text-xs text-center text-white">Provider</h4></div>
             </div>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div><h4 class="md:text-base text-xs text-center text-white">Max Download Speed</h4></div>
+                <div><h4 class="md:text-base text-xs text-center text-white">Connection </h4></div>
+            </div>
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white">Fast Package</h4></div>
+            </div>
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white">Download Speed</h4></div>
+            </div>
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div><h4 class="md:text-base text-xs text-center text-white">Price</h4></div>
             </div>
         </div>
         <div class="grid">
@@ -353,21 +421,45 @@
                         $servicesInfo = get_field('services_info');
                         $type = get_query_var('type');
                         $isSpeed = $type === "tv";
+                        
                         if($isSpeed){
                             $speed =  $servicesInfo["tv_services"]["summary_speed"];
                         }else{
                             $speed =  $servicesInfo["internet_services"]["summary_speed"];
                         }
+
+                        $internet_services =  $servicesInfo["internet_services"];
+                        $home_security_services =  $servicesInfo["home_security_services"];
+                        $landline_services =  $servicesInfo["landline_services"];
+                        $tv_services =  $servicesInfo["tv_services"];
+                        $internet_tv_bundles =  $servicesInfo["internet_tv_bundles"];
+
+                      //  var_dump($internet_services);
+                       $price =  $internet_services['price'];
+                       $summary_speed =  $internet_services['summary_speed'];
+                       $connection_type =  $internet_services['connection_type'];
+                       $fast_package =  $internet_services['fast_package'];
+
+                       
+                        
+                       
+
+
+
                     ?>
                         <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                             <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                                <div class="md:w-full w-full grid grid-cols-2 md:grid-cols-2">
+                                <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
                                     <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                         <div>
                                             <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
                                         </div>
                                     </div>
-                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $speed ?> Mbps</div>
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $connection_type ?> </div>
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $fast_package ?></div>
+
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center"><?php echo $summary_speed ?> Mbps</div>
+                                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">$<?php echo $price ?></div>
                                 </div>
                             </div>
                         </div>
@@ -384,6 +476,149 @@
     </div>
 </section>
 
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">Compare  <?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+            <p>Still can’t decide? Use our side-by-side comparison chart to make an informed decision.</p>
+        </div>
+        <div>
+            <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
+                <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-row flex-row items-stretch">
+                    <div class="md:w-96 min-w-[50px]  bg-[#215690]">
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white">Provider</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white">Connection Type</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Max Download Speed</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Data Caps</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Contract Term</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Setup Fee</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Early Termination Fee</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Equipment Rental Fee</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Monthly Price</h4></div>
+                        </div>
+                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div><h4 class="md:text-base text-xs text-center text-white mb-2">Order Now</h4></div>
+                        </div>
+                       
+                    </div>
+                    <div class="flex  flex-row w-full md:overflow-hidden overflow-x-scroll">
+                        
+                        <?php
+                            if ($query_compair->have_posts()) {
+                                while ($query_compair->have_posts()) {
+                                    $query_compair->the_post();
+                                    $i++;
+                                    set_query_var('provider_index', $i);
+                                    $servicesInfo = get_field('services_info');
+                                    $type = get_query_var('type');
+                                    $isSpeed = $type === "tv";
+                                    if($isSpeed){
+                                        $speed =  $servicesInfo["tv_services"]["summary_speed"];
+                                        $feature =  $servicesInfo["tv_services"]["summary_features"];
+                                        $price =  $servicesInfo["tv_services"]["price"];
+                                    }else{
+                                        $speed =  $servicesInfo["internet_services"]["summary_speed"];
+                                        $feature =  $servicesInfo["internet_services"]["summary_features"];
+                                        $price =  $servicesInfo["internet_services"]["price"];
+                                    }
+
+                                    $internet_services =  $servicesInfo["internet_services"];
+                                    $home_security_services =  $servicesInfo["home_security_services"];
+                                    $landline_services =  $servicesInfo["landline_services"];
+                                    $tv_services =  $servicesInfo["tv_services"];
+                                    $internet_tv_bundles =  $servicesInfo["internet_tv_bundles"];
+            
+                                  //  var_dump($internet_services);
+                                   $price =  $internet_services['price'];
+                                   $setup_fee =  $internet_services['setup_fee'];
+                                   $connection_type =  $internet_services['connection_type'];
+                                   $early_termination_fee =  $internet_services['early_termination_fee'];
+                                   $equipment_rental_fee =  $internet_services['equipment_rental_fee'];
+                                   $contract =  $internet_services['contract'];
+                                   $data_caps =  $internet_services['data_caps'];
+            
+
+
+
+
+
+
+
+
+
+
+                                ?>
+                                    <div class="min-w-[120px] md:w-full dtable">
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div>
+                                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> <?php the_title()?> </a></p>
+                                            </div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">Satellite</p></div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $speed ?> Mbps</p></div>
+                                        </div>
+                                        <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
+                                            <div><p class="text-center md:text-base text-xs"><?php echo $connection_type ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $data_caps ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $contract ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $setup_fee?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $early_termination_fee ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $equipment_rental_fee ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs">$<?php echo $price ?></p></div>
+                                        </div>
+                                        <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                            <div><p class="text-center md:text-base text-xs"><a href="<?php the_permalink()?>">View Plans</a></p></div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                            } else {
+                                echo 'No providers found with the specified zip codes.';
+                            }
+                            
+                            // Reset post data
+                            wp_reset_postdata();
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Of Providers -->
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
@@ -465,6 +700,8 @@
         </div>
     </div>
 </section>
+
+
 
 <section class="my-16">
     <div class="container mx-auto px-4">
