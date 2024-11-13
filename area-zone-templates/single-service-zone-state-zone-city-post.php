@@ -463,6 +463,99 @@ $query_fast = new WP_Query($query_args_fast);
     </div>
 </section>
 
+<?php if ($type === "internet") : ?>
+    <!-- What are the Internet Fees in (Enter Zip code, State Abbreviation) -->
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold capitalize leading-10">What are the <?php echo $type ?> Fees in
+                    <span class="text-[#ef9831]"><?php echo $city ?> </span>
+                </h2>
+            </div>
+            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Equipment Rental Fee</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
+                    </div>
+                </div>
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="grid">
+                <?php
+                        if ($query_fast->have_posts()) {
+                            while ($query_fast->have_posts()) {
+                                $query_fast->the_post();
+                                $i++;
+                                set_query_var('provider_index', $i);
+                                $servicesInfo = get_field('services_info');
+                                if ($type == 'internet') {
+                                    $services = $servicesInfo["internet_services"];
+                                } elseif ($type == 'tv') {
+                                    $services = $servicesInfo["tv_services"];
+                                } elseif ($type == 'landline') {
+                                    $services = $servicesInfo["landline_services"];
+                                } else {
+                                    $services = $servicesInfo["home_security_services"];
+                                }
+
+                            //  var_dump($internet_services);
+                            $price =  $services['price'];
+                            $summary_speed =  $services['summary_speed'];
+                            $connection_type =  $services['connection_type'];
+                            $fast_package =  $services['fast_package'];
+                            ?>
+                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                    <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                        <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
+                            <div
+                                class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank"
+                                            href="/providers/earthlink"><?php the_title()?></a></p>
+                                </div>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <?php echo $connection_type ?> </div>
+                            <?php if ($type === 'internet'): ?> <div
+                                class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <?php echo $fast_package ?></div> <?php endif; ?>
+
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <?php echo $summary_speed ?></div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $price ?></div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                        } else {
+                            echo 'No providers found with the specified zip codes.';
+                        }
+                        
+                        // Reset post data
+                        wp_reset_postdata();
+                    ?>
+            </div> -->
+        </div>
+    </section>
+<?php endif; ?>
+
+
 <!-- Summary Of Providers -->
 <section class="my-16">
     <div class="container mx-auto px-4">
@@ -604,7 +697,6 @@ $query_fast = new WP_Query($query_args_fast);
         </div>
     </div>
 </section>
-
 
 
 
