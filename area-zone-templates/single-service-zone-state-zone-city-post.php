@@ -254,11 +254,11 @@ $query_fast = new WP_Query($query_args_fast);
             <?php 
                  if ($type === 'internet'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?></span></h2>
+                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?></span></h2>
 
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
             <p class="PClass">Below is our curated list of the cable TV providers we know that offer
                 quality service and reasonable pricing. Each one has exceptional customer service and online user
                 reviews so you can enjoy the football, latest films, and local TV stations you love. </p>
@@ -362,7 +362,7 @@ $query_fast = new WP_Query($query_args_fast);
             <?php 
                  if ($type === 'internet'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo $type ?> Providers in
-                <span class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
 
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
@@ -470,7 +470,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the <?php echo $type ?> Fees in
-                    <span class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span>
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
@@ -561,7 +561,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the Cable <?php echo $type ?> Fees in
-                    <span class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span>
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
@@ -657,7 +657,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the Home Security Systems Fees in
-                    <span class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span>
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690] md:grid-cols-3">
@@ -743,7 +743,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the Landline Phone Fees in
-                    <span class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span>
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690] md:grid-cols-3">
@@ -830,7 +830,7 @@ $query_fast = new WP_Query($query_args_fast);
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold">Summary of <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
 
             <?php if ( $type === 'internet'): ?>
             <p class="PClass"> When it comes to finding Internet service provider, (Insert city name, state
