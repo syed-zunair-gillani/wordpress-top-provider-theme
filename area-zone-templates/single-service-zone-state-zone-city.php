@@ -2,26 +2,20 @@
     get_header();
     $state = get_query_var('state');
     $qcity = get_query_var('city');
-    $type = get_query_var('type');
-
- 
+    $type = get_query_var('type'); 
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
-
-    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);   
-
-    $fast_provider_details = Fast_Provider_Details($provider_ids);
-    
+    $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);  
+    $fast_provider_details = Fast_Provider_Details($provider_ids);    
     $total_provider = count($provider_ids);
+    $total_services_type = count_service_types($provider_ids); 
 
-    $total_services_type = count_service_types($provider_ids);
-  
+    $query_reviews_args = array(
+        'post_type'      => 'providers',
+        'posts_per_page' => -1            
+    );
+    $query_reviews = new WP_Query($query_reviews_args);
 
-   
-    //    print "<pre>";
-    //     print_r($provider_ids);
-    //     print "</pre>";
-    // Check if there are any provider IDs
     if (!empty($provider_ids)) {    
             $query_args = array(
                     'post_type'      => 'providers',
@@ -30,14 +24,8 @@
                     'orderby'        => 'post__in',             
                 );
                 $query = new WP_Query($query_args);
-        
-            } else {
-            echo 'No providers match the criteria.';
-        }   
 
-
-        if (!empty($provider_ids)) {    
-            $query_args_cheep = array(
+                $query_args_cheep = array(
                     'post_type'      => 'providers',
                     'posts_per_page' => -1,
                     'post__in'       => $provider_ids, 
@@ -47,13 +35,8 @@
                     'order'          => 'ASC',             
                 );
                 $query_cheep = new WP_Query($query_args_cheep);
-        
-            } else {
-            echo 'No providers match the criteria.';
-        }  
 
-        if (!empty($provider_ids)) {    
-            $query_args_fast = array(
+                $query_args_fast = array(
                     'post_type'      => 'providers',
                     'posts_per_page' => -1,
                     'post__in'       => $provider_ids, 
@@ -63,13 +46,8 @@
                     'order'          => 'DESC',             
                 );
                 $query_fast = new WP_Query($query_args_fast);
-        
-            } else {
-            echo 'No providers match the criteria.';
-        }  
 
-        if (!empty($provider_ids)) {    
-            $query_args_compair = array(
+                $query_args_compair = array(
                     'post_type'      => 'providers',
                     'posts_per_page' => 2,
                     'post__in'       => $provider_ids, 
@@ -79,9 +57,8 @@
         
             } else {
             echo 'No providers match the criteria.';
-        }  
+        } 
 
-      
 
 
     ?>
@@ -141,37 +118,9 @@
 <?php set_query_var('providers_query', $query_fast);get_template_part( 'template-parts/section/fast', 'providers' ); ?>
 <?php set_query_var('providers_query', $query_compair);get_template_part( 'template-parts/section/compair', 'providers' ); ?>
 <?php set_query_var('providers_query', $query);get_template_part( 'template-parts/section/summary', 'providers' ); ?>
-
 <?php get_template_part( 'template-parts/section/text', 'providers' ); ?>
-
-
-
-
-<!-- Types of  Technologies -->
-
-<section class="my-16">
-    <div class="container mx-auto px-4">
-        <div class="mb-10">
-            <h2 class="text-2xl font-bold mb-2">
-                Types of <?php echo $type ?> Technologies Available in <span class="text-[#ef9831]"><?php echo $city?>,
-                    <span class="uppercase"><?php echo $state?></span></span>
-            </h2>
-            <p class="text-base">
-                <?php echo $city?>, <?php echo $state?> is well-connected with a diverse range of Internet connection
-                types to its residents, each with with its own advantages and considerations. These connection types
-                include <?php display_unique_service_types($provider_ids); ?>. Understanding these options can help you
-                make an informed decision based on your needs and location.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <?php display_service_types_details($provider_ids); ?>
-        </div>
-    </div>
-</section>
-
-<?php 
-         set_query_var('review_query', $query);
-        get_template_part( 'template-parts/section/review', 'providers' ); 
+<?php set_query_var('provider_ids', $provider_ids);get_template_part( 'template-parts/section/types', 'technology' ); ?>
+<?php set_query_var('review_query', $query_reviews); get_template_part( 'template-parts/section/review', 'providers' ); 
     ?>
 
 
