@@ -113,7 +113,6 @@
 
 
 <?php get_template_part( 'template-parts/section/best', 'providers' ); ?>
-
 <?php set_query_var('providers_query', $query_cheep);get_template_part( 'template-parts/section/cheap', 'providers' ); ?>
 <?php set_query_var('providers_query', $query_fast);get_template_part( 'template-parts/section/fast', 'providers' ); ?>
 <?php set_query_var('providers_query', $query_compair);get_template_part( 'template-parts/section/compair', 'providers' ); ?>

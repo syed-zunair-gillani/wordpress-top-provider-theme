@@ -135,6 +135,7 @@ $query_fast = new WP_Query($query_args_fast);
 </section>
 
 
+<!-- Cheep ZIP Sections -->
 
 <section class="my-8">
     <div class="container mx-auto px-4">
@@ -142,32 +143,24 @@ $query_fast = new WP_Query($query_args_fast);
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo $type ?> Providers in
                 <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690]">
+        <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                 </div>
             </div>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white mb-2">Cheap Package</h4>
-                </div>
-            </div>
+            
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white mb-2">
-                        <?php if ($type === 'internet'): ?> Download Speed <?php else: ?> # of Channels <?php endif; ?>
+                        <?php if ($type === 'internet'): ?>Max Download Speed <?php else: ?> # of Channels <?php endif; ?>
                     </h4>
                 </div>
             </div>
+            
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
-                    <h4 class="md:text-base text-xs text-center text-white mb-2">Contract</h4>
-                </div>
-            </div>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white mb-2">Price</h4>
+                    <h4 class="md:text-base text-xs text-center text-white mb-2">Starting Price</h4>
                 </div>
             </div>
         </div>
@@ -204,7 +197,7 @@ $query_fast = new WP_Query($query_args_fast);
                             
                             ?>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-5">
+                <div class="md:w-full w-full grid grid-cols-3">
                     <div
                         class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
@@ -213,21 +206,13 @@ $query_fast = new WP_Query($query_args_fast);
                         </div>
                     </div>
 
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><?php echo $cheap_package ?> </p>
-                        </div>
-                    </div>
+                  
                     <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
                             <p class="text-center md:text-base text-xs"><?php echo $summary_speed ?> </p>
                         </div>
                     </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><?php echo $contract ?> </p>
-                        </div>
-                    </div>
+                   
                     <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
                             <p class="text-center md:text-base text-xs">$<?php echo $price ?> </p>
@@ -247,6 +232,8 @@ $query_fast = new WP_Query($query_args_fast);
         </div>
     </div>
 </section>
+
+<!-- Fast ZIP Sections -->
 
 <section class="my-16">
     <div class="container mx-auto px-4">
@@ -464,8 +451,10 @@ $query_fast = new WP_Query($query_args_fast);
 </section>
 
 
+ <!-- Fee Sections -->
+
 <?php if ($type === "internet") : ?>
-    <!-- What are the Internet Fees in (Enter Zip code, State Abbreviation) -->
+   
     <section class="my-16">
         <div class="container mx-auto px-4">
             <div class="mb-10">
@@ -495,7 +484,7 @@ $query_fast = new WP_Query($query_args_fast);
                     </div>
                 </div>
             </div>
-            <!-- <div class="grid">
+            <div class="grid">
                 <?php
                         if ($query_fast->have_posts()) {
                             while ($query_fast->have_posts()) {
@@ -513,15 +502,17 @@ $query_fast = new WP_Query($query_args_fast);
                                     $services = $servicesInfo["home_security_services"];
                                 }
 
-                            //  var_dump($internet_services);
+
+
+                           // var_dump($services);
                             $price =  $services['price'];
                             $summary_speed =  $services['summary_speed'];
                             $connection_type =  $services['connection_type'];
-                            $fast_package =  $services['fast_package'];
+                            $setup_fee =  $services['setup_fee'];
                             ?>
                 <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                     <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                        <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
+                        <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
                             <div
                                 class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
@@ -529,11 +520,10 @@ $query_fast = new WP_Query($query_args_fast);
                                             href="/providers/earthlink"><?php the_title()?></a></p>
                                 </div>
                             </div>
-                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <?php echo $connection_type ?> </div>
+                            
                             <?php if ($type === 'internet'): ?> <div
                                 class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <?php echo $fast_package ?></div> <?php endif; ?>
+                                <?php echo $setup_fee ?></div> <?php endif; ?>
 
                             <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <?php echo $summary_speed ?></div>
@@ -551,7 +541,7 @@ $query_fast = new WP_Query($query_args_fast);
                         // Reset post data
                         wp_reset_postdata();
                     ?>
-            </div> -->
+            </div>
         </div>
     </section>
 <?php endif; ?>
