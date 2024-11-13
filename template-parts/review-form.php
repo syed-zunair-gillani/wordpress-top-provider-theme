@@ -4,8 +4,6 @@
  $query = get_query_var('review_query');
  $city = get_query_var('city');
  $type = get_query_var('type');
-
-
  $i = 0;
 ?>
 
@@ -19,8 +17,10 @@
 
         <form id="submit-review-form" class="max-w-[900px] mt-4">
             <div class="space-y-3">
-                <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900">Select Provider</label>
+                
+            <div class="flex gap-3 flex-col md:flex-row">
+                <div class="flex-1">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Choose Your Provider </label>
                     <select id="provider" name="provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option>Choose a provider</option>
                         <?php
@@ -36,6 +36,28 @@
                         ?>
                     </select>
                 </div>
+                <div class="flex-1">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Choose Your Service</label>
+                    <select id="service" name="service" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option>Choose Service</option>
+                        <option value="internet">Internet</option>
+                        <option value="tv">TV</option>
+                        <option value="landline">Landline</option>
+                        <option value="home-security">Home Security</option>
+                    </select>
+                </div>
+                <div class="flex-1">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Overall Rating</label>
+                    <select id="rating" name="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+
                 <div class="flex md:flex-row flex-col gap-4">
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
@@ -48,12 +70,12 @@
                 </div>
                 <div>
                     <label class="block mb-2 text-sm font-medium text-gray-900">Street Address</label>
-                    <input type="text" id="street" name="street" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Street Address" required />
+                    <input type="text" id="street" name="street" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Street Address" />
                 </div>
                 <div class="flex flex-row gap-4">
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">City</label>
-                        <input type="text" id="city" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" required />
+                        <input type="text" id="city" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" />
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">State</label>
@@ -61,12 +83,12 @@
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">Zipcode</label>
-                        <input type="text" id="zipcode" name="zipcode" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Zipcode" required />
+                        <input type="text" id="zipcode" name="zipcode" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Zipcode" />
                     </div>
                 </div>
                 <div class="sm:col-span-2">
                     <label class="block mb-2 text-sm font-medium text-gray-900">Comments</label>
-                    <textarea id="comment" name="comment" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                    <textarea id="comment" name="comment" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..." required></textarea>
                 </div>
                 <button type="submit" class="py-3 px-5 text-sm font-medium text-center bg-[#EF9831] text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Submit Review</button>
             </div>
@@ -81,10 +103,8 @@
     jQuery(document).ready(function ($) {
     $('#submit-review-form').on('submit', function (e) {
         e.preventDefault();
-
         // Gather form data
         var formData = $(this).serialize();
-
         // AJAX request
         $.ajax({
             url: ajaxurl, // AJAX URL provided by WordPress

@@ -391,6 +391,8 @@ function handle_review_submission() {
         $state = sanitize_text_field($form_data['state']);
         $zipcode = sanitize_text_field($form_data['zipcode']);
         $comment_content = sanitize_textarea_field($form_data['comment']);
+        $service = sanitize_textarea_field($form_data['service']);
+        $rating = sanitize_textarea_field($form_data['rating']);
         
         // Insert comment data
         $comment_data = array(
@@ -398,7 +400,7 @@ function handle_review_submission() {
             'comment_author' => $first_name . ' ' . $last_name,
             'comment_content' => $comment_content,
             'comment_type' => 'review',
-            'comment_approved' => 1, // Automatically approve the comment
+            'comment_approved' => 0, // Automatically approve the comment
         );
 
         $comment_id = wp_insert_comment($comment_data);
@@ -409,6 +411,8 @@ function handle_review_submission() {
             add_comment_meta($comment_id, 'city', $city);
             add_comment_meta($comment_id, 'state', $state);
             add_comment_meta($comment_id, 'zipcode', $zipcode);
+            add_comment_meta($comment_id, 'provider_type', $service);
+            add_comment_meta($comment_id, 'star', $rating);
 
             wp_send_json_success('Review submitted successfully!');
         } else {
