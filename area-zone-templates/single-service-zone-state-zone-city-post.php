@@ -140,7 +140,7 @@ $query_fast = new WP_Query($query_args_fast);
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo $type ?> Providers in
-                <span class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
+                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
         </div>
         <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
