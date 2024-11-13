@@ -90,14 +90,15 @@ $query_fast = new WP_Query($query_args_fast);
 
 
 
-<section class="min-h-[40vh] flex items-center bg-gray-50"> 
+<section class="min-h-[40vh] flex items-center bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-            <?php echo $type ?> Providers in <br />
+                <?php echo $type ?> Providers in <br />
                 ZIP Code <span class="text-[#ef9831]"><?php echo $zipcode ?></span>
             </h1>
-            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?> Providers in your area:</p>
+            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?>
+                Providers in your area:</p>
             <?php get_template_part('template-parts/filter', 'form'); ?>
         </div>
     </div>
@@ -108,7 +109,8 @@ $query_fast = new WP_Query($query_args_fast);
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span
+                    class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
         </div>
         <?php
         // Query the posts
@@ -124,22 +126,21 @@ $query_fast = new WP_Query($query_args_fast);
             // Reset post data
             wp_reset_postdata();
         ?>
-        <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
+        <div>
+            <p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers
+                available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may
+                apply.</p>
+        </div>
     </div>
 </section>
 
 
 
- <section class="my-8">
+<section class="my-8">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
-            
-
-
-
-
+            <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo $type ?> Providers in
+                <span class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
         </div>
         <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -254,7 +255,7 @@ $query_fast = new WP_Query($query_args_fast);
                  if ($type === 'internet'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-           
+
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
@@ -360,9 +361,9 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="mb-10">
             <?php 
                  if ($type === 'internet'): ?>
-            <h2 class="text-2xl font-bold capitalize leading-10">What are the Best  <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> </span></h2>
-           
+            <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo $type ?> Providers in
+                <span class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
