@@ -968,6 +968,96 @@ $query_fast = new WP_Query($query_args_fast);
 </section>
 
 
+<!-- FAQ’s -->
+<section class="my-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold">FAQs</h2>
+        </div>
+        <div class="grid gap-10">
+            <?php
+                // Define an array of FAQs
+                $faqs = [
+                    [
+                        "question" => "What is your return policy?",
+                        "answer" => "You can return items within 30 days of purchase for a full refund."
+                    ],
+                    [
+                        "question" => "How do I track my order?",
+                        "answer" => "Once your order is shipped, you will receive a tracking number by email."
+                    ],
+                    [
+                        "question" => "Can I change my order?",
+                        "answer" => "You can change your order within 24 hours of placing it."
+                    ]
+                ];
+
+                // Loop through the FAQs array
+                foreach ($faqs as $faq) {
+                    $question = $faq['question'];
+                    $answer = $faq['answer'];
+            ?>
+                    <div class="faq-item w-full h-fit border border-[#F0F0F0] rounded-[10px] p-[30px] shadow-[0_15px_15px_rgba(0,0,0,0.05)]">
+                        <div class="faq-question flex justify-between cursor-pointer">
+                            <p class="text-lg font-semibold"><?php echo $question; ?></p>
+                            <span class="faq-icon text-lightBlue">
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 1024 1024"
+                                    class="faq-arrow transform transition duration-200 rotate-0"
+                                    height="24"
+                                    width="24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"></path>
+                                    <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="faq-answer hidden mt-5">
+                            <p class="text-base font-medium"><?php echo $answer; ?></p>
+                        </div>
+                    </div>
+            <?php
+                }
+            ?>
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach((item) => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const arrow = item.querySelector('.faq-arrow');
+
+            question.addEventListener('click', () => {
+                // Close all other open FAQ items
+                faqItems.forEach((otherItem) => {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherArrow = otherItem.querySelector('.faq-arrow');
+                    if (otherItem !== item) {
+                        otherAnswer.classList.add('hidden');
+                        otherArrow.classList.remove('rotate-45');
+                    }
+                });
+
+                // Toggle the clicked item
+                answer.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-45');
+            });
+        });
+    });
+
+</script>
+
 
 <?php
 
