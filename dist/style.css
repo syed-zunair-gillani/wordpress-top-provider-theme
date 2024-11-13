@@ -2121,17 +2121,21 @@ html {
 
 /* Breadcrumb CSS */
 
+.bread_crumb_wrapper {
+  background: #555;
+}
+
 .breadcrumb {
   display: flex;
   align-items: center;
   font-size: 0.9em;
   font-family: Arial, sans-serif;
-  color: #555;
+  color: #FFF;
   padding: 10px 0;
 }
 
 .breadcrumb a {
-  color: #0073e6;
+  color: #FFF;
   text-decoration: none;
   padding: 0 8px;
   transition: color 0.3s ease;
@@ -2139,7 +2143,7 @@ html {
 
 .breadcrumb a::after {
   content: '»';
-  color: #888;
+  color: #FFF;
   margin-left: 8px;
 }
 
@@ -2149,13 +2153,13 @@ html {
 }
 
 .breadcrumb span {
-  color: #555;
+  color: #FFF;
   padding: 0 8px;
   font-weight: bold;
 }
 
 .breadcrumb a:hover {
-  color: #005bb5;
+  color: #ef9831;
   text-decoration: underline;
 }
 

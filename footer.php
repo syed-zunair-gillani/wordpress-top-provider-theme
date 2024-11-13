@@ -119,9 +119,10 @@ $providersData = [
   ]
 ];
 
-cbl_breadcrumb(); 
+
 
 ?>
+<div class="bread_crumb_wrapper"><?php cbl_breadcrumb();  ?></div>
 
 <footer class="bg-[#000] pt-16 pb-4">
   <div class="container mx-auto px-4 grid md:grid-cols-5 grid-cols-1 gap-5">
