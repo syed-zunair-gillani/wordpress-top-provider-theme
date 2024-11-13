@@ -1058,7 +1058,4 @@ $query_fast = new WP_Query($query_args_fast);
 
 </script>
 
-
-<?php
-
-get_footer();
+<?php get_footer();
