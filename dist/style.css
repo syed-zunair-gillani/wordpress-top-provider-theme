@@ -1094,6 +1094,10 @@ video {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
@@ -1208,10 +1212,6 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-x-hidden {
-  overflow-x: hidden;
 }
 
 .overflow-x-scroll {
@@ -2589,6 +2589,10 @@ html {
 
   .md\:overflow-hidden {
     overflow: hidden;
+  }
+
+  .md\:border-b {
+    border-bottom-width: 1px;
   }
 
   .md\:border-b-0 {

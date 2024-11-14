@@ -139,23 +139,26 @@ $query_fast = new WP_Query($query_args_fast);
 <section class="my-8">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo $type ?> Providers in
-                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo str_replace(['-'], ' ', $type); ?> Providers in
+                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+            </h2>
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690]">
+        <div class="md:w-full min-w-fit grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?> bg-[#215690]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                 </div>
             </div>
             
-            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white mb-2">
-                        <?php if ($type === 'internet'): ?>Max Download Speed <?php else: ?> # of Channels <?php endif; ?>
-                    </h4>
+            <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white mb-2">
+                            <?php if ($type === 'internet'): ?>Max Download Speed <?php else: ?> # of Channels <?php endif; ?>
+                        </h4>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
             
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
@@ -189,7 +192,7 @@ $query_fast = new WP_Query($query_args_fast);
                     $contract =  $services['contract'];
             ?>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid grid-cols-3">
+                <div class="md:w-full w-full grid <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
                     <div
                         class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
@@ -197,11 +200,17 @@ $query_fast = new WP_Query($query_args_fast);
                                     <?php the_title()?> </a></p>
                         </div>
                     </div>
-                    <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                        <div>
-                            <p class="text-center md:text-base text-xs"><?php echo $summary_speed ?> <sup>Mbps</sup> </p>
+
+                    <?php if ($type !== 'home-security'): ?>
+                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div>
+                                <p class="text-center md:text-base text-xs"><?php echo $summary_speed ?> 
+                                    <?php if ($type === 'internet'): ?><sup>Mbps</sup><?php endif; ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
+
                     <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
                             <p class="text-center md:text-base text-xs">$<?php echo $price ?> </p>
@@ -224,128 +233,131 @@ $query_fast = new WP_Query($query_args_fast);
 
 
 <!-- Fast ZIP Sections -->
-<section class="my-16">
-    <div class="container mx-auto px-4">
-        <div class="mb-10">
-            <?php 
-                 if ($type === 'internet'): ?>
-            <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?></span></h2>
+<?php if ($type === 'internet'): ?>
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <?php 
+                    if ($type === 'internet'): ?>
+                <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
+                        class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?></span></h2>
 
-            <?php elseif ($type === 'tv'): ?>
-            <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
-            <p class="PClass">Below is our curated list of the cable TV providers we know that offer
-                quality service and reasonable pricing. Each one has exceptional customer service and online user
-                reviews so you can enjoy the football, latest films, and local TV stations you love. </p>
-            <?php else: ?>
-            <?php endif; ?>
-        </div>
-        <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
-            <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
-                </div>
+                <?php elseif ($type === 'tv'): ?>
+                <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
+                        class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
+                <p class="PClass">Below is our curated list of the cable TV providers we know that offer
+                    quality service and reasonable pricing. Each one has exceptional customer service and online user
+                    reviews so you can enjoy the football, latest films, and local TV stations you love. </p>
+                <?php else: ?>
+                <?php endif; ?>
             </div>
-            <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Connection </h4>
+            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
+                    </div>
                 </div>
-            </div>
-           
-            <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white"><?php if ($type === 'internet'): ?> Max Download Speed <?php else: ?> # of Channels <?php endif; ?></h4>
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Connection </h4>
+                    </div>
                 </div>
-            </div>
-            <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Upload Speed</h4>
+            
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white"><?php if ($type === 'internet'): ?> Max Download Speed <?php else: ?> # of Channels <?php endif; ?></h4>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="grid">
-            <?php
-                    if ($query_fast->have_posts()) {
-                        while ($query_fast->have_posts()) {
-                            $query_fast->the_post();
-                            $i++;
-                            set_query_var('provider_index', $i);
-                            $servicesInfo = get_field('services_info');
-                            if ($type == 'internet') {
-                                $services = $servicesInfo["internet_services"];
-                            } elseif ($type == 'tv') {
-                                $services = $servicesInfo["tv_services"];
-                            } elseif ($type == 'landline') {
-                                $services = $servicesInfo["landline_services"];
-                            } else {
-                                $services = $servicesInfo["home_security_services"];
-                            }
-
-                        //  var_dump($internet_services);
-                        $price =  $services['price'];
-                        $summary_speed =  $services['summary_speed'];
-                        $connection_type =  $services['connection_type'];
-                        $fast_package =  $services['fast_package'];
-                        ?>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
-                        <div
-                            class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank"
-                                        href="/providers/earthlink"><?php the_title()?></a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <?php echo $connection_type ?> </div>
-                    
-                        <div class="border-r border-b flex justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <?php echo $summary_speed ?> <sub>Mbps</sub></div>
-                        <div class="border-r border-b flex justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            upload speed <sub>Mbps</sub></div>
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Upload Speed</h4>
                     </div>
                 </div>
             </div>
-            <?php
+            <div class="grid">
+                <?php
+                        if ($query_fast->have_posts()) {
+                            while ($query_fast->have_posts()) {
+                                $query_fast->the_post();
+                                $i++;
+                                set_query_var('provider_index', $i);
+                                $servicesInfo = get_field('services_info');
+                                if ($type == 'internet') {
+                                    $services = $servicesInfo["internet_services"];
+                                } elseif ($type == 'tv') {
+                                    $services = $servicesInfo["tv_services"];
+                                } elseif ($type == 'landline') {
+                                    $services = $servicesInfo["landline_services"];
+                                } else {
+                                    $services = $servicesInfo["home_security_services"];
+                                }
+
+                            //  var_dump($internet_services);
+                            $price =  $services['price'];
+                            $summary_speed =  $services['summary_speed'];
+                            $connection_type =  $services['connection_type'];
+                            $fast_package =  $services['fast_package'];
+                            ?>
+                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                    <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                        <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
+                            <div
+                                class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank"
+                                            href="/providers/earthlink"><?php the_title()?></a></p>
+                                </div>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <?php echo $connection_type ?> </div>
+                        
+                            <div class="border-r border-b flex justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <?php echo $summary_speed ?> <sub>Mbps</sub></div>
+                            <div class="border-r border-b flex justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                upload speed <sub>Mbps</sub></div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                        } else {
+                            echo 'No providers found with the specified zip codes.';
                         }
-                    } else {
-                        echo 'No providers found with the specified zip codes.';
-                    }
-                    
-                    // Reset post data
-                    wp_reset_postdata();
-                ?>
+                        
+                        // Reset post data
+                        wp_reset_postdata();
+                    ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 
 
 <!-- What are the Best ZIP Section  -->
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo $type ?> Providers in
+            <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo str_replace(['-'], ' ', $type); ?> Providers in
                 <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690] md:grid-cols-3">
+        <div class="md:w-full min-w-fit grid  bg-[#215690] <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                 </div>
             </div>
-            <div class="grid justify-center border-r md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Connection </h4>
+            <?php if ($type !== 'home-security'): ?>
+                <div class="grid justify-center border-r md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Connection </h4>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
             <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Best For:</h4>
                 </div>
             </div>
-            
         </div>
         <div class="grid">
             <?php
@@ -373,7 +385,7 @@ $query_fast = new WP_Query($query_args_fast);
                         ?>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                 <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-3 md:grid-cols-3">
+                    <div class="md:w-full w-full grid <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
                         <div
                             class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
@@ -405,100 +417,288 @@ $query_fast = new WP_Query($query_args_fast);
 
 
  <!-- Fee Sections -->
-<section class="my-16">
-    <div class="container mx-auto px-4">
-        <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10">What are the <?php echo $type ?> Fees in
-                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
-            </h2>
-        </div>
-        <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
-            <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
-                </div>
+ <?php if ($type === 'internet'): ?>
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold capitalize leading-10">What are the <?php echo $type ?> Fees in
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                </h2>
             </div>
-            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Equipment Rental Fee</h4>
+            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Equipment Rental Fee</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                <div>
-                    <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="grid">
-            <?php
-                    if ($query_fast->have_posts()) {
-                        while ($query_fast->have_posts()) {
-                            $query_fast->the_post();
-                            $i++;
-                            set_query_var('provider_index', $i);
-                            $servicesInfo = get_field('services_info');
-                            if ($type == 'internet') {
-                                $services = $servicesInfo["internet_services"];
-                            } elseif ($type == 'tv') {
-                                $services = $servicesInfo["tv_services"];
-                            } elseif ($type == 'landline') {
-                                $services = $servicesInfo["landline_services"];
-                            } else {
-                                $services = $servicesInfo["home_security_services"];
-                            }
-
-
-
-                        // var_dump($services);
-                        $price =  $services['price'];
-                        $early_termination_fee =  $services['early_termination_fee'];
-                        $setup_fee =  $services['setup_fee'];
-                        $equipment_rental_fee =  $services['equipment_rental_fee'];
-                        ?>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
-                        <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
-                            </div>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            $<?php echo $equipment_rental_fee ?>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            $<?php echo $setup_fee ?>
-                        </div>
-                        <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            $<?php echo $early_termination_fee ?>
-                        </div>
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
                     </div>
                 </div>
             </div>
-            <?php
+            <div class="grid">
+                <?php
+                        if ($query_fast->have_posts()) {
+                            while ($query_fast->have_posts()) {
+                                $query_fast->the_post();
+                                $i++;
+                                set_query_var('provider_index', $i);
+                                $servicesInfo = get_field('services_info');
+                                if ($type == 'internet') {
+                                    $services = $servicesInfo["internet_services"];
+                                } elseif ($type == 'tv') {
+                                    $services = $servicesInfo["tv_services"];
+                                } elseif ($type == 'landline') {
+                                    $services = $servicesInfo["landline_services"];
+                                } else {
+                                    $services = $servicesInfo["home_security_services"];
+                                }
+
+
+
+                            // var_dump($services);
+                            $price =  $services['price'];
+                            $early_termination_fee =  $services['early_termination_fee'];
+                            $setup_fee =  $services['setup_fee'];
+                            $equipment_rental_fee =  $services['equipment_rental_fee'];
+                            ?>
+                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                    <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                        <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
+                            <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
+                                </div>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $equipment_rental_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $setup_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $early_termination_fee ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                        } else {
+                            echo 'No providers found with the specified zip codes.';
                         }
-                    } else {
-                        echo 'No providers found with the specified zip codes.';
-                    }
-                    
-                    // Reset post data
-                    wp_reset_postdata();
-                ?>
+                        
+                        // Reset post data
+                        wp_reset_postdata();
+                    ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
+
+<?php if ($type === 'tv'): ?>
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold capitalize leading-10">What are the Cable TV Fees in
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                </h2>
+            </div>
+            <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Equipment Rental Fee</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
+                    </div>
+                </div>
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Broadcast Fee</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <?php
+                        if ($query_fast->have_posts()) {
+                            while ($query_fast->have_posts()) {
+                                $query_fast->the_post();
+                                $i++;
+                                set_query_var('provider_index', $i);
+                                $servicesInfo = get_field('services_info');
+                                if ($type == 'internet') {
+                                    $services = $servicesInfo["internet_services"];
+                                } elseif ($type == 'tv') {
+                                    $services = $servicesInfo["tv_services"];
+                                } elseif ($type == 'landline') {
+                                    $services = $servicesInfo["landline_services"];
+                                } else {
+                                    $services = $servicesInfo["home_security_services"];
+                                }
+
+
+
+                            // var_dump($services);
+                            $price =  $services['price'];
+                            $early_termination_fee =  $services['early_termination_fee'];
+                            $setup_fee =  $services['setup_fee'];
+                            $equipment_rental_fee =  $services['equipment_rental_fee'];
+                            $broadcast_tv_fee =  $services['broadcast_tv_fee'];
+                            ?>
+                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                    <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                        <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
+                            <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
+                                </div>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $setup_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $equipment_rental_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $early_termination_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $broadcast_tv_fee ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                        } else {
+                            echo 'No providers found with the specified zip codes.';
+                        }
+                        
+                        // Reset post data
+                        wp_reset_postdata();
+                    ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+<?php if ($type === 'home-security' || $type === 'landline'): ?>
+    <section class="my-16">
+        <div class="container mx-auto px-4">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold capitalize leading-10">What are the 
+                    <?php if ($type === 'landline'): ?>Landline Home Phone <?php endif; ?>
+                    <?php if ($type === 'home-security'): ?>Home Security Systems<?php endif; ?>
+                    Fees in
+                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                </h2>
+            </div>
+            <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690] md:grid-cols-3">
+                <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
+                    </div>
+                </div>
+                <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
+                    </div>
+                </div>
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div>
+                        <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <?php
+                        if ($query_fast->have_posts()) {
+                            while ($query_fast->have_posts()) {
+                                $query_fast->the_post();
+                                $i++;
+                                set_query_var('provider_index', $i);
+                                $servicesInfo = get_field('services_info');
+                                if ($type == 'internet') {
+                                    $services = $servicesInfo["internet_services"];
+                                } elseif ($type == 'tv') {
+                                    $services = $servicesInfo["tv_services"];
+                                } elseif ($type == 'landline') {
+                                    $services = $servicesInfo["landline_services"];
+                                } else {
+                                    $services = $servicesInfo["home_security_services"];
+                                }
+
+
+
+                            // var_dump($services);
+                            $price =  $services['price'];
+                            $early_termination_fee =  $services['early_termination_fee'];
+                            $setup_fee =  $services['setup_fee'];
+                            $equipment_rental_fee =  $services['equipment_rental_fee'];
+                            ?>
+                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                    <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
+                        <div class="md:w-full w-full grid grid-cols-3 md:grid-cols-3">
+                            <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/earthlink"><?php the_title()?></a></p>
+                                </div>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $setup_fee ?>
+                            </div>
+                            <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                $<?php echo $early_termination_fee ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                        } else {
+                            echo 'No providers found with the specified zip codes.';
+                        }
+                        
+                        // Reset post data
+                        wp_reset_postdata();
+                    ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 
 <!-- Summary Of Providers -->
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold">Summary of <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
+            <h2 class="text-2xl font-bold">Summary of <?php echo str_replace(['-'], ' ', $type); ?> Providers in 
+                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+            </h2>
         </div>
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
@@ -511,22 +711,41 @@ $query_fast = new WP_Query($query_args_fast);
                                 <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                             </div>
                         </div>
-                        <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <h4 class="md:text-base text-xs text-center text-white">Connection Type</h4>
+
+                        <!-- $type !== 'home-security' -->
+                        <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
+                            <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <h4 class="md:text-base text-xs text-center text-white">Connection Type</h4>
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Max Download Speed</h4>
+                            <div
+                                class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <h4 class="md:text-base text-xs text-center text-white mb-2">
+                                        <?php if ($type === 'internet'): ?>Max Download Speed<?php endif; ?>
+                                        <?php if ($type === 'tv'): ?>Channels<?php endif; ?>
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
+
+                        <!-- $type === 'home-security' -->
+                        <?php if ($type === 'home-security' || $type === 'landline'): ?>
+                            <div class="md:border-r border-r-0 md:border-b-0 col-span-2 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                <div>
+                                    <h4 class="md:text-base text-xs text-center text-white">
+                                        <?php if ($type === 'home-security'): ?>Features<?php endif; ?>
+                                        <?php if ($type === 'landline'): ?>Connection<?php endif; ?>
+                                    </h4>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
                         
                         <div class="grid justify-center border-r md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Price</h4>
+                                <h4 class="md:text-base text-xs text-center text-white mb-2">Starting Price</h4>
                             </div>
                         </div>
                         <div
@@ -563,27 +782,45 @@ $query_fast = new WP_Query($query_args_fast);
                             <div
                                 class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
-                                    <p class="text-center md:text-base text-xs"><a target="_blank"
-                                            href="/providers/hughesnet"> <?php the_title()?> </a></p>
+                                    <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> <?php the_title()?> </a> </p>
                                 </div>
                             </div>
-                            <div
-                                class="w-full md:border-r border-r md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs">Satellite</p>
+
+                            <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
+                                <div
+                                    class="w-full md:border-r border-r md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div>
+                                        <p class="text-center md:text-base text-xs">Satellite</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="w-full md:border-r border-r md:border-b border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <p class="text-center md:text-base text-xs"><?php echo $speed ?> Mbps</p>
+                                <div
+                                    class="w-full md:border-r border-r md:border-b border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div>
+                                        <p class="text-center md:text-base text-xs"><?php echo $speed ?> 
+                                            <?php if ($type === 'internet'): ?>Mbps<?php endif; ?>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
+
+                            <?php if ($type === 'home-security' || $type === 'landline'): ?>
+                                <div class="w-full md:border-r col-span-2 border-r md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div>
+                                        <p class="text-center md:text-base text-xs">
+                                            <?php if ($type === 'home-security'): ?><?php echo $feature ?><?php endif; ?>
+                                            <?php if ($type === 'landline'): ?><?php echo $type ?><?php endif; ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            
+
                             <div class="w-full grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs">$<?php echo $price ?>/mo</p>
                                 </div>
                             </div>
+
                             <div
                                 class="w-full md:border-r border-r md:border-b border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
