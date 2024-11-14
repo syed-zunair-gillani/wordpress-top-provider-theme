@@ -395,9 +395,9 @@ $query_fast = new WP_Query($query_args_fast);
                         </div>
                         <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <?php echo $connection_type ?> </div>
-                        <?php if ($type === 'internet'): ?> <div
+                         <div
                             class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            Best For</div> <?php endif; ?>
+                            Best For</div>
 
                     </div>
                 </div>
