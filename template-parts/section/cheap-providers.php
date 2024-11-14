@@ -1,3 +1,7 @@
+<?php 
+    $cheap_providers = get_query_var('cheap_provider_details'); 
+?>
+
 <section class="my-8">
     <div class="container mx-auto px-4">
         <div class="mb-10">
@@ -6,41 +10,37 @@
             <?php 
                if ($type === 'internet'): ?>
             <p class="PClass">
-                Affordability is essential when choosing your internet service provider. Cable Movers picks {insert
-                lowest priced internet providers name} as the cheapest internet option in <?php echo $city ?>. {Insert
-                lowest priced internet providers name} offers inexpensive and budget friendly internet plans without
-                sacrificing performance. Their monthly plans begins at {enter price} per month making them a great
+                Affordability is essential when choosing your internet service provider. Cable Movers picks <?php echo $fast_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city ?>. 
+                <?php echo $fast_providers[0]['title']; ?> offers inexpensive and budget friendly internet plans without
+                sacrificing performance. Their monthly plans begins at <?php echo $fast_providers[0]['price']; ?> per month making them a great
                 choice for individuals and families looking to save on their internet bills.
             </p>
             <p class="PClass">
-                {Insert 2nd cheap provider name} is another cheap internet service option offering high speed internet
-                plans as low as {enter price} per month to fit into any budget. To help you choose the right internet
+                <?php echo $fast_providers[1]['speed']; ?> is another cheap internet service option offering high speed internet
+                plans as low as <?php echo $fast_providers[0]['price']; ?> per month to fit into any budget. To help you choose the right internet
                 provider for your home we have listed all providers available in {enter city name} and sorted them by
                 price (low to high).
             </p>
             <?php elseif ($type === 'tv'): ?>
             <p class="PClass"> Affordability is essential when choosing your internet service provider. Cable Movers
-                picks {insert lowest priced internet providers name} as the cheapest internet option in {enter city
-                name}. {Insert lowest priced internet providers name} offers inexpensive and budget friendly internet
-                plans without sacrificing performance. Their monthly plans begins at {enter price} per month making them
+                picks <?php echo $fast_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city; ?>. <?php echo $fast_providers[0]['title']; ?> offers inexpensive and budget friendly internet
+                plans without sacrificing performance. Their monthly plans begins at <?php echo $fast_providers[0]['price']; ?> per month making them
                 a great choice for individuals and families looking to save on their internet bills.
             <p>
-            <p class="PClass"> {Insert 2nd cheap provider name} is another cheap internet service option offering high
-                speed internet plans as low as {enter price} per month to fit into any budget. To help you choose the
-                right internet provider for your home we have listed all providers available in {enter city name} and
+            <p class="PClass"> <?php echo $fast_providers[1]['speed']; ?> is another cheap internet service option offering high
+                speed internet plans as low as <?php echo $fast_providers[1]['price']; ?> per month to fit into any budget. To help you choose the
+                right internet provider for your home we have listed all providers available in <?php echo $city ?> and
                 sorted them by price (low to high).</p>
 
 
             <?php elseif ($type === 'landline'): ?>
 
-            <p class="PClass"> Our recommendation for the cheap landline provider in Glendale, CA is {insert top
-                provider}. Starting at just {enter landline price} per month would give you unlimited nationwide
+            <p class="PClass"> Our recommendation for the cheap landline provider in Glendale, CA is <?php echo $fast_providers[0]['title']; ?>. Starting at just {enter landline price} per month would give you unlimited nationwide
                 calling, readable voicemail using transcription services as well as three-way calling when you need to
                 catch up with friends and family members.
             <p>
-            <p class="PClass"> {Insert second rated provider} is another pick for cheap landline provider in {insert
-                city name}. Its landline service revolves around unlimited local calls for just {enter price} per month
-                without any hidden fees or surcharges. {Provider name} offers month to month service and doesn’t lock
+            <p class="PClass"> <?php echo $fast_providers[1]['title']; ?> is another pick for cheap landline provider in <?php echo $city; ?>. Its landline service revolves around unlimited local calls for just <?php echo $fast_providers[0]['price']; ?> per month
+                without any hidden fees or surcharges. <?php echo $fast_providers[1]['title']; ?> offers month to month service and doesn’t lock
                 its customer in contracts and in most cases; landline phone has to be bundled with high speed internet.
                 International calling packages are available as an ad-on.</p>
             <p class="PClass">While we rank the different landline providers in Glendale, CA, by their amenities and
@@ -51,9 +51,9 @@
 
             <?php elseif ($type === 'home-security'): ?>
 
-            <p class="PClass">The home security companies in {insert city name} mentioned above are known countrywide
+            <p class="PClass">The home security companies in <?php echo $city; ?> mentioned above are known countrywide
                 for their exceptional reputation, which is also why they’re a bit higher on price point But If you are
-                looking for affordable yet reliable home security systems in {insert city name}, we have several
+                looking for affordable yet reliable home security systems in <?php echo $city; ?>, we have several
                 budget-friendly options for you.
             <p>
             <p class="PClass"> While each system has distinct features, they are all known for providing 24/7
@@ -61,7 +61,7 @@
                 pricing, these companies also offer flexible payment plans and low-cost equipment options. This allows
                 you to start low and then gradually increase your security system’s components such as security cameras,
                 smart locks, etc. without breaking the bank.</p>
-            <p class="PClass">Here’s a list of the cheapest home security systems in {insert city name}, ranked from the
+            <p class="PClass">Here’s a list of the cheapest home security systems in <?php echo $city; ?>, ranked from the
                 lowest to highest price. </p>
 
             <?php endif ?>
@@ -130,8 +130,7 @@
                         $contract =  $services['contract'];
                             
                             
-                            
-                            ?>
+                        ?>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
                 <div class="md:w-full w-full grid grid-cols-5">
                     <div
