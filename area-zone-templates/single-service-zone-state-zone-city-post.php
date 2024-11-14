@@ -192,7 +192,7 @@ $query_fast = new WP_Query($query_args_fast);
                     $contract =  $services['contract'];
             ?>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
-                <div class="md:w-full w-full grid <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
+                <div class="md:w-full w-full grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
                     <div
                         class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                         <div>
@@ -201,7 +201,7 @@ $query_fast = new WP_Query($query_args_fast);
                         </div>
                     </div>
 
-                    <?php if ($type !== 'home-security'): ?>
+                    <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
                         <div class="border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <p class="text-center md:text-base text-xs"><?php echo $summary_speed ?> 
