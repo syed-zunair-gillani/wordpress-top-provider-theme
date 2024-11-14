@@ -10,37 +10,37 @@
             <?php 
                if ($type === 'internet'): ?>
             <p class="PClass">
-                Affordability is essential when choosing your internet service provider. Cable Movers picks <?php echo $fast_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city ?>. 
-                <?php echo $fast_providers[0]['title']; ?> offers inexpensive and budget friendly internet plans without
-                sacrificing performance. Their monthly plans begins at <?php echo $fast_providers[0]['price']; ?> per month making them a great
+                Affordability is essential when choosing your internet service provider. Cable Movers picks <?php echo $cheap_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city ?>. 
+                <?php echo $cheap_providers[0]['title']; ?> offers inexpensive and budget friendly internet plans without
+                sacrificing performance. Their monthly plans begins at <?php echo $cheap_providers[0]['price']; ?> per month making them a great
                 choice for individuals and families looking to save on their internet bills.
             </p>
             <p class="PClass">
-                <?php echo $fast_providers[1]['speed']; ?> is another cheap internet service option offering high speed internet
-                plans as low as <?php echo $fast_providers[0]['price']; ?> per month to fit into any budget. To help you choose the right internet
+                <?php echo $cheap_providers[1]['speed']; ?> is another cheap internet service option offering high speed internet
+                plans as low as <?php echo $cheap_providers[0]['price']; ?> per month to fit into any budget. To help you choose the right internet
                 provider for your home we have listed all providers available in {enter city name} and sorted them by
                 price (low to high).
             </p>
             <?php elseif ($type === 'tv'): ?>
             <p class="PClass"> Affordability is essential when choosing your internet service provider. Cable Movers
-                picks <?php echo $fast_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city; ?>. <?php echo $fast_providers[0]['title']; ?> offers inexpensive and budget friendly internet
-                plans without sacrificing performance. Their monthly plans begins at <?php echo $fast_providers[0]['price']; ?> per month making them
+                picks <?php echo $cheap_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city; ?>. <?php echo $cheap_providers[0]['title']; ?> offers inexpensive and budget friendly internet
+                plans without sacrificing performance. Their monthly plans begins at <?php echo $cheap_providers[0]['price']; ?> per month making them
                 a great choice for individuals and families looking to save on their internet bills.
             <p>
-            <p class="PClass"> <?php echo $fast_providers[1]['speed']; ?> is another cheap internet service option offering high
-                speed internet plans as low as <?php echo $fast_providers[1]['price']; ?> per month to fit into any budget. To help you choose the
+            <p class="PClass"> <?php echo $cheap_providers[1]['speed']; ?> is another cheap internet service option offering high
+                speed internet plans as low as <?php echo $cheap_providers[1]['price']; ?> per month to fit into any budget. To help you choose the
                 right internet provider for your home we have listed all providers available in <?php echo $city ?> and
                 sorted them by price (low to high).</p>
 
 
             <?php elseif ($type === 'landline'): ?>
 
-            <p class="PClass"> Our recommendation for the cheap landline provider in Glendale, CA is <?php echo $fast_providers[0]['title']; ?>. Starting at just {enter landline price} per month would give you unlimited nationwide
+            <p class="PClass"> Our recommendation for the cheap landline provider in Glendale, CA is <?php echo $cheap_providers[0]['title']; ?>. Starting at just {enter landline price} per month would give you unlimited nationwide
                 calling, readable voicemail using transcription services as well as three-way calling when you need to
                 catch up with friends and family members.
             <p>
-            <p class="PClass"> <?php echo $fast_providers[1]['title']; ?> is another pick for cheap landline provider in <?php echo $city; ?>. Its landline service revolves around unlimited local calls for just <?php echo $fast_providers[0]['price']; ?> per month
-                without any hidden fees or surcharges. <?php echo $fast_providers[1]['title']; ?> offers month to month service and doesn’t lock
+            <p class="PClass"> <?php echo $cheap_providers[1]['title']; ?> is another pick for cheap landline provider in <?php echo $city; ?>. Its landline service revolves around unlimited local calls for just <?php echo $cheap_providers[0]['price']; ?> per month
+                without any hidden fees or surcharges. <?php echo $cheap_providers[1]['title']; ?> offers month to month service and doesn’t lock
                 its customer in contracts and in most cases; landline phone has to be bundled with high speed internet.
                 International calling packages are available as an ad-on.</p>
             <p class="PClass">While we rank the different landline providers in Glendale, CA, by their amenities and

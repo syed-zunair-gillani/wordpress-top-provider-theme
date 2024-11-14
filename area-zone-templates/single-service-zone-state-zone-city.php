@@ -11,7 +11,6 @@
     set_query_var('fast_provider_details', $fast_provider_details);
     set_query_var('cheap_provider_details', $cheap_provider_details);
 
-    print_r($fast_provider_details);
 
     $total_provider = count($provider_ids);
     $total_services_type = count_service_types($provider_ids); 
