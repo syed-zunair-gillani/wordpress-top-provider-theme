@@ -477,7 +477,7 @@ function Cheap_provider_details($provider_ids) {
             'post_type'      => 'providers',
             'posts_per_page' => 3, 
             'post__in'       => $provider_ids, 
-            'orderby'        => 'post__in',             
+            'orderby'        => 'post__in',        
         );
         
         $query = new WP_Query($query_args);
