@@ -6,7 +6,7 @@
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
             <p class="PClass"> Whether you need high speed internet for streaming in 4K resolution
-                or playing online multiplayer games {insert highest speed rated provider name} provides fastest internet
+                or playing online multiplayer games : <?php echo $fast_provider_details['title']; ?> provides fastest internet
                 connection in {enter city name} with download speed of up to {enter max download speed} for just {enter
                 price} per month which is perfect for households with multiple users and heavy data consumption and can
                 cater to the needs of heavy internet users, streamers and online gamers.</p>

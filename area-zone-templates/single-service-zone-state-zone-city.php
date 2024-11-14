@@ -6,7 +6,10 @@
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
     $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);  
-    $fast_provider_details = Fast_Provider_Details($provider_ids);    
+    $fast_provider_details = Fast_Provider_Details($provider_ids);
+
+    print_r($fast_provider_details);
+
     $total_provider = count($provider_ids);
     $total_services_type = count_service_types($provider_ids); 
 
@@ -114,7 +117,7 @@
 
 <?php get_template_part( 'template-parts/section/best', 'providers' ); ?>
 <?php set_query_var('providers_query', $query_cheep);get_template_part( 'template-parts/section/cheap', 'providers' ); ?>
-<?php set_query_var('providers_query', $query_fast);get_template_part( 'template-parts/section/fast', 'providers' ); ?>
+<?php set_query_var('providers_query', $query_fast);set_query_var('fast_provider_details', $fast_provider_details);get_template_part( 'template-parts/section/fast', 'providers' ); ?>
 <?php set_query_var('providers_query', $query_compair);get_template_part( 'template-parts/section/compair', 'providers' ); ?>
 <?php set_query_var('providers_query', $query);get_template_part( 'template-parts/section/summary', 'providers' ); ?>
 <?php get_template_part( 'template-parts/section/text', 'providers' ); ?>
