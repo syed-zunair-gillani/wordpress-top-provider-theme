@@ -143,7 +143,7 @@ function SiteMapByZipCode() {
 
 function SiteMapByCity() {
     set_time_limit(0);
-    $services = ['internet', 'tv', 'home-security', 'landline'];
+    $services = ['internet','tv','landline','home-security'];
     $sitemap_folder = ABSPATH . 'sitemaps';
     $posts_per_file = 10000;
     $total_records = 0; // Initialize counter for total records
@@ -184,8 +184,11 @@ function SiteMapByCity() {
                 $zone_city = $zone_city_terms && !is_wp_error($zone_city_terms) ? $zone_city_terms[0]->slug : '';
                 $zone_state = $zone_state_terms && !is_wp_error($zone_state_terms) ? $zone_state_terms[0]->slug : '';
 
-                if (!in_array($zone_city, $displayed_cities) && $zone_city) {
-                    $displayed_cities[] = $zone_city;
+                // Unique city-state key
+                $city_state_key = $zone_city . '|' . $zone_state;
+
+                if (!in_array($city_state_key, $displayed_cities) && $zone_city && $zone_state) {
+                    $displayed_cities[] = $city_state_key;
 
                     $link = home_url("/{$service}/{$zone_state}/{$zone_city}/");
                     if (strpos($link, 'www.') === false) {
@@ -217,5 +220,4 @@ function SiteMapByCity() {
 
     echo "Total records added: " . $total_records . "<br>";
 }
-
 
