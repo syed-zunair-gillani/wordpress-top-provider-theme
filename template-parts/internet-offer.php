@@ -22,16 +22,6 @@
                                 <div class="md:w-full w-full grid grid-cols-1 dtable  flex-col">
                                     <div class=" border-b grid items-center justify-center p-5">
                                         <a target="_blank" href="<?php echo get_permalink($provider[0]->ID); ?>">
-                                            <!-- <img
-                                                alt="Feature Image"
-                                                loading="lazy"
-                                                width="140"
-                                                height="50"
-                                                decoding="async"
-                                                data-nimg="1"
-                                                src="<?php echo $logoUrl ?>"
-                                                style="color: transparent;"
-                                            /> -->
                                             <?php echo get_the_post_thumbnail($provider[0]->ID, 'thumbnail') ?: $provider[0]->post_title; ?>
                                         </a>
                                     </div>
@@ -49,12 +39,12 @@
                                     <div class="border-b grid items-center justify-center p-5">
                                         <div>
                                             <p class="tch">Pricing starts from</p>
-                                            <p class="tcd"><span class="font-extrabold text-[#215690] font-[Roboto] text-xl"> $<?php echo $price; ?> </span> /mo.</p>
+                                            <p class="tcd text-center"><span class="font-extrabold text-[#215690] font-[Roboto] text-center text-xl"> $<?php echo $price; ?> </span> /mo.</p>
                                         </div>
                                     </div>
                                     <div class="grid gap-3 items-center justify-center p-5">
-                                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#215690] hover:bg-[#ef9831]" href="tel:<?php echo $call ?>"><?php echo $call ?></a>
-                                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#215690]" href="<?php echo get_permalink($provider[0]->ID); ?>">View Plans</a>
+                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#215690] hover:bg-[#ef9831]" href="tel:<?php echo $call ?>"><?php echo $call ?></a>
+                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#215690]" href="<?php echo get_permalink($provider[0]->ID); ?>">View Plans</a>
                                     </div>
                                 </div>
                             </div>
