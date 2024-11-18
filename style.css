@@ -295,7 +295,7 @@ html {
 }
 
 
-.fimage image {
+.fimage img {
   aspect-ratio: 3/2;
   object-fit: contain;
 }
