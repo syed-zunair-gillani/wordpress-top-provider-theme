@@ -1,3 +1,6 @@
+<?php 
+    $fast_providers = get_query_var('fast_provider_details'); 
+?>
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
@@ -6,14 +9,12 @@
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
                     class="text-[#ef9831]"><?php echo $city ?> </span></h2>
             <p class="PClass"> Whether you need high speed internet for streaming in 4K resolution
-                or playing online multiplayer games : <?php echo $fast_provider_details['title']; ?> provides fastest internet
-                connection in {enter city name} with download speed of up to {enter max download speed} for just {enter
-                price} per month which is perfect for households with multiple users and heavy data consumption and can
+                or playing online multiplayer games <?php echo $fast_providers[0]['title']; ?> provides fastest internet
+                connection in <?php echo $city ?> with download speed of up to <?php echo $fast_providers[0]['speed']; ?> for just <?php echo $fast_providers[0]['price']; ?> per month which is perfect for households with multiple users and heavy data consumption and can
                 cater to the needs of heavy internet users, streamers and online gamers.</p>
-            <p class="PClass">{enter 2nd rated fast internet provider} internet is renowned for its
+            <p class="PClass"><?php echo $fast_providers[1]['title']; ?> internet is renowned for its
                 high speed capabilities making it an excellent choice for gamers and streamers. With download speeds of
-                up to {enter max download speed} making it one of the fastest internet service provider in {enter city
-                name}. Price begins at {enter price} per month.</p>
+                up to <?php echo $fast_providers[0]['speed']; ?> making it one of the fastest internet service provider in <?php echo $city ?>. Price begins at <?php echo $fast_providers[0]['price']; ?> per month.</p>
             <p class="PClass">Take a look at the fastest internet providers in your area sorted by
                 speed (high to low). </p>
             <?php elseif ($type === 'tv'): ?>

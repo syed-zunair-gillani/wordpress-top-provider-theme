@@ -86,6 +86,7 @@ $query_args_fast = array(
 );
 $query_fast = new WP_Query($query_args_fast);
 
+
 ?>
 
 
@@ -854,20 +855,93 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="grid gap-10">
             <?php
                 // Define an array of FAQs
-                $faqs = [
+                $total_providers_count = $query_fast->found_posts;
+                $first_provider = $query_fast->posts[0];
+                $first_provider_title = get_the_title($first_provider->ID);
+                
+                $faqs;
+                $internet_faqs = [
                     [
-                        "question" => "What is your return policy?",
-                        "answer" => "You can return items within 30 days of purchase for a full refund."
+                        "question" => "1. Who is the Best Internet Service Provider in $zipcode",
+                        "answer" => "$total_providers_count Internet service providers are available in $zipcode Based on the availability $first_provider_title is the best internet service provider in  $zipcode"
                     ],
                     [
-                        "question" => "How do I track my order?",
-                        "answer" => "Once your order is shipped, you will receive a tracking number by email."
+                        "question" => "2. Who is the fastest Internet service provider in  $zipcode?",
+                        "answer" => "$first_provider_title is the fastest internet service provider in {$zipcode} and offers max download speeds up to {summery_speed}Mbps in select areas."
                     ],
                     [
-                        "question" => "Can I change my order?",
-                        "answer" => "You can change your order within 24 hours of placing it."
+                        "question" => "3. Who is the cheapest Internet service provider in $zipcode?",
+                        "answer" => "$first_provider_title is the cheapest internet service provider in {$zipcode} with price starting from {price}"
+                    ],
+                    [
+                        "question" => "4. What is the typical internet speed options offered in $zipcode?",
+                        "answer" => "In {$zipcode} internet speed options can vary among internet service providers but most plans include speeds from 25 mbps to 5000 mbps."
+                    ],
+                    [
+                        "question" => "5. How do I check the availability of Internet service providers in $zipcode?",
+                        "answer" => "To check Internet service providers availability, Enter your zip code to find the best internet options available to you."
                     ]
                 ];
+                $tv_faqs = [
+                    [
+                        "question" => "1. How do I check the availability of TV service providers in $zipcode",
+                        "answer" => "To check TV service providers availability, Enter your zip code to find the best TV options available to you."
+                    ],
+                    [
+                        "question" => "2. How do I setup TV service in my new home in $zipcode",
+                        "answer" => " To setup TV service in your new home, contact the above listed service providers, inquire about their plans and select the plan that works for you."
+                    ],
+                    [
+                        "question" => "3. Can I get TV service without any contract in $zipcode",
+                        "answer" => "Yes. A few TV service providers in {$zipcode} offer no contract or month to month services. Call the providers to know more."
+                    ],
+                    [
+                        "question" => "4. Who is the Best TV Service Provider in $zipcode",
+                        "answer" => "{$total_providers_count} TV service providers are available in {$zipcode} Based on the availability and pricing {$first_provider_title} is the best TV service provider in {$zipcode}."
+                    ],
+                    [
+                        "question" => "5.	Who is the cheapest TV service provider in $zipcode",
+                        "answer" => "{$first_provider_title} is the cheapest TV service provider in {$zipcode} with price starting from {Price}"
+                    ],
+                ];
+                $landline_faqs = [
+                    [
+                        "question" => "1.	What is a Landline?",
+                        "answer" => "A landline is a type of home phone service that transmits audio data over a wire (typically copper, cable or fiber) and comes with features like Caller ID, Call Forwarding, Call Blocking and Three-way calling."
+                    ],
+                    [
+                        "question" => "2.	Who is the Best Landline Phone Service Provider in $zipcode",
+                        "answer" => "$total_providers_count landline service providers are available in Zip Code {$zipcode}. Based on the availability {$first_provider_title}  is the best landline phone service provider in $zipcode"
+                    ],
+                    [
+                        "question" => "3.	Can I get Landline Phone Service without Internet in $zipcode",
+                        "answer" => "Yes. You can get a landline home phone service without internet in Zip Code $zipcode as many providers offer traditional landline phone service options which requires a separate line and don’t require an internet connection."
+                    ],
+                    [
+                        "question" => "4.	Who is the cheapest Internet service provider in $zipcode",
+                        "answer" => "{$total_providers_count} is the cheapest landline home phone service provider in Zip Code {$zipcode} with price starting from {Price}."
+                    ],
+                    [
+                        "question" => "5.	How do I check the availability of Landline Phone service providers in $zipcode",
+                        "answer" => "To check Landline Phone service providers availability, Enter your zip code to find the best Landline options available to you."
+                    ],
+                ];
+                $home_security_faqs = [
+                    [
+                        "question" => "home_security_faqs",
+                        "answer" => "home_security_faqs"
+                    ] 
+                ];
+ 
+                if ($type === 'tv'):
+                    $faqs = $tv_faqs;
+                elseif ($type === 'internet'):
+                    $faqs = $internet_faqs;
+                elseif ($type === 'landline'):
+                    $faqs = $landline_faqs;
+                else:
+                    $faqs = $home_security_faqs;
+                endif;
 
                 // Loop through the FAQs array
                 foreach ($faqs as $faq) {
