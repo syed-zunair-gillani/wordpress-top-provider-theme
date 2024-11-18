@@ -10,7 +10,6 @@
                 $price = $row['price'];
                 $call = $row['call'];
                 $provider = $row['provider'];
-                print_r($provider);
                 echo '<div>';
                     ?>
                         <div class="grid  gap-7 mb-7">
