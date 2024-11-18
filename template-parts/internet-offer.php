@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="md:w-full w-full grid grid-cols-1 dtable  flex-col">
                                     <div class=" border-b grid items-center justify-center p-5">
-                                        <a target="_blank" href="<?php echo get_permalink($provider[0]->ID); ?>">
+                                        <a target="_blank" href="<?php echo get_permalink($provider[0]->ID); ?>" class="fimage">
                                             <?php echo get_the_post_thumbnail($provider[0]->ID, 'thumbnail') ?: $provider[0]->post_title; ?>
                                         </a>
                                     </div>
