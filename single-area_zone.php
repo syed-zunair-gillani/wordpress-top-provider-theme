@@ -105,10 +105,7 @@ get_header();
                             <p class="tcd"><span class="font-extrabold text-[#215690] font-[Roboto] text-xl"> $19.99 </span> /mo.</p>
                         </div>
                     </div>
-                    <div class="grid gap-3 items-center justify-center p-5">
-                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#215690] hover:bg-[#ef9831]" href="tel:844-581-1129">844-581-1129 </a>
-                        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#215690]" href="/providers/xfinity">View Plans</a>
-                    </div>
+                    <?php echo render_provider_buttons("844-581-1129", "/providers/xfinity"); ?>
                 </div>
             </div>
         </div>
