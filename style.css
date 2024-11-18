@@ -293,9 +293,3 @@ html {
     border-width: 1px 0 !important;
   }
 }
-
-
-.fimage img {
-  aspect-ratio: 3/2;
-  object-fit: contain;
-}
