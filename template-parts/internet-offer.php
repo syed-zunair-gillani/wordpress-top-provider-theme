@@ -4,9 +4,15 @@
         if( have_rows('top_internet_provider_deals') ) {
             while( have_rows('top_internet_provider_deals') ) {
                 the_row();
-                $first_row_title = get_sub_field('speed');
-                echo "jkhkh";
-                echo $first_row_title;
+                $speed = get_sub_field('speed');
+                $features = get_sub_field('features');
+                $price = get_sub_field('price');
+                $call = get_sub_field('call');
+                $provider = get_sub_field('provider');
+
+                print_r($provider);
+                
+
                 break;
             }
         }  
