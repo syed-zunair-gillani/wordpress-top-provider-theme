@@ -4,13 +4,18 @@
     $type = get_query_var('type');
     $state = get_query_var('state');
 
-    function fetch_comments_by_state($state) {                
+    function fetch_comments_by_state($state, $type) {                
         $args = [
             'meta_query' => [
                 [
                     'key'   => 'state', // The meta key to filter by
                     'value' => $state,  // The meta value to match
                     'compare' => '=',   // Comparison operator
+                ],
+                [
+                    'key'     => 'provider_type', // The second meta key
+                    'value'   => $type, // The value to match
+                    'compare' => '=',            // Comparison operator
                 ],
             ],
         ];
@@ -71,7 +76,7 @@
     </h2>
     <div class="mt-5">
         <?php
-            fetch_comments_by_state($state);
+            fetch_comments_by_state($state, $type);
         ?>
     </div>
 </section>
