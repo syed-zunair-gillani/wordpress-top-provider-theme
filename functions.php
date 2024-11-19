@@ -290,7 +290,6 @@ function get_states_and_cities_data($request) {
                   }
         foreach ($city_terms as $city_term) {
                       $city_name = $city_term->slug;
-
                       // Check if the city is not already in the array for the current state
                       if (!in_array($city_name, $states_and_cities[$state_name])) {
                           $states_and_cities[$state_name][] = $city_name;
@@ -393,7 +392,11 @@ function handle_review_submission() {
         $comment_content = sanitize_textarea_field($form_data['comment']);
         $service = sanitize_textarea_field($form_data['service']);
         $rating = sanitize_textarea_field($form_data['rating']);
+        $ucity = sanitize_textarea_field($form_data['ucity']);
+        $ustate = sanitize_textarea_field($form_data['ustate']);
         
+        $user_city_state = $ucity . ", " . $ustate;
+
         // Insert comment data
         $comment_data = array(
             'comment_post_ID' => $provider, // Provider as the post ID
@@ -413,6 +416,7 @@ function handle_review_submission() {
             add_comment_meta($comment_id, 'zipcode', $zipcode);
             add_comment_meta($comment_id, 'provider_type', $service);
             add_comment_meta($comment_id, 'star', $rating);
+            add_comment_meta($comment_id, 'comment_city', $user_city_state);
 
             wp_send_json_success('Review submitted successfully!');
         } else {
@@ -426,8 +430,6 @@ function handle_review_submission() {
 // Add AJAX actions for logged-in and non-logged-in users
 add_action('wp_ajax_submit_review', 'handle_review_submission');
 add_action('wp_ajax_nopriv_submit_review', 'handle_review_submission');
-
-
 
 
 

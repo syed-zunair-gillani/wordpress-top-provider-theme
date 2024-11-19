@@ -4,6 +4,8 @@
  $query = get_query_var('review_query');
  $city = get_query_var('city');
  $type = get_query_var('type');
+ $state = get_query_var('state');
+
  $i = 0;
 ?>
 
@@ -75,11 +77,21 @@
                 <div class="flex flex-row gap-4">
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">City</label>
-                        <input type="text" id="city" name="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" />
+                        <input type="text" id="ucity" name="ucity" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" />
+                        <input type="hidden" id="city" name="city" value="<?php echo esc_attr($city); ?>" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3" placeholder="City" />
                     </div>
                     <div class="flex-1">
-                        <label class="block mb-2 text-sm font-medium text-gray-900">State</label>
-                        <input type="text" id="state" name="state" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="State" required />
+                        <label class="block mb-2 text-sm font-medium text-gray-900">State </label>
+                        <input type="text" id="ustate" name="ustate"  class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="State" required />
+                        <input 
+                            type="hidden" 
+                            id="state" 
+                            name="state" 
+                            value="<?php echo esc_attr($state); ?>" 
+                            class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" 
+                            placeholder="State" 
+                            required 
+                        />                    
                     </div>
                     <div class="flex-1">
                         <label class="block mb-2 text-sm font-medium text-gray-900">Zipcode</label>
