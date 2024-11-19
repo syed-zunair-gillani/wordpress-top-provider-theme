@@ -4,13 +4,6 @@
 get_header();
 
 $zip_query = $_REQUEST['zipcode'];
-
-
-
-
-
-
-
 $args = array(
     'post_type' => 'providers',    
     'meta_query' => array(
@@ -29,10 +22,10 @@ if ($query->have_posts()) {
     while ($query->have_posts()) { $query->the_post(); $Pid = get_the_ID(); 
         ?>
 
-        
+
 <h2> <?php the_title() ?></h2>
 
-        <?php
+<?php
         $post_title = $zip_query; 
         $post_type = 'area_zone'; 
         $post = get_page_by_title( $post_title, OBJECT, $post_type );
@@ -52,13 +45,14 @@ if ($query->have_posts()) {
        
         ?>
 
-            
-              
-        
 
-        City : <?php echo $zone_city ?> | State : <?php echo $zone_state ?>  | 	Area Code <?php echo $zone_code ?>    |   County <?php echo $zone_county ?>  
 
-      <?php
+
+
+City : <?php echo $zone_city ?> | State : <?php echo $zone_state ?> | Area Code <?php echo $zone_code ?> | County
+<?php echo $zone_county ?>
+
+<?php
 
 
       
@@ -67,12 +61,12 @@ if ($query->have_posts()) {
         
 
         ?>
-             
-        
-        <hr/>
 
 
-        <?php
+<hr />
+
+
+<?php
 
 
 

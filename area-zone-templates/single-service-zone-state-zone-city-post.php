@@ -1,18 +1,14 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package CBL_Theme
- */
+<?php get_header(); 
 
-get_header();
+
+
+
 
 $state = get_query_var('state');
 $city = get_query_var('city');
 $zipcode = get_query_var('zipcode');
 $type = get_query_var('type');
+
 
 
 
