@@ -191,3 +191,34 @@ function cbl_breadcrumb() {
     // End breadcrumb container
     echo '</div>';
 }
+
+
+
+function Generate_Title() {
+    global $wp_query;
+    $state = $wp_query->query_vars['zone_state'];
+    $city = $wp_query->query_vars['zone_city'];
+    $zipcode = $wp_query->query_vars['post_slug'];
+    $type =$wp_query->query_vars['service'];
+    $title = "High Speed $type Providers in $zipcode, $state | Cable Movers";
+    return $title;
+}
+
+
+function Generate_Description() {
+    $state = get_query_var('zone_state', '');
+    $city = get_query_var('zone_city', '');
+    $zipcode = get_query_var('post_slug', '');
+    $type = get_query_var('service', '');
+    $description = "View all $type service providers in $zipcode, $state. Compare $type plans, prices and new promotions and pick the best provider that fits within your budget."; 
+    return $description;  // Fallback to default canonical
+}
+
+function Generate_Canonical() {
+    $state = get_query_var('zone_state', '');
+    $city = get_query_var('zone_city', '');
+    $zipcode = get_query_var('post_slug', '');
+    $type = get_query_var('service', '');
+    $canonical = home_url("/$type/$state/$city/$zipcode");  
+    return $canonical; // Fallback to default canonical
+}

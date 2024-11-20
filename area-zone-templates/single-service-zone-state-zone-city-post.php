@@ -1,30 +1,25 @@
 <?php 
+
+
+global $wp_query;
+
+$state = $wp_query->query_vars['zone_state'];
+$city = $wp_query->query_vars['zone_city'];
+$zipcode = $wp_query->query_vars['post_slug'];
+$type =$wp_query->query_vars['service'];
+
+
+add_filter('wpseo_title', 'Generate_Title');
+add_filter('wpseo_metadesc', 'Generate_Description');
+add_filter('wpseo_canonical', 'Generate_Canonical');
+
 get_header();
 
-// Capture query variables
-$state = get_query_var('state');
-$city = get_query_var('city');
-$zipcode = get_query_var('zipcode');
-$type = get_query_var('type');
 
-// Define metadata dynamically
-$seo_title = $city ?: 'Default Title'; // Provide a fallback title
-$seo_description = $state ?: 'Default Description'; // Provide a fallback description
-$seo_keywords = $type ?: 'Default Keywords'; // Provide fallback keywords
-
-// Remove default title and replace it
-add_filter('document_title_parts', function ($title_parts) use ($seo_title) {
-    // Clear all other title parts and replace with custom title
-    return ['title' => $seo_title];
-});
+?>
 
 
-function custom_add_meta_tag() {
-    echo '<meta name="description" content="This is a custom meta description added via wp_head.">';
-}
-add_action('wp_head', 'custom_add_meta_tag');
-
-
+<?php
 
 
 
@@ -98,6 +93,7 @@ $query_args_fast = array(
     ),          
 );
 $query_fast = new WP_Query($query_args_fast);
+
 
 
 ?>

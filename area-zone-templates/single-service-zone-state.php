@@ -1,12 +1,19 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package CBL_Theme
- */
+
+global $wp_query;
+
+$state = $wp_query->query_vars['zone_state'];
+$city = $wp_query->query_vars['zone_city'];
+$zipcode = $wp_query->query_vars['post_slug'];
+$type =$wp_query->query_vars['service'];
+
+
+add_filter('wpseo_title', 'Generate_Title');
+add_filter('wpseo_metadesc', 'Generate_Description');
+add_filter('wpseo_canonical', 'Generate_Canonical');
+
 get_header();
+
  $state = get_query_var('state');
  $city = get_query_var('city');
  $type = get_query_var('type');

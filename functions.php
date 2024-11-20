@@ -7,6 +7,7 @@
  * @package CBL_Theme
  */
 
+ 
 
  function enqueue_font_awesome() {
     wp_enqueue_style(
@@ -15,14 +16,8 @@
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
-
-
 include_once('inc/extra_functions.php');
 include_once('inc/sitemap_functions.php');
-
-
-
-
 
 function enqueue_slick_slider_assets() {
     // Slick CSS
@@ -484,3 +479,5 @@ function save_xml_file() {
         return false; // Return false on failure
     }
 }
+
+

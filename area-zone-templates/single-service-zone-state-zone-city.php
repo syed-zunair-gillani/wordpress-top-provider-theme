@@ -1,28 +1,20 @@
 <?php
- 
-   
 
-//     // Define metadata
-//    $seo_title = "Custom SEO Title for Single Template";
-//     // Remove default title and replace it
-//    add_filter('document_title_parts', function ($title_parts) use ($seo_title) {
-//        // Clear all other title parts and replace with custom title
-//        return ['title' => $seo_title];
-//    });
-   
-   
-   
-//    $seo_description = "Custom description for the single template.";
-//    $seo_keywords = "custom, single, keywords";
-   
-//    // Add action for wp_head
-//    add_action('wp_head', function () use ($seo_title, $seo_description, $seo_keywords) {
-//        echo "<meta name='title' content='" . esc_attr($seo_title) . "'>\n";
-//        echo "<meta name='description' content='" . esc_attr($seo_description) . "'>\n";
-//        echo "<meta name='keywords' content='" . esc_attr($seo_keywords) . "'>\n";
-//    });
-   
-   get_header();
+    global $wp_query;
+
+    $state = $wp_query->query_vars['zone_state'];
+    $city = $wp_query->query_vars['zone_city'];
+    $zipcode = $wp_query->query_vars['post_slug'];
+    $type =$wp_query->query_vars['service'];
+
+
+    add_filter('wpseo_title', 'Generate_Title');
+    add_filter('wpseo_metadesc', 'Generate_Description');
+    add_filter('wpseo_canonical', 'Generate_Canonical');
+
+    get_header();
+    
+
    $state = get_query_var('state');
    $qcity = get_query_var('city');
    $type = get_query_var('type');

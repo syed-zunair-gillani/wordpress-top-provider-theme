@@ -76,6 +76,7 @@ function cbl_theme_setup() {
 			'script',
 		)
 	);
+    add_theme_support( 'title-tag' );
 
 
 }

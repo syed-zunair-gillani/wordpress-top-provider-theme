@@ -1,4 +1,18 @@
-<?php get_header();
+<?php 
+
+global $wp_query;
+
+$state = $wp_query->query_vars['zone_state'];
+$city = $wp_query->query_vars['zone_city'];
+$zipcode = $wp_query->query_vars['post_slug'];
+$type =$wp_query->query_vars['service'];
+
+
+add_filter('wpseo_title', 'Generate_Title');
+add_filter('wpseo_metadesc', 'Generate_Description');
+add_filter('wpseo_canonical', 'Generate_Canonical');
+
+get_header();
     $url_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     $parts = explode('/', $url_path);
     $last_part = strtoupper(array_pop($parts));
