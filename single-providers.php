@@ -25,7 +25,7 @@
     
 
 ?>
-<section class="relative pbanner" style="background-image: url('<?php echo $features_banner ?>')">
+<section class="relative pbanner" style="background: url('<?php echo $features_banner ?>') no-repeat left top, linear-gradient(#eb01a5, #d13531)">
     <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
         <div class="md:w-1/2 w-full py-10">
             <a href="/providers/att">
