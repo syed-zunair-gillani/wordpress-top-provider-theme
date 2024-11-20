@@ -300,5 +300,7 @@ html {
   background-size: cover;
 }
 .pbanner .overlay_wrapper{
-  background-color: rgb(1 29 51);
+  background: linear-gradient(90deg, rgba(1,29,51,1) 26%, rgba(50,72,90,1) 59%, rgba(255,255,255,0) 100%);
+  width: 100vw;
+  height: 100vh;
 }
