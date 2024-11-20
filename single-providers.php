@@ -39,7 +39,7 @@
                         decoding="async"
                         data-nimg="1"
                         src="<?php echo $logoUrl ?>"
-                        style="color: transparent;"
+                        style="color: transparent; filter: invert(1); mix-blend-mode: exclusion;"
                     />
                 </a>
                 <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-white"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
