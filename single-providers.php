@@ -35,6 +35,7 @@
                         loading="lazy"
                         width="140"
                         height="50"
+                        class="plogo"
                         decoding="async"
                         data-nimg="1"
                         src="<?php echo $logoUrl ?>"
