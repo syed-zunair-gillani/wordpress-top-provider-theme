@@ -28,7 +28,7 @@
 <section class="relative pbanner" style="background-image: url('<?php echo $features_banner ?>')">
     <div class="overlay_wrapper">
         <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
-            <div class="md:w-1/2 w-full py-10">
+            <div class="md:w-1/2 w-full py-10 text-white">
                 <a href="/providers/att">
                     <img
                         alt="Feature Image"
@@ -42,12 +42,12 @@
                         style="color: transparent;"
                     />
                 </a>
-                <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-black"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
-                <div class="features text-black mb-5 single_content">
+                <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-white"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
+                <div class="features text-white mb-5 single_content">
                     <?php echo $features ?>
                 </div>
-                <h5 class="text-xl font-bold text-black">Price Starting At</h5>
-                <h2 class="md:text-4xl text-3xl font-extrabold text-black my-4 flex items-start">
+                <h5 class="text-xl font-bold text-white">Price Starting At</h5>
+                <h2 class="md:text-4xl text-3xl font-extrabold text-white my-4 flex items-start">
                     <span class="md:text-3xl text-base">$</span><?php echo $price ?>
                     <span class="grid">
                         <span class="md:text-3xl text-base"><sub>/mo</sub></span>
