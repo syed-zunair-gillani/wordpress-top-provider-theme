@@ -18,15 +18,12 @@ add_filter('document_title_parts', function ($title_parts) use ($seo_title) {
     return ['title' => $seo_title];
 });
 
-// Add action for wp_head
-add_action('wp_head', function () use ($seo_title, $seo_description, $seo_keywords) {
-    echo "<meta name='title' content='" . esc_attr($seo_title) . "'>\n";
-    echo "<meta name='description' content='" . esc_attr($seo_description) . "'>\n";
-    echo "<meta name='keywords' content='" . esc_attr($seo_keywords) . "'>\n";
-});
 
- 
-  
+function custom_add_meta_tag() {
+    echo '<meta name="description" content="This is a custom meta description added via wp_head.">';
+}
+add_action('wp_head', 'custom_add_meta_tag');
+
 
 
 
@@ -944,8 +941,28 @@ $query_fast = new WP_Query($query_args_fast);
                 ];
                 $home_security_faqs = [
                     [
-                        "question" => "home_security_faqs",
-                        "answer" => "home_security_faqs"
+                        "question" => "1.	What are home security systems?",
+                        "answer" => "Home security systems are used to protect theft and burglaries and include a central hub, entryway sensors, glass break sensors and motion sensors, security indoor and outdoor cameras, video doorbells and home automation devices."
+                    ],
+                    [
+                        "question" => "2.	What are the most affordable security systems in $zipcode, $state?",
+                        "answer" => "(insert lowest provider name) topped our list as the most affordable home security system in (insert zip code) with price starting from (insert lowest provider price) per month."
+                    ],
+                    [
+                        "question" => "3.	What are the most affordable security systems in $zipcode, $state?",
+                        "answer" => "From In house 24/7 monitoring team to controlling everything from a single mobile app, Vivint is rated the best home security system in $zipcode, $state. "
+                    ] ,
+                    [
+                        "question" => "4.	Can I install my own security system?",
+                        "answer" => "While DIY is on the rise, we highly recommend professional installation for the home security systems for a seamless integration between different devices."
+                    ],
+                    [
+                        "question" => "5.	Do I have to sign a contract for home security?",
+                        "answer" => "Security companies like ADT and Vivint may require a contract while other providers such as Ring, SimpliSafe offer DIY solutions that never require a contract."
+                    ],
+                    [
+                        "question" => "6.	What Home Security Providers are Available in $zipcode, $state?",
+                        "answer" => "Availability varies for Home Security systems. To check availability, enter your zip code (zip code has a popup link to the zip search bar) to find the best security companies available to you."
                     ] 
                 ];
  
@@ -1022,7 +1039,8 @@ $query_fast = new WP_Query($query_args_fast);
             });
         });
     });
-
 </script>
 
 <?php get_footer();
+
+

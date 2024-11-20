@@ -311,3 +311,7 @@ html {
    filter: invert(1);
    mix-blend-mode: exclusion;
 }
+
+.__list{
+  list-style-type: circle;
+}
