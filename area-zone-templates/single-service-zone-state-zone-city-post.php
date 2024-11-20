@@ -1,13 +1,33 @@
-<?php get_header(); 
+<?php 
+get_header();
 
-
-
-
-
+// Capture query variables
 $state = get_query_var('state');
 $city = get_query_var('city');
 $zipcode = get_query_var('zipcode');
 $type = get_query_var('type');
+
+// Define metadata dynamically
+$seo_title = $city ?: 'Default Title'; // Provide a fallback title
+$seo_description = $state ?: 'Default Description'; // Provide a fallback description
+$seo_keywords = $type ?: 'Default Keywords'; // Provide fallback keywords
+
+// Remove default title and replace it
+add_filter('document_title_parts', function ($title_parts) use ($seo_title) {
+    // Clear all other title parts and replace with custom title
+    return ['title' => $seo_title];
+});
+
+// Add action for wp_head
+add_action('wp_head', function () use ($seo_title, $seo_description, $seo_keywords) {
+    echo "<meta name='title' content='" . esc_attr($seo_title) . "'>\n";
+    echo "<meta name='description' content='" . esc_attr($seo_description) . "'>\n";
+    echo "<meta name='keywords' content='" . esc_attr($seo_keywords) . "'>\n";
+});
+
+ 
+  
+
 
 
 

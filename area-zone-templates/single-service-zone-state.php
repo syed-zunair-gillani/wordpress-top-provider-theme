@@ -6,12 +6,27 @@
  *
  * @package CBL_Theme
  */
+get_header();
+ $state = get_query_var('state');
+ $city = get_query_var('city');
+ $type = get_query_var('type');
+ 
+ function inject_meta_tags() {
+    // Get the current page title, description, and canonical URL
+    $meta_title = "High Speed Internet Providers in" . $zipcode . "," . $state . "| Cable Movers";
+    $meta_description = "View all Internet service providers in {Insert Zip Code, State Abbreviation}. Compare internet plans, prices and new promotions and pick the best provider that fits within your budget.";
+    $canonical_url = get_permalink();
 
-    get_header();
+    // Output the meta tags
+    echo '<title>' . esc_html($meta_title) . '</title>' . "\n";
+    echo '<meta name="description" content="' . esc_attr($meta_description) . '" />' . "\n";
+    echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
+}
+add_action('wp_head', 'inject_meta_tags');
 
-    $state = get_query_var('state');
-    $city = get_query_var('city');
-    $type = get_query_var('type');
+   
+
+   
 
     $zip_codes_to_search = get_zipcodes_by_state($state);
     $provider_ids = create_meta_query_for_zipcodes($zip_codes_to_search, $type);  
@@ -77,3 +92,4 @@
  
  <?php  get_footer();
  
+

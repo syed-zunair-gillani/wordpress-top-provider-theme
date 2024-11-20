@@ -7,6 +7,7 @@
     <?php if (is_search()) { ?>
 	   <meta name="robots" content="noindex, nofollow" /> 
 	<?php } ?>
+ 
 		<title>
 			<?php
 				/*
@@ -29,16 +30,9 @@
 					echo ' | ' . sprintf( __( 'Page %s', 'wpv' ), max( $paged, $page ) );
             ?>
 	</title>
+
     <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-   
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
