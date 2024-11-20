@@ -21,6 +21,9 @@ include_once('inc/extra_functions.php');
 include_once('inc/sitemap_functions.php');
 
 
+
+
+
 function enqueue_slick_slider_assets() {
     // Slick CSS
     wp_enqueue_style('slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');

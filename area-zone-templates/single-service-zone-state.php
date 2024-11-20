@@ -6,7 +6,7 @@
  *
  * @package CBL_Theme
  */
-
+get_header();
  $state = get_query_var('state');
  $city = get_query_var('city');
  $type = get_query_var('type');
@@ -24,7 +24,7 @@
 }
 add_action('wp_head', 'inject_meta_tags');
 
-    get_header();
+   
 
    
 

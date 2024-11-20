@@ -1,22 +1,31 @@
 <?php
-    $state = get_query_var('state');
-    $qcity = get_query_var('city');
-    $type = get_query_var('type');
+ 
+   
 
-    function inject_meta_tags() {
-        // Get the current page title, description, and canonical URL
-        $meta_title = "High Speed Internet Providers in" . $zipcode . "," . $state . "| Cable Movers";
-        $meta_description = "View all Internet service providers in {Insert Zip Code, State Abbreviation}. Compare internet plans, prices and new promotions and pick the best provider that fits within your budget.";
-        $canonical_url = get_permalink();
-    
-        // Output the meta tags
-        echo '<title>' . esc_html($meta_title) . '</title>' . "\n";
-        echo '<meta name="description" content="' . esc_attr($meta_description) . '" />' . "\n";
-        echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
-    }
-    add_action('wp_head', 'inject_meta_tags');
-    get_header();
-    
+//     // Define metadata
+//    $seo_title = "Custom SEO Title for Single Template";
+//     // Remove default title and replace it
+//    add_filter('document_title_parts', function ($title_parts) use ($seo_title) {
+//        // Clear all other title parts and replace with custom title
+//        return ['title' => $seo_title];
+//    });
+   
+   
+   
+//    $seo_description = "Custom description for the single template.";
+//    $seo_keywords = "custom, single, keywords";
+   
+//    // Add action for wp_head
+//    add_action('wp_head', function () use ($seo_title, $seo_description, $seo_keywords) {
+//        echo "<meta name='title' content='" . esc_attr($seo_title) . "'>\n";
+//        echo "<meta name='description' content='" . esc_attr($seo_description) . "'>\n";
+//        echo "<meta name='keywords' content='" . esc_attr($seo_keywords) . "'>\n";
+//    });
+   
+   get_header();
+   $state = get_query_var('state');
+   $qcity = get_query_var('city');
+   $type = get_query_var('type');
      
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);

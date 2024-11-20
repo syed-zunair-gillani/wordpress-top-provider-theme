@@ -1,5 +1,15 @@
 <?php
 
+function enqueue_google_fonts() {
+    // Enqueue the Google Fonts stylesheet
+    wp_enqueue_style(
+        'google-fonts-manrope', // Handle for the font
+        'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', // Font URL
+        array(), // Dependencies (none for this case)
+        null // Version (use null for Google Fonts to prevent caching issues)
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
 
 include_once('cpts.php');
