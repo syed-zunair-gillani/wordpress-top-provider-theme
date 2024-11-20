@@ -293,3 +293,9 @@ html {
     border-width: 1px 0 !important;
   }
 }
+
+.pbanner{
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

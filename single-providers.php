@@ -25,7 +25,7 @@
     
 
 ?>
-<section class="relative my-8 pbanner" style="background-image: url('<?php echo $features_banner ?>')">
+<section class="relative pbanner" style="background-image: url('<?php echo $features_banner ?>')">
     <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
         <div class="md:w-1/2 w-full py-10">
             <a href="/providers/att">
@@ -62,17 +62,7 @@
         </div>
         <?php echo $features_banner ?>
         <div class="md:w-1/2 w-full md:block hidden">
-            <img
-                alt="Feature Image"
-                loading="lazy"
-                width="1200"
-                height="1626"
-                decoding="async"
-                data-nimg="1"
-                class="object-cover w-full h-full"
-                src="<?php echo $features_banner ?>"
-                style="color: transparent;"
-            />
+            
         </div>
     </div>
 </section>
