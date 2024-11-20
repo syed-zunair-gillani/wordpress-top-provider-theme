@@ -25,44 +25,46 @@
     
 
 ?>
-<section class="relative pbanner" style="background: url('<?php echo $features_banner ?>') no-repeat left top, linear-gradient(#eb01a5, #d13531)">
-    <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
-        <div class="md:w-1/2 w-full py-10">
-            <a href="/providers/att">
-                <img
-                    alt="Feature Image"
-                    loading="lazy"
-                    width="140"
-                    height="50"
-                    decoding="async"
-                    data-nimg="1"
-                    src="<?php echo $logoUrl ?>"
-                    style="color: transparent;"
-                />
-            </a>
-            <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-black"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
-            <div class="features text-black mb-5 single_content">
-                <?php echo $features ?>
+<section class="relative pbanner" style="background-image: url('<?php echo $features_banner ?>')">
+    <div class="overlay_wrapper">
+        <div class="container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center">
+            <div class="md:w-1/2 w-full py-10">
+                <a href="/providers/att">
+                    <img
+                        alt="Feature Image"
+                        loading="lazy"
+                        width="140"
+                        height="50"
+                        decoding="async"
+                        data-nimg="1"
+                        src="<?php echo $logoUrl ?>"
+                        style="color: transparent;"
+                    />
+                </a>
+                <h1 class="text-3xl md:text-5xl md:leading-tight font-bold text-black"><span class="text-[#ef9831]"><?php echo the_title(); ?> </span>Plans and Pricing for <?php echo $currentMonth ?>, <?php echo $currentYear ?></h1>
+                <div class="features text-black mb-5 single_content">
+                    <?php echo $features ?>
+                </div>
+                <h5 class="text-xl font-bold text-black">Price Starting At</h5>
+                <h2 class="md:text-4xl text-3xl font-extrabold text-black my-4 flex items-start">
+                    <span class="md:text-3xl text-base">$</span><?php echo $price ?>
+                    <span class="grid">
+                        <span class="md:text-3xl text-base"><sub>/mo</sub></span>
+                    </span>
+                </h2>
+                <a class="bg-[#ef9831] rounded-3xl md:text-4xl text-base font-bold text-white w-fit px-3 py-1.5 flex items-center gap-3 mb-4" href="<?php echo $phone ?>">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z"
+                        ></path>
+                    </svg>
+                    </span><?php echo $phone ?>
+                </a>
             </div>
-            <h5 class="text-xl font-bold text-black">Price Starting At</h5>
-            <h2 class="md:text-4xl text-3xl font-extrabold text-black my-4 flex items-start">
-                <span class="md:text-3xl text-base">$</span><?php echo $price ?>
-                <span class="grid">
-                    <span class="md:text-3xl text-base"><sub>/mo</sub></span>
-                </span>
-            </h2>
-            <a class="bg-[#ef9831] rounded-3xl md:text-4xl text-base font-bold text-white w-fit px-3 py-1.5 flex items-center gap-3 mb-4" href="<?php echo $phone ?>">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z"
-                    ></path>
-                </svg>
-                </span><?php echo $phone ?>
-            </a>
-        </div>
-        <?php echo $features_banner ?>
-        <div class="md:w-1/2 w-full md:block hidden">
-            
+            <?php echo $features_banner ?>
+            <div class="md:w-1/2 w-full md:block hidden">
+                
+            </div>
         </div>
     </div>
 </section>

@@ -299,3 +299,6 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.pbanner .overlay_wrapper{
+  background-color: rgb(1 29 51);
+}
