@@ -61,9 +61,7 @@
                     </span><?php echo $phone ?>
                 </a>
             </div>
-            <?php echo $features_banner ?>
             <div class="md:w-1/2 w-full md:block hidden">
-                
             </div>
         </div>
     </div>
