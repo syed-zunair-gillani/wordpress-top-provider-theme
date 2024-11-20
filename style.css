@@ -306,7 +306,7 @@ html {
   margin-top: 1rem;
 }
 
-.pbanner .overlay_wrapper .plogo{
+.pbanner .overlay_wrapper .plogo img{
   -webkit-filter: invert(1);
    filter: invert(1);
    mix-blend-mode: exclusion;
