@@ -8,15 +8,10 @@ $city = $wp_query->query_vars['zone_city'];
 $zipcode = $wp_query->query_vars['post_slug'];
 $type =$wp_query->query_vars['service'];
 
-function Generate_Tag($canonical_url) {
-    // Modify the canonical URL
-    return 'https://example.com/custom-canonical';
-}
-
 
 add_filter('wpseo_title', 'Generate_Title_For_Zipcode');
 add_filter('wpseo_metadesc', 'Generate_Description_For_Zipcode');
-add_filter('wpseo_canonical', 'Generate_Tag',10, 1);
+add_filter('wpseo_canonical', 'Generate_Canonical_Tag',10, 1);
 
 
 get_header(); ?>
