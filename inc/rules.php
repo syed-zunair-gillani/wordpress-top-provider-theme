@@ -194,31 +194,125 @@ function cbl_breadcrumb() {
 
 
 
-function Generate_Title() {
+function Generate_Title_For_Zipcode() {
     global $wp_query;
     $state = $wp_query->query_vars['zone_state'];
     $city = $wp_query->query_vars['zone_city'];
     $zipcode = $wp_query->query_vars['post_slug'];
     $type =$wp_query->query_vars['service'];
-    $title = "High Speed $type Providers in $zipcode, $state | Cable Movers";
-    return $title;
+
+    if($type === "internet"){
+        return "High Speed $type Providers in $zipcode, $state | Cable Movers";
+    } elseif ($type === "tv") {
+        return "Cable TV Providers in $zipcode, $state | Cable Movers";
+    }elseif ($type === "landline") {
+        return "Landline Home Phone Service Providers in $zipcode, $state | Cable Movers";
+    }elseif ($type === "home-security") {
+        return "Home Security Systems in $zipcode, $state | Cable Movers";
+    }
 }
 
-
-function Generate_Description() {
+function Generate_Description_For_Zipcode() {
     $state = get_query_var('zone_state', '');
     $city = get_query_var('zone_city', '');
     $zipcode = get_query_var('post_slug', '');
     $type = get_query_var('service', '');
-    $description = "View all $type service providers in $zipcode, $state. Compare $type plans, prices and new promotions and pick the best provider that fits within your budget."; 
-    return $description;  // Fallback to default canonical
+
+    if($type === "internet"){
+        return  "View all $type service providers in $zipcode, $state. Compare $type plans, prices and new promotions and pick the best provider that fits within your budget.";
+    } elseif ($type === "tv") {
+        return "Compare Cable TV providers in $zipcode, $state. View Cable TV plans and deals and choose the best provider that fits within your budget";
+    }elseif ($type === "landline") {
+        return "Find the best home phone service providers in $zipcode, $state. Compare providers, plans, prices and amenities to set your landline up.";
+    }elseif ($type === "home-security") {
+        return "Find reliable, trustworthy, and affordable home security systems in $zipcode, $state and protect your property like never before.";
+    }
 }
 
-function Generate_Canonical() {
+function Generate_Title_For_City() {
+    global $wp_query;
+    $state = $wp_query->query_vars['zone_state'];
+    $city = $wp_query->query_vars['zone_city'];
+    $zipcode = $wp_query->query_vars['post_slug'];
+    $type =$wp_query->query_vars['service'];
+
+    if($type === "internet"){
+        return "High Speed $type Providers in $city, $state | Cable Movers";
+    } elseif ($type === "tv") {
+        return "Cable TV Providers in $city, $state | Cable Movers";
+    }elseif ($type === "landline") {
+        return "Landline Home Phone Service Providers in $city, $state | Cable Movers";
+    }elseif ($type === "home-security") {
+        return "Home Security Systems in $city, $state | Cable Movers";
+    }
+}
+
+function Generate_Description_For_City() {
     $state = get_query_var('zone_state', '');
     $city = get_query_var('zone_city', '');
     $zipcode = get_query_var('post_slug', '');
     $type = get_query_var('service', '');
-    $canonical = home_url("/$type/$state/$city/$zipcode");  
-    return $canonical; // Fallback to default canonical
+
+    if($type === "internet"){
+        return  "View all Internet service providers in $city, $state. Compare Internet plans, prices and new promotions and pick the best provider that fits within your budget.";
+    } elseif ($type === "tv") {
+        return "Compare Cable TV providers in $city, $state. View Cable TV plans and deals and choose the best provider that fits within your budget";
+    }elseif ($type === "landline") {
+        return "Find the best home phone service providers in $city, $state. Compare providers, plans, prices and amenities to set your landline up.";
+    }elseif ($type === "home-security") {
+        return "Find reliable, trustworthy, and affordable home security systems in $city, $state and protect your property like never before.";
+    }
+}
+
+function Generate_Title_For_State() {
+    global $wp_query;
+    $state = $wp_query->query_vars['zone_state'];
+    $city = $wp_query->query_vars['zone_city'];
+    $zipcode = $wp_query->query_vars['post_slug'];
+    $type =$wp_query->query_vars['service'];
+
+    if($type === "internet"){
+        return "High Speed $type Providers in $state | Cable Movers";
+    } elseif ($type === "tv") {
+        return "Cable TV Providers in $state | Cable Movers";
+    }elseif ($type === "landline") {
+        return "Landline Home Phone Service Providers in $state | Cable Movers";
+    }elseif ($type === "home-security") {
+        return "Home Security Systems in $state | Cable Movers";
+    }
+}
+
+function Generate_Description_For_State() {
+    $state = get_query_var('zone_state', '');
+    $city = get_query_var('zone_city', '');
+    $zipcode = get_query_var('post_slug', '');
+    $type = get_query_var('service', '');
+
+    if($type === "internet"){
+        return  "View all Internet service providers in $state. Compare Internet plans, prices and new promotions and pick the best provider that fits within your budget.";
+    } elseif ($type === "tv") {
+        return "Compare Cable TV providers in $state. View Cable TV plans and deals and choose the best provider that fits within your budget";
+    }elseif ($type === "landline") {
+        return "Find the best home phone service providers in $state. Compare providers, plans, prices and amenities to set your landline up.";
+    }elseif ($type === "home-security") {
+        return "Find reliable, trustworthy, and affordable home security systems in $state and protect your property like never before.";
+    }
+}
+
+
+function Generate_Canonical_Tag() {
+    $state = get_query_var('zone_state', '');
+    $city = get_query_var('zone_city', '');
+    $zipcode = get_query_var('post_slug', '');
+    $type = get_query_var('service', '');
+
+    if($zipcode){
+        return home_url("/$type/$state/$city/$zipcode");
+    }
+    if($city){
+        return home_url("/$type/$state/$city/");
+    }
+    if($state){
+        return home_url("/$type/$state/");
+    }
 }

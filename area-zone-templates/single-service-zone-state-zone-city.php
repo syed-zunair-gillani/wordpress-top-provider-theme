@@ -8,16 +8,12 @@
     $type =$wp_query->query_vars['service'];
 
 
-    add_filter('wpseo_title', 'Generate_Title');
-    add_filter('wpseo_metadesc', 'Generate_Description');
-    add_filter('wpseo_canonical', 'Generate_Canonical');
+    add_filter('wpseo_title', 'Generate_Title_For_City');
+    add_filter('wpseo_metadesc', 'Generate_Description_For_City');
+    add_filter('wpseo_canonical', 'Generate_Canonical_Tag');
 
     get_header();
     
-
-   $state = get_query_var('state');
-   $qcity = get_query_var('city');
-   $type = get_query_var('type');
      
     $zip_codes_to_search = get_zipcodes_by_city($qcity);
     $city = FormatData($qcity);
