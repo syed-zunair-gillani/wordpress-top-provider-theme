@@ -300,9 +300,10 @@ function Generate_Description_For_State() {
 }
 
 
-function Generate_Canonical_Tag() {
-    global $wp_query;
+function Generate_Canonical_Tag($canonical) {
 
+    
+    global $wp_query;
     $state = $wp_query->query_vars['zone_state'];
     $city = $wp_query->query_vars['zone_city'];
     $zipcode = $wp_query->query_vars['post_slug'];
