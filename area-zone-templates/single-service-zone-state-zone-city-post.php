@@ -8,10 +8,10 @@ $city = $wp_query->query_vars['zone_city'];
 $zipcode = $wp_query->query_vars['post_slug'];
 $type =$wp_query->query_vars['service'];
 
-
+add_filter('wpseo_canonical', 'Generate_Canonical_Tag');
 add_filter('wpseo_title', 'Generate_Title_For_Zipcode');
 add_filter('wpseo_metadesc', 'Generate_Description_For_Zipcode');
-add_filter('wpseo_canonical', 'Generate_Canonical_Tag');
+
 
 get_header(); ?>
 
