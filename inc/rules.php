@@ -306,13 +306,23 @@ function Generate_Canonical_Tag() {
     $zipcode = get_query_var('post_slug', '');
     $type = get_query_var('service', '');
 
-    if($zipcode){
-        return home_url("/$type/$state/$city/$zipcode");
-    }
-    if($city){
-        return home_url("/$type/$state/$city/");
-    }
-    if($state){
-        return home_url("/$type/$state/");
-    }
+    $canonical = home_url("/$type/$state/$city/$zipcode");
+
+    // if($zipcode){
+    //     $url = ;
+    //     return $url;
+       
+    // }
+    // elseif($city){
+    //     return home_url("/$type/$state/$city/");
+    // }
+    // elseif($state){
+    //     return home_url("/$type/$state/");
+    // }
+    // else {
+    //     return "ab.com";
+    // }
+
+    return $canonical;
+
 }
