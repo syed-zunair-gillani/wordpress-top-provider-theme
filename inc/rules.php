@@ -326,6 +326,9 @@ function Generate_Canonical_Tag($canonical) {
     //     return "ab.com";
     // }
 
+    exit($canonical);
+
     return $canonical;
+
 
 }
