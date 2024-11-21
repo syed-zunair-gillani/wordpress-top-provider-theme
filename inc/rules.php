@@ -301,10 +301,12 @@ function Generate_Description_For_State() {
 
 
 function Generate_Canonical_Tag() {
-    $state = get_query_var('zone_state', '');
-    $city = get_query_var('zone_city', '');
-    $zipcode = get_query_var('post_slug', '');
-    $type = get_query_var('service', '');
+    global $wp_query;
+
+    $state = $wp_query->query_vars['zone_state'];
+    $city = $wp_query->query_vars['zone_city'];
+    $zipcode = $wp_query->query_vars['post_slug'];
+    $type =$wp_query->query_vars['service'];
 
     $canonical = home_url("/$type/$state/$city/$zipcode");
 
