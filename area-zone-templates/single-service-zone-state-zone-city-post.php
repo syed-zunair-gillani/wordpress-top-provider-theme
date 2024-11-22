@@ -12,13 +12,13 @@ $type =$wp_query->query_vars['service'];
 add_filter('wpseo_title', 'Generate_Title_For_Zipcode');
 add_filter('wpseo_metadesc', 'Generate_Description_For_Zipcode');
 
-function Generate_Canonical_Tag($canonical) {
+function Generate_Canonical($canonical) {
     if (is_page('example-page')) {
         return 'https://example.com/custom-canonical-url/';
     }
     return $canonical; // Default value
 }
-add_filter('wpseo_canonical', 'Generate_Canonical_Tag', 10);
+add_filter('wpseo_canonical', 'Generate_Canonical', 10);
 
 
 get_header(); ?>
