@@ -301,34 +301,23 @@ function Generate_Description_For_State() {
 
 
 function Generate_Canonical_Tag($canonical) {
-
-    
     global $wp_query;
     $state = $wp_query->query_vars['zone_state'];
     $city = $wp_query->query_vars['zone_city'];
     $zipcode = $wp_query->query_vars['post_slug'];
     $type =$wp_query->query_vars['service'];
 
-    $canonical = home_url("/$type/$state/$city/$zipcode");
-
-    // if($zipcode){
-    //     $url = ;
-    //     return $url;
-       
-    // }
-    // elseif($city){
-    //     return home_url("/$type/$state/$city/");
-    // }
-    // elseif($state){
-    //     return home_url("/$type/$state/");
-    // }
-    // else {
-    //     return "ab.com";
-    // }
-
-    exit($canonical);
-
-    return $canonical;
-
+    if($zipcode){
+        return home_url("/$type/$state/$city/$zipcode/");
+    }
+    elseif($city){
+        return home_url("/$type/$state/$city/");
+    }
+    elseif($state){
+        return home_url("/$type/$state/");
+    }
+    else {
+        return home_url("/$type/");
+    }
 
 }
