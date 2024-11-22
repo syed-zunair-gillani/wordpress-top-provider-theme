@@ -2375,6 +2375,10 @@ html {
     max-width: 36rem;
   }
 
+  .sm\:\!grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -2544,6 +2548,10 @@ html {
     width: 100%;
   }
 
+  .md\:\!grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2664,6 +2672,10 @@ html {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .md\:leading-10 {
+    line-height: 2.5rem;
   }
 
   .md\:leading-tight {
