@@ -301,7 +301,6 @@ function Generate_Description_For_State() {
 
 
 function Generate_Canonical_Tag($canonical) {
-    die("CD");
     global $wp_query;
     $state = $wp_query->query_vars['zone_state'];
     $city = $wp_query->query_vars['zone_city'];
