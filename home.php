@@ -328,7 +328,7 @@ $query = new WP_Query(array(
 <!-- Blogs post  -->
 <section class="py-16">
     <div class="container mx-auto px-4">
-        <div class="mb-10 flex md:flex-row flex-col gap-5 items-center">
+        <div class="mb-10 flex gap-5 items-center">
             <div class="md:w-[65%] w-full"><h2 class="text-left md:text-4xl text-2xl font-bold">Latest News</h2></div>
             <div class="md:w-[45%] w-full">
                 <a class="text-xl font-bold text-[#2B3253] flex items-center justify-end gap-2 hover:gap-10 transform transition-all duration-300 w-40 md:ml-auto" href="/blog">
