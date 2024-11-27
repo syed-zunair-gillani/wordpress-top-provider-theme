@@ -1,5 +1,5 @@
 /*
-Theme Name: Cable Mover Theme
+Theme Name: Top Providers Theme
 Theme URI: https://cablemovers.net
 Author: Mufaqar
 Author URI: https://mufaqar.com
@@ -314,4 +314,24 @@ html {
 
 .__list{
   list-style-type: circle;
+}
+
+
+.type-list li:before {
+  font-family: "fontello";
+  content: '';
+  border: 2px solid #EF9831;
+  border-radius: 100%;
+  top: 0rem;
+  left: -2.6rem;
+  font-size: 0.8rem;
+  letter-spacing: -0.4375rem;
+  line-height: 0.9375rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  position: absolute;
+}
+
+.container{
+  max-width: 1280px !important;
 }

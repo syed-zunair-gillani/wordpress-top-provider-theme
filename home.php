@@ -3,125 +3,393 @@
 /** Template Name: FrontPage */
  get_header();
 
+ $providers = [
+  "cox" => "Cox.webp",
+  "viasat" => "Cox.webp",
+  "att" => "Cox.webp",
+  "spectrum" => "Cox.webp",
+  "dish" => "Cox.webp",
+  "hughesNet" => "Cox.webp",
+  "frontier" => "Cox.webp",
+  "centurylink" => "Cox.webp",
+  "earthlink" => "Cox.webp",
+  "windstream" => "Cox.webp",
+  "wow" => "Cox.webp",
+  "xfinity" => "Cox.webp"
+];
+
 ?>
 
 <!-- Hero Section -->
-<section class="min-h-screen h-full flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('https://www.cablemovers.net/images/slide3.jpg');">
-  <div class="container mx-auto px-4 gap-7 items-center">
+<section class="min-h-[calc(100vh-15rem)] h-[calc(100vh-110px)] flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main.jpg');">
+  <div class="max-w-[1280px] w-full mx-auto px-4 gap-7 items-center">
     <div class="py-10">
-      <h1 class="text-3xl md:text-5xl text-center md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#ef9831]">TV, Internet, Landline and Home Security providers </span> in Your Area.</h1>
-      <p class="text-[22px] text-center md:px-24 font-normal text-white my-5">Compare Top Providers, plans and deals by ZIP code.</p>
-      <?php get_template_part('template-parts/search', 'form'); ?>
+      <h1 class="text-3xl md:text-5xl text-left md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#ef9831]">TV, Internet, <br/> Landline Providers </span> in Your Area.</h1>
+      <p class="text-[22px] text-left font-normal text-white my-5">Compare Top Providers, plans and deals by ZIP code.</p>
+      <ul class="type-list text-white ml-12 flex flex-col gap-2 text-lg">
+        <li class="relative">Home Broadband</li>
+        <li class="relative">Satellite TV</li>
+        <li class="relative">Cell Phone Connection</li>
+        <li class="relative">Home Security</li>
+      </ul>
     </div>
     <div class=""></div>
   </div>
 </section>
 
-<!-- TV Providers / Internet Providers -->
-<section class="pt-16">
-  <div class="max-w-[1110px] w-full mx-auto px-4">
-        <div class="providers_slides">
-             <?php
-                    // Arguments for the WP Query
-                    $args = array(
-                        'post_type'      => 'providers', // Custom post type name
-                        'posts_per_page' => -1, // Number of posts to display
-                        'order'          => 'DESC', // Order of the posts
-        
-                    );
-                    // Custom query to fetch posts
-                    $providers_query = new WP_Query($args);
-                    // The Loop
-                    if ($providers_query->have_posts()) :
-                        while ($providers_query->have_posts()) : $providers_query->the_post();
-                            get_template_part('template-parts/box', 'provider_slide');
-                        endwhile;
-                    else :
-                        echo '<p>No providers found.</p>';
-                    endif;
-
-                    // Reset post data to avoid conflicts
-                    wp_reset_postdata();
-                ?>
-
-          </div>
-    </div>
-
-
-</section>
-<div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-10"></div>
-
-<!-- How it Works? -->
-<section class="py-16">
-  <div class="max-w-[1110px] w-full mx-auto px-4">
-    <div class="mb-10">
-      <h2 class="text-center md:text-4xl text-2xl font-semibold">How it Works?</h2>
-    </div>
-    <div class="relative grid gap-7 md:grid-cols-3">
-      <!-- Step 1 -->
-      <div class="w-full py-5 bg-white rounded-3xl">
-        <div class="mt-5">
-          <span class="block">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-6xl text-[#215690] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </span>
-          <h2 class="mt-5 text-center text-2xl font-semibold">Search</h2>
-          <div>
-            <p class="px-5 mt-5 text-base text-center">Find providers in your area with a simple zip code search.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Step 2 -->
-      <div class="w-full py-5 bg-white rounded-3xl">
-        <div class="mt-5">
-          <span class="block">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-6xl text-[#215690] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.01 2c-1.93 0-3.5 1.57-3.5 3.5 0 1.58 1.06 2.903 2.5 3.337v7.16c-.001.179.027 1.781 1.174 2.931C6.892 19.64 7.84 20 9 20v2l4-3-4-3v2c-1.823 0-1.984-1.534-1.99-2V8.837c1.44-.434 2.5-1.757 2.5-3.337 0-1.93-1.571-3.5-3.5-3.5zm0 5c-.827 0-1.5-.673-1.5-1.5S5.183 4 6.01 4s1.5.673 1.5 1.5S6.837 7 6.01 7zm13 8.163V7.997C19.005 6.391 17.933 4 15 4V2l-4 3 4 3V6c1.829 0 2.001 1.539 2.01 2v7.163c-1.44.434-2.5 1.757-2.5 3.337 0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5c0-1.58-1.06-2.903-2.5-3.337zm-1 4.837c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5z"></path>
-            </svg>
-          </span>
-          <h2 class="mt-5 text-center text-2xl font-semibold">Compare</h2>
-          <div>
-            <p class="px-5 mt-5 text-base text-center">Compare plans and prices from available providers in your area.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="w-full py-5 bg-white rounded-3xl">
-        <div class="mt-5">
-          <span class="block">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-6xl text-[#215690] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-          </span>
-          <h2 class="mt-5 text-center text-2xl font-semibold">Order</h2>
-          <div>
-            <p class="px-5 mt-5 text-base text-center">Give us a call, we’ll help you setup your service.</p>
-          </div>
-        </div>
-      </div>
+<!-- // Hero Bottom -->
+<section class="py-12 w-full bg-cover bg-no-repeat"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main-bottom.webp');">
+  <div class="max-w-[1280px] w-full px-4 mx-auto items-center flex flex-col md:flex-row gap-6 md:gap-10">
+    <h2 class="text-3xl md:text-5xl text-left md:leading-tight font-bold">Search and Find Your Providers</h2>
+    <div class="!max-w-[712px] w-full ml-auto">
+      <?php get_template_part('template-parts/search', 'form'); ?>
     </div>
   </div>
+</section>
 
-  <!-- Divider -->
-  <div class="max-w-[1110px] w-full mx-auto h-[1px] bg-black/20 my-16"></div>
-
-  <!-- Second Section -->
-  <div class="max-w-[1110px] w-full mx-auto px-4">
-        <div class="mx-auto max-w-3xl">
-          <h2 class="text-center md:text-4xl text-2xl font-semibold">What We Offer</h2>
-          <p class="text-xl font-normal text-center mt-4">Cable Movers is committed to be a one-stop shop for all your connectivity needs by making Internet, TV, Landline and Home security ordering simple and hassle free. Our experts team research and reviews leading providers and bring you the best deals. </p>
-        </div>  
-        <div class="max-w-[1110px] w-full mx-auto  bg-black/20 my-16"></div>  
-      <?php get_template_part('template-parts/internet','offer'); ?>
-      <?php get_template_part('template-parts/tv','offer'); ?>
-      <?php get_template_part('template-parts/landline','offer'); ?>
-      <?php get_template_part('template-parts/home-security','offer'); ?>
-            
+<!-- How Its Work -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10 flex md:flex-row flex-col gap-7 items-center">
+            <div class="md:w-[65%] w-full">
+                <h2 class="text-3xl md:text-5xl text-left md:leading-tight font-bold mb-4">How does it Work?</h2>
+                <p class="text-lg font-normal text-[#4E4E4E]">
+                    At Top Providers, we do the research, so you don't have to. We've reviewed the top internet and TV service providers and found the best plans and deals. Let us help you find the perfect package to fit your needs and
+                    budget. Shop smarter with Top Providers!
+                </p>
+            </div>
+            <div class="md:w-[45%] w-full">
+                <img
+                    alt="how-work"
+                    loading="lazy"
+                    width="460"
+                    height="303"
+                    decoding="async"
+                    data-nimg="1"
+                    style="color: transparent;"
+                    src="<?php echo get_template_directory_uri(); ?>/images/how-work.webp"
+                />
+            </div>
+        </div>
+        <div class="relative grid gap-7 lg:grid-cols-4 md:grid-cols-2 mb-10">
+            <div class="w-full py-7 px-4 transform hover:-translate-y-3 transition-all duration-300 ease-in-out bg-[#E7E2FE] border ">
+                <div class="mt-5">
+                    <span class="block rounded-full w-fit mx-auto p-4 bg-[#fff]">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </span>
+                    <h2 class="mt-5 text-center text-base font-bold text-[#071F37]">Search</h2>
+                    <div><p class="px-5 mt-5 text-base text-center text-[#464646]">Find providers in your area with a quick zip code search.</p></div>
+                </div>
+            </div>
+            <div class="w-full py-7 px-4 transform hover:-translate-y-3 transition-all duration-300 ease-in-out bg-[#fbf1e2] border ">
+                <div class="mt-5">
+                    <span class="block rounded-full w-fit mx-auto p-4 bg-[#fff]">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.01 2c-1.93 0-3.5 1.57-3.5 3.5 0 1.58 1.06 2.903 2.5 3.337v7.16c-.001.179.027 1.781 1.174 2.931C6.892 19.64 7.84 20 9 20v2l4-3-4-3v2c-1.823 0-1.984-1.534-1.99-2V8.837c1.44-.434 2.5-1.757 2.5-3.337 0-1.93-1.571-3.5-3.5-3.5zm0 5c-.827 0-1.5-.673-1.5-1.5S5.183 4 6.01 4s1.5.673 1.5 1.5S6.837 7 6.01 7zm13 8.163V7.997C19.005 6.391 17.933 4 15 4V2l-4 3 4 3V6c1.829 0 2.001 1.539 2.01 2v7.163c-1.44.434-2.5 1.757-2.5 3.337 0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5c0-1.58-1.06-2.903-2.5-3.337zm-1 4.837c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5z"
+                            ></path>
+                        </svg>
+                    </span>
+                    <h2 class="mt-5 text-center text-base font-bold text-[#071F37]">Compare Top Providers</h2>
+                    <div><p class="px-5 mt-5 text-base text-center text-[#464646]">Easily compare dozens of top TV and internet providers, like AT&amp;T and Xfinity, to find the best high-speed options in minutes.</p></div>
+                </div>
+            </div>
+            <div class="w-full py-7 px-4 transform hover:-translate-y-3 transition-all duration-300 ease-in-out bg-[#ffdbce] border ">
+                <div class="mt-5">
+                    <span class="block rounded-full w-fit mx-auto p-4 bg-[#fff]">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                            ></path>
+                        </svg>
+                    </span>
+                    <h2 class="mt-5 text-center text-base font-bold text-[#071F37]">Compare Bundle Deals</h2>
+                    <div><p class="px-5 mt-5 text-base text-center text-[#464646]">Discover seamless internet and TV bundles with our user-friendly zip code search. Compare the best local deals all in one place.</p></div>
+                </div>
+            </div>
+            <div class="w-full py-7 px-4 transform hover:-translate-y-3 transition-all duration-300 ease-in-out bg-[#e8ebe4] border ">
+                <div class="mt-5">
+                    <span class="block rounded-full w-fit mx-auto p-4 bg-[#fff]">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
+                            ></path>
+                            <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"></path>
+                        </svg>
+                    </span>
+                    <h2 class="mt-5 text-center text-base font-bold text-[#071F37]">Calculate Your Speed</h2>
+                    <div><p class="px-5 mt-5 text-base text-center text-[#464646]">Optimize your expenses – match your internet speed to your lifestyle with our Internet Speed Quiz. Pay only for what you really need!</p></div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
+<!-- Why Compare Top Internet and TV Service Providers -->
+<section class="pb-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl text-center md:leading-tight font-bold max-w-[900px] mx-auto w-full mb-10">Why Compare Top Internet and TV Service Providers</h2>
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-7 items-center">
+            <div class="grid gap-8">
+                <div class="w-full py-7 px-4">
+                    <div class="flex items-start gap-4">
+                        <span class="block rounded-full w-fit p-3 bg-[#e7e2fe]">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                                <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="md:text-2xl text-xl font-bold text-[#071F37] mb-2">Save Time</h2>
+                            <p class="text-base text-[#34344B]">Using our zip code search tool, quickly uncover top providers in your area. Easily filter plans for internet, TV, bundles, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full py-7 px-4">
+                    <div class="flex items-start gap-4">
+                        <span class="block rounded-full w-fit p-3 bg-[#fbf1e2]">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M488 192H336v56c0 39.7-32.3 72-72 72s-72-32.3-72-72V126.4l-64.9 39C107.8 176.9 96 197.8 96 220.2v47.3l-80 46.2C.7 322.5-4.6 342.1 4.3 357.4l80 138.6c8.8 15.3 28.4 20.5 43.7 11.7L231.4 448H368c35.3 0 64-28.7 64-64h16c17.7 0 32-14.3 32-32v-64h8c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24zm147.7-37.4L555.7 16C546.9.7 527.3-4.5 512 4.3L408.6 64H306.4c-12 0-23.7 3.4-33.9 9.7L239 94.6c-9.4 5.8-15 16.1-15 27.1V248c0 22.1 17.9 40 40 40s40-17.9 40-40v-88h184c30.9 0 56 25.1 56 56v28.5l80-46.2c15.3-8.9 20.5-28.4 11.7-43.7z"
+                                ></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="md:text-2xl text-xl font-bold text-[#071F37] mb-2">Helpful Tools</h2>
+                            <p class="text-base text-[#34344B]">Discover helpful tips and expert advice in our Resource Center. It's designed to improve your experience and make the most of our services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-8">
+                <img
+                    alt="save-money"
+                    loading="lazy"
+                    width="300"
+                    height="272"
+                    decoding="async"
+                    data-nimg="1"
+                    class="mx-auto"
+                    style="color: transparent;"
+                    src="<?php echo get_template_directory_uri(); ?>/images/1.webp"
+                />
+                <img
+                    alt="helping-tools"
+                    loading="lazy"
+                    width="300"
+                    height="272"
+                    decoding="async"
+                    data-nimg="1"
+                    class="mx-auto"
+                    style="color: transparent;"
+                    src="<?php echo get_template_directory_uri(); ?>/images/2.webp"
+                />
+            </div>
+            <div class="grid gap-8">
+                <div class="w-full py-7 px-4">
+                    <div class="flex items-start gap-4">
+                        <span class="block rounded-full w-fit p-3 bg-[#ffdbce]">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M327.027 65.816L229.79 128.23l9.856 5.397 86.51-55.53 146.735 83.116-84.165 54.023 4.1 2.244v6.848l65.923-42.316 13.836 7.838-79.76 51.195v11.723l64.633-41.487 15.127 8.57-79.76 51.195v11.723l64.633-41.487 15.127 8.57-79.76 51.195v11.723l100.033-64.21-24.828-14.062 24.827-15.937-24.828-14.064 24.827-15.937-23.537-13.333 23.842-15.305-166.135-94.106zm31.067 44.74c-21.038 10.556-49.06 12.342-68.79 4.383l-38.57 24.757 126.903 69.47 36.582-23.48c-14.41-11.376-13.21-28.35 2.942-41.67l-59.068-33.46zM227.504 147.5l-70.688 46.094 135.61 78.066 1.33-.85c2.5-1.61 6.03-3.89 10.242-6.613 8.42-5.443 19.563-12.66 30.674-19.86 16.002-10.37 24.248-15.72 31.916-20.694L227.504 147.5zm115.467 1.17a8.583 14.437 82.068 0 1 .003 0 8.583 14.437 82.068 0 1 8.32 1.945 8.583 14.437 82.068 0 1-.87 12.282 8.583 14.437 82.068 0 1-20.273 1.29 8.583 14.437 82.068 0 1 .87-12.28 8.583 14.437 82.068 0 1 11.95-3.237zm-218.423 47.115L19.143 263.44l23.537 13.333-23.842 15.305 24.828 14.063-24.828 15.938 24.828 14.063-24.828 15.938 166.135 94.106L285.277 381.8V370.08l-99.433 63.824L39.11 350.787l14.255-9.15 131.608 74.547L285.277 351.8V340.08l-99.433 63.824L39.11 320.787l14.255-9.15 131.608 74.547L285.277 321.8V310.08l-99.433 63.824L39.11 290.787l13.27-8.52 132.9 75.28 99.997-64.188v-5.05l-5.48-3.154-93.65 60.11-146.73-83.116 94.76-60.824-9.63-5.543zm20.46 11.78l-46.92 30.115c14.41 11.374 13.21 28.348-2.942 41.67l59.068 33.46c21.037-10.557 49.057-12.342 68.787-4.384l45.965-29.504-123.96-71.358zm229.817 32.19c-8.044 5.217-15.138 9.822-30.363 19.688-11.112 7.203-22.258 14.42-30.69 19.873-4.217 2.725-7.755 5.01-10.278 6.632-.09.06-.127.08-.215.137v85.924l71.547-48.088v-84.166zm-200.99 17.48a8.583 14.437 82.068 0 1 8.32 1.947 8.583 14.437 82.068 0 1-.87 12.28 8.583 14.437 82.068 0 1-20.27 1.29 8.583 14.437 82.068 0 1 .87-12.28 8.583 14.437 82.068 0 1 11.95-3.236z"
+                                ></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="md:text-2xl text-xl font-bold text-[#071F37] mb-2">Save Money</h2>
+                            <p class="text-base text-[#34344B]">Easily compare real-time prices and find the best deals that fit your budget and digital requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full py-7 px-4">
+                    <div class="flex items-start gap-4">
+                        <span class="block rounded-full w-fit p-3 bg-[#e8ebe4]">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-4xl text-[#6041BB] mx-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M219.3 .5c3.1-.6 6.3-.6 9.4 0l200 40C439.9 42.7 448 52.6 448 64s-8.1 21.3-19.3 23.5L352 102.9V160c0 70.7-57.3 128-128 128s-128-57.3-128-128V102.9L48 93.3v65.1l15.7 78.4c.9 4.7-.3 9.6-3.3 13.3s-7.6 5.9-12.4 5.9H16c-4.8 0-9.3-2.1-12.4-5.9s-4.3-8.6-3.3-13.3L16 158.4V86.6C6.5 83.3 0 74.3 0 64C0 52.6 8.1 42.7 19.3 40.5l200-40zM111.9 327.7c10.5-3.4 21.8 .4 29.4 8.5l71 75.5c6.3 6.7 17 6.7 23.3 0l71-75.5c7.6-8.1 18.9-11.9 29.4-8.5C401 348.6 448 409.4 448 481.3c0 17-13.8 30.7-30.7 30.7H30.7C13.8 512 0 498.2 0 481.3c0-71.9 47-132.7 111.9-153.6z"
+                                ></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="md:text-2xl text-xl font-bold text-[#071F37] mb-2">Get Expert Advice</h2>
+                            <p class="text-base text-[#34344B]">Count on our team of experts, who evaluate providers based on factors like performance and price. We will recommend the best options available in your area.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<?php get_template_part('template-parts/usa','statemap'); ?>
+
+<section class="py-16">
+    <div class="container mx-auto py-16 px-6 flex md:flex-row flex-col items-center gap-10 md:py-10 md:px-16 rounded-tl-[90px] rounded-br-[90px] rounded-tr-[3px] rounded-bl-[3px]">
+        <div class="md:w-[44%] w-full">
+            <h2 class="text-3xl md:text-5xl text-left md:leading-tight font-bold text-[#262626] mb-5">
+                Review <br />
+                Top Providers
+            </h2>
+            <p class="text-lg font-normal text-[#4E4E4E] mb-8">Let us help you navigate your options. Compare the leading providers in your area and find high-speed choices for internet, TV, or bundled services tailored to your needs.</p>
+            <a class="text-lg font-medium AxiformaRegular bg-[#FECE2F] text-white py-3 px-12 rounded-[3px]" href="/providers">View All</a>
+        </div>
+        <div class="md:w-[56%] w-full grid md:grid-cols-4 grid-cols-2 gap-4 [&amp;>*:nth-child(5)]:md:ml-14 [&amp;>*:nth-child(6)]:md:ml-14 [&amp;>*:nth-child(7)]:md:ml-14 [&amp;>*:nth-child(8)]:md:ml-14">
+        <?php
+          foreach ($providers as $provider => $image) {
+              $additionalClass = $provider === "wow" ? "bg-white" : "bg-white";
+              ?>
+              <a 
+                  class="w-[130px] mx-auto h-[130px] <?php echo $additionalClass; ?> rounded-full flex items-center justify-center group border" 
+                  href="/providers/<?php echo $provider; ?>">
+                  <div>
+                      <img
+                          alt="Feature"
+                          loading="lazy"
+                          width="93"
+                          height="50"
+                          decoding="async"
+                          data-nimg="1"
+                          class="group-hover:scale-105 mx-auto"
+                          src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $image; ?>"
+                          style="color: transparent;"
+                      />
+                  </div>
+              </a>
+              <?php
+          }
+        ?>  
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Top Providers? -->
+<section class="py-16 bg-[#F3FAFF]">
+    <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-center md:text-4xl text-2xl font-bold">Why Choose Top Provider?</h2>
+            <p class="text-xl font-normal my-4">
+                Finding TV and Internet Service Providers is complex and time consuming but Top Providers make the search process so easy and simple that saves you time and money. Here’s why you should shop with us.
+            </p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-2 grid-cols-1 gap-7">
+            <div class="block rounded-xl border border-gray-100 p-8 bg-white transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V128H16zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V144c0-8.8-7.2-16-16-16H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"
+                    ></path>
+                </svg>
+                <h2 class="mt-4 text-xl font-bold">Convenience</h2>
+                <p class="mt-1 text-base">
+                    Top Providers can simplify the task of setting up your Internet or TV service. Instead of searching individual provider sites do all your research, compare plans and order service all on one site.
+                </p>
+            </div>
+            <div class="block rounded-xl border border-gray-100 p-8 bg-white transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+                    ></path>
+                </svg>
+                <h2 class="mt-4 text-xl font-bold">Time Savings</h2>
+                <p class="mt-1 text-base">Top Providers can help you save time. Enter your zip code once and compare all options available at your address.</p>
+            </div>
+            <div class="block rounded-xl border border-gray-100 p-8 bg-white transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
+                    ></path>
+                </svg>
+                <h2 class="mt-4 text-xl font-bold">Cost Savings</h2>
+                <p class="mt-1 text-base">Instead of tracking offers from multiple provider websites, compare current prices in real time at Top Providers and get the best deal that fit your budget.</p>
+            </div>
+            <div class="block rounded-xl border border-gray-100 p-8 bg-white transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z"
+                    ></path>
+                </svg>
+                <h2 class="mt-4 text-xl font-bold">Expert Advice</h2>
+                <p class="mt-1 text-base">Our trained agents can answer any service related question and recommend the best options available in your area.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blogs post  -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="mb-10 flex md:flex-row flex-col gap-5 items-center">
+            <div class="md:w-[65%] w-full"><h2 class="text-left md:text-4xl text-2xl font-bold">Latest News</h2></div>
+            <div class="md:w-[45%] w-full">
+                <a class="text-xl font-bold text-[#2B3253] flex items-center justify-end gap-2 hover:gap-10 transform transition-all duration-300 w-40 md:ml-auto" href="/blog">
+                    View All
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-3xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
+            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
+                <img
+                    alt="blog2"
+                    loading="lazy"
+                    width="435"
+                    height="377"
+                    decoding="async"
+                    data-nimg="1"
+                    class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out"
+                    srcset="
+                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=640&amp;q=75  1x,
+                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=1080&amp;q=75 2x
+                    "
+                    src="/_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=1080&amp;q=75"
+                    style="color: transparent;"
+                />
+                <div class="grid gap-3 p-5 absolute bottom-0">
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/sign-up-for-internet-services">News</a>
+                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/sign-up-for-internet-services">Seasonal Promotions: When to Sign Up for Internet Services</a>
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-24T14:29:18</a>
+                </div>
+            </div>
+            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
+                <img
+                    alt="blog2"
+                    loading="lazy"
+                    width="435"
+                    height="377"
+                    decoding="async"
+                    data-nimg="1"
+                    class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out"
+                    srcset="
+                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=640&amp;q=75  1x,
+                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=1080&amp;q=75 2x
+                    "
+                    src="/_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=1080&amp;q=75"
+                    style="color: transparent;"
+                />
+                <div class="grid gap-3 p-5 absolute bottom-0">
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/protect-network-cyber-attacks">News</a>
+                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/protect-network-cyber-attacks">How to Protect Your Home Network from Cyber Attacks</a>
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-16T13:00:31</a>
+                </div>
+            </div>
+            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
+                <img alt="blog2" width="435" height="377" decoding="async" data-nimg="1" class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out" src="" style="" />
+                <div class="grid gap-3 p-5 absolute bottom-0">
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/isp-privacy">News</a>
+                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/isp-privacy">Best Practices for Online Privacy: What Your ISP Can See and How to Protect Yourself</a>
+                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-12T14:58:10</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Enter your zip code to find providers and plans in your area: -->
 <section class="py-16 bg-[#F3FAFF]">
@@ -135,60 +403,8 @@
 
 </section>
 
-<!-- Why Choose Cable Movers? -->
-<section class="py-16">
-    <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-center md:text-4xl text-2xl font-bold">Why Choose Cable Movers?</h2>
-            <p class="text-xl font-normal my-4">
-                Finding TV and Internet Service Providers is complex and time consuming but cable movers make the search process so easy and simple that saves you time and money. Here’s why you should shop with us.
-            </p>
-        </div>
-        <div class="mt-8 grid md:grid-cols-2 grid-cols-1 gap-7">
-            <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V128H16zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V144c0-8.8-7.2-16-16-16H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"
-                    ></path>
-                </svg>
-                <h2 class="mt-4 text-xl font-bold">Convenience</h2>
-                <p class="mt-1 text-base">
-                    Cable Movers can simplify the task of setting up your Internet or TV service. Instead of searching individual provider sites do all your research, compare plans and order service all on one site.
-                </p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-                    ></path>
-                </svg>
-                <h2 class="mt-4 text-xl font-bold">Time Savings</h2>
-                <p class="mt-1 text-base">Cable Movers can help you save time. Enter your zip code once and compare all options available at your address.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
-                    ></path>
-                </svg>
-                <h2 class="mt-4 text-xl font-bold">Cost Savings</h2>
-                <p class="mt-1 text-base">Instead of tracking offers from multiple provider websites, compare current prices in real time at Cable Movers and get the best deal that fit your budget.</p>
-            </div>
-            <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="h-10 w-10 text-[#215690]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z"
-                    ></path>
-                </svg>
-                <h2 class="mt-4 text-xl font-bold">Expert Advice</h2>
-                <p class="mt-1 text-base">Our trained agents can answer any service related question and recommend the best options available in your area.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Need Help Finding The Best Provider For You? -->
-<section class="py-24 bg-blue-500">
+<section class="py-24 bg-[#6746C8]">
     <div class="container mx-auto px-4 items-center">        
         <div class="text-center">
             <h2 class="md:text-5xl text-3xl leading- font-semibold text-white">Need Help Finding The Best Provider For You?</h2>

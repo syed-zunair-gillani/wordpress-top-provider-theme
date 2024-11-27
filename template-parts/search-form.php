@@ -1,4 +1,4 @@
-<div class="!max-w-[712px] w-full mx-auto">
+<div>
     <form id="searchProvidersForm"  class="sm:bg-gray-100 rounded-2xl shadow-xl w-full sm:w-auto" method="post" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <div class="relative sm:flex-row flex-col gap-2 flex sm:pl-3 items-center w-full m-auto serch_form">
             <div class="flex items-center bg-gray-100 w-full border border-gray-300 sm:border-none">
