@@ -18,6 +18,13 @@
   "xfinity" => "Cox.webp"
 ];
 
+$query = new WP_Query(array(
+  'posts_per_page' => 3,
+  'post_type'      => 'post',
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+));
+
 ?>
 
 <!-- Hero Section -->
@@ -335,58 +342,36 @@
             </div>
         </div>
         <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
-            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
-                <img
-                    alt="blog2"
-                    loading="lazy"
-                    width="435"
-                    height="377"
-                    decoding="async"
-                    data-nimg="1"
-                    class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out"
-                    srcset="
-                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=640&amp;q=75  1x,
-                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=1080&amp;q=75 2x
-                    "
-                    src="/_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2Finternet-services.jpg&amp;w=1080&amp;q=75"
-                    style="color: transparent;"
-                />
-                <div class="grid gap-3 p-5 absolute bottom-0">
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/sign-up-for-internet-services">News</a>
-                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/sign-up-for-internet-services">Seasonal Promotions: When to Sign Up for Internet Services</a>
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-24T14:29:18</a>
-                </div>
-            </div>
-            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
-                <img
-                    alt="blog2"
-                    loading="lazy"
-                    width="435"
-                    height="377"
-                    decoding="async"
-                    data-nimg="1"
-                    class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out"
-                    srcset="
-                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=640&amp;q=75  1x,
-                        /_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=1080&amp;q=75 2x
-                    "
-                    src="/_next/image?url=https%3A%2F%2Ftopproviders.mufaqar.com%2Fwp-content%2Fuploads%2F2024%2F09%2FCyber-Attack.jpg&amp;w=1080&amp;q=75"
-                    style="color: transparent;"
-                />
-                <div class="grid gap-3 p-5 absolute bottom-0">
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/protect-network-cyber-attacks">News</a>
-                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/protect-network-cyber-attacks">How to Protect Your Home Network from Cyber Attacks</a>
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-16T13:00:31</a>
-                </div>
-            </div>
-            <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
-                <img alt="blog2" width="435" height="377" decoding="async" data-nimg="1" class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out" src="" style="" />
-                <div class="grid gap-3 p-5 absolute bottom-0">
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/blog/isp-privacy">News</a>
-                    <a class="md:text-2xl text-xl font-bold text-white" href="/blog/isp-privacy">Best Practices for Online Privacy: What Your ISP Can See and How to Protect Yourself</a>
-                    <a class="text-lg font-normal text-[#FECE2F]" href="/">2024-09-12T14:58:10</a>
-                </div>
-            </div>
+            <?php
+              if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post();
+                  $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                  $post_date = get_the_date('F j, Y');
+                    ?>
+                      <div class="relative bg-gradient-to-b from-[#000000] to-[#6746C8] group">
+                          <img
+                              alt="blog2"
+                              loading="lazy"
+                              width="435"
+                              decoding="async"
+                              data-nimg="1"
+                              class="opacity-[.3] group-hover:opacity-70 transition duration-300 ease-in-out min-h-[360px] h-full object-cover"
+                              src="<?php echo esc_url($featured_image_url ? $featured_image_url : '/path/to/default-image.jpg'); ?>"
+                              style="color: transparent;"
+                          />
+                          <div class="grid gap-3 p-5 absolute bottom-0">
+                              <a class="text-lg font-normal text-[#FECE2F]" href=<?php echo esc_url(get_permalink()); ?>>News</a>
+                              <a class="md:text-2xl text-xl font-bold text-white" href=<?php echo esc_url(get_permalink()); ?>><?php the_title() ?></a>
+                              <a class="text-lg font-normal text-[#FECE2F]" href=<?php echo esc_url(get_permalink()); ?>><?php echo esc_html($post_date); ?></a>
+                          </div>
+                      </div>
+                    <?php
+                endwhile;
+                wp_reset_postdata();
+              else :
+                echo '<p>No posts found.</p>';
+              endif;
+            ?>
         </div>
     </div>
 </section>

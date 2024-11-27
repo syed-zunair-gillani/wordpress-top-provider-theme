@@ -996,6 +996,10 @@ video {
   height: fit-content;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .max-h-56 {
   max-height: 14rem;
 }
@@ -1010,6 +1014,22 @@ video {
 
 .min-h-\[calc\(100vh-15rem\)\] {
   min-height: calc(100vh - 15rem);
+}
+
+.min-h-\[\] {
+  min-height: ;
+}
+
+.min-h-\[3\] {
+  min-height: 3;
+}
+
+.min-h-\[360px\] {
+  min-height: 360px;
+}
+
+.min-h-\[320px\] {
+  min-height: 320px;
 }
 
 .w-10 {
