@@ -45,7 +45,7 @@ $query = new WP_Query(array(
 </section>
 
 <!-- // Hero Bottom -->
-<section class="py-12 w-full bg-cover bg-no-repeat"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main-bottom.webp');">
+<section id="search" class="py-12 w-full bg-cover bg-no-repeat"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main-bottom.webp');">
   <div class="max-w-[1280px] w-full px-4 mx-auto items-center flex flex-col md:flex-row gap-6 md:gap-10">
     <h2 class="text-3xl md:text-5xl text-left md:leading-tight font-bold">Search and Find Your Providers</h2>
     <div class="!max-w-[712px] w-full ml-auto">
