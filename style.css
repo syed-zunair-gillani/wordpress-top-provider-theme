@@ -17,6 +17,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 body,
 html {
   font-family: 'Manrope', sans-serif !important;
+  scroll-behavior: smooth;
 }
 .container {
   max-width: 1110px !important;
