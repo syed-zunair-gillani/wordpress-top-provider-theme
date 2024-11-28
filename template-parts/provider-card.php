@@ -84,9 +84,9 @@ if($type === "home-security"){
         <?php                  
             echo '<ul class="grid gap-2 mt-4">';                   
             foreach ($features_items as $feature_item) {
-                echo '<li class="flex gap-1 items-center">';
+                echo '<li class="flex gap-1">';
                 echo '<span class="text-[#6041BB] font-bold mr-2">➤</span>';
-                echo '<span class="text-gray-600">' . trim($feature_item) . '</span>';
+                echo '<span class="text-gray-600 capitalize">' . trim($feature_item) . '</span>';
                 echo '</li>';
             }
             echo '</ul>';
