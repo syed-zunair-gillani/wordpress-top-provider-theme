@@ -1,42 +1,31 @@
 <?php
 
-// global $wp_query;
+    $state = get_query_var('state');
+    $city = get_query_var('city');
+    $zipcode = get_query_var('zipcode');
+    $type = get_query_var('type');
 
-// // Get all query variables
-// $query_vars = $wp_query->query_vars;
+    $URL = '';
 
-// print "<pre>";
-// print_r($query_vars);
-
-$state = get_query_var('state');
-$city = get_query_var('city');
-$zipcode = get_query_var('zipcode');
-$type = get_query_var('type');
-
-$URL = '';
-
-// Check if the state, city, and zipcode exist and build the URL accordingly
-if ($state && $city && $zipcode) {
-    // All three exist: state, city, and zipcode
-    $URL = "$state/$city/$zipcode/";
-} elseif ($state && $city) {
-    // Only state and city exist
-    $URL = "$state/$city/";
-} elseif ($state) {
-    // Only state exists
-    $URL = "$state/";
-} else {
-    // None of the parameters exist
-    $URL = '/';
-}
-
-
+    // Check if the state, city, and zipcode exist and build the URL accordingly
+    if ($state && $city && $zipcode) {
+        // All three exist: state, city, and zipcode
+        $URL = "$state/$city/$zipcode/";
+    } elseif ($state && $city) {
+        // Only state and city exist
+        $URL = "$state/$city/";
+    } elseif ($state) {
+        // Only state exists
+        $URL = "$state/";
+    } else {
+        // None of the parameters exist
+        $URL = '/';
+    }
 
     $links = [
         'Internet Providers' => home_url('/internet/' . $URL),
         'TV Providers' => home_url('/tv/' . $URL),
-        'Landline Providers' => home_url('/landline/' . $URL),
-        'Home Security' => home_url('/home-security/' . $URL),
+        'Internet & TV Providers' => home_url('/internet-tv/' . $URL),
     ];
 
     function containsText($string, $matchText) {
@@ -53,16 +42,16 @@ if ($state && $city && $zipcode) {
                 <?php 
                 foreach ($links as $label => $href): 
                     // Check if $type is contained in $href
-                    $isActive = strpos($href, $type) !== false; 
+                    $isActive = containsText($href, $type)
                 ?>
                     <li>
-                        <a class="hover:bg-[#ffff] hover:text-[#6041BB] md:text-base text-xs text-center inline-block w-full font-medium md:px-3 px-1.5 py-1.5 rounded-3xl <?php 
+                        <a class="hover:bg-[#ffff] !bg-[#fff] !text-[#6041BB] hover:text-[#6041BB] md:text-base text-xs text-center inline-block w-full font-medium md:px-3 px-1.5 py-1.5 rounded-3xl <?php 
                             // Add the active class if $isActive is true
-                            if ($isActive) {
-                                echo "!bg-[#fff] !text-[#6041BB]";
-                            } else{
-                                echo "text-white";
-                            }
+                            // if ($isActive) {
+                            //     echo "!bg-[#fff] !text-[#6041BB]";
+                            // } else{
+                            //     echo "text-white";
+                            // }
                         ?>" href="<?php echo htmlspecialchars($href, ENT_QUOTES, 'UTF-8'); ?>">
                             <?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?>
                         </a>

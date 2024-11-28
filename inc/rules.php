@@ -5,7 +5,7 @@
 // Step 1: Define dynamic rewrite rules for all service types
 function custom_dynamic_rewrite_rules() {
     // Define the static service types
-    $services = ['internet', 'tv', 'home-security', 'landline'];
+    $services = ['internet', 'tv', 'internet-tv'];
     
     foreach ($services as $service) {
         // Pattern for full URL: /service/zone_state/zone_city/post_slug
