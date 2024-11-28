@@ -45,7 +45,7 @@
                     $isActive = containsText($href, $type)
                 ?>
                     <li>
-                        <a class="hover:bg-[#ffff] !bg-[#fff] !text-[#6041BB] hover:text-[#6041BB] md:text-base text-xs text-center inline-block w-full font-medium md:px-3 px-1.5 py-1.5 rounded-3xl <?php 
+                        <a class="hover:bg-[#111] hover:text-[#fff] !bg-[#fff] !text-[#6041BB] md:text-base text-xs text-center inline-block w-full font-medium md:px-3 px-1.5 py-1.5 rounded-3xl <?php 
                             // Add the active class if $isActive is true
                             // if ($isActive) {
                             //     echo "!bg-[#fff] !text-[#6041BB]";
