@@ -89,7 +89,7 @@ $query_fast = new WP_Query($query_args_fast);
 
 
 
-<section class="py-14 flex items-center bg-gray-50 overflow-hidden relative">
+<section class="py-14 flex items-center bg-gray-50 relative">
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
@@ -870,20 +870,20 @@ $query_fast = new WP_Query($query_args_fast);
                 $faqs;
                 $internet_faqs = [
                     [
-                        "question" => "1. Who is the Best Internet Service Provider in $zipcode",
-                        "answer" => "$total_providers_count Internet service providers are available in $zipcode Based on the availability $first_provider_title is the best internet service provider in  $zipcode"
+                        "question" => "1. Who is the Best Internet Service Provider in $zipcode?",
+                        "answer" => "5 Internet service providers are available in $zipcode Based on the availability HughesNet is the best internet service provider in $zipcode"
                     ],
                     [
-                        "question" => "2. Who is the fastest Internet service provider in  $zipcode?",
-                        "answer" => "$first_provider_title is the fastest internet service provider in {$zipcode} and offers max download speeds up to {summery_speed}Mbps in select areas."
+                        "question" => "2. Who is the fastest Internet service provider in $zipcode?",
+                        "answer" => "HughesNet is the fastest internet service provider in $zipcode and offers max download speeds up to in select areas."
                     ],
                     [
                         "question" => "3. Who is the cheapest Internet service provider in $zipcode?",
-                        "answer" => "$first_provider_title is the cheapest internet service provider in {$zipcode} with price starting from {price}"
+                        "answer" => "HughesNet is the cheapest internet service provider in $zipcode with price starting from $55.00."
                     ],
                     [
                         "question" => "4. What is the typical internet speed options offered in $zipcode?",
-                        "answer" => "In {$zipcode} internet speed options can vary among internet service providers but most plans include speeds from 25 mbps to 5000 mbps."
+                        "answer" => "In $zipcode internet speed options can vary among internet service providers but most plans include speeds from 25 mbps to 5000 mbps."
                     ],
                     [
                         "question" => "5. How do I check the availability of Internet service providers in $zipcode?",
@@ -892,81 +892,56 @@ $query_fast = new WP_Query($query_args_fast);
                 ];
                 $tv_faqs = [
                     [
-                        "question" => "1. How do I check the availability of TV service providers in $zipcode",
+                        "question" => "How do I check the availability of TV service providers in $zipcode",
                         "answer" => "To check TV service providers availability, Enter your zip code to find the best TV options available to you."
                     ],
                     [
-                        "question" => "2. How do I setup TV service in my new home in $zipcode",
-                        "answer" => " To setup TV service in your new home, contact the above listed service providers, inquire about their plans and select the plan that works for you."
+                        "question" => "2. How do I setup TV service in my new home in $zipcode?",
+                        "answer" => "To setup TV service in your new home, contact the above listed service providers, inquire about their plans and select the plan that works for you."
                     ],
                     [
-                        "question" => "3. Can I get TV service without any contract in $zipcode",
-                        "answer" => "Yes. A few TV service providers in {$zipcode} offer no contract or month to month services. Call the providers to know more."
+                        "question" => "3. Can I get TV service without any contract in $zipcode?",
+                        "answer" => "Yes. A few TV service providers in $zipcode offer no contract or month to month services. Call the providers to know more."
                     ],
                     [
-                        "question" => "4. Who is the Best TV Service Provider in $zipcode",
-                        "answer" => "{$total_providers_count} TV service providers are available in {$zipcode} Based on the availability and pricing {$first_provider_title} is the best TV service provider in {$zipcode}."
+                        "question" => "4. Who is the Best TV Service Provider in $zipcode?",
+                        "answer" => "4 TV service providers are available in $zipcode Based on the availability and pricing DISH is the best TV service provider in $zipcode ."
                     ],
                     [
-                        "question" => "5.	Who is the cheapest TV service provider in $zipcode",
-                        "answer" => "{$first_provider_title} is the cheapest TV service provider in {$zipcode} with price starting from {Price}"
-                    ],
+                        "question" => "5. Who is the cheapest TV service provider in $zipcode?",
+                        "answer" => "DISH is the cheapest TV service provider in $zipcode with price starting from $79.99"
+                    ]
                 ];
-                $landline_faqs = [
+                $internet_tv = [
                     [
-                        "question" => "1.	What is a Landline?",
-                        "answer" => "A landline is a type of home phone service that transmits audio data over a wire (typically copper, cable or fiber) and comes with features like Caller ID, Call Forwarding, Call Blocking and Three-way calling."
+                        "question" => "1. How do I check the availability of Internet and TV service providers in $zipcode?",
+                        "answer" => "To check Internet and TV service providers bundles availability, Enter your zip code to find the best bundle options available to you."
                     ],
                     [
-                        "question" => "2.	Who is the Best Landline Phone Service Provider in $zipcode",
-                        "answer" => "$total_providers_count landline service providers are available in Zip Code {$zipcode}. Based on the availability {$first_provider_title}  is the best landline phone service provider in $zipcode"
+                        "question" => "2. How do I setup internet and TV service in my new home in $zipcode?",
+                        "answer" => "To setup internet and TV service in your new home, contact the above listed service providers, inquire about their plans and select the plan that works for you."
                     ],
                     [
-                        "question" => "3.	Can I get Landline Phone Service without Internet in $zipcode",
-                        "answer" => "Yes. You can get a landline home phone service without internet in Zip Code $zipcode as many providers offer traditional landline phone service options which requires a separate line and don’t require an internet connection."
+                        "question" => "3. Can I get internet and TV bundle without any contract in $zipcode?",
+                        "answer" => "Yes. A few service providers in $zipcode offer no contract or month to month services. Check with the providers to know more."
                     ],
                     [
                         "question" => "4.	Who is the cheapest Internet service provider in $zipcode",
-                        "answer" => "{$total_providers_count} is the cheapest landline home phone service provider in Zip Code {$zipcode} with price starting from {Price}."
+                        "answer" => "bundle service providers are available in $zipcode. Based on the availability DIRECTV is the best bundle service provider in $zipcode."
                     ],
                     [
-                        "question" => "5.	How do I check the availability of Landline Phone service providers in $zipcode",
-                        "answer" => "To check Landline Phone service providers availability, Enter your zip code to find the best Landline options available to you."
+                        "question" => "5. Can I bundle Internet and TV service in $zipcode ?",
+                        "answer" => "Yes. Many providers in $zipcode offer bundle options to combine internet and TV services for potential cost savings."
                     ],
                 ];
-                $home_security_faqs = [
-                    [
-                        "question" => "1.	What are home security systems?",
-                        "answer" => "Home security systems are used to protect theft and burglaries and include a central hub, entryway sensors, glass break sensors and motion sensors, security indoor and outdoor cameras, video doorbells and home automation devices."
-                    ],
-                    [
-                        "question" => "2.	What are the most affordable security systems in $zipcode, $state?",
-                        "answer" => "(insert lowest provider name) topped our list as the most affordable home security system in (insert zip code) with price starting from (insert lowest provider price) per month."
-                    ],
-                    [
-                        "question" => "3.	What are the most affordable security systems in $zipcode, $state?",
-                        "answer" => "From In house 24/7 monitoring team to controlling everything from a single mobile app, Vivint is rated the best home security system in $zipcode, $state. "
-                    ] ,
-                    [
-                        "question" => "4.	Can I install my own security system?",
-                        "answer" => "While DIY is on the rise, we highly recommend professional installation for the home security systems for a seamless integration between different devices."
-                    ],
-                    [
-                        "question" => "5.	Do I have to sign a contract for home security?",
-                        "answer" => "Security companies like ADT and Vivint may require a contract while other providers such as Ring, SimpliSafe offer DIY solutions that never require a contract."
-                    ],
-                    [
-                        "question" => "6.	What Home Security Providers are Available in $zipcode, $state?",
-                        "answer" => "Availability varies for Home Security systems. To check availability, enter your zip code (zip code has a popup link to the zip search bar) to find the best security companies available to you."
-                    ] 
-                ];
+                
  
                 if ($type === 'tv'):
                     $faqs = $tv_faqs;
                 elseif ($type === 'internet'):
                     $faqs = $internet_faqs;
-                elseif ($type === 'landline'):
-                    $faqs = $landline_faqs;
+                elseif ($type === 'internet-tv'):
+                    $faqs = $internet_tv;
                 else:
                     $faqs = $home_security_faqs;
                 endif;
