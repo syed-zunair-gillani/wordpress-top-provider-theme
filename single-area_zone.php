@@ -11,7 +11,7 @@ get_header();
 ?>
 
 
-<section class="min-h-[40vh] flex items-center bg-gray-50"> 
+<section class="py-14 flex items-center bg-gray-50"> 
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">

@@ -39,7 +39,7 @@ get_header();
  ?> 
  
  
- <section class="min-h-[40vh] flex items-center bg-gray-50"> 
+ <section class="py-14 flex items-center bg-gray-50"> 
      <div class="container mx-auto px-4">
          <div class="flex justify-center flex-col items-center">
              <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
@@ -58,6 +58,7 @@ get_header();
          <div class="mb-10">
              <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $state ?> </span></h2>
          </div>
+         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
          <?php
          // Query the posts
              if ($query->have_posts()) {
@@ -70,7 +71,7 @@ get_header();
              // Reset post data
              wp_reset_postdata();
          ?>
-         
+         </div>
          <div><p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may apply.</p></div>
      </div>
  </section>

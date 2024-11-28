@@ -160,27 +160,34 @@ $providersData = [
             <div class="lg:mx-auto text-left ">
                 <h4 class="text-lg text-gray-900 font-medium mb-7">Top Providers</h4>
                 <ul class="text-sm  transition-all duration-500">
-                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Home</a></li>
-                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">About</a></li>
-                    <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Pricing</a></li>
+                    <?php 
+                        foreach (array_slice($providersData, 0, 11) as $provider) {
+                            echo "<li class='mb-4'><a href='{$provider['link']}' class='text-gray-600 hover:text-gray-900'>{$provider['name']}</a></li>";
+                            // echo "<li class="mb-6"><a href='{$provider['link']}'  class="text-gray-600 hover:text-gray-900">{$provider['name']}</a></li>"
+                        }                        
+                    ?>
                 </ul>
             </div>
             <!--End Col-->
             <div class="lg:mx-auto text-left ">
-                <h4 class="text-lg text-gray-900 font-medium mb-7">Products</h4>
+                <h4 class="text-lg text-gray-900 font-medium mb-7 !opacity-0">Providers</h4>
                 <ul class="text-sm  transition-all duration-500">
-                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Figma UI System</a></li>
-                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Icons Assets</a></li>
-                    <li><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Responsive Blocks</a></li>
+                    <?php
+                        foreach (array_slice($providersData, 11) as $provider) {
+                            echo "<li class='mb-4'><a href='{$provider['link']}' class='text-gray-600 hover:text-gray-900'>{$provider['name']}</a></li>";
+                        }
+                    ?>
                 </ul>
             </div>
             <!--End Col-->
             <div class="lg:mx-auto text-left ">
                 <h4 class="text-lg text-gray-900 font-medium mb-7">Support</h4>
                 <ul class="text-sm  transition-all duration-500">
-                    <li class="mb-6"><a href="javascript:;"  class="text-gray-600 hover:text-gray-900">Customer Support</a></li>
-                    <li class="mb-6"><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Terms & Conditions</a></li>
-                    <li ><a href="javascript:;"  class=" text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
+                    <?php 
+                        foreach (array_slice($navLinks, 0, 11) as $otherpage) {
+                            echo "<li class='mb-4'><a href='{$otherpage['link']}' class='text-gray-600 hover:text-gray-900'>{$otherpage['name']}</a></li>";
+                        }                        
+                    ?>
                 </ul>
             </div>
             <!--End Col-->

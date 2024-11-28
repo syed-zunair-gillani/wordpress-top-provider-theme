@@ -85,48 +85,56 @@ $query_args_fast = array(
 );
 $query_fast = new WP_Query($query_args_fast);
 
-
-
 ?>
 
 
 
-<section class="min-h-[40vh] flex items-center bg-gray-50">
+<section class="py-14 flex items-center bg-gray-50 overflow-hidden relative">
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
                 <?php echo $type ?> Providers in <br />
-                ZIP Code <span class="text-[#ef9831]"><?php echo $zipcode ?></span>
+                ZIP Code <span class="text-[#6041BB]"><?php echo $zipcode ?></span>
             </h1>
-            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?>
-                Providers in your area:</p>
-            <?php get_template_part('template-parts/filter', 'form'); ?>
+            <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best 
+                <?php echo $type ?> Providers in your area:
+            </p>
+            <div class="!max-w-[712px] w-full bg-white z-30 rounded-2xl mx-auto">
+                <?php get_template_part('template-parts/search', 'form'); ?>
+            </div>
         </div>
     </div>
+    <img src="<?php echo get_template_directory_uri(); ?>/images/business.webp" class="absolute right-0 z-10 bottom-0 w-72"/>
+    <img src="<?php echo get_template_directory_uri(); ?>/images/wave1.png" class="absolute opacity-40 -left-60 -bottom-20 w-[800px]"/>
 </section>
 
+
 <?php get_template_part( 'template-parts/types', 'routing' ); ?>
+
 
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
         </div>
-        <?php
-        // Query the posts
-            $query = new WP_Query($args);
-            $i = 0;
-            if ($query->have_posts()) {
-                while ($query->have_posts()) { $query->the_post(); $i++; set_query_var('provider_index', $i);     
-                    get_template_part( 'template-parts/provider', 'card' );
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <?php
+            // Query the posts
+                $query = new WP_Query($args);
+                $i = 0;
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) { $query->the_post(); $i++; set_query_var('provider_index', $i);     
+                        get_template_part( 'template-parts/provider', 'card' );
+                    }
+                } else {
+                    echo 'No providers found with the specified zip code.';
                 }
-            } else {
-                echo 'No providers found with the specified zip code.';
-            }
-            // Reset post data
-            wp_reset_postdata();
-        ?>
+                // Reset post data
+                wp_reset_postdata();
+            ?>
+        </div>
+
         <div>
             <p class="text-sm font-[Roboto] mt-10">*DISCLAIMER: Availability vary by service address. not all offers
                 available in all areas, pricing subject to change at any time. Additional taxes, fees, and terms may
@@ -144,7 +152,7 @@ $query_fast = new WP_Query($query_args_fast);
                 <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
             </h2>
         </div>
-        <div class="md:w-full min-w-fit grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?> bg-[#215690]">
+        <div class="md:w-full min-w-fit grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?> bg-[#6041BB]">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -192,7 +200,7 @@ $query_fast = new WP_Query($query_args_fast);
                     $cheap_package =  $services['cheap_package'];
                     $contract =  $services['contract'];
             ?>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+            <div class="w-full mx-auto h-auto bg-[#fafafa]">
                 <div class="md:w-full w-full grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
                     <div
                         class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -252,7 +260,7 @@ $query_fast = new WP_Query($query_args_fast);
                 <?php else: ?>
                 <?php endif; ?>
             </div>
-            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
+            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#6041BB] md:grid-cols-4">
                 <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -299,7 +307,7 @@ $query_fast = new WP_Query($query_args_fast);
                             $connection_type =  $services['connection_type'];
                             $fast_package =  $services['fast_package'];
                             ?>
-                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                <div class="w-full mx-auto h-auto bg-[#fafafa]">
                     <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
                         <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
                             <div
@@ -341,7 +349,7 @@ $query_fast = new WP_Query($query_args_fast);
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo str_replace(['-'], ' ', $type); ?> Providers in
                 <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
         </div>
-        <div class="md:w-full min-w-fit grid  bg-[#215690] <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
+        <div class="md:w-full min-w-fit grid  bg-[#6041BB] <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -384,7 +392,7 @@ $query_fast = new WP_Query($query_args_fast);
                         $connection_type =  $services['connection_type'];
                         $fast_package =  $services['fast_package'];
                         ?>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+            <div class="w-full mx-auto h-auto bg-[#fafafa]">
                 <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full w-full grid <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
                         <div
@@ -426,7 +434,7 @@ $query_fast = new WP_Query($query_args_fast);
                     <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
-            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#215690] md:grid-cols-4">
+            <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#6041BB] md:grid-cols-4">
                 <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -474,7 +482,7 @@ $query_fast = new WP_Query($query_args_fast);
                             $setup_fee =  $services['setup_fee'];
                             $equipment_rental_fee =  $services['equipment_rental_fee'];
                             ?>
-                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                <div class="w-full mx-auto h-auto bg-[#fafafa]">
                     <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
                         <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
                             <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -516,7 +524,7 @@ $query_fast = new WP_Query($query_args_fast);
                     <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
-            <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
+            <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#6041BB] md:grid-cols-5">
                 <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -570,7 +578,7 @@ $query_fast = new WP_Query($query_args_fast);
                             $equipment_rental_fee =  $services['equipment_rental_fee'];
                             $broadcast_tv_fee =  $services['broadcast_tv_fee'];
                             ?>
-                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                <div class="w-full mx-auto h-auto bg-[#fafafa]">
                     <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
                         <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
                             <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -618,7 +626,7 @@ $query_fast = new WP_Query($query_args_fast);
                     <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
-            <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#215690] md:grid-cols-3">
+            <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#6041BB] md:grid-cols-3">
                 <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
@@ -661,7 +669,7 @@ $query_fast = new WP_Query($query_args_fast);
                             $setup_fee =  $services['setup_fee'];
                             $equipment_rental_fee =  $services['equipment_rental_fee'];
                             ?>
-                <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+                <div class="w-full mx-auto h-auto bg-[#fafafa]">
                     <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
                         <div class="md:w-full w-full grid grid-cols-3 md:grid-cols-3">
                             <div class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -702,10 +710,10 @@ $query_fast = new WP_Query($query_args_fast);
             </h2>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
+            <div class="w-full mx-auto h-auto mb-6">
                 <div
                     class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-[50px] grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
+                    <div class="md:w-full min-w-[50px] grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
                         <div
                             class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
