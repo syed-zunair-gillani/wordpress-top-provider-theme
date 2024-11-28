@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main class="bg-[#215690]">
+<main class="bg-[#6041BB]">
 	<header class="py-12">
 		<div class="px-4 mx-auto w-full max-w-screen-xl text-center">
 			<span class="block mb-4 font-semibold text-white">Published <time class="font-normal text-gray-500 dark:text-gray-400" pubdate class="uppercase" datetime="2022-03-08" title="August 3rd, 2022">August 3, 2022, 2:20am EDT</time></span>

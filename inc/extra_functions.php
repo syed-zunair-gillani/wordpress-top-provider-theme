@@ -390,8 +390,8 @@ function display_service_types_details($provider_ids) {
         if (!empty($all_service_types)) {
             foreach ($all_service_types as $service_type) {
                 ?>
-                <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                    <span class="text-4xl !text-[#215690] block w-fit">
+                <div class="block rounded-xl border border-gray-100 p-8 shadow-xl transition hover:border-[#6041BB]/10 hover:shadow-[#6041BB]/10">
+                    <span class="text-4xl !text-[#6041BB] block w-fit">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M5.5 1.5A1.5 1.5 0 0 1 7 0h2a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.404 1.497c.35.305.872.678 1.628 1.056A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.224-.947c.756-.378 1.277-.75 1.628-1.056A1.5 1.5 0 0 1 5.5 12.5v-11ZM7 1a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-11A.5.5 0 0 0 9 1H7Z"
@@ -540,10 +540,10 @@ function render_provider_buttons($phone, $permalink) {
     ob_start(); // Start output buffering
     ?>
     <div class="grid gap-3 items-center justify-center p-5">
-        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#215690] hover:bg-[#ef9831]" href="tel:<?php echo esc_attr($phone); ?>">
+        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#6041BB] hover:bg-[#ef9831]" href="tel:<?php echo esc_attr($phone); ?>">
             <?php echo esc_html($phone); ?>
         </a>
-        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#215690]" href="<?php echo esc_url($permalink); ?>">
+        <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#6041BB]" href="<?php echo esc_url($permalink); ?>">
             View Plans
         </a>
     </div>

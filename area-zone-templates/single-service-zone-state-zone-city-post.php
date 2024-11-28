@@ -162,16 +162,16 @@ $query_fast = new WP_Query($query_args_fast);
             <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
                 <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                     <div>
-                        <h4 class="md:text-base text-xs text-center text-white mb-2">
+                        <h4 class="md:text-base text-xs text-center text-white">
                             <?php if ($type === 'internet'): ?>Max Download Speed <?php else: ?> # of Channels <?php endif; ?>
                         </h4>
                     </div>
                 </div>
             <?php endif; ?>
             
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                 <div>
-                    <h4 class="md:text-base text-xs text-center text-white mb-2">Starting Price</h4>
+                    <h4 class="md:text-base text-xs text-center text-white">Starting Price</h4>
                 </div>
             </div>
         </div>
@@ -362,7 +362,7 @@ $query_fast = new WP_Query($query_args_fast);
                     </div>
                 </div>
             <?php endif; ?>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Best For:</h4>
                 </div>
@@ -450,7 +450,7 @@ $query_fast = new WP_Query($query_args_fast);
                         <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
                     </div>
                 </div>
-                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
                     </div>
@@ -545,7 +545,7 @@ $query_fast = new WP_Query($query_args_fast);
                         <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
                     </div>
                 </div>
-                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Broadcast Fee</h4>
                     </div>
@@ -637,7 +637,7 @@ $query_fast = new WP_Query($query_args_fast);
                         <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
                     </div>
                 </div>
-                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                     <div>
                         <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
                     </div>
@@ -715,7 +715,7 @@ $query_fast = new WP_Query($query_args_fast);
                     class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-[50px] grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                             </div>
@@ -723,15 +723,15 @@ $query_fast = new WP_Query($query_args_fast);
 
                         <!-- $type !== 'home-security' -->
                         <?php if ($type !== 'home-security' && $type !== 'landline'): ?>
-                            <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <h4 class="md:text-base text-xs text-center text-white">Connection Type</h4>
                                 </div>
                             </div>
                             <div
-                                class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
-                                    <h4 class="md:text-base text-xs text-center text-white mb-2">
+                                    <h4 class="md:text-base text-xs text-center text-white">
                                         <?php if ($type === 'internet'): ?>Max Download Speed<?php endif; ?>
                                         <?php if ($type === 'tv'): ?>Channels<?php endif; ?>
                                     </h4>
@@ -754,13 +754,13 @@ $query_fast = new WP_Query($query_args_fast);
                         
                         <div class="grid justify-center border-r md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Starting Price</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Starting Price</h4>
                             </div>
                         </div>
                         <div
                             class="md:border-r border-r md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Contact</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Contact</h4>
                             </div>
                         </div>
                     </div>
@@ -789,7 +789,7 @@ $query_fast = new WP_Query($query_args_fast);
                                     ?>
                         <div class="min-w-[120px] md:w-full grid md:grid-cols-5 dtable">
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><a target="_blank" href="/providers/hughesnet"> <?php the_title()?> </a> </p>
                                 </div>

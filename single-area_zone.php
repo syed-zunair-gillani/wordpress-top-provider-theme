@@ -24,21 +24,21 @@ get_header();
     </div>
 </section>
 
-<section class="bg-[#215690] py-4 shadow-sm border-y border-zinc-400/20 sticky top-0">
+<section class="bg-[#6041BB] py-4 shadow-sm border-y border-zinc-400/20 sticky top-0">
     <div class="container mx-auto px-4">
         <div>
             <ul class="flex md:gap-3 gap-1.5 items-center">
                 <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet/zip-20001">Internet Providers</a>
+                    <a class="bg-[#ef9831] hover:bg-[#6041BB] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet/zip-20001">Internet Providers</a>
                 </li>
-                <li><a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/tv/zip-20001">TV Providers</a></li>
+                <li><a class="bg-[#ef9831] hover:bg-[#6041BB] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/tv/zip-20001">TV Providers</a></li>
                 <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet-tv/zip-20001">
+                    <a class="bg-[#ef9831] hover:bg-[#6041BB] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/internet-tv/zip-20001">
                         Internet and TV Providers
                     </a>
                 </li>
                 <li>
-                    <a class="bg-[#ef9831] hover:bg-[#215690] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/landline/zip-20001">Landline Providers</a>
+                    <a class="bg-[#ef9831] hover:bg-[#6041BB] text-white md:text-base text-xs text-center inline-block w-full font-medium font-[Roboto] md:px-3 px-1.5 py-1.5 rounded-3xl" href="/landline/zip-20001">Landline Providers</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +52,7 @@ get_header();
         </div>
         <div class="grid gap-7">
             <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex flex-col">
-                <div class="md:w-full min-w-fit bg-[#215690] flex justify-between items-center">
+                <div class="md:w-full min-w-fit bg-[#6041BB] flex justify-between items-center">
                     <h2 class="text-base font-bold text-center text-white p-5"><span> 1 </span>- Xfinity</h2>
                     <h2 class="text-base font-bold text-center text-white p-5"></h2>
                 </div>
@@ -102,7 +102,7 @@ get_header();
                     <div class="md:border-r border-r-0 md:border-b-0 border-b grid items-center justify-center p-5">
                         <div>
                             <p class="tch">Pricing starts from</p>
-                            <p class="tcd"><span class="font-extrabold text-[#215690] font-[Roboto] text-xl"> $19.99 </span> /mo.</p>
+                            <p class="tcd"><span class="font-extrabold text-[#6041BB] font-[Roboto] text-xl"> $19.99 </span> /mo.</p>
                         </div>
                     </div>
                     <?php echo render_provider_buttons("844-581-1129", "/providers/xfinity"); ?>

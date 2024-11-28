@@ -35,37 +35,37 @@
 
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
+            <div class="w-full mx-auto h-auto mb-6">
                 <div
                     class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-[50px] grid md:grid-cols-7 grid-cols-1 bg-[#215690]">
+                    <div class="md:w-full min-w-[50px] grid md:grid-cols-7 grid-cols-1 bg-[#6041BB]">
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <h4 class="md:text-base text-xs text-center text-white">Connection Type</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Max Download Speed</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Max Download Speed</h4>
                             </div>
                         </div>
                         <div
                             class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto md:col-span-3 h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Features</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Features</h4>
                             </div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Pricing starts from</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Pricing starts from</h4>
                             </div>
                         </div>
                     </div>
@@ -93,31 +93,31 @@
                                     ?>
                         <div class="min-w-[120px] md:w-full grid md:grid-cols-7 dtable">
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><a target="_blank"
                                             href="/providers/hughesnet"> <?php the_title()?> </a></p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs">Satellite</p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $speed ?> Mbps</p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 min-h-[64.8px] items-center md:col-span-3">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $feature ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs">$<?php echo $price ?>/mo</p>
                                 </div>

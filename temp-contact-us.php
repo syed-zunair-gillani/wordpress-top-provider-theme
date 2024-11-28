@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<section class="py-24 bg-[#215690]">
+<section class="py-24 bg-[#6041BB]">
     <div class="container mx-auto px-4">
         <h1 class="sm:text-5xl text-4xl leading-normal font-semibold text-white text-center">Contact Us</h1>
     </div>
@@ -72,7 +72,7 @@ get_header();
                         ></textarea>
                     </div>
                 </div>
-                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-[#ef9831] hover:bg-[#215690]" value="SUBMIT" /></div>
+                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-[#ef9831] hover:bg-[#6041BB]" value="SUBMIT" /></div>
             </form>
         </div>
     </div>

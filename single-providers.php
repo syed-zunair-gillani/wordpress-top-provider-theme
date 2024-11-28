@@ -92,17 +92,17 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white"><?php _e('Package', 'your-theme-textdomain'); ?></h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2"><?php _e('Speed Up To', 'your-theme-textdomain'); ?></h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white"><?php _e('Price', 'your-theme-textdomain'); ?></h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2"><?php _e('Order Now', 'your-theme-textdomain'); ?></h4></div>
                         </div>
                     </div>
@@ -119,24 +119,24 @@
                                 $price_info = get_sub_field('price_info');
                                 ?>
                                 <div class="w-full flex md:flex-row flex-col dtable">
-                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                         <div><p class="text-center md:text-base text-xs"><?php echo $package ?></p></div>
                                     </div>
-                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                         <div>
                                             <p class="text-center md:text-base text-xs font-bold"><?php echo $Speeds ?></p>
                                             <p class="text-center md:text-xs text-xs"><?php echo $speed_info; ?></p>
                                         </div>
                                     </div>
-                                    <div class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                         <div>
                                             <p class="text-center md:text-base text-xs font-bold"><?php echo $price ?></p>
                                             <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
                                         </div>
                                     </div>
-                                    <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                                 <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -162,17 +162,17 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Channels</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                                 <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -231,20 +231,20 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                             <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -311,20 +311,20 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                             <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -391,20 +391,20 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
                         </div>
                     </div>
@@ -443,7 +443,7 @@
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                             <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -472,23 +472,23 @@
         <div>
             <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-fit grid md:grid-cols-6 grid-cols-1 bg-[#215690]">
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                    <div class="md:w-full min-w-fit grid md:grid-cols-6 grid-cols-1 bg-[#6041BB]">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Package</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Speed Up To</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Channels</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Voice</h4></div>
                         </div>
-                        <div class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white">Price</h4></div>
                         </div>
-                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                        <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                             <div><h4 class="md:text-base text-xs font-bold text-center text-white mb-2">Order Now</h4></div>
                         </div>
                     </div>
@@ -535,7 +535,7 @@
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
                                         <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#215690] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
+                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
                                             <?php echo $phone ?>
                                             </a>
                                         </div>
@@ -564,8 +564,8 @@
                     $details = get_sub_field('details');
                     $icon = get_sub_field('icon');
                     ?>
-                            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#215690]/10 hover:shadow-[#215690]/10">
-                                    <span class="text-4xl !text-[#215690] text-center block w-fit mx-auto">
+                            <div class="block rounded-xl border border-gray-100 px-8 py-10 shadow-xl transition hover:border-[#6041BB]/10 hover:shadow-[#6041BB]/10">
+                                    <span class="text-4xl !text-[#6041BB] text-center block w-fit mx-auto">
                                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 fill-rule="evenodd"

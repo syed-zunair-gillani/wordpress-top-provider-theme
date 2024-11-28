@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<section class="py-24 bg-[#215690]">
+<section class="py-24 bg-[#6041BB]">
     <div class="container mx-auto px-4">
         <h1 class="sm:text-5xl text-4xl leading-normal font-extrabold text-white text-center">Blog</h1>
     </div>
@@ -30,7 +30,7 @@ get_header();
             </div>
                         
         </div>
-        <a href="javascript:;" class="cursor-pointer border border-gray-300 shadow-sm rounded-full py-3.5 px-7 w-52 flex justify-center items-center text-gray-900 font-semibold mx-auto transition-all duration-300 hover:bg-[#215690] hover:text-white">View All</a>
+        <a href="javascript:;" class="cursor-pointer border border-gray-300 shadow-sm rounded-full py-3.5 px-7 w-52 flex justify-center items-center text-gray-900 font-semibold mx-auto transition-all duration-300 hover:bg-[#6041BB] hover:text-white">View All</a>
     </div>
 </section>
                                             

@@ -6,68 +6,68 @@
             <p>Still can’t decide? Use our side-by-side comparison chart to make an informed decision.</p>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto mb-6">
+            <div class="w-full mx-auto h-auto mb-6">
                 <div
                     class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-row flex-row items-stretch">
-                    <div class="md:w-96 min-w-[50px]  bg-[#215690]">
+                    <div class="md:w-96 min-w-[50px]  bg-[#6041BB]">
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
                                 <h4 class="md:text-base text-xs text-center text-white">Connection Type</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Max Download Speed</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Max Download Speed</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Data Caps</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Data Caps</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Contract Term</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Contract Term</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Setup Fee</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Setup Fee</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Early Termination Fee</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Early Termination Fee</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Equipment Rental Fee</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Equipment Rental Fee</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Monthly Price</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Monthly Price</h4>
                             </div>
                         </div>
                         <div
-                            class="md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
-                                <h4 class="md:text-base text-xs text-center text-white mb-2">Order Now</h4>
+                                <h4 class="md:text-base text-xs text-center text-white">Order Now</h4>
                             </div>
                         </div>
 
@@ -113,61 +113,61 @@
                                     ?>
                         <div class="min-w-[120px] md:w-full dtable">
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><a target="_blank"
                                             href="/providers/hughesnet"> <?php the_title()?> </a></p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs">Satellite</p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $speed ?> Mbps</p>
                                 </div>
                             </div>
                             <div
-                                class="w-full md:border-r border-r-0 md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center md:col-span-3">
+                                class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 min-h-[64.8px] items-center md:col-span-3">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $connection_type ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $data_caps ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $contract ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $setup_fee?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $early_termination_fee ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $equipment_rental_fee ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs">$<?php echo $price ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><a href="<?php the_permalink()?>">View
                                             Plans</a></p>

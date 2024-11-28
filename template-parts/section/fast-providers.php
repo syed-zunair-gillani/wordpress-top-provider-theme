@@ -26,31 +26,31 @@
             <?php else: ?>
             <?php endif; ?>
         </div>
-        <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#215690] md:grid-cols-5">
+        <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#6041BB] md:grid-cols-4">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Provider</h4>
                 </div>
             </div>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Connection </h4>
                 </div>
             </div>
             <?php if ($type === 'internet'): ?>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Fast Package</h4>
                 </div>
             </div>
             <?php endif; ?>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid border-r justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white"><?php if ($type === 'internet'): ?> Download
                         Speed <?php else: ?> # of Channels <?php endif; ?></h4>
                 </div>
             </div>
-            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
+            <div class="grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center border-r">
                 <div>
                     <h4 class="md:text-base text-xs text-center text-white">Price</h4>
                 </div>
@@ -81,9 +81,9 @@
                         $connection_type =  $services['connection_type'];
                         $fast_package =  $services['fast_package'];
                         ?>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto bg-[#fafafa]">
+            <div class="w-full mx-auto h-auto bg-[#fafafa]">
                 <div class="w-full h-auto flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full w-full grid grid-cols-5 md:grid-cols-5">
+                    <div class="md:w-full w-full grid grid-cols-4 md:grid-cols-4">
                         <div
                             class="border-l border-r border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
