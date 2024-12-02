@@ -86,12 +86,7 @@ html {
   display: block;
 }
 /* Additional styling to make submenu behave like a dropdown */
-.submenu {
-  position: absolute;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 50;
-}
+
 /* Optional: add transition for smooth appearance */
 .submenu {
   transition: opacity 0.3s ease;
@@ -335,4 +330,34 @@ html {
 
 .container{
   max-width: 1280px !important;
+}
+
+.menu-item{
+  position: relative !important;
+}
+.parent-menu-item > ul{
+  display: none;
+}
+.parent-menu-item:hover > ul{
+  display: block;
+}
+
+.submenu {
+  transition: all 0.3s ease;
+  margin-left: 14px;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px){
+  .submenu {
+    margin-left: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .submenu li a{
+    padding-left: 0;
+    padding: 0 !important;
+  }
 }

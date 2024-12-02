@@ -87,31 +87,32 @@
                 </button>
             </div>
             <div class="hidden col-span-3 justify-between items-center w-full lg:flex lg:w-auto lg:order-1 lg:col-span-1" id="mobile-menu-2">
-                
-            <?php wp_nav_menu( array( 
-                'theme_location' => 'main', 
-                'container'      => '',
-                'container_class'=> 'flex flex-col space-y-4',
-                'menu_class'     => 'flex sm:flex-row flex-col sm:items-center md:gap-[3vw] gap-5',
-            )); ?>
-
-            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-300 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Internet Tv</a>
-                    </li>
-                    <li>
-                        <a href="/providers" class="block py-2 pr-4 pl-3 text-gray-300 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Providers</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-300 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">States</a>
-                    </li>
-                    <li>
-                        <a href="/" class="block py-2 pr-4 pl-3 text-gray-300 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Blogs</a>
-                    </li>
-                </ul>
+                <?php wp_nav_menu( array( 
+                    'theme_location' => 'main', 
+                    'container'      => '',
+                    'container_class'=> 'flex flex-col space-y-4',
+                    'menu_class'     => 'flex flex-col mt-4 font-medium lg:flex-row text-white lg:space-x-8 lg:mt-0 relative pb-3 md:pb-0',
+                    'walker'         => new Tailwind_Nav_Walker(),
+                )); ?>
             </div>
         </div>
     </nav>
 </header>
 
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggles = document.querySelectorAll('.submenu-toggle');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                const submenu = e.target.nextElementSibling;
+                if (submenu && submenu.classList.contains('submenu')) {
+                    submenu.classList.toggle('hidden');
+                }
+            });
+        });
+    });
+</script>
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
