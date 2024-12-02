@@ -2606,10 +2606,6 @@ html {
   display: none;
 }
 
-.submenu li a{
-  color: #555;
-}
-
 @media (max-width: 768px){
   .submenu {
     margin-left: 14px;
@@ -3175,11 +3171,6 @@ html {
   .md\:\!text-gray-500 {
     --tw-text-opacity: 1 !important;
     color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
-  }
-
-  .md\:\!text-gray-600 {
-    --tw-text-opacity: 1 !important;
-    color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
   }
 }
 

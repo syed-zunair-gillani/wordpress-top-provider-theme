@@ -349,10 +349,6 @@ html {
 .hidden {
   display: none;
 }
-.submenu li a{
-  color: #555;
-}
-
 @media (max-width: 768px){
   .submenu {
     margin-left: 14px;
