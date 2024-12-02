@@ -91,7 +91,7 @@
                     'theme_location' => 'main', 
                     'container'      => '',
                     'container_class'=> 'flex flex-col space-y-4',
-                    'menu_class'     => 'flex flex-col mt-4 font-medium lg:flex-row text-white lg:space-x-8 lg:mt-0 relative pb-3 md:pb-0',
+                    'menu_class'     => 'flex flex-col mt-4 font-medium lg:flex-row text-sm text-white lg:space-x-8 lg:mt-0 relative pb-3 md:pb-0',
                     'walker'         => new Tailwind_Nav_Walker(),
                 )); ?>
             </div>
