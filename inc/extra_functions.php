@@ -578,7 +578,7 @@ class Tailwind_Nav_Walker extends Walker_Nav_Menu {
             $output .= '<button class="submenu-toggle block lg:hidden px-2 py-1 text-sm text-gray-600 focus:outline-none">▼</button>';
         }
 
-        $output .= '<a href="' . esc_url($item->url) . '" class="block py-2 whitespace-nowrap pr-4 pl-3 hover:text-[#6041BB] lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0">';
+        $output .= '<a href="' . esc_url($item->url) . '" class="block py-2 whitespace-nowrap md:!text-gray-600 pr-4 pl-3 hover:text-[#6041BB] lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0">';
         $output .= esc_html($item->title);
         $output .= '</a>';
     }

@@ -10,10 +10,10 @@ get_header();
     </div>
 </section>
 
-<section class="pb-16 -mt-12">
+<section class="pb-16 mt-10">
     <div class="container mx-auto px-4">
         <div class="w-full flex items-center justify-center">
-            <form class="bg-white shadow-xl rounded py-10 lg:px-28 px-8">
+            <form class="bg-white py-10 lg:px-28 px-8">
                 <h3 class="md:text-3xl text-xl font-bold leading-7 text-center">Have question?</h3>
                 <p class="text-xl font-normal mt-3">We’re here to help. Leave a message and we’ll get you an answer soon.</p>
                 <div class="md:flex w-full gap-5 items-center mt-12">
@@ -72,7 +72,7 @@ get_header();
                         ></textarea>
                     </div>
                 </div>
-                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-[#ef9831] hover:bg-[#6041BB]" value="SUBMIT" /></div>
+                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 cursor-pointer hover:bg-[#ef9831] bg-[#6041BB] w-full" value="SUBMIT" /></div>
             </form>
         </div>
     </div>
