@@ -807,10 +807,6 @@ video {
   margin-top: -0.25rem;
 }
 
-.-mt-12 {
-  margin-top: -3rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -2139,11 +2135,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.\!text-gray-600 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
-}
-
 .no-underline {
   text-decoration-line: none;
 }
@@ -2613,6 +2604,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.submenu li a{
+  color: #555;
 }
 
 @media (max-width: 768px){
@@ -3180,11 +3175,6 @@ html {
   .md\:\!text-gray-500 {
     --tw-text-opacity: 1 !important;
     color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
-  }
-
-  .md\:text-gray-600 {
-    --tw-text-opacity: 1;
-    color: rgb(75 85 99 / var(--tw-text-opacity));
   }
 
   .md\:\!text-gray-600 {
