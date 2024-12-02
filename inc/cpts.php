@@ -1,86 +1,90 @@
 <?php
 
-
 function cptui_register_my_cpts() {
 
-	/**
-	 * Post Type: Zones.
-	 */
+    /**
+     * Post Type: Zones.
+     */
+    $labels = [
+        "name" => esc_html__( "Zones", "custom-post-type-ui" ),
+        "singular_name" => esc_html__( "Zone", "custom-post-type-ui" ),
+    ];
 
-	$labels = [
-		"name" => esc_html__( "Zones", "custom-post-type-ui" ),
-		"singular_name" => esc_html__( "Zone", "custom-post-type-ui" ),
-	];
+    $args = [
+        "label" => esc_html__( "Zones", "custom-post-type-ui" ),
+        "labels" => $labels,
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "supports" => [ "title", "editor", "thumbnail" ],
+        "rewrite" => [ "slug" => "area_zone", "with_front" => true ],
+        "show_in_graphql" => true,
+        "graphql_single_name" => "Zone",
+        "graphql_plural_name" => "Zones",
+    ];
 
-	$args = [
-		"label" => esc_html__( "Zones", "custom-post-type-ui" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"rest_namespace" => "wp/v2",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"can_export" => false,
-		"rewrite" => [ "slug" => "area_zone", "with_front" => true ],
-		"query_var" => true,
-		"supports" => [ "title", "editor", "thumbnail" ],
-		"show_in_graphql" => true,
-		"graphql_single_name" => "Zone",
-		"graphql_plural_name" => "Zones",
-	];
+    register_post_type( "area_zone", $args );
 
-	register_post_type( "area_zone", $args );
+    /**
+     * Post Type: Providers.
+     */
+    $labels = [
+        "name" => esc_html__( "Providers", "custom-post-type-ui" ),
+        "singular_name" => esc_html__( "Provider", "custom-post-type-ui" ),
+    ];
 
-	/**
-	 * Post Type: Providers.
-	 */
+    $args = [
+        "label" => esc_html__( "Providers", "custom-post-type-ui" ),
+        "labels" => $labels,
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "supports" => [ "title", "editor", "thumbnail" ],
+        "rewrite" => [ "slug" => "providers", "with_front" => true ],
+        "show_in_graphql" => true,
+        "graphql_single_name" => "SingleProvider",
+        "graphql_plural_name" => "AllProviders",
+    ];
 
-	$labels = [
-		"name" => esc_html__( "Providers", "custom-post-type-ui" ),
-		"singular_name" => esc_html__( "Provider", "custom-post-type-ui" ),
-	];
+    register_post_type( "providers", $args );
 
-	$args = [
-		"label" => esc_html__( "Providers", "custom-post-type-ui" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"rest_namespace" => "wp/v2",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"can_export" => false,
-		"rewrite" => [ "slug" => "providers", "with_front" => true ],
-		"query_var" => true,
-		"supports" => [ "title", "editor", "thumbnail" ],
-		"show_in_graphql" => true,
-		"graphql_single_name" => "SingleProvider",
-		"graphql_plural_name" => "AllProviders",
-	];
+    /**
+     * Post Type: Country Zones.
+     */
+    $labels = [
+        "name" => esc_html__( "Country Zones", "custom-post-type-ui" ),
+        "singular_name" => esc_html__( "Country Zone", "custom-post-type-ui" ),
+    ];
 
-	register_post_type( "providers", $args );
+    $args = [
+        "label" => esc_html__( "Country Zones", "custom-post-type-ui" ),
+        "labels" => $labels,
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "supports" => [ "title", "editor", "thumbnail" ],
+        "rewrite" => [ "slug" => "country_zone", "with_front" => true ],
+        "show_in_graphql" => true,
+        "graphql_single_name" => "CountryZone",
+        "graphql_plural_name" => "CountryZones",
+    ];
+
+    register_post_type( "country_zone", $args );
 }
+
+add_action( 'init', 'cptui_register_my_cpts' );
 
 
 function cptui_register_my_taxes_providers_types() {
