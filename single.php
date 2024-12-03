@@ -18,7 +18,7 @@ $month = get_the_date('M');
 $year = get_the_date('Y');
 ?>
 
-<main class="bg-[#215690]">
+<main class="bg-[#372B77]">
 	<div class="py-12 max-w-[900px] mx-auto">
 		<div class="px-4 w-full">
 			<span class="block mb-4 font-semibold text-white">Published <time class="font-normal text-gray-500 dark:text-gray-400" pubdate class="uppercase" datetime="2022-03-08" title="August 3rd, 2022"><?php echo get_the_date('F j, Y'); ?></time></span>
