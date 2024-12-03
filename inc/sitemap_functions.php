@@ -34,7 +34,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
 //SiteMapByState(); Sitemap for States
 function SiteMapByState() {
     $sitemap_folder = ABSPATH . 'sitemaps';
-    $sitemap_file = $sitemap_folder . '/states-sitemap.xml';
+    $sitemap_file = $sitemap_folder . '/states.xml';
     if (!file_exists($sitemap_folder)) {
         mkdir($sitemap_folder, 0755, true);
     }
