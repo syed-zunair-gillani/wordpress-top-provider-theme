@@ -13,32 +13,37 @@ $meta_description = get_post_meta($post_id, '_yoast_wpseo_metadesc', true);
 $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // 'full' or other sizes
 $thumbnail_id = get_post_thumbnail_id(); // Get the ID of the featured image
 $caption = wp_get_attachment_caption($thumbnail_id);
-
+$date = get_the_date('j');
+$month = get_the_date('M');
+$year = get_the_date('Y');
 ?>
 
 <main class="bg-[#215690]">
-	<header class="py-12">
-		<div class="px-4 mx-auto w-full max-w-screen-xl text-center">
+	<header class="py-12 max-w-[900px] mx-auto">
+		<div class="px-4 w-full">
 			<span class="block mb-4 font-semibold text-white">Published <time class="font-normal text-gray-500 dark:text-gray-400" pubdate class="uppercase" datetime="2022-03-08" title="August 3rd, 2022"><?php echo get_the_date('F j, Y'); ?></time></span>
-			<h1 class="mx-auto mb-4 max-w-2xl text-2xl text-white font-extrabold leading-none sm:text-3xl lg:text-4xl"><?php the_title()?></h1>
+			<h1 class="mx-auto mb-4 text-2xl text-white font-extrabold leading-none sm:text-3xl lg:text-4xl"><?php the_title()?></h1>
 			<p class="text-lg font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html($meta_description) ?></p>
 		</div>
-	</header>
-</main>
-
-
-<div class="flex relative max-w-[900px] w-full z-20 justify-between px-4 mx-auto bg-white rounded mb-20">
-    <article class="w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-        <div class="flex mb-5 flex-col lg:flex-row justify-between lg:items-center py-6 border-t border-b border-gray-200 dark:border-gray-700 not-format">
-            <span class="text-base mb-4 lg:mb-0 font-normal text-gray-500 dark:text-gray-400">
-                By <a href="#" rel="author" class="font-bold text-gray-900 no-underline hover:underline capitalize"><?php echo get_the_author(); ?></a> in <a href="<?php echo get_home_url(); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Cablemovers</a>
-            </span>
-            <aside aria-label="Share social media">
+        <section class="px-4">
+        <div class="flex flex-col py-6 border-t border-gray-500 not-format">
+            <div class="mb-4">
+                <span class="text-base mb-4 lg:mb-0 font-normal text-gray-500 dark:text-gray-400">
+                    By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo get_the_author(); ?></a> in <a href="<?php echo get_home_url(); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Cablemovers</a>
+                </span>
+                <p class="mt-1 text-white flex items-center gap-1">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span><?php echo $month ?> <?php echo $date ?>,<?php echo $year ?></span>
+                </p>
+            </div>
+            <div aria-label="Share social media">
                 <a
                     href="<?php echo esc_url("#"); ?>" target="_blank"
                     class="inline-flex items-center py-2 px-6 mr-2 text-xs font-medium text-gray-900 no-underline bg-white rounded-lg border border-gray-200 focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200"
                 >
-                    <svg class="mr-2 w-4 h-4" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <svg class="mr-2 w-4 h-4" fill="currentColor" aria-hidden="true" viewBox="0 0 512 512">
                         <path
                             d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
                         />
@@ -65,9 +70,15 @@ $caption = wp_get_attachment_caption($thumbnail_id);
                     </svg>
                     Copy link
                 </button>
-            </aside>
+            </div>
         </div>
+        </section>
+	</header>
+</main>
 
+
+<div class="flex relative max-w-[900px] w-full z-20 justify-between px-4 mx-auto bg-white rounded mb-20 mt-10">
+    <article class="w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
         <section>
             <?php
                 if (have_posts()) : 
