@@ -32,12 +32,9 @@ get_header();
             </header>
 
             <div class="entry-content">
-                <?php the_excerpt(); ?>
+                <?php the_content(); ?>
             </div>
 
-            <footer class="entry-footer">
-                <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
-            </footer>
         </article>
     <?php endwhile; ?>
 <?php else : ?>
