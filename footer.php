@@ -123,7 +123,7 @@ $providersData = [
 
 ?>
 
-<footer class="w-full image-overlay" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('<?php echo get_template_directory_uri(); ?>/images/new-maps.png')">
+<footer class="w-full image-overlay" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('<?php echo get_template_directory_uri(); ?>/images/fbg.jpg')">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!--Grid-->
         <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">

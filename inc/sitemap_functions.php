@@ -5,7 +5,7 @@
 
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
-    $base_url = 'https://dev.cblproject.cablemovers.net/sitemaps/';
+    $base_url = 'https://topproviders.net/sitemaps/';
     $types =  ['internet', 'tv', 'home-security', 'landline'];
     $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
@@ -59,8 +59,8 @@ function SiteMapByState() {
                 }
                 $xml_content .= '<url>' . PHP_EOL;
                 $xml_content .= '<loc>' . esc_url($url) . '</loc>' . PHP_EOL;
-                $xml_content .= '<lastmod>' . wp_date('c') . '</lastmod>' . PHP_EOL; // Using wp_date for current date in ISO 8601 format
-                $xml_content .= '<priority>0.8</priority>' . PHP_EOL; // Setting priority to 0.8
+                // $xml_content .= '<lastmod>' . wp_date('c') . '</lastmod>' . PHP_EOL; // Using wp_date for current date in ISO 8601 format
+                // $xml_content .= '<priority>0.8</priority>' . PHP_EOL; // Setting priority to 0.8
                 $xml_content .= '</url>' . PHP_EOL;
             }
         }
@@ -122,8 +122,8 @@ function SiteMapByZipCode() {
                 $xml_content .= "<url>" . PHP_EOL;
                 $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
                 $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
-                $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
-                $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
+                // $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
+                // $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                 $xml_content .= "</url>" . PHP_EOL;
             }
 
@@ -198,8 +198,8 @@ function SiteMapByCity() {
                     $xml_content .= "<url>" . PHP_EOL;
                     $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
                     $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
-                    $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
-                    $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
+                    // $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
+                    // $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                     $xml_content .= "</url>" . PHP_EOL;
 
                     $total_records++; // Increment the total records count
