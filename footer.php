@@ -123,7 +123,7 @@ $providersData = [
 
 ?>
 
-<footer class="w-full">
+<footer class="w-full image-overlay" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('<?php echo get_template_directory_uri(); ?>/images/new-maps.png')">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!--Grid-->
         <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
@@ -161,7 +161,7 @@ $providersData = [
                 <h4 class="text-lg text-gray-900 font-medium mb-7">Top Providers</h4>
                 <ul class="text-sm  transition-all duration-500">
                     <?php 
-                        foreach (array_slice($providersData, 0, 11) as $provider) {
+                        foreach (array_slice($providersData, 0, 7) as $provider) {
                             echo "<li class='mb-4'><a href='{$provider['link']}' class='text-gray-600 hover:text-gray-900'>{$provider['name']}</a></li>";
                             // echo "<li class="mb-6"><a href='{$provider['link']}'  class="text-gray-600 hover:text-gray-900">{$provider['name']}</a></li>"
                         }                        
@@ -173,7 +173,18 @@ $providersData = [
                 <h4 class="text-lg text-gray-900 font-medium mb-7 !opacity-0">Providers</h4>
                 <ul class="text-sm  transition-all duration-500">
                     <?php
-                        foreach (array_slice($providersData, 11) as $provider) {
+                        foreach (array_slice($providersData, 7, 7) as $provider) {
+                            echo "<li class='mb-4'><a href='{$provider['link']}' class='text-gray-600 hover:text-gray-900'>{$provider['name']}</a></li>";
+                        }
+                    ?>
+                </ul>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                <h4 class="text-lg text-gray-900 font-medium mb-7 !opacity-0">Providers</h4>
+                <ul class="text-sm  transition-all duration-500">
+                    <?php
+                        foreach (array_slice($providersData, 14) as $provider) {
                             echo "<li class='mb-4'><a href='{$provider['link']}' class='text-gray-600 hover:text-gray-900'>{$provider['name']}</a></li>";
                         }
                     ?>
@@ -189,15 +200,6 @@ $providersData = [
                         }                        
                     ?>
                 </ul>
-            </div>
-            <!--End Col-->
-            <div class="lg:mx-auto text-left ">
-                <h4 class="text-lg text-gray-900 font-medium mb-7">Subscribe</h4>
-                <p class="text-sm text-gray-500 leading-6 mb-7">Subscribe to get the latest news from us</p>
-                <a href="javascript:;"  class="flex items-center justify-center gap-2 border border-[#6746C8] rounded-full py-3 px-6 w-fit lg:mx-0  text-sm text-[#6746C8] font-semibold transition-all duration-500 hover:bg-indigo-50">Subscribe<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.25 6L13.25 6M9.5 10.5L13.4697 6.53033C13.7197 6.28033 13.8447 6.15533 13.8447 6C13.8447 5.84467 13.7197 5.71967 13.4697 5.46967L9.5 1.5" stroke="#4F46E5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    </a>
             </div>
         </div>
         <!--Grid-->
