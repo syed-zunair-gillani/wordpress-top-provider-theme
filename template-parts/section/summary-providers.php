@@ -117,7 +117,7 @@
                                     <p class="text-center md:text-base text-xs"><?php echo $feature ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs">$<?php echo $price ?>/mo</p>
                                 </div>

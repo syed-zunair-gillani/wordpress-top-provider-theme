@@ -124,7 +124,7 @@
                                             <p class="text-center md:text-xs text-xs"><?php echo $price_info ?></p>
                                         </div>
                                     </div>
-                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                         <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                             Contact us
                                         </a>
@@ -190,7 +190,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                             <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                                 Contact us
                                             </a>
@@ -270,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                             <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                                 Contact us
                                             </a>
@@ -350,7 +350,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                         <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                             Contact us
                                         </a>
@@ -430,7 +430,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                         <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                             Contact us
                                         </a>
@@ -522,7 +522,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                         <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
                                             Contact us
                                         </a>

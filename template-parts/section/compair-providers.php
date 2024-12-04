@@ -137,37 +137,37 @@
                                     <p class="text-center md:text-base text-xs"><?php echo $connection_type ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $data_caps ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $contract ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $setup_fee?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $early_termination_fee ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><?php echo $equipment_rental_fee ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs">$<?php echo $price ?></p>
                                 </div>
                             </div>
-                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                            <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center">
                                 <div>
                                     <p class="text-center md:text-base text-xs"><a href="<?php the_permalink()?>">View
                                             Plans</a></p>
