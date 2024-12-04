@@ -748,6 +748,10 @@ video {
   z-index: 11111;
 }
 
+.\!z-\[11111\] {
+  z-index: 11111 !important;
+}
+
 .order-1 {
   order: 1;
 }
@@ -952,6 +956,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.\!grid {
+  display: grid !important;
 }
 
 .hidden {
@@ -2977,6 +2985,10 @@ footer {
 
   .md\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .md\:\!grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .md\:flex-row {
