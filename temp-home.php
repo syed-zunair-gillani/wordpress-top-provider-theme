@@ -25,6 +25,15 @@ $query = new WP_Query(array(
   'order'          => 'DESC',
 ));
 
+$argsForProvider = array(
+    'post_type'      => 'providers',
+    'posts_per_page' => 12,
+    'order'          => 'DESC', 
+    'orderby'        => 'date'
+);
+
+$providers_query = new WP_Query($argsForProvider);
+
 ?>
 
 <!-- Hero Section -->
@@ -246,28 +255,28 @@ $query = new WP_Query(array(
         </div>
         <div class="md:w-[56%] w-full grid md:grid-cols-4 grid-cols-2 gap-4 [&amp;>*:nth-child(5)]:md:ml-14 [&amp;>*:nth-child(6)]:md:ml-14 [&amp;>*:nth-child(7)]:md:ml-14 [&amp;>*:nth-child(8)]:md:ml-14">
         <?php
-          foreach ($providers as $provider => $image) {
-              $additionalClass = $provider === "wow" ? "bg-white" : "bg-white";
-              ?>
-              <a 
-                  class="w-[130px] mx-auto h-[130px] <?php echo $additionalClass; ?> rounded-full flex items-center justify-center group border" 
-                  href="/providers/<?php echo $provider; ?>">
-                  <div>
-                      <img
-                          alt="Feature"
-                          loading="lazy"
-                          width="93"
-                          height="50"
-                          decoding="async"
-                          data-nimg="1"
-                          class="group-hover:scale-105 mx-auto"
-                          src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $image; ?>"
-                          style="color: transparent;"
-                      />
-                  </div>
-              </a>
-              <?php
-          }
+
+            if ($providers_query->have_posts()) :
+                while ($providers_query->have_posts()) : $providers_query->the_post();
+                    ?>
+                        <a class="w-[130px] mx-auto h-[130px] <?php echo $additionalClass; ?> rounded-full flex items-center justify-center group border" 
+                            href="<?php the_permalink() ?>">
+                            <div>
+                                <img
+                                    alt="<?php the_title() ?>"
+                                    width="93"
+                                    height="50"
+                                    class="group-hover:scale-105 mx-auto"
+                                    src="<?php the_post_thumbnail('full') ?>"
+                                />
+                            </div>
+                        </a>
+                    <?php
+                endwhile;
+            else :
+                echo '<p>No providers found.</p>';
+            endif;
+            wp_reset_postdata();
         ?>  
         </div>
     </div>

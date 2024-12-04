@@ -2264,6 +2264,7 @@ html {
 
 .submenu {
   display: none;
+  z-index: 1111111;
 }
 
 /* Show submenu when hovering over the parent li element */
