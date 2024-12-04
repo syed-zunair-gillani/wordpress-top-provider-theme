@@ -13,28 +13,27 @@ $meta_description = get_post_meta($post_id, '_yoast_wpseo_metadesc', true);
 $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // 'full' or other sizes
 $thumbnail_id = get_post_thumbnail_id(); // Get the ID of the featured image
 $caption = wp_get_attachment_caption($thumbnail_id);
-$date = get_the_date('j');
-$month = get_the_date('M');
-$year = get_the_date('Y');
 ?>
 
 <main class="bg-[#372B77]">
-	<div class="py-12 max-w-[900px] mx-auto">
-		<div class="px-4 w-full">
-			<h1 class="mx-auto mb-4 text-2xl text-white font-extrabold leading-none sm:text-3xl lg:text-4xl"><?php the_title()?></h1>
-			<p class="text-lg font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html($meta_description) ?></p>
-		</div>
+    <div class="py-12 max-w-[900px] mx-auto">
+        <div class="px-4 w-full">
+            <h1 class="mx-auto mb-4 text-2xl text-white font-extrabold leading-none sm:text-3xl lg:text-4xl"><?php the_title(); ?></h1>
+            <?php if ($meta_description): ?>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html($meta_description); ?></p>
+            <?php endif; ?>
+        </div>
         <section class="px-4">
             <div class="flex justify-between flex-col md:flex-row gap-5 md:gap-0 py-6 border-t border-gray-500 not-format">
                 <div class="mb-4">
-                    <span class="text-base mb-4 lg:mb-0 font-normal text-gray-500 dark:text-gray-400">
-                        By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo get_the_author(); ?></a> in <a href="<?php echo get_home_url(); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Cablemovers</a>
+                    <span class="text-base font-normal text-gray-500 dark:text-gray-400">
+                        By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo esc_html(get_the_author()); ?></a> in <a href="<?php echo esc_url(get_home_url()); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Cablemovers</a>
                     </span>
                     <p class="mt-2 text-white flex items-center gap-1">
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span class="font-semibold text-white">Published <time class="font-normal text-gray-500 dark:text-gray-400" pubdate class="uppercase" datetime="2022-03-08" title="August 3rd, 2022"><?php echo get_the_date('F j, Y'); ?></time></span>
+                        <span class="font-semibold text-white">Published <time datetime="<?php echo esc_attr(get_the_date('c')); ?>" class="font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html(get_the_date('F j, Y')); ?></time></span>
                     </p>
                 </div>
                 <div aria-label="Share social media">
@@ -72,55 +71,24 @@ $year = get_the_date('Y');
                 </div>
             </div>
         </section>
-	</div>
+    </div>
 </main>
 
-
-<div class="flex relative max-w-[900px] w-full z-20 justify-between px-4 mx-auto bg-white rounded mb-20 mt-6">
-    <article class="w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-
-        <figure class="pb-6">
-            <?php
-               if ($thumbnail_url) {
-                echo '<img src="' . esc_url($thumbnail_url) . '" alt="Post Thumbnail">';
-               }
-            ?>
-            <figcaption class="text-center mt-2"><?php echo esc_html($caption) ?></figcaption>
-        </figure>
+<Section class="flex relative max-w-[900px] w-full justify-between px-4 mx-auto bg-white rounded mb-20 mt-6">
+    <article class="w-full format">
+        <?php if ($thumbnail_url): ?>
+            <figure class="pb-6">
+                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($caption); ?>">
+                <?php if ($caption): ?>
+                    <figcaption class="text-center mt-2"><?php echo esc_html($caption); ?></figcaption>
+                <?php endif; ?>
+            </figure>
+        <?php endif; ?>
 
         <section class="the_content">
-            <?php echo get_the_content(); ?>
+            <?php the_content(); ?>
         </section>
     </article>
-</div>
+</Section>
 
-
-<!-- <main id="primary" class="site-main">
-
-	<?php
-	while ( have_posts() ) :
-		the_post();
-
-		get_template_part( 'template-parts/content', get_post_type() );
-
-		the_post_navigation(
-			array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'cbl_theme' ) . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'cbl_theme' ) . '</span> <span class="nav-title">%title</span>',
-			)
-		);
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
-
-	endwhile; // End of the loop.
-	?>
-
-</main>#main -->
-
-
-	
 <?php get_footer(); ?>
-
