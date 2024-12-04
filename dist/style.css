@@ -728,6 +728,10 @@ video {
   top: 0.75rem;
 }
 
+.\!z-\[11111\] {
+  z-index: 11111 !important;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -742,14 +746,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.z-\[11111\] {
-  z-index: 11111;
-}
-
-.\!z-\[11111\] {
-  z-index: 11111 !important;
 }
 
 .order-1 {
@@ -956,10 +952,6 @@ video {
 
 .grid {
   display: grid;
-}
-
-.\!grid {
-  display: grid !important;
 }
 
 .hidden {
@@ -2276,7 +2268,7 @@ html {
 
 .submenu {
   display: none;
-  z-index: 1111111;
+  z-index: 1111111 !important;
 }
 
 /* Show submenu when hovering over the parent li element */
@@ -2350,6 +2342,13 @@ html {
 
   .menu-item {
     padding: 0 !important;
+  }
+}
+
+@media(min-width:1024px){
+  .submenu {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
 }
 
@@ -2985,10 +2984,6 @@ footer {
 
   .md\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  .md\:\!grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .md\:flex-row {
