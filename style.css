@@ -80,7 +80,7 @@ html {
 /* Initially hide all submenus */
 .submenu {
   display: none;
-  z-index: 1111111;
+  z-index: 1111111 !important;
 }
 /* Show submenu when hovering over the parent li element */
 .menu-item:hover .submenu {
