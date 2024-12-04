@@ -374,3 +374,30 @@ footer {
   background-position: bottom left; 
   background-repeat: no-repeat;
 }
+
+
+.the_content{
+  margin-top: 5px;
+}
+
+.the_content h2{
+  text-align: left !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: 0px !important;
+  padding: 10px 0 !important;
+}
+.the_content hr{
+  display: none !important;
+}
+.the_content ul{
+  list-style-type: circle;
+  padding: 6px 0 0 1.4rem !important;
+}
+.the_content h3{
+  text-align: left !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 0px !important;
+  padding: 10px 0 !important;
+}
