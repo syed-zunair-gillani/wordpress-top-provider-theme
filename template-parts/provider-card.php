@@ -93,8 +93,8 @@ if($type === "home-security"){
         ?>
     </div>
     <div class="mt-6">
-        <a href="tel:<?php echo get_field( "pro_phone" ) ?>" class="w-full block text-center mb-2 py-3 text-white bg-[#FBB13D] rounded-md font-semibold hover:bg-[#6041BB]">
-            <?php echo get_field( "pro_phone" ) ?>
+        <a href="/contact-us" class="w-full block text-center mb-2 py-3 text-white bg-[#FBB13D] rounded-md font-semibold hover:bg-[#6041BB]">
+            Contact Us
         </a>
         <a href="<?php the_permalink()?>" class="w-full block text-center py-3 text-white bg-[#6041BB] rounded-md font-semibold hover:bg-[#FBB13D]">
             View More

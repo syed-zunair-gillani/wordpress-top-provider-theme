@@ -83,7 +83,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5"><?php _e('Swipe Left to See All →', 'your-theme-textdomain'); ?></div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -125,11 +125,9 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                                <?php echo $phone ?>
-                                            </a>
-                                        </div>
+                                        <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                            Contact us
+                                        </a>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
@@ -150,7 +148,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-4 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -192,9 +190,9 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                                <?php echo $phone ?>
+                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                            <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                                Contact us
                                             </a>
                                         </div>
                                     </div>
@@ -219,7 +217,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -272,9 +270,9 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                            <?php echo $phone ?>
+                                        <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                            <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                                Contact us
                                             </a>
                                         </div>
                                     </div>
@@ -299,7 +297,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -352,11 +350,11 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                            <?php echo $phone ?>
-                                            </a>
-                                        </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                        <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                            Contact us
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
@@ -379,7 +377,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -432,11 +430,11 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                            <?php echo $phone ?>
-                                            </a>
-                                        </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                        <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                            Contact us
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
@@ -460,7 +458,7 @@
             <div class="w-fit hint mx-auto block md:hidden mt-5">Swipe Left to See All →</div>
         </div>
         <div>
-            <div class="w-full lg:max-w-[1200px] mx-auto h-auto">
+            <div class="w-full h-auto">
                 <div class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
                     <div class="md:w-full min-w-fit grid md:grid-cols-6 grid-cols-1 bg-[#6041BB]">
                         <div class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -524,11 +522,11 @@
                                         </div>
                                     </div>
                                     <div class="w-full grid justify-center md:p-5 p-2 md:h-auto h-[120px] overflow-hidden items-center">
-                                        <div>
-                                            <a class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto" href="tel:<?php echo $phone ?>">
-                                            <?php echo $phone ?>
-                                            </a>
-                                        </div>
+                                    <div class="w-full grid justify-center md:p-5 p-2 min-h-[64.8px] items-center border-b">
+                                        <a  href="/contact-us" class="md:text-base text-[9px] font-medium text-white bg-[#ef9831] hover:bg-[#6041BB] md:px-3 px-[5px] py-1.5 rounded-3xl block w-[90px] md:w-[140px] text-center mx-auto">
+                                            Contact us
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
