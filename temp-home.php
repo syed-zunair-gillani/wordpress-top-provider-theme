@@ -243,7 +243,7 @@ $providers_query = new WP_Query($argsForProvider);
 
 <?php get_template_part('template-parts/usa','statemap'); ?>
 
-<!-- <section class="py-16">
+<section class="py-16">
     <div class="container mx-auto py-16 px-6 flex md:flex-row flex-col items-center gap-10 md:py-10 md:px-16 rounded-tl-[90px] rounded-br-[90px] rounded-tr-[3px] rounded-bl-[3px]">
         <div class="md:w-[44%] w-full">
             <h2 class="text-3xl md:text-5xl text-left md:leading-tight font-bold text-[#262626] mb-5">
@@ -283,7 +283,7 @@ $providers_query = new WP_Query($argsForProvider);
             ?>
         </div>
     </div>
-</section> -->
+</section>
 
 
 <!-- Why Choose Top Providers? -->
