@@ -2608,8 +2608,7 @@ footer {
 
 .the_content ul{
   list-style-type: circle;
-  padding-left: 1.4rem !important;
-  padding: 5px 0 !important;
+  padding: 6px 0 0 1.4rem !important;
 }
 
 .the_content h3{
