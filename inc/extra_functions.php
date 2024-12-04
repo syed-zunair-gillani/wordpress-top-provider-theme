@@ -553,29 +553,47 @@ function render_provider_buttons($phone, $permalink) {
 
 
 
-
 class Tailwind_Nav_Walker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"submenu !z-[11111] hidden border-l md:absolute md:bg-white mt-2 md:rounded-lg left-0 md:!text-gray-500 md:p-4 !ml-0 px-4\">\n";
     }
+
     public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
         $classes = empty($item->classes) ? array() : (array) $item->classes;
+
         if ($depth > 0) {
             $classes[] = 'child-menu-item'; // Class for child items
         } else {
             $classes[] = 'parent-menu-item'; // Class for parent items
         }
+
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
-        $has_children = !empty($args->has_children) ? 'has-children' : ''; // Check if item has children
-        $output .= '<li class="' . esc_attr("$class_names $has_children") . '">';
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+        // Check if the menu item has children
+        $has_children = !empty($args->has_children) ? 'has-children' : '';
+
+        // Menu item wrapper
+        $output .= '<li' . $class_names . ' ' . esc_attr($has_children) . '>';
+
         // Add toggle button for items with children
         if (!empty($args->has_children)) {
             $output .= '<button class="submenu-toggle block lg:hidden px-2 py-1 text-sm text-gray-600 focus:outline-none">▼</button>';
         }
 
+        // Add link
         $output .= '<a href="' . esc_url($item->url) . '" class="block py-2 whitespace-nowrap pr-4 pl-3 hover:text-[#6041BB] lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0">';
         $output .= esc_html($item->title);
         $output .= '</a>';
+    }
+
+    public function end_el( &$output, $item, $depth = 0, $args = null ) {
+        $output .= "</li>\n";
+    }
+
+    public function end_lvl( &$output, $depth = 0, $args = null ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
     }
 }
