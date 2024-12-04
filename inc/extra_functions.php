@@ -557,7 +557,7 @@ function render_provider_buttons($phone, $permalink) {
 class Tailwind_Nav_Walker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"submenu z-[11111] hidden border-l md:absolute md:bg-white mt-2 md:rounded-lg left-0 md:!text-gray-500 md:p-4 px-4\">\n";
+        $output .= "\n$indent<ul class=\"submenu z-[11111] hidden border-l md:absolute md:bg-white mt-2 md:rounded-lg left-0 md:!text-gray-500 md:p-4 !ml-0 grid lg:grid-cols-3 px-4\">\n";
     }
 
     public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
