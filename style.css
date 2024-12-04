@@ -379,7 +379,6 @@ footer {
 .the_content{
   margin-top: 5px;
 }
-
 .the_content h2{
   text-align: left !important;
   font-weight: 700;
@@ -400,4 +399,7 @@ footer {
   font-size: 1.1rem;
   border: 0px !important;
   padding: 10px 0 !important;
+}
+.the_content img{
+  width: 100% !important;
 }
