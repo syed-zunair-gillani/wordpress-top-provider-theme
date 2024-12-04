@@ -136,6 +136,12 @@ html {
     padding: 0 !important;
   }
 }
+@media(min-width:1024px){
+  .submenu {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
 /* For larger screens, always display the menu */
 @media (min-width: 641px) {
   #menu {
