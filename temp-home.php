@@ -250,37 +250,41 @@ $providers_query = new WP_Query($argsForProvider);
                 Review <br />
                 Top Providers
             </h2>
-            <p class="text-lg font-normal text-[#4E4E4E] mb-8">Let us help you navigate your options. Compare the leading providers in your area and find high-speed choices for internet, TV, or bundled services tailored to your needs.</p>
+            <p class="text-lg font-normal text-[#4E4E4E] mb-8">
+                Let us help you navigate your options. Compare the leading providers in your area and find high-speed choices for internet, TV, or bundled services tailored to your needs.
+            </p>
             <a class="text-lg font-medium AxiformaRegular bg-[#FECE2F] text-white py-3 px-12 rounded-[3px]" href="/providers">View All</a>
         </div>
-        <div class="md:w-[56%] w-full grid md:grid-cols-4 grid-cols-2 gap-4 [&amp;>*:nth-child(5)]:md:ml-14 [&amp;>*:nth-child(6)]:md:ml-14 [&amp;>*:nth-child(7)]:md:ml-14 [&amp;>*:nth-child(8)]:md:ml-14">
-        <?php
-
+        <div class="md:w-[56%] w-full grid md:grid-cols-4 grid-cols-2 gap-4 [&>*:nth-child(5)]:md:ml-14 [&>*:nth-child(6)]:md:ml-14 [&>*:nth-child(7)]:md:ml-14 [&>*:nth-child(8)]:md:ml-14">
+            <?php
             if ($providers_query->have_posts()) :
                 while ($providers_query->have_posts()) : $providers_query->the_post();
+                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    $provider_title = get_the_title();
                     ?>
-                        <a class="w-[130px] mx-auto h-[130px] <?php echo $additionalClass; ?> rounded-full flex items-center justify-center group border" 
-                            href="<?php the_permalink() ?>">
-                            <div>
-                                <img
-                                    alt="<?php the_title() ?>"
-                                    width="93"
-                                    height="50"
-                                    class="group-hover:scale-105 mx-auto"
-                                    src="<?php the_post_thumbnail('full') ?>"
-                                />
-                            </div>
-                        </a>
+                    <a class="w-[130px] mx-auto h-[130px] rounded-full flex items-center justify-center group border" 
+                        href="<?php the_permalink(); ?>">
+                        <div>
+                            <img
+                                alt="<?php echo esc_attr($provider_title); ?>"
+                                width="93"
+                                height="50"
+                                class="group-hover:scale-105 mx-auto"
+                                src="<?php echo esc_url($thumbnail_url); ?>"
+                            />
+                        </div>
+                    </a>
                     <?php
                 endwhile;
             else :
                 echo '<p>No providers found.</p>';
             endif;
             wp_reset_postdata();
-        ?>  
+            ?>
         </div>
     </div>
 </section>
+
 
 <!-- Why Choose Top Providers? -->
 <section class="py-16 bg-[#F3FAFF]">
