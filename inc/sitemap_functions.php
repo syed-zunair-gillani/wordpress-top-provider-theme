@@ -11,7 +11,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $current_date = gmdate('Y-m-d H:i +00:00');
 
     // Add the static sitemap with modification date at the top
-    $static_sitemap_url = $base_url . 'states-sitemap.xml';
+    $static_sitemap_url = $base_url . 'states.xml';
     $sitemap_index .= '<sitemap><loc>' . esc_url($static_sitemap_url) . '</loc><lastmod>' . esc_html($current_date) . '</lastmod></sitemap>';
 
     // Add dynamic sitemaps
