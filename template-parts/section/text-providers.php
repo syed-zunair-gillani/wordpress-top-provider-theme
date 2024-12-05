@@ -6,7 +6,7 @@
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
                 What Local Channels are Available from Cable TV Providers in <span
-                    class="text-[#ef9831]"><?php echo $city?>, <span class="uppercase"><?php echo $state?></span></span>
+                    class="text-[#96B93A]"><?php echo $city?>, <span class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
                 The best part of using a cable provider is accessing the news, sports, events, and special screenings of
@@ -21,7 +21,7 @@
 
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-                Why Use Cable Companies in <span class="text-[#ef9831]"><?php echo $city?>, <span
+                Why Use Cable Companies in <span class="text-[#96B93A]"><?php echo $city?>, <span
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
@@ -42,7 +42,7 @@
 
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-                How We Research TV Companies in <span class="text-[#ef9831]"><?php echo $city?>, <span
+                How We Research TV Companies in <span class="text-[#96B93A]"><?php echo $city?>, <span
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
@@ -76,7 +76,7 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-                How We Measure Home Phone Providers in <span class="text-[#ef9831]"><?php echo $city?>, <span
+                How We Measure Home Phone Providers in <span class="text-[#96B93A]"><?php echo $city?>, <span
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
@@ -102,7 +102,7 @@
 
         <div class="mb-10">
             <h2 class="text-2xl font-bold mb-2">
-                Get the Best Landline Phone Service in <span class="text-[#ef9831]"><?php echo $city?>, <span
+                Get the Best Landline Phone Service in <span class="text-[#96B93A]"><?php echo $city?>, <span
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">

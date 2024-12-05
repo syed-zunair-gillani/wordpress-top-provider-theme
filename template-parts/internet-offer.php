@@ -43,8 +43,8 @@
                                         </div>
                                     </div>
                                     <div class="grid gap-3 items-center justify-center p-5">
-                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#6041BB] hover:bg-[#ef9831]" href="tel:<?php echo $call ?>"><?php echo $call ?></a>
-                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#6041BB]" href="<?php echo get_permalink($provider[0]->ID); ?>">View Plans</a>
+                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#6041BB] hover:bg-[#96B93A]" href="tel:<?php echo $call ?>"><?php echo $call ?></a>
+                                        <a class="text-base text-white font-[Roboto] text-center uppercase px-5 py-2.5 bg-[#96B93A] hover:bg-[#6041BB]" href="<?php echo get_permalink($provider[0]->ID); ?>">View Plans</a>
                                     </div>
                                 </div>
                             </div>

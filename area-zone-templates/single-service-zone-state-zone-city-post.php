@@ -115,7 +115,7 @@ $query_fast = new WP_Query($query_args_fast);
 <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
-            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#ef9831]"><?php echo $zipcode ?> </span></h2>
+            <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <span class="text-[#96B93A]"><?php echo $zipcode ?> </span></h2>
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -149,7 +149,7 @@ $query_fast = new WP_Query($query_args_fast);
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Cheap <?php echo str_replace(['-'], ' ', $type); ?> Providers in
-                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
             </h2>
         </div>
         <div class="md:w-full min-w-fit grid <?php if ($type !== 'home-security' && $type !== 'landline'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?> bg-[#6041BB]">
@@ -249,11 +249,11 @@ $query_fast = new WP_Query($query_args_fast);
                 <?php 
                     if ($type === 'internet'): ?>
                 <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
-                        class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?></span></h2>
+                        class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?></span></h2>
 
                 <?php elseif ($type === 'tv'): ?>
                 <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
-                        class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
+                        class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
                 <p class="PClass">Below is our curated list of the cable TV providers we know that offer
                     quality service and reasonable pricing. Each one has exceptional customer service and online user
                     reviews so you can enjoy the football, latest films, and local TV stations you love. </p>
@@ -347,7 +347,7 @@ $query_fast = new WP_Query($query_args_fast);
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo str_replace(['-'], ' ', $type); ?> Providers in
-                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
+                <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span></h2>
         </div>
         <div class="md:w-full min-w-fit grid  bg-[#6041BB] <?php if ($type !== 'home-security'): ?>grid-cols-3<?php else: ?> grid-cols-2 <?php endif; ?>">
             <div class="border-r grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
@@ -431,7 +431,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the <?php echo $type ?> Fees in
-                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                    <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-4 bg-[#6041BB] md:grid-cols-4">
@@ -521,7 +521,7 @@ $query_fast = new WP_Query($query_args_fast);
         <div class="container mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-2xl font-bold capitalize leading-10">What are the Cable TV Fees in
-                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                    <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-5 bg-[#6041BB] md:grid-cols-5">
@@ -623,7 +623,7 @@ $query_fast = new WP_Query($query_args_fast);
                     <?php if ($type === 'landline'): ?>Landline Home Phone <?php endif; ?>
                     <?php if ($type === 'home-security'): ?>Home Security Systems<?php endif; ?>
                     Fees in
-                    <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                    <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
                 </h2>
             </div>
             <div class="md:w-full min-w-fit grid grid-cols-3 bg-[#6041BB] md:grid-cols-3">
@@ -706,7 +706,7 @@ $query_fast = new WP_Query($query_args_fast);
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold">Summary of <?php echo str_replace(['-'], ' ', $type); ?> Providers in 
-                <span class="text-[#ef9831]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
+                <span class="text-[#96B93A]"><?php echo $zipcode ?>, <?php echo $state ?> </span>
             </h2>
         </div>
         <div>

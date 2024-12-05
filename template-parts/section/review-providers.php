@@ -32,7 +32,7 @@
                         <div>
                             <div class="flex gap-1 items-center">
                                 <strong><?php echo esc_html($comment->post_title) ?></strong>
-                                <p class="capitalize text-sm px-2 bg-[#ef9831] text-white" style="padding: 0px 3px"><?php echo $provider_type ?></p>
+                                <p class="capitalize text-sm px-2 bg-[#96B93A] text-white" style="padding: 0px 3px"><?php echo $provider_type ?></p>
                             </div>
                             <div class="flex items-center gap-1">
                                 <?php
@@ -64,7 +64,7 @@
 <!-- Review Sections -->
 <section class="px-4 mt-16 container mx-auto">
     <button id="openModalBtn"
-        class="border-[#EF9831] border-[2px] text-[#EF9831] p-3 px-5 rounded-lg hover:bg-[#EF9831] hover:text-white font-medium">
+        class="border-[#96B93A] border-[2px] text-[#96B93A] p-3 px-5 rounded-lg hover:bg-[#96B93A] hover:text-white font-medium">
         Leave a Review
     </button>
     <div class="grid gap-10"></div>
@@ -72,7 +72,7 @@
 
 <section class="container mx-auto px-4 mb-10">
     <h2 class="text-2xl font-bold mb-2 mt-5">
-        Reviews for <?php echo $type ?> in <span class="text-[#ef9831]"> <span class="capitalize"><?php echo $city ?></span></span>
+        Reviews for <?php echo $type ?> in <span class="text-[#96B93A]"> <span class="capitalize"><?php echo $city ?></span></span>
     </h2>
     <div class="mt-5">
         <?php

@@ -85,7 +85,7 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col items-center">
             <h1 class="sm:text-5xl text-2xl font-bold text-center max-w-[850px] mx-auto capitalize leading-10">
-                <?php echo $type ?> Providers in <?php echo $state ?> <span class="text-[#ef9831]"><?php echo $city ?></span>
+                <?php echo $type ?> Providers in <?php echo $state ?> <span class="text-[#96B93A]"><?php echo $city ?></span>
             </h1>
             <p class="text-xl text-center font-[Roboto] my-5">Enter your zip so we can find the best <?php echo $type ?>
                 Providers in your area:</p>
@@ -104,7 +104,7 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10"><?php echo $type ?> Providers in <?php echo $state?>
-                <span class="text-[#ef9831]"><?php echo $city?> </span>
+                <span class="text-[#96B93A]"><?php echo $city?> </span>
             </h2>
         </div>
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -141,7 +141,7 @@
             <div class="container mx-auto px-4">
                 <div class="mb-5">
                     <h2 class="text-2xl font-bold capitalize leading-10">How We Measure Home Phone Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
                         <p>Offering a cheap home phone line isn’t enough to convince our professional team at CableMovers of a provider’s quality. We look at a number of amenities and services to ensure you are only getting the best landline phone service. That may include any combination of: </p>
                         <ul class="__list pl-5 mt-2">
@@ -170,7 +170,7 @@
             <div class="container mx-auto px-4">
                 <div class="mb-5">
                     <h2 class="text-2xl font-bold capitalize leading-10">Summary of Landline Home Phone Service Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
                         <p>The next time you’re moving to the area or need to set up a dedicated landline service for your side hustle, rely on our list of the top landline home service providers in the area. We do the hard work for you so you can quickly get a landline and move on with your day.</p>
                         <p class="mt-2">Whatever landline home service providers you choose, be sure to ask about bundled services. That is where our trained agents at CableMovers can help. Call us today, and we’ll compare all the available telephone service providers in your area, finding the best deal and assisting with the setup process. </p>
@@ -183,7 +183,7 @@
             <div class="container mx-auto px-4">
                 <div class="mb-5">
                     <h2 class="text-2xl font-bold capitalize leading-10">Get the Best Landline Phone Service in <span
-                    class="text-[#ef9831]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
                         <p>Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison our professional agents provide. At CableMovers, we save you time and money by uncovering the home phone service providers in <?php echo $city ?>, <?php echo $state ?> perfect for your unique personal and business needs. </p>
                         <p class="mt-2">Call our agents today, and let’s find the perfect landline solution whether you’ve just moved to the area or need a 24/7 connection to friends, family, and emergency services. Together, we can find an affordable and amenity-rich telephone service provider you can count on. </p>

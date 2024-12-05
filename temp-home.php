@@ -40,7 +40,7 @@ $providers_query = new WP_Query($argsForProvider);
 <section class="min-h-[calc(100vh-15rem)] h-[calc(100vh-110px)] flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main.jpg');">
   <div class="max-w-[1280px] w-full mx-auto px-4 gap-7 items-center">
     <div class="py-10">
-      <h1 class="text-3xl md:text-5xl text-left md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#ef9831]">TV, Internet, <br/> Landline Providers </span> in Your Area.</h1>
+      <h1 class="text-3xl md:text-5xl text-left md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#96B93A]">TV, Internet, <br/> Landline Providers </span> in Your Area.</h1>
       <p class="text-[22px] text-left font-normal text-white my-5">Compare Top Providers, plans and deals by ZIP code.</p>
       <ul class="type-list text-white ml-12 flex flex-col gap-2 text-lg">
         <li class="relative">Home Broadband</li>
@@ -253,7 +253,7 @@ $providers_query = new WP_Query($argsForProvider);
             <p class="text-lg font-normal text-[#4E4E4E] mb-8">
                 Let us help you navigate your options. Compare the leading providers in your area and find high-speed choices for internet, TV, or bundled services tailored to your needs.
             </p>
-            <a class="text-lg font-medium AxiformaRegular bg-[#FECE2F] text-white py-3 px-12 rounded-[3px]" href="/providers">View All</a>
+            <a class="text-lg font-medium AxiformaRegular bg-[#96B93A] text-white py-3 px-12 rounded-[3px]" href="/providers">View All</a>
         </div>
         <div class="md:w-[56%] w-full grid md:grid-cols-4 grid-cols-2 gap-4 [&>*:nth-child(5)]:md:ml-14 [&>*:nth-child(6)]:md:ml-14 [&>*:nth-child(7)]:md:ml-14 [&>*:nth-child(8)]:md:ml-14">
             <?php
@@ -374,7 +374,7 @@ $providers_query = new WP_Query($argsForProvider);
                                     src="<?php echo esc_url($featured_image_url ? $featured_image_url : '/path/to/default-image.jpg'); ?>"
                                     style="color: transparent;"
                                 />
-                                <div class="absolute bottom-5 right-5 bg-[#FECE2F] flex flex-col justify-center text-center p-2 px-5 shadow text-xl rounded-xl uppercase">
+                                <div class="absolute bottom-5 right-5 bg-[#96B93A] flex flex-col justify-center text-center p-2 px-5 shadow text-xl rounded-xl uppercase">
                                     <a class="font-semibold text-[#fff] text-3xl" href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html($date); ?></a>
                                     <a class="font-semibold text-[#fff] -mt-1" href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html($month); ?></a>
                                 </div>

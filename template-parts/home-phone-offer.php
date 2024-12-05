@@ -63,7 +63,7 @@
                                 echo '<ul class="grid items-center justify-center">';                   
                                 foreach ($features_items as $feature_item) {
                                     echo '<li class="flex gap-2 items-center">';
-                                    echo '<svg class="min-w-[1rem] h-4 text-[#ef9831] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    echo '<svg class="min-w-[1rem] h-4 text-[#96B93A] font-extrabold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
                                             </svg>';
                                     echo '<span class="text-sm">' . trim($feature_item) . '</span>';
@@ -79,8 +79,8 @@
                                 </div>
                             </div>
                             <div class="grid gap-3 items-center justify-center p-5">
-                                <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#6041BB] hover:bg-[#ef9831]" href="tel:<?php echo $phone ?>"><?php echo $phone ?></a>
-                                <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#ef9831] hover:bg-[#6041BB]" href="<?php echo the_permalink() ?>">View Plans</a>
+                                <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#6041BB] hover:bg-[#96B93A]" href="tel:<?php echo $phone ?>"><?php echo $phone ?></a>
+                                <a class="text-base text-white font-[Roboto] uppercase px-5 py-2.5 bg-[#96B93A] hover:bg-[#6041BB]" href="<?php echo the_permalink() ?>">View Plans</a>
                             </div>
                         </div>
                     </div>
