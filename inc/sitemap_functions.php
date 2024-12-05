@@ -6,8 +6,8 @@
 
 add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $base_url = 'https://topproviders.net/sitemaps/';
-    $types =  ['internet', 'tv', 'home-security', 'landline'];
-    $number_of_sitemaps = 6; // Generate 6 sitemaps for each type
+    $types =  ['internet', 'tv', 'internet-tv'];
+    $number_of_sitemaps = 2; // Generate 6 sitemaps for each type
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
     // Get the current date in the specified format
