@@ -1549,11 +1549,6 @@ video {
   background-color: rgb(251 177 61 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#FECE2F\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 206 47 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#FF0000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
