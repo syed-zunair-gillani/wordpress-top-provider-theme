@@ -2541,7 +2541,7 @@ html {
 
 .submenu {
   transition: all 0.3s ease;
-  margin-left: 14px;
+  margin-left: 15px !important;
 }
 
 .hidden {
