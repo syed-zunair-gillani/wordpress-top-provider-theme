@@ -43,7 +43,7 @@ function SiteMapByState() {
     $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
     $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
     // Types to iterate
-    $types = ["internet", "tv", "tv-internet", "landline"];    
+    $types =  ['internet', 'tv', 'internet-tv']   
     foreach ($types as $type) {
      
         $terms = get_terms(array(
@@ -74,7 +74,7 @@ function SiteMapByState() {
 // SiteMapByZipCode(); Sitemap for ZipCode
 function SiteMapByZipCode() {
     set_time_limit(0);
-    $services = ['internet', 'tv', 'home-security', 'landline'];
+    $services =  ['internet', 'tv', 'internet-tv']
     $sitemap_folder = ABSPATH . 'sitemaps';
     $posts_per_file = 30000;
 
@@ -143,7 +143,7 @@ function SiteMapByZipCode() {
 
 function SiteMapByCity() {
     set_time_limit(0);
-    $services = ['internet','tv','landline','home-security'];
+    $services =  ['internet', 'tv', 'internet-tv']
     $sitemap_folder = ABSPATH . 'sitemaps';
     $posts_per_file = 30000;
     $total_records = 0; // Initialize counter for total records
