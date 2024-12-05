@@ -2550,7 +2550,7 @@ html {
 
 @media (max-width: 768px){
   .submenu {
-    margin-left: 14px;
+    margin-left: 14px !important;
     padding-top: 0;
     padding-bottom: 0;
   }
