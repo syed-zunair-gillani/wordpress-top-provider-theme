@@ -156,7 +156,6 @@ get_header();
             <p class="text-base mb-4">If you have any questions about these Terms and Conditions, You can contact us:</p>
             <ul class="md:text-base text-2xl">
                 <li><p class="text-base mb-4">By email: contact@topproviders.net</p></li>
-                <li><p class="text-base mb-4">By phone number: 833-592-0098</p></li>
             </ul>
         </div>
     </div>
