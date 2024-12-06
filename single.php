@@ -27,7 +27,7 @@ $caption = wp_get_attachment_caption($thumbnail_id);
             <div class="flex justify-between flex-col md:flex-row gap-5 md:gap-0 py-6 border-t border-gray-500 not-format">
                 <div class="mb-4">
                     <span class="text-base font-normal text-gray-500 dark:text-gray-400">
-                        By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo esc_html(get_the_author()); ?></a> in <a href="<?php echo esc_url(get_home_url()); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Cablemovers</a>
+                        By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo esc_html(get_the_author()); ?></a> in <a href="<?php echo esc_url(get_home_url()); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Topprovides</a>
                     </span>
                     <p class="mt-2 text-white flex items-center gap-1">
                         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
