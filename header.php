@@ -3,7 +3,6 @@ function get_full_url() {
     $protocol = is_ssl() ? 'https://' : 'http://';
     $host = $_SERVER['HTTP_HOST'];
     $request_uri = $_SERVER['REQUEST_URI'];
-
     return $protocol . $host . $request_uri;
 }
 
@@ -19,7 +18,6 @@ function get_full_url() {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="canonical" href="<?php echo get_full_url(); ?>">
-    
 	<?php wp_head(); ?>
 </head>
 
