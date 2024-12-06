@@ -5,16 +5,12 @@ function get_full_url() {
     $request_uri = $_SERVER['REQUEST_URI'];
     return $protocol . $host . $request_uri;
 }
-
 ?>
-
-
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <!-- <meta name="robots" content="noindex, nofollow" /> -->
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+  	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="canonical" href="<?php echo get_full_url(); ?>">

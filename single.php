@@ -27,13 +27,7 @@ $caption = wp_get_attachment_caption($thumbnail_id);
             <div class="flex justify-between flex-col md:flex-row gap-5 md:gap-0 py-6 border-t border-gray-500 not-format">
                 <div class="mb-4">
                     <span class="text-base font-normal text-gray-500 dark:text-gray-400">
-                        By <a href="#" rel="author" class="font-bold no-underline text-white hover:underline capitalize"><?php echo esc_html(get_the_author()); ?></a> in <a href="<?php echo esc_url(get_home_url()); ?>" class="font-normal text-gray-500 dark:text-gray-400 no-underline hover:underline">Topprovides</a>
-                    </span>
-                    <p class="mt-2 text-white flex items-center gap-1">
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="font-semibold text-white">Published <time datetime="<?php echo esc_attr(get_the_date('c')); ?>" class="font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html(get_the_date('F j, Y')); ?></time></span>
+                        By Top Providers  <span class="font-semibold text-white">Published <time datetime="<?php echo esc_attr(get_the_date('c')); ?>" class="font-normal text-gray-500 dark:text-gray-400"><?php echo esc_html(get_the_date('F j, Y')); ?></time></span>
                     </p>
                 </div>
                 <div aria-label="Share social media">
