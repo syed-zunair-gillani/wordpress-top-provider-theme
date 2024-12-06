@@ -7,9 +7,6 @@ function get_full_url() {
     return $protocol . $host . $request_uri;
 }
 
-// Usage
-echo get_full_url();
-
 ?>
 
 
