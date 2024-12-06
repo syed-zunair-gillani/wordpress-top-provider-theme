@@ -8,7 +8,7 @@ add_filter('wpseo_sitemap_index', function ($sitemap_index) {
     $prefixes = ['zipcode', 'cities']; // Define prefixes to loop through
 
     // Get the current date in the specified format
-    $current_date = gmdate('Y-m-d H:i +00:00');
+    $current_date = gmdate('Y-m-d H:i +0 0:00');
 
     // Add the static sitemap with modification date at the top
     $static_sitemap_url = $base_url . 'states.xml';
@@ -118,7 +118,7 @@ function SiteMapByZipCode() {
 
                 $xml_content .= "<url>" . PHP_EOL;
                 $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
-                $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                // $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
                 // $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
                 // $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                 $xml_content .= "</url>" . PHP_EOL;
@@ -194,7 +194,7 @@ function SiteMapByCity() {
 
                     $xml_content .= "<url>" . PHP_EOL;
                     $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
-                    $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                    //$xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
                     // $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
                     // $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                     $xml_content .= "</url>" . PHP_EOL;
@@ -217,4 +217,5 @@ function SiteMapByCity() {
 
     echo "Total records added: " . $total_records . "<br>";
 }
+
 

@@ -321,3 +321,23 @@ function Generate_Canonical_Tag($canonical) {
     }
 
 }
+
+
+
+
+
+function custom_blog_permalink_structure($rules) {
+    $new_rules = array(
+        'blog/([^/]+)/?$' => 'index.php?name=$matches[1]', // Match blog/post_slug
+    );
+    return $new_rules + $rules;
+}
+add_filter('rewrite_rules_array', 'custom_blog_permalink_structure');
+
+function custom_blog_post_permalink($permalink, $post) {
+    if ($post->post_type === 'post') {
+        $permalink = home_url('/blog/' . $post->post_name . '/');
+    }
+    return $permalink;
+}
+add_filter('post_link', 'custom_blog_post_permalink', 10, 2);
