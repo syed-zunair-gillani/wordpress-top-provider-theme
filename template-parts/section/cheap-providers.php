@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">Cheap <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> </span></h2>
             <?php 
                if ($type === 'internet'): ?>
             <p class="PClass">

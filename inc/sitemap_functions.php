@@ -194,7 +194,7 @@ function SiteMapByCity() {
 
                     $xml_content .= "<url>" . PHP_EOL;
                     $xml_content .= "<loc>" . esc_url($link) . "</loc>" . PHP_EOL;
-                    //$xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
+                    // $xml_content .= "<lastmod>" . wp_date('c') . "</lastmod>" . PHP_EOL;
                     // $xml_content .= "<changefreq>monthly</changefreq>" . PHP_EOL;
                     // $xml_content .= "<priority>0.8</priority>" . PHP_EOL;
                     $xml_content .= "</url>" . PHP_EOL;

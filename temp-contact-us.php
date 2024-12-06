@@ -131,7 +131,7 @@ get_header();
                         ></textarea>
                     </div>
                 </div>
-                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 cursor-pointer hover:bg-[#ef9831] bg-[#6041BB] w-full" value="SUBMIT" /></div>
+                <div class="flex items-center justify-center w-full"><input type="submit" class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 cursor-pointer hover:bg-[#96B93A] bg-[#6041BB] w-full" value="SUBMIT" /></div>
             </form>
         </div>
     </div>

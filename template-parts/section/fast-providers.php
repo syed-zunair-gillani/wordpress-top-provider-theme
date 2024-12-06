@@ -7,7 +7,7 @@
             <?php 
                  if ($type === 'internet'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Fastest <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> </span></h2>
             <p class="PClass"> Whether you need high speed internet for streaming in 4K resolution
                 or playing online multiplayer games <?php echo $fast_providers[0]['title']; ?> provides fastest internet
                 connection in <?php echo $city ?> with download speed of up to <?php echo $fast_providers[0]['speed']; ?> for just <?php echo $fast_providers[0]['price']; ?> per month which is perfect for households with multiple users and heavy data consumption and can
@@ -19,7 +19,7 @@
                 speed (high to low). </p>
             <?php elseif ($type === 'tv'): ?>
             <h2 class="text-2xl font-bold capitalize leading-10">Highest Rated <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> </span></h2>
             <p class="PClass">Below is our curated list of the cable TV providers we know that offer
                 quality service and reasonable pricing. Each one has exceptional customer service and online user
                 reviews so you can enjoy the football, latest films, and local TV stations you love. </p>

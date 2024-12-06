@@ -158,10 +158,10 @@ html {
 
 @layer components {
   .fact-box .icon {
-    @apply text-lg font-medium flex items-center justify-center w-[90px] h-[90px] rounded-full border-2 border-[#ef9831] mx-auto z-20 relative;
+    @apply text-lg font-medium flex items-center justify-center w-[90px] h-[90px] rounded-full border-2 border-[#96B93A] mx-auto z-20 relative;
   }
   .fact-box i {
-    @apply text-5xl text-[#ef9831] block w-fit mx-auto mt-[-25px];
+    @apply text-5xl text-[#96B93A] block w-fit mx-auto mt-[-25px];
   }
 
   .PClass {
@@ -196,7 +196,7 @@ html {
   font-weight: bold;
   margin-top: -8px;
   margin-right: -8px;
-  background-color: #ef9831;
+  background-color: #96B93A;
   width: 2rem;
   height: 2rem;
   border-radius: 50px;
@@ -260,7 +260,7 @@ html {
 }
 
 .breadcrumb a:hover {
-  color: #ef9831;
+  color: #96B93A;
   text-decoration: underline;
 }
 /*End */
@@ -324,7 +324,7 @@ html {
 .type-list li:before {
   font-family: "fontello";
   content: '';
-  border: 2px solid #EF9831;
+  border: 2px solid #96B93A;
   border-radius: 100%;
   top: 3px;
   left: -2.6rem;
@@ -352,14 +352,14 @@ html {
 
 .submenu {
   transition: all 0.3s ease;
-  margin-left: 14px;
+  margin-left: 15px !important;
 }
 .hidden {
   display: none;
 }
 @media (max-width: 768px){
   .submenu {
-    margin-left: 14px;
+    margin-left: 14px !important;
     padding-top: 0;
     padding-bottom: 0;
   }

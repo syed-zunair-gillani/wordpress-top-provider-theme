@@ -30,7 +30,7 @@
     <div class="container mx-auto px-4">
         <div class="">
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Provider in <span
-                    class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> <?php echo $state ?></span></h2>
             <p class="PClass">
                 Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service
                 provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high
@@ -51,7 +51,7 @@
     <div class="container mx-auto px-4">
         <div class="">
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Service Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> <?php echo $state ?></span></h2>
             <p class="PClass">
                 CableMovers choose {insert top rated phone provider} as the best home phone provider in {insert city
                 name}. {insert provider name} offers home phone service with variety of features such as Caller ID, Call
@@ -77,7 +77,7 @@
     <div class="container mx-auto px-4">
         <div class="">
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Service Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> <?php echo $state ?></span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> <?php echo $state ?></span></h2>
             <p class="PClass">
                 Home is where your comfort resides, and you shouldn’t let your peace of mind be compromised by
                 unexpected burglaries and intrusions. But how can you protect your belongings and loved ones from those
@@ -188,7 +188,7 @@
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">
                 Internet Facts for
-                <span class="text-[#ef9831]">
+                <span class="text-[#96B93A]">
                     <?php echo esc_html($city); ?>, <span class="uppercase"><?php echo esc_html($state); ?></span>
                 </span>
             </h2>
@@ -278,7 +278,7 @@
                         <ul class="grid items-center">
                             <?php foreach ($bestUse as $featureIdx => $feature) : ?>
                             <li class="flex gap-2" key="<?php echo esc_attr($featureIdx); ?>">
-                                <svg class="min-w-[1rem] h-4 mt-[2px] text-[#ef9831] font-extrabold" fill="none"
+                                <svg class="min-w-[1rem] h-4 mt-[2px] text-[#96B93A] font-extrabold" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
                                         d="M5 13l4 4L19 7"></path>
@@ -309,7 +309,7 @@
     <div class="container mx-auto px-4">
         <div class="">
             <h2 class="text-2xl font-bold">Best Cable <?php echo $type ?> Providers in <span
-                    class="text-[#ef9831]"><?php echo $city ?> </span></h2>
+                    class="text-[#96B93A]"><?php echo $city ?> </span></h2>
 
             <p class="PClass"> While Dish is present in <?php echo $city ?>, we recommend DIRECTV for you entertainment
                 needs. DIRECTV offer a broad catalog of channels perfect for watching the latest local sports with

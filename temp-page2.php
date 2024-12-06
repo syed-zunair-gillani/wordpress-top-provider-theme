@@ -26,7 +26,7 @@ get_header();
     <div class="container mx-auto px-4 my-10 grid md:grid-cols-2 grid-cols-1 gap-5 items-center">
         <div class=""><h2 class="md:text-4xl text-2xl font-semibold leading-normal md:text-start text-center">Find Internet and TV Service Providers</h2></div>
         <div class="flex items-center md:justify-end justify-center [&amp;>div:nth-child(1)]:md:mr-0 [&amp;>div:nth-child(1)]:w-fit">
-            <button class="text-[#ef9831] border hover:bg-[#ef9831] hover:text-white border-[#ef9831] p-3 px-8 rounded-lg">Change Location</button>
+            <button class="text-[#96B93A] border hover:bg-[#96B93A] hover:text-white border-[#96B93A] p-3 px-8 rounded-lg">Change Location</button>
         </div>
     </div>
     </div>

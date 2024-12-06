@@ -45,7 +45,7 @@ get_header();
                             src="<?php echo esc_url($featured_image_url ? $featured_image_url : '/path/to/default-image.jpg'); ?>"
                             style="color: transparent;"
                         />
-                        <div class="absolute bottom-5 right-5 bg-[#FECE2F] flex flex-col justify-center text-center p-2 px-5 shadow text-xl rounded-xl uppercase">
+                        <div class="absolute bottom-5 right-5 bg-[#96B93A] flex flex-col justify-center text-center p-2 px-5 shadow text-xl rounded-xl uppercase">
                             <a class="font-semibold text-[#fff] text-3xl" href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html($date); ?></a>
                             <a class="font-semibold text-[#fff] -mt-1" href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html($month); ?></a>
                         </div>
