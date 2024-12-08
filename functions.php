@@ -160,9 +160,9 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 
-// http://localhost/clients/cbl/wp-json/custom/v1/providers?internet_services=20001,20005
+// http://localhost/topproviders/wp-json/custom/v1/providers?internet_services=20001,20005
 
-// https://cblproject.cablemovers.net/wp-json/custom/v1/providers?internet_services=20001,20005
+// https://topproviders.net/wp-json/custom/v1/providers?internet_services=20001,20005
 
 
 function custom_area_zone_endpoint( $request ) {
@@ -259,8 +259,8 @@ add_action( 'rest_api_init', 'register_city_area_zone_endpoint' );
 
 //custom/v1/area-zones
 
-// http://localhost/clients/cbl/wp-json/custom/v1/area-zones
-// https://cblproject.cablemovers.net/wp-json/custom/v1/area-zones?state=ca
+// http://localhost/topproviders/wp-json/custom/v1/area-zones
+// https://topproviders.net/wp-json/custom/v1/area-zones?state=ca
 
 
 function get_states_and_cities_data($request) {

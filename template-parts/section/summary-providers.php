@@ -18,7 +18,7 @@
                 hard work for you so you can quickly get a landline and move on with your day.
             <p>
             <p class="PClass"> Whatever landline home service providers you choose, be sure to ask about bundled
-                services. That is where our trained agents at CableMovers can help. Call us today, and we’ll compare all
+                services. That is where our trained agents at Top Providers can help. Call us today, and we’ll compare all
                 the available telephone service providers in your area, finding the best deal and assisting with the
                 setup process.</p>
             <?php elseif ($type === 'home-security'): ?>

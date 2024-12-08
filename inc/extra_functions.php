@@ -330,7 +330,7 @@ function get_zipcodes_by_state_callback($request) {
 
 
 //
-//http://localhost/cablemovers/wp-json/custom/v1/area-zones?state=ca
+//http://localhost/topproviders/wp-json/custom/v1/area-zones?state=ca
 
 
 

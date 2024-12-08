@@ -53,7 +53,7 @@
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Service Providers in <span
                     class="text-[#96B93A]"><?php echo $city ?> <?php echo $state ?></span></h2>
             <p class="PClass">
-                CableMovers choose {insert top rated phone provider} as the best home phone provider in {insert city
+            Top Providers choose {insert top rated phone provider} as the best home phone provider in {insert city
                 name}. {insert provider name} offers home phone service with variety of features such as Caller ID, Call
                 blocking, Three way calling, call forwarding, instant tracing to 911 services along with unlimited
                 nationwide calling in the U.S, Canada, Puerto Rico Guam and U.S Virgin Island. High speed internet is

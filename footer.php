@@ -204,9 +204,9 @@ $providersData = [
         <!--Grid-->
         <div class="py-7 border-t border-gray-700">
             <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-                <span class="text-sm text-gray-400 ">©<a href="<?php bloginfo('url'); ?>">topproviders</a> 2024, All rights reserved.</span>
+                <span class="text-sm text-gray-400 ">©<a href="<?php bloginfo('url'); ?>">Top Providers</a> 2024, All rights reserved.</span>
                 <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
-                    <a href="https://x.com/cablemovers" target="_blank"  class="w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#33CCFF] hover:bg-gray-900">
+                    <a href="https://x.com/topproviders" target="_blank"  class="w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#33CCFF] hover:bg-gray-900">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <g id="Social Media">
                         <path id="Vector" d="M11.3214 8.93666L16.4919 3.05566H15.2667L10.7772 8.16205L7.1914 3.05566H3.05566L8.47803 10.7774L3.05566 16.9446H4.28097L9.022 11.552L12.8088 16.9446H16.9446L11.3211 8.93666H11.3214ZM9.64322 10.8455L9.09382 10.0765L4.72246 3.95821H6.60445L10.1322 8.8959L10.6816 9.66481L15.2672 16.083H13.3852L9.64322 10.8458V10.8455Z" fill="white"/>
@@ -220,7 +220,7 @@ $providersData = [
                             </svg>
                             
                     </a>
-                    <a href="https://www.facebook.com/topproviders.net" target="_blank"  class="relative w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#337FFF]  hover:bg-gray-900 ">
+                    <a href="https://www.facebook.com/topproviders" target="_blank"  class="relative w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#337FFF]  hover:bg-gray-900 ">
                         <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.04111 7.81204L7.41156 5.46043H5.1296V3.93188C5.1296 3.28886 5.44818 2.66054 6.46692 2.66054H7.51899V0.657999C6.90631 0.560385 6.28723 0.507577 5.66675 0.5C3.78857 0.5 2.56239 1.62804 2.56239 3.66733V5.46043H0.480469V7.81204H2.56239V13.5H5.1296V7.81204H7.04111Z" fill="currentColor"/>
                             </svg>

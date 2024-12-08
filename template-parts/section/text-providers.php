@@ -80,7 +80,7 @@
                         class="uppercase"><?php echo $state?></span></span>
             </h2>
             <p class="PClass">
-                Offering a cheap home phone line isn’t enough to convince our professional team at CableMovers of a
+                Offering a cheap home phone line isn’t enough to convince our professional team at Top Providers of a
                 provider’s quality. We look at a number of amenities and services to ensure you are only getting the
                 best landline phone service. That may include any combination of:
             </p>
@@ -107,7 +107,7 @@
             </h2>
             <p class="PClass">
                 Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison
-                our professional agents provide. At CableMovers, we save you time and money by uncovering the home phone
+                our professional agents provide. At Top Providers, we save you time and money by uncovering the home phone
                 service providers in Glendale, CA perfect for your unique personal and business needs.
             </p>
             <p class="PClass">

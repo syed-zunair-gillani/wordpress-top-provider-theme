@@ -143,7 +143,7 @@
                     <h2 class="text-2xl font-bold capitalize leading-10">How We Measure Home Phone Providers in <span
                     class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
-                        <p>Offering a cheap home phone line isn’t enough to convince our professional team at CableMovers of a provider’s quality. We look at a number of amenities and services to ensure you are only getting the best landline phone service. That may include any combination of: </p>
+                        <p>Offering a cheap home phone line isn’t enough to convince our professional team at Top Providers of a provider’s quality. We look at a number of amenities and services to ensure you are only getting the best landline phone service. That may include any combination of: </p>
                         <ul class="__list pl-5 mt-2">
                             <li>
                                 <strong>Internet Requirements: </strong> Do the landline home phone service providers in <?php echo $city ?>, <?php echo $state ?>, require you to have internet access to install or use the lines being offered? 
@@ -173,7 +173,7 @@
                     class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
                         <p>The next time you’re moving to the area or need to set up a dedicated landline service for your side hustle, rely on our list of the top landline home service providers in the area. We do the hard work for you so you can quickly get a landline and move on with your day.</p>
-                        <p class="mt-2">Whatever landline home service providers you choose, be sure to ask about bundled services. That is where our trained agents at CableMovers can help. Call us today, and we’ll compare all the available telephone service providers in your area, finding the best deal and assisting with the setup process. </p>
+                        <p class="mt-2">Whatever landline home service providers you choose, be sure to ask about bundled services. That is where our trained agents at Top Providers can help. Call us today, and we’ll compare all the available telephone service providers in your area, finding the best deal and assisting with the setup process. </p>
                         <p class="mt-2">Your reliable home phone line is only one quick phone call away!</p>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                     <h2 class="text-2xl font-bold capitalize leading-10">Get the Best Landline Phone Service in <span
                     class="text-[#96B93A]"><?php echo $city ?>, <?php echo $state ?> </span></h2>
                     <div class="mt-1">
-                        <p>Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison our professional agents provide. At CableMovers, we save you time and money by uncovering the home phone service providers in <?php echo $city ?>, <?php echo $state ?> perfect for your unique personal and business needs. </p>
+                        <p>Stop wasting time pouring through hours of overly hyped online marketing and get the trusted comparison our professional agents provide. At Top Providers, we save you time and money by uncovering the home phone service providers in <?php echo $city ?>, <?php echo $state ?> perfect for your unique personal and business needs. </p>
                         <p class="mt-2">Call our agents today, and let’s find the perfect landline solution whether you’ve just moved to the area or need a 24/7 connection to friends, family, and emergency services. Together, we can find an affordable and amenity-rich telephone service provider you can count on. </p>
                     </div>
                 </div>
