@@ -202,13 +202,13 @@ function Generate_Title_For_Zipcode() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $zipcode, $state | Cable Movers";
+        return "High Speed $type Providers in $zipcode, $state |  Top Providers";
     } elseif ($type === "tv") {
-        return "Cable TV Providers in $zipcode, $state | Cable Movers";
+        return "Cable TV Providers in $zipcode, $state |  Top Providers";
     }elseif ($type === "landline") {
-        return "Landline Home Phone Service Providers in $zipcode, $state | Cable Movers";
+        return "Landline Home Phone Service Providers in $zipcode, $state |  Top Providers";
     }elseif ($type === "home-security") {
-        return "Home Security Systems in $zipcode, $state | Cable Movers";
+        return "Home Security Systems in $zipcode, $state |  Top Providers";
     }
 }
 
@@ -219,13 +219,15 @@ function Generate_Description_For_Zipcode() {
     $type = get_query_var('service', '');
 
     if($type === "internet"){
-        return  "View all $type service providers in $zipcode, $state. Compare $type plans, prices and new promotions and pick the best provider that fits within your budget.";
+        return  "Explore all $type service providers in $zipcode, $state. Compare plans, pricing, and the latest promotions to find the perfect provider for your budget and needs.";
     } elseif ($type === "tv") {
-        return "Compare Cable TV providers in $zipcode, $state. View Cable TV plans and deals and choose the best provider that fits within your budget";
+        return "Compare Cable TV providers in $zipcode, $state. Explore plans, deals, and pricing to find the best provider that matches your budget and entertainment needs.";
     }elseif ($type === "landline") {
-        return "Find the best home phone service providers in $zipcode, $state. Compare providers, plans, prices and amenities to set your landline up.";
+        return "Discover the top home phone service providers in $zipcode, $state. Compare plans, pricing, and features to find the perfect landline solution for your needs.";
     }elseif ($type === "home-security") {
-        return "Find reliable, trustworthy, and affordable home security systems in $zipcode, $state and protect your property like never before.";
+        return "
+        Find reliable and trustworthy home security systems in $zipcode, $state. Protect your property with affordable solutions tailored to your needs. Explore Top Providers today!
+        ";
     }
 }
 
@@ -237,13 +239,13 @@ function Generate_Title_For_City() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $city, $state | Cable Movers";
+        return "High Speed $type Providers in $city, $state |   Trusted and Affordable Solutions from Top Providers";
     } elseif ($type === "tv") {
-        return "Cable TV Providers in $city, $state | Cable Movers";
+        return "Cable TV Providers in $city, $state |   Trusted and Affordable Solutions from Top Providers";
     }elseif ($type === "landline") {
-        return "Landline Home Phone Service Providers in $city, $state | Cable Movers";
+        return "Landline Home Phone Service Providers in $city, $state |  Trusted and Affordable Solutions from Top Providers";
     }elseif ($type === "home-security") {
-        return "Home Security Systems in $city, $state | Cable Movers";
+        return "Home Security Systems in $city, $state | Trusted and Affordable Solutions from Top Providers";
     }
 }
 
@@ -272,13 +274,13 @@ function Generate_Title_For_State() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $state | Cable Movers";
+        return "High Speed $type Providers in $state |  Top Providers";
     } elseif ($type === "tv") {
-        return "Cable TV Providers in $state | Cable Movers";
+        return "Cable TV Providers in $state |  Top Providers";
     }elseif ($type === "landline") {
-        return "Landline Home Phone Service Providers in $state | Cable Movers";
+        return "Landline Home Phone Service Providers in $state |  Top Providers";
     }elseif ($type === "home-security") {
-        return "Home Security Systems in $state | Cable Movers";
+        return "Home Security Systems in $state |  Top Providers";
     }
 }
 

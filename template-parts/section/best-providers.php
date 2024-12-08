@@ -32,7 +32,7 @@
             <h2 class="text-2xl font-bold">Best <?php echo $type ?> Provider in <span
                     class="text-[#96B93A]"><?php echo $city ?> <?php echo $state ?></span></h2>
             <p class="PClass">
-                Cable Movers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service
+                 Top Providers hand picks <?php echo $fast_provider_details['title']; ?> as the best internet service
                 provider in <?php echo $city ?>. <?php echo $fast_provider_details['title']; ?> offers reliable high
                 speed internet service with robust download speed of up to {enter max download speed} Mbps. Their
                 monthly plans begins at {enter price} /mo making it an all-around popular choice for <?php echo $city ?>
@@ -241,7 +241,7 @@
                 devices to the internet, how they are being used, someone using it
                 for online gaming, video conferencing, streaming on Netflix or
                 even working from home. Some households may need more speed than
-                the rest because of their use cases. That’s why Cable Movers has
+                the rest because of their use cases. That’s why  Top Providers has
                 designed a chart to help you choose the right internet speed for
                 your home for seamless online experience.
             </p>

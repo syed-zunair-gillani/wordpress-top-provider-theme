@@ -10,7 +10,7 @@
             <?php 
                if ($type === 'internet'): ?>
             <p class="PClass">
-                Affordability is essential when choosing your internet service provider. Cable Movers picks <?php echo $cheap_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city ?>. 
+                Affordability is essential when choosing your internet service provider.  Top Providers picks <?php echo $cheap_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city ?>. 
                 <?php echo $cheap_providers[0]['title']; ?> offers inexpensive and budget friendly internet plans without
                 sacrificing performance. Their monthly plans begins at <?php echo $cheap_providers[0]['price']; ?> per month making them a great
                 choice for individuals and families looking to save on their internet bills.
@@ -22,7 +22,7 @@
                 price (low to high).
             </p>
             <?php elseif ($type === 'tv'): ?>
-            <p class="PClass"> Affordability is essential when choosing your internet service provider. Cable Movers
+            <p class="PClass"> Affordability is essential when choosing your internet service provider.  Top Providers
                 picks <?php echo $cheap_providers[0]['title']; ?> as the cheapest internet option in <?php echo $city; ?>. <?php echo $cheap_providers[0]['title']; ?> offers inexpensive and budget friendly internet
                 plans without sacrificing performance. Their monthly plans begins at <?php echo $cheap_providers[0]['price']; ?> per month making them
                 a great choice for individuals and families looking to save on their internet bills.
