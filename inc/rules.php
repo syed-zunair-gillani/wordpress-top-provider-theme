@@ -202,7 +202,7 @@ function Generate_Title_For_Zipcode() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $zipcode, $state |  Top Providers";
+        return "Top $type Providers in $zipcode, $state |  Top Providers";
     } elseif ($type === "tv") {
         return "Cable TV Providers in $zipcode, $state |  Top Providers";
     }elseif ($type === "landline") {
@@ -239,11 +239,11 @@ function Generate_Title_For_City() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $city, $state |   Trusted and Affordable Solutions from Top Providers";
+        return "Top $type Providers in $city, $state |  Trusted and Affordable Solutions from Top Providers";
     } elseif ($type === "tv") {
-        return "Cable TV Providers in $city, $state |   Trusted and Affordable Solutions from Top Providers";
+        return "Cable TV Providers in $city, $state |  Trusted and Affordable Solutions from Top Providers";
     }elseif ($type === "landline") {
-        return "Landline Home Phone Service Providers in $city, $state |  Trusted and Affordable Solutions from Top Providers";
+        return "Landline Home Phone Service Providers in $city, $state | Trusted and Affordable Solutions from Top Providers";
     }elseif ($type === "home-security") {
         return "Home Security Systems in $city, $state | Trusted and Affordable Solutions from Top Providers";
     }
@@ -274,7 +274,7 @@ function Generate_Title_For_State() {
     $type =$wp_query->query_vars['service'];
 
     if($type === "internet"){
-        return "High Speed $type Providers in $state |  Top Providers";
+        return "Top $type Providers in $state |  Top Providers";
     } elseif ($type === "tv") {
         return "Cable TV Providers in $state |  Top Providers";
     }elseif ($type === "landline") {
