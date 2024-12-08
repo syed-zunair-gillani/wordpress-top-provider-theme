@@ -342,7 +342,7 @@ add_action( 'init', 'cptui_register_my_taxes_zone_name' );
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => [ 'slug' => 'zone_county', 'with_front' => true, ],
+		"rewrite" => [ 'slug' => 'country', 'with_front' => true ], // Updated slug
 		"show_admin_column" => false,
 		"show_in_rest" => true,
 		"show_tagcloud" => false,
