@@ -356,4 +356,3 @@ add_action( 'init', 'cptui_register_my_taxes_zone_name' );
 		"graphql_plural_name" => "Counties",
 	];
 	register_taxonomy( "zone_county", [ "area_zone" ], $args );
-
