@@ -1,10 +1,10 @@
 <?php
 /**
- * CBL_Theme functions and definitions
+ * tp_theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package CBL_Theme
+ * @package tp_theme
  */
 
  

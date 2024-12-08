@@ -52,16 +52,16 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 
-function cbl_theme_setup() {
+function tp_theme_setup() {
 	
-	load_theme_textdomain( 'cbl_theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'tp_theme', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	register_nav_menus(
 		array(
-			'main' => esc_html__( 'Main', 'cbl_theme' ),
-			'footer' => esc_html__( 'Footer', 'cbl_theme' ),
+			'main' => esc_html__( 'Main', 'tp_theme' ),
+			'footer' => esc_html__( 'Footer', 'tp_theme' ),
 		)
 	);
 	add_theme_support(
@@ -80,7 +80,7 @@ function cbl_theme_setup() {
 
 
 }
-add_action( 'after_setup_theme', 'cbl_theme_setup' );
+add_action( 'after_setup_theme', 'tp_theme_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -89,22 +89,22 @@ add_action( 'after_setup_theme', 'cbl_theme_setup' );
  *
  * @global int $content_width
  */
-function cbl_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'cbl_theme_content_width', 640 );
+function tp_theme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'tp_theme_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'cbl_theme_content_width', 0 );
+add_action( 'after_setup_theme', 'tp_theme_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function cbl_theme_widgets_init() {
+function tp_theme_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'cbl_theme' ),
+			'name'          => esc_html__( 'Sidebar', 'tp_theme' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'cbl_theme' ),
+			'description'   => esc_html__( 'Add widgets here.', 'tp_theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -112,7 +112,7 @@ function cbl_theme_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'cbl_theme_widgets_init' );
+add_action( 'widgets_init', 'tp_theme_widgets_init' );
 
 function handle_search_providers_ajax() {
     // Check if the necessary parameters are provided
