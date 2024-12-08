@@ -37,7 +37,7 @@ $providers_query = new WP_Query($argsForProvider);
 ?>
 
 <!-- Hero Section -->
-<section class="min-h-[calc(80vh-15rem)] h-[calc(80vh-110px)] flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main.jpg');">
+<section class="min-h-[calc(90vh-15rem)] h-[calc(90vh-110px)] flex items-center bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/50" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/main.jpg');">
   <div class="max-w-[1280px] w-full mx-auto px-4 gap-7 items-center">
     <div class="py-10">
       <h1 class="text-3xl md:text-5xl text-left md:leading-tight font-semibold text-white">Find the Best  <span class="text-[#96B93A]">TV, Internet, <br/> Landline Providers </span> in Your Area.</h1>
