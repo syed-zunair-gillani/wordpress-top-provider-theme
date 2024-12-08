@@ -111,9 +111,8 @@ get_header();
                         <label class="text-base font-semibold leading-none">Subject</label>
                         <select name="subject" id="subject" class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100">
                             <option>Select a Subject</option>
-                            <option value="Customer Service">Customer Service</option>
+                            <option value="Customer Service">Customer Service Support</option>
                             <option value="New Service for my Home">New Service for my Home</option>
-                            <option value="ISP: New/Update Listing">ISP: New/Update Listing</option>
                             <option value="Advertising Opportunities">Advertising Opportunities</option>
                             <option value="Other">Other</option>
                         </select>
