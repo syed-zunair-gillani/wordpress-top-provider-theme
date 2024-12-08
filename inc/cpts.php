@@ -75,7 +75,7 @@ function cptui_register_my_cpts() {
         "has_archive" => false,
         "show_in_menu" => true,
         "supports" => [ "title", "editor", "thumbnail" ],
-        "rewrite" => [ "slug" => "country_zone", "with_front" => true ],
+        "rewrite" => [ "slug" => "country", "with_front" => true ],
         "show_in_graphql" => true,
         "graphql_single_name" => "CountryZone",
         "graphql_plural_name" => "CountryZones",
@@ -342,7 +342,7 @@ add_action( 'init', 'cptui_register_my_taxes_zone_name' );
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => [ 'slug' => 'country', 'with_front' => true ], // Updated slug
+		"rewrite" => [ 'slug' => 'zone_county', 'with_front' => true, ],
 		"show_admin_column" => false,
 		"show_in_rest" => true,
 		"show_tagcloud" => false,
