@@ -343,3 +343,13 @@ function custom_blog_post_permalink($permalink, $post) {
     return $permalink;
 }
 add_filter('post_link', 'custom_blog_post_permalink', 10, 2);
+
+
+add_filter('wpseo_robots', function ($robots) {
+    if (is_singular('area_zone')) {
+        // Remove 'noindex' if it exists
+        return array_diff($robots, ['noindex']);
+    }
+    return $robots;
+});
+
