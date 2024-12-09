@@ -343,7 +343,7 @@ $query_fast = new WP_Query($query_args_fast);
 
 
 <!-- What are the Best ZIP Section  -->
-<section class="my-16">
+<!-- <section class="my-16">
     <div class="container mx-auto px-4">
         <div class="mb-10">
             <h2 class="text-2xl font-bold capitalize leading-10">What are the Best <?php echo str_replace(['-'], ' ', $type); ?> Providers in
@@ -422,11 +422,11 @@ $query_fast = new WP_Query($query_args_fast);
                 ?>
         </div>
     </div>
-</section>
+</section> -->
 
 
  <!-- Fee Sections -->
- <?php if ($type === 'internet'): ?>
+ <!-- <?php if ($type === 'internet'): ?>
     <section class="my-16">
         <div class="container mx-auto px-4">
             <div class="mb-10">
@@ -698,7 +698,7 @@ $query_fast = new WP_Query($query_args_fast);
             </div>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; ?> -->
 
 
 <!-- Summary Of Providers -->
@@ -713,7 +713,7 @@ $query_fast = new WP_Query($query_args_fast);
             <div class="w-full mx-auto h-auto mb-6">
                 <div
                     class="w-full h-auto shadow-xl border rounded-t-md rounded-b-md flex md:flex-col flex-row items-stretch">
-                    <div class="md:w-full min-w-[50px] grid md:grid-cols-5 grid-cols-1 bg-[#6041BB]">
+                    <div class="md:w-full min-w-[50px] grid md:grid-cols-4 grid-cols-1 bg-[#6041BB]">
                         <div
                             class="md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                             <div>
@@ -757,12 +757,7 @@ $query_fast = new WP_Query($query_args_fast);
                                 <h4 class="md:text-base text-xs text-center text-white">Starting Price</h4>
                             </div>
                         </div>
-                        <div
-                            class="md:border-r border-r md:border-b-0 border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                            <div>
-                                <h4 class="md:text-base text-xs text-center text-white">Contact</h4>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="flex md:flex-col flex-row w-full md:overflow-hidden overflow-x-scroll">
 
@@ -787,7 +782,7 @@ $query_fast = new WP_Query($query_args_fast);
                                             $price =  $servicesInfo["internet_services"]["price"];
                                         }
                                     ?>
-                        <div class="min-w-[120px] md:w-full grid md:grid-cols-5 dtable">
+                        <div class="min-w-[120px] md:w-full grid md:grid-cols-4 dtable">
                             <div
                                 class="w-full md:border-r border-r-0  border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
                                 <div>
@@ -830,12 +825,7 @@ $query_fast = new WP_Query($query_args_fast);
                                 </div>
                             </div>
 
-                            <div
-                                class="w-full md:border-r border-r md:border-b border-b grid justify-center md:p-5 p-2 md:h-auto h-[120px] items-center">
-                                <div>
-                                    <a href="tel:<?php echo $phone ?>" class="text-center md:text-base text-xs"><?php echo $phone ?></a>
-                                </div>
-                            </div>
+                            
                         </div>
                         <?php
                                     }
