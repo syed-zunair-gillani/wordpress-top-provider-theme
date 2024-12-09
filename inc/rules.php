@@ -348,6 +348,8 @@ add_filter('post_link', 'custom_blog_post_permalink', 10, 2);
 add_filter('wpseo_robots', function ($robots) {
     // Check if the current page/post is the one where you want to remove the noindex tag
     if (is_singular('area_zone')) {
+        echo "die";
+        die();
         // Remove 'noindex' from the robots array
         return array_diff($robots, ['noindex']);
     }
