@@ -345,7 +345,3 @@ function custom_blog_post_permalink($permalink, $post) {
 add_filter('post_link', 'custom_blog_post_permalink', 10, 2);
 
 
-add_filter('wpseo_robots', function ($robots) {
-    // Remove 'noindex' from the robots array for all pages/posts
-    return array_diff($robots, ['noindex']);
-});
