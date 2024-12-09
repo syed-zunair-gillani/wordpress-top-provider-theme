@@ -348,7 +348,7 @@ add_filter('post_link', 'custom_blog_post_permalink', 10, 2);
 add_filter('wpseo_robots', 'yoast_no_home_noindex', 999);
 
 function yoast_no_home_noindex($string) {
-    $string = "";
+    $string = "index,follow";
     if (is_singular('area_zone')) {
         $string= "index,follow";
     }
