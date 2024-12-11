@@ -613,6 +613,14 @@ class Tailwind_Nav_Walker extends Walker_Nav_Menu {
 }
 
 
+// Enable shortcodes in Yoast SEO meta titles and descriptions
+function yoast_process_shortcodes($string) {
+    return do_shortcode($string);
+}
+add_filter('wpseo_title', 'yoast_process_shortcodes'); // For titles
+add_filter('wpseo_metadesc', 'yoast_process_shortcodes'); // For meta descriptions
+
+
 // Shortcode to output the current month and year
 function current_month_year_shortcode() {
     return date('F Y'); 
