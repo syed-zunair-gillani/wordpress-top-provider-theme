@@ -30,7 +30,7 @@ get_header();
                         </div>
                         <a href="javascript:void(0)" class="text-[#007bff] text-sm ml-4">
                             <small class="block">Mail</small>
-                            <strong>info@topproviders.com</strong>
+                            <strong><a href="mailto:info@topproviders.com">Email Us</a></strong>
                         </a>
                     </li>
                 </ul>
