@@ -3,13 +3,7 @@
 
 get_header();
 
-$args = array(
-    'post_type'      => 'providers', // Custom post type name
-    'posts_per_page' => -1, // Number of posts to display
-    'order'          => 'DESC', // Order of the posts
-    'orderby'        => 'date' // Order by date
-);
-$providers_query = new WP_Query($args);
+
 
 ?>
 
@@ -21,6 +15,15 @@ $providers_query = new WP_Query($args);
 
 <div class="!overflow-x-auto scroll-bar my-20">
     <section class="mt-14 container mx-auto grid grid-cols-3 px-2 md:px-0 min-w-[540px]">
+
+    <?php
+		while ( have_posts() ) :
+			the_post();
+
+			the_content();
+
+		endwhile; // End of the loop.
+		?>
         <div></div>
         <div class="flex justify-center items-center border py-10"><img alt="" width="150" height="120" decoding="async" data-nimg="1" style="color: transparent;" src="/web/20240723115135im_/https://www.topproviders.net/comparison" /></div>
         <div class="flex justify-center items-center border py-10"><img alt="" width="150" height="120" decoding="async" data-nimg="1" style="color: transparent;" src="/web/20240723115135im_/https://www.topproviders.net/comparison" /></div>
@@ -31,6 +34,14 @@ $providers_query = new WP_Query($args);
             <select id="provider_1" class="bg-transparent text-gray-900 block w-full p-2.5 border-none focus:outline-none">
                 <option selected="">Choose a Provider </option>
                 <?php
+
+                    $args = array(
+                        'post_type'      => 'providers', // Custom post type name
+                        'posts_per_page' => -1, // Number of posts to display
+                        'order'          => 'DESC', // Order of the posts
+                        'orderby'        => 'date' // Order by date
+                    );
+                    $providers_query = new WP_Query($args);
                     if ($providers_query->have_posts()) :
                         while ($providers_query->have_posts()) : $providers_query->the_post();
                             ?> <option value='<?php the_title(); ?>' > <?php the_title(); ?> </option> <?php
