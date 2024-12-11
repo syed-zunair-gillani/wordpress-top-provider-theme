@@ -22,3 +22,32 @@ document.getElementById('dropdownButton').addEventListener('click', function () 
 		  dropdownMenu.classList.add('hidden');
 	  }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(ajax_object.ajax_url, {
+                method: "POST",
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        alert("Form submitted successfully!");
+                        form.reset();
+                    } else {
+                        alert("An error occurred: " + data.message);
+                    }
+                })
+                .catch((error) => {
+                    alert("An error occurred: " + error.message);
+                });
+        });
+    }
+});

@@ -8,12 +8,18 @@ function enqueue_google_fonts() {
         array(), // Dependencies (none for this case)
         null // Version (use null for Google Fonts to prevent caching issues)
     );
+    wp_enqueue_script('ajax-form', get_template_directory_uri() . '/js/ajax-form.js', array('jquery'), null, true);
+    wp_localize_script('ajax-form', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
 
+
+
+
 include_once('cpts.php');
 include_once('rules.php');
+include_once('ajax_calls.php');
 //include_once('sitemap.php');
 
 function check_header() {
@@ -605,3 +611,11 @@ class Tailwind_Nav_Walker extends Walker_Nav_Menu {
         $output .= "$indent</ul>\n";
     }
 }
+
+
+// Shortcode to output the current month and year
+function current_month_year_shortcode() {
+    return date('F Y'); 
+}
+add_shortcode('date_month', 'current_month_year_shortcode');
+

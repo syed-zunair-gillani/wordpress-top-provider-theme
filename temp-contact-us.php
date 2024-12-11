@@ -75,6 +75,8 @@ get_header();
         </div>
         <div class="w-full col-span-2 flex items-center justify-center">
             <form class="bg-white w-full">
+                <input type="hidden" name="action" value="submit_form">
+                <?php wp_nonce_field('ajax_form_nonce'); ?>
                 <div class="md:flex w-full gap-5 items-center">
                     <div class="md:w-1/2 flex flex-col">
                         <label class="text-base font-semibold leading-none">Name</label>
