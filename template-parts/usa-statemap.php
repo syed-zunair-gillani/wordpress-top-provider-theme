@@ -472,14 +472,14 @@
                 ></path>
                 <g>
                     <g transform="translate(551.5627827137049, 404.7222666582044)" class="rsm-marker">
-                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer; color: white">
                             <a href="<?php echo esc_url(home_url('/internet/al')) ?>">AL</a>
                         </text>
                     </g>
                 </g>
                 <g>
                     <g transform="translate(82.96466123864468, 479.54325549204145)" class="rsm-marker">
-                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer; color: white">
                             <a href="<?php echo esc_url(home_url('/internet/ak')) ?>">AK</a>
                         </text>
                     </g>
@@ -487,7 +487,7 @@
                 <g>
                     <g transform="translate(169.95691493959956, 363.72482268080364)" class="rsm-marker">
                         <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
-                            <a href="<?php echo esc_url(home_url('/internet/az')) ?>">AZ</a>
+                            <a href="<?php echo esc_url(home_url('/internet/az')) ?>" style="color: white" >AZ</a>
                         </text>
                     </g>
                 </g>
