@@ -1,42 +1,58 @@
-<div class="flex justify-center rounded-xl border border-gray-100 p-3 shadow-xl transition hover:border-[#6041BB]/10 hover:shadow-[#6041BB]/10  ">
+<div class="flex md:flex-row flex-col gap-2 sm:gap-4 md:justify-between md:items-center rounded-xl border border-gray-100 p-3 transition hover:border-[#6041BB]/10  ">
+  <div class="flex items-center gap-2 sm:gap-4 lg:gap-8">
+    <figure class="sm:w-[150px] sm:h-[150px] p-2 h-[100px] w-[100px] rounded-xl  flex justify-center items-center flex-col border">
+      <?php if (has_post_thumbnail()) {
+            ?>
+              <figure class="w-full">
+                <?php the_post_thumbnail('full') ?>
+              </figure>
+            <?php
+          } else { ?>
+            <figure class="max-w-[100px] sm:max-w-[144px]">
+              <img src="<?php bloginfo('template_directory'); ?>/images/img5.jpg" alt="<?php the_title() ?>" class="sm:w-[144px]" />
+            </figure>
+      <?php } ?>
+    </figure>  
+    <div>
+      <h2 class="sm:text-2xl text-left font-black"><?php the_title() ?></h2>
+      <p class="font-medium text-[#6A6A93] text-xs sm:text-base mt-[2px] text-left">Reviews 7,796  •  Great</p>
+      <div class="flex gap-1 items-center mt-1">
+        <img src="<?php bloginfo('template_directory'); ?>/images/trustpilot-star.png" class="lg:!w-10 lg:!h-10 md:!h-8 md:!w-8 h-5 w-5"/>
+        <img src="<?php bloginfo('template_directory'); ?>/images/trustpilot-star.png" class="lg:!w-10 lg:!h-10 md:!h-8 md:!w-8 h-5 w-5"/>
+        <img src="<?php bloginfo('template_directory'); ?>/images/trustpilot-star.png" class="lg:!w-10 lg:!h-10 md:!h-8 md:!w-8 h-5 w-5"/>
+        <img src="<?php bloginfo('template_directory'); ?>/images/trustpilot-star.png" class="lg:!w-10 lg:!h-10 md:!h-8 md:!w-8 h-5 w-5"/>
+        <img src="<?php bloginfo('template_directory'); ?>/images/trustpilot-star.png" class="lg:!w-10 lg:!h-10 md:!h-8 md:!w-8 h-5 w-5 grayscale opacity-50"/>
+        <p class="font-semibold text-[#6A6A93] ml-1">4.0</p>
+      </div>
+      <div class="text-[10px] hidden sm:flex font-black w-fit mt-2 bg-[#B1F2D0] items-center gap-[2px] rounded-[3px] py-1 px-[6px]">
+        <svg fill="#0E7946" width="12px" height="12px" viewBox="0 0 512 512" id="_x30_1" version="1.1" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M434.068,46.758L314.607,9.034C295.648,3.047,275.883,0,256,0s-39.648,3.047-58.607,9.034L77.932,46.758  C52.97,54.641,36,77.796,36,103.973v207.39c0,38.129,18.12,73.989,48.816,96.607l117.032,86.234  C217.537,505.764,236.513,512,256,512s38.463-6.236,54.152-17.796l117.032-86.234C457.88,385.352,476,349.492,476,311.363v-207.39  C476,77.796,459.03,54.641,434.068,46.758z M347.924,227.716l-98.995,98.995c-11.716,11.716-30.711,11.716-42.426,0l-42.427-42.426  c-11.716-11.716-11.716-30.711,0-42.426l0,0c11.716-11.716,30.711-11.716,42.426,0l21.213,21.213l77.782-77.782  c11.716-11.716,30.711-11.716,42.426,0h0C359.64,197.005,359.64,216,347.924,227.716z"/>
+        </svg>
+        VERIFIED COMPANY
+      </div>
+    </div>
+  </div>
 
-  <a href="<?php the_permalink() ?>" class="flex flex-col justify-center items-center">
-    <?php if (has_post_thumbnail()) {
-      ?>
-        <figure style="width: 140px">
-          <?php the_post_thumbnail('full') ?>
-        </figure>
-      <?php
-    } else { ?>
-      <figure class="max-w-[144px]">
-        <img src="<?php bloginfo('template_directory'); ?>/images/img5.jpg" alt="<?php the_title() ?>" class="w-[144px]" />
-      </figure>
-    <?php } ?>
+  <div class="text-[10px] sm:hidden font-black bg-[#B1F2D0] flex items-center gap-[2px] rounded-[3px] py-1 px-[6px]">
+    <svg fill="#0E7946" width="12px" height="12px" viewBox="0 0 512 512" id="_x30_1" version="1.1" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path d="M434.068,46.758L314.607,9.034C295.648,3.047,275.883,0,256,0s-39.648,3.047-58.607,9.034L77.932,46.758  C52.97,54.641,36,77.796,36,103.973v207.39c0,38.129,18.12,73.989,48.816,96.607l117.032,86.234  C217.537,505.764,236.513,512,256,512s38.463-6.236,54.152-17.796l117.032-86.234C457.88,385.352,476,349.492,476,311.363v-207.39  C476,77.796,459.03,54.641,434.068,46.758z M347.924,227.716l-98.995,98.995c-11.716,11.716-30.711,11.716-42.426,0l-42.427-42.426  c-11.716-11.716-11.716-30.711,0-42.426l0,0c11.716-11.716,30.711-11.716,42.426,0l21.213,21.213l77.782-77.782  c11.716-11.716,30.711-11.716,42.426,0h0C359.64,197.005,359.64,216,347.924,227.716z"/>
+    </svg>
+    VERIFIED COMPANY
+  </div>
 
-    <h2 class="mt-4 text-lg text-center"><?php the_title() ?></h2>
-    Reviews 610   Great
-   
 
-<div class="flex items-center">
-    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-    </svg>
-    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-    </svg>
-    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-    </svg>
-    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-    </svg>
-    <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-    </svg>
-    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">4.95</p>
-    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">out of</p>
-    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">5</p>
-</div>
 
+
+  <a href="<?php the_permalink() ?>" class="flex justify-between group hover:bg-[#C2D5F7] gap-2 sm:gap-6 items-center lg:!max-w-[350px] lg:w-full border p-2 sm:p-3 px-3 sm:px-6 hover:border-[#C2D5F7] border-blue-600 rounded-md sm:rounded-lg">
+    <div>
+      <span class="flex items-center gap-1 text-blue-500 group-hover:text-black">
+        <svg viewBox="0 0 16 16" fill="inherit" class="icon_icon__ECGRl icon_appearance-action__9bJa5" width="16px" height="16px"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2H2v12h12V8h-1v5H3V3h5V2Zm2 1h2.293L7.646 7.646l.708.708L13 3.707V6h1V2h-4v1Z"></path></svg>
+        <h2 class="text-sm sm:text-base text-left font-black "><?php the_title() ?></h2> 
+      </span>
+      <p class="font-medium text-left text-sm sm:text-base group-hover:text-black text-gray-500">Vist to provider full details</p>
+    </div>
+    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="inherit">
+      <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </a>
 </div>
