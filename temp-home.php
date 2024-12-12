@@ -46,7 +46,6 @@ $providers_query = new WP_Query($argsForProvider);
         <li class="relative">Home Broadband</li>
         <li class="relative">Satellite TV</li>
         <li class="relative">Cell Phone Connection</li>
-     
       </ul>
     </div>
     <div class=""></div>
