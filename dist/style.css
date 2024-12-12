@@ -2693,6 +2693,17 @@ footer {
   width: 100% !important;
 }
 
+.rsm-geography {
+  transition: fill 0.2s ease;
+  /* Smooth transition */
+}
+
+.rsm-geography:hover {
+  fill: #96B93A !important;
+  /* New fill color on hover */
+  fill-opacity: 1 !important;
+}
+
 .hover\:-translate-y-3:hover {
   --tw-translate-y: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
