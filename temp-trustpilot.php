@@ -14,7 +14,7 @@ get_header();
     <div class="container mx-auto px-4">
      
             <h3 class="text-3xl font-semibold mb-10">Trustpilot Reviews for Providers</h3>
-            <div class="mt-8 grid grid-cols-1 sm:!grid-cols-2 gap-8 md:!grid-cols-4 text-center">
+            <div class="mt-8 grid grid-cols-1  text-center">
                 <?php
                 // Arguments for the WP Query
                 $args = array(
