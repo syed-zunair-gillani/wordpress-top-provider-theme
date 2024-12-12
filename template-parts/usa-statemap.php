@@ -471,190 +471,389 @@
                     style="outline: none;"
                 ></path>
                 <g>
-                    <g transform="translate(551.5627827137049, 404.7222666582044)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">AL</text></g>
+                    <g transform="translate(551.5627827137049, 404.7222666582044)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/al')) ?>">AL</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(82.96466123864468, 479.54325549204145)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">AK</text></g>
+                    <g transform="translate(82.96466123864468, 479.54325549204145)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/ak')) ?>">AK</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(169.95691493959956, 363.72482268080364)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">AZ</text></g>
+                    <g transform="translate(169.95691493959956, 363.72482268080364)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/az')) ?>">AZ</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(271.63875654225285, 287.53393182444336)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">CO</text></g>
+                    <g transform="translate(271.63875654225285, 287.53393182444336)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/co')) ?>">CO</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(630.4435912992149, 473.8356333404412)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">FL</text></g>
+                    <g transform="translate(630.4435912992149, 473.8356333404412)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/fl')) ?>">FL</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(604.5349207342637, 401.2513189895351)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">GA</text></g>
+                    <g transform="translate(604.5349207342637, 401.2513189895351)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/ga')) ?>">GA</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(546.3925201968467, 270.45835059917806)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">IN</text></g>
+                    <g transform="translate(546.3925201968467, 270.45835059917806)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/in')) ?>">IN</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(374.2319399479133, 303.4875788670088)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">KS</text></g>
+                    <g transform="translate(374.2319399479133, 303.4875788670088)" class="rsm-marker">
+                        <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">
+                            <a href="<?php echo esc_url(home_url('/internet/ks')) ?>">KS</a>
+                        </text>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(755.1708246571214, 125.9703551874959)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ME</text></g>
+                    <g transform="translate(755.1708246571214, 125.9703551874959)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/me')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ME</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
                     <g transform="translate(767.4396538197562, 189.98160722471607)" class="rsm-annotation">
                         <path d="M0,0 Q-15,0.5 -30,1" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">MA</text>
+                        <a href="<?php echo esc_url(home_url('/internet/ma')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">MA</text>
+                        </a>
                     </g>
                 </g>
                 <g>
-                    <g transform="translate(430.5820831412152, 157.48115378447483)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MN</text></g>
+                    <g transform="translate(430.5820831412152, 157.48115378447483)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/mn')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MN</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
                     <g transform="translate(741.8449821100271, 239.42977657190988)" class="rsm-annotation">
                         <path d="M0,0 Q-17,-0.5 -34,-1" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">NJ</text>
+                        <a href="<?php echo esc_url(home_url('/internet/nj')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">NJ</text>
+                        </a>
                     </g>
                 </g>
                 <g>
-                    <g transform="translate(658.0165313540429, 337.48831950190663)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NC</text></g>
+                    <g transform="translate(658.0165313540429, 337.48831950190663)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/nc')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NC</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(351.92790644840915, 134.58721661361517)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ND</text></g>
+                    <g transform="translate(351.92790644840915, 134.58721661361517)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/nd')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ND</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(386.1862161974885, 358.52001797673563)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OK</text></g>
+                    <g transform="translate(386.1862161974885, 358.52001797673563)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ok')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OK</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(661.941582579698, 234.6481465818107)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">PA</text></g>
+                    <g transform="translate(661.941582579698, 234.6481465818107)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/pa')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">PA</text>
+                        </a>
+                    </g>
+                </g>
+
+                <g>
+                    <g transform="translate(352.4647752285047, 190.72727101404212)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/sd')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">SD</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(352.4647752285047, 190.72727101404212)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">SD</text></g>
+                    <g transform="translate(355.9833323023857, 435.3455119737191)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/tx')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">TX</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(355.9833323023857, 435.3455119737191)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">TX</text></g>
-                </g>
-                <g>
-                    <g transform="translate(252.14366632169106, 209.62488547641703)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WY</text></g>
+                    <g transform="translate(252.14366632169106, 209.62488547641703)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/wy')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WY</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
                     <g transform="translate(762.8949252270265, 215.71896772268678)" class="rsm-annotation">
                         <path d="M0,0 Q-17.5,-5 -35,-10" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">CT</text>
+                        <a href="<?php echo esc_url(home_url('/internet/ct')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">CT</text>
+                        </a>
                     </g>
                 </g>
                 <g>
-                    <g transform="translate(460.01709219426095, 305.5473525157237)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MO</text></g>
+                    <g transform="translate(460.01709219426095, 305.5473525157237)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/mo')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MO</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(629.7986873664627, 283.2368244758293)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WV</text></g>
+                    <g transform="translate(629.7986873664627, 283.2368244758293)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/wv')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WV</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(504.9635834788202, 271.27759986862225)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">IL</text></g>
+                    <g transform="translate(504.9635834788202, 271.27759986862225)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/il')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">IL</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(254.37964405841436, 372.72569974290707)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NM</text></g>
+                    <g transform="translate(254.37964405841436, 372.72569974290707)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/nm')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NM</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(462.67370808839996, 370.7611509141807)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">AR</text></g>
+                    <g transform="translate(462.67370808839996, 370.7611509141807)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ar')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">AR</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(66.29622690225341, 286.1235020914812)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">CA</text></g>
+                    <g transform="translate(66.29622690225341, 286.1235020914812)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ca')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">CA</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
                     <g transform="translate(734.0942043050983, 262.8889198310404)" class="rsm-annotation">
                         <path d="M0,0 Q-16.5,0 -33,0" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">DE</text>
+                        <a href="<?php echo esc_url(home_url('/internet/de')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">DE</text>
+                        </a>
                     </g>
                 </g>
                 <g>
                     <g transform="translate(729.1055480076627, 289.9843304464249)" class="rsm-annotation">
                         <path d="M0,0 Q-24.5,-10.5 -49,-21" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">DC</text>
+                        <a href="<?php echo esc_url(home_url('/internet/dc')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">DC</text>
+                        </a>
                     </g>
                 </g>
                 <g>
-                    <g transform="translate(245.1791906787246, 520.5772887463597)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">HI</text></g>
+                    <g transform="translate(245.1791906787246, 520.5772887463597)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/hi')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">HI</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(443.1278910274519, 235.99353037020035)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">IA</text></g>
+                    <g transform="translate(443.1278910274519, 235.99353037020035)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ia')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">IA</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(565.2172191596534, 313.1763715183731)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">KY</text></g>
+                    <g transform="translate(565.2172191596534, 313.1763715183731)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ky')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">KY</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
                     <g transform="translate(730.2334405601431, 275.87572238063365)" class="rsm-annotation">
-                        <path d="M0,0 Q-23.5,-5 -47,-10" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">MD</text>
+                        <a href="<?php echo esc_url(home_url('/internet/md')) ?>" target="_blank" rel="noopener noreferrer">
+                            <path d="M0,0 Q-23.5,-5 -47,-10" fill="transparent" stroke="#000"></path>
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">MD</text>
+                        </a>
                     </g>
                 </g>
                 <g>
-                    <g transform="translate(549.8713081770508, 186.4014560082759)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MI</text></g>
+                    <g transform="translate(549.8713081770508, 186.4014560082759)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/mi')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MI</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(507.4844162773439, 409.10913131218535)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MS</text></g>
+                    <g transform="translate(507.4844162773439, 409.10913131218535)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ms')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MS</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
-                    <g transform="translate(234.95700712292498, 130.83396895110423)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MT</text></g>
+                    <g transform="translate(234.95700712292498, 130.83396895110423)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/mt')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">MT</text>
+                        </a>
+                    </g>
                 </g>
                 <g>
                     <g transform="translate(767.4557740985513, 166.3656601677294)" class="rsm-annotation">
-                        <path d="M0,0 Q-17,-1 -34,-2" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">NH</text>
+                        <a href="<?php echo esc_url(home_url('/internet/nh')) ?>" target="_blank" rel="noopener noreferrer">
+                            <path d="M0,0 Q-17,-1 -34,-2" fill="transparent" stroke="#000"></path>
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">NH</text>
+                        </a>
                     </g>
                 </g>
+
                 <g>
-                    <g transform="translate(685.0975901957768, 190.34019847063132)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NY</text></g>
+                    <g transform="translate(685.0975901957768, 190.34019847063132)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ny')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NY</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(594.5088176934005, 257.14254844781544)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OH</text></g>
+                    <g transform="translate(594.5088176934005, 257.14254844781544)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/oh')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OH</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(83.23715837285204, 159.24459190477444)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OR</text></g>
+                    <g transform="translate(83.23715837285204, 159.24459190477444)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/or')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">OR</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(553.126719832518, 346.27445531316505)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">TN</text></g>
+                    <g transform="translate(553.126719832518, 346.27445531316505)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/tn')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">TN</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(185.3746129704859, 270.1592897552282)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">UT</text></g>
+                    <g transform="translate(185.3746129704859, 270.1592897552282)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ut')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">UT</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(659.3077860329208, 299.5386185428115)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">VA</text></g>
+                    <g transform="translate(659.3077860329208, 299.5386185428115)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/va')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">VA</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(100.9880922577446, 97.34807614199099)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WA</text></g>
+                    <g transform="translate(100.9880922577446, 97.34807614199099)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/wa')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WA</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(488.2667294297505, 186.06584931332975)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WI</text></g>
+                    <g transform="translate(488.2667294297505, 186.06584931332975)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/wi')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">WI</text>
+                        </a>
+                    </g>
                 </g>
-                <g></g>
-                <g></g>
-                <g></g>
+
                 <g>
-                    <g transform="translate(356.03868400317754, 245.50229561729498)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NE</text></g>
+                    <g transform="translate(356.03868400317754, 245.50229561729498)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/ne')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NE</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(640.149163387973, 371.9393915659912)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">SC</text></g>
+                    <g transform="translate(640.149163387973, 371.9393915659912)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/sc')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">SC</text>
+                        </a>
+                    </g>
                 </g>
-                <g></g>
-                <g></g>
+
                 <g>
-                    <g transform="translate(162.3997928391251, 169.55196921506945)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ID</text></g>
+                    <g transform="translate(162.3997928391251, 169.55196921506945)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/id')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">ID</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
-                    <g transform="translate(115.75420131406503, 256.2497848713422)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NV</text></g>
+                    <g transform="translate(115.75420131406503, 256.2497848713422)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/nv')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">NV</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
                     <g transform="translate(767.5312766228697, 152.90831815351646)" class="rsm-annotation">
                         <path d="M0,0 Q-25,4 -50,8" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">VT</text>
+                        <a href="<?php echo esc_url(home_url('/internet/vt')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">VT</text>
+                        </a>
                     </g>
                 </g>
+
                 <g>
-                    <g transform="translate(473.078813277756, 442.7960414801561)" class="rsm-marker"><text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">LA</text></g>
+                    <g transform="translate(473.078813277756, 442.7960414801561)" class="rsm-marker">
+                        <a href="<?php echo esc_url(home_url('/internet/la')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text y="2" font-size="14" text-anchor="middle" style="fill: white; cursor: pointer;">LA</text>
+                        </a>
+                    </g>
                 </g>
+
                 <g>
                     <g transform="translate(771.3972695811984, 202.6770897160926)" class="rsm-annotation">
                         <path d="M0,0 Q-14,-1 -28,-2" fill="transparent" stroke="#000"></path>
-                        <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">RI</text>
+                        <a href="<?php echo esc_url(home_url('/internet/ri')) ?>" target="_blank" rel="noopener noreferrer">
+                            <text x="4" font-size="14" alignment-baseline="middle" style="fill: white;">RI</text>
+                        </a>
                     </g>
                 </g>
+
             </g>
         </svg>
     </div>
